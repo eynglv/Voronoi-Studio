@@ -40,6 +40,6 @@ module.exports = db.define("artPieces", {
     type: Sequelize.STRING,
   },
   isHighlighted: {
-    type: Sequelize.STRING,
+    type: Sequelize.DataTypes.BOOLEAN,
   },
 });
