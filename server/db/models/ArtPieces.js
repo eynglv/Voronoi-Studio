@@ -18,7 +18,7 @@ module.exports = db.define("artPieces", {
   artistGender: {
     type: Sequelize.STRING,
   },
-  dateCreated: {
+  endDate: {
     type: Sequelize.INTEGER,
   },
   primaryImage: {
