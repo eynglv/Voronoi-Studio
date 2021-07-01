@@ -6,9 +6,9 @@ const Voronoi = require("./Voronoi");
 const User = require("./models/User");
 
 //associations could go here!
-ArtPieces.belongsTo(Voronoi, { foreignKey: VoronoiId  });
+ArtPieces.belongsToMany(Voronoi, { through: VoronoiElements })t;
 //Voronoi.belongsTo(ArtPieces, {through: VoronoiElements});
-Voronoi.hasMany(ArtPieces);
+Voronoi.belongsToMany(ArtPieces, { through: VoronoiElements };
 
 module.exports = {
   db,
