@@ -6,7 +6,7 @@ const Voronoi = require("./Voronoi");
 const User = require("./models/User");
 
 //associations could go here!
-ArtPieces.belongsToMany(Voronoi, { through: VoronoiElements })t;
+ArtPieces.belongsToMany(Voronoi, { through: VoronoiElements });
 //Voronoi.belongsTo(ArtPieces, {through: VoronoiElements});
 Voronoi.belongsToMany(ArtPieces, { through: VoronoiElements };
 
