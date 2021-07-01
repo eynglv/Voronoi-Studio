@@ -10,25 +10,21 @@
   <body>
     <div id="app"></div>
     <style>
-
       path {
         pointer-events: all;
         fill: none;
         stroke: tomato;
         stroke-opacity: 0.2;
       }
-      
       .active circle {
         stroke: #000;
         stroke-width: 2px;
       }
-      
       </style>
       <svg width="960" height="500"></svg>
       <script src="//d3js.org/d3.v4.min.js"></script>
       <script>
-        
-
+    
       var svg = d3.select("svg"),
           width = +svg.attr("width"),
           height = +svg.attr("height"),
@@ -49,7 +45,6 @@
           .x(function(d) { return d.x; })
           .y(function(d) { return d.y; })
           .extent([[-1, -1], [width + 1, height + 1]]);
-
       //selects all the children of SVG's containers
       var circle = svg.selectAll("g")
         .data(circles)

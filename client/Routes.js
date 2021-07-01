@@ -12,21 +12,8 @@ class Routes extends Component {
 
   render() {
 
-
     return (
       <div>
-//         {isLoggedIn ? (
-//           <Switch>
-//             <Route path="/home" component={Home} />
-//             <Redirect to="/home" />
-//           </Switch>
-//         ) : (
-//           <Switch>
-//             <Route path='/' exact component={ Login } />
-//             <Route path="/login" component={Login} />
-//             <Route path="/signup" component={Signup} />
-//           </Switch>
-//         )}
       </div>
     )
   }
@@ -53,4 +40,19 @@ class Routes extends Component {
 
 // The `withRouter` wrapper makes sure that updates are not blocked
 // when the url changes
+
 export default withRouter(connect(null)(Routes))
+
+
+//         {isLoggedIn ? (
+//           <Switch>
+//             <Route path="/home" component={Home} />
+//             <Redirect to="/home" />
+//           </Switch>
+//         ) : (
+//           <Switch>
+//             <Route path='/' exact component={ Login } />
+//             <Route path="/login" component={Login} />
+//             <Route path="/signup" component={Signup} />
+//           </Switch>
+//         )}
