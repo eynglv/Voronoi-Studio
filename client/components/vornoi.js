@@ -14,49 +14,7 @@ container.render = (selector, cellCount) => {
 			y: Math.round(Math.random() * (height - radius * 2) + radius),
 		};
 	});
-	const defs = svg.append("svg:defs");
-	womenByWomen.forEach((painting, index) => {
-		defs.append("svg:pattern")
-			.attr("id", `painting${index}`)
-			.attr("width", 500) //in pixels
-			.attr("height", 400) //in pixels
-			.attr("patternUnits", "userSpaceOnUse")
-			.append("svg:image")
-			.attr("xlink:href", painting.primaryImageSmall)
-			.attr("width", 500)
-			.attr("height", 400)
-			.attr("x", 0)
-			.attr("y", 0);
-	});
-	// defs.append("svg:pattern")
-	// 	.attr("id", "test_painting1")
-	// 	.attr("width", 599) //in pixels
-	// 	.attr("height", 487) //in pixels
-	// 	.attr("patternUnits", "userSpaceOnUse")
-	// 	.append("svg:image")
-	// 	.attr(
-	// 		"xlink:href",
-	// 		"https://images.metmuseum.org/CRDImages/ep/web-large/DT1927.jpg"
-	// 	)
-	// 	.attr("width", 599)
-	// 	.attr("height", 487)
-	// 	.attr("x", 0)
-	// 	.attr("y", 0);
-	// defs.append("svg:pattern")
-	// 	.attr("id", "test_painting2")
-	// 	.attr("width", 599) //in pixels
-	// 	.attr("height", 501) //in pixels
-	// 	.attr("patternUnits", "userSpaceOnUse")
-	// 	.append("svg:image")
-	// 	.attr(
-	// 		"xlink:href",
-	// 		"https://images.metmuseum.org/CRDImages/ep/web-large/DT1928.jpg"
-	// 	)
-	// 	.attr("width", 599)
-	// 	.attr("height", 501)
-	// 	.attr("x", 0)
-	// 	.attr("y", 0);
-	const color = d3.scaleOrdinal().range(d3.schemeCategory20);
+
 	const voronoi = d3
 		.voronoi()
 		.x(function (d) {
@@ -69,6 +27,38 @@ container.render = (selector, cellCount) => {
 			[-1, -1],
 			[width + 1, height + 1],
 		]);
+	const defs = svg.append("svg:defs");
+
+	// const defs = svg.append("svg:defs");
+	// womenByWomen.forEach((painting, index) => {
+	// 	defs.append("svg:pattern")
+	// 		.attr("id", `painting${index}`)
+	// 		.attr("width", 500) //in pixels
+	// 		.attr("height", 400) //in pixels
+	// 		.attr("patternUnits", "userSpaceOnUse")
+	// 		.append("svg:image")
+	// 		.attr("xlink:href", painting.primaryImageSmall)
+	// 		.attr("width", 500)
+	// 		.attr("height", 400)
+	// 		.attr("x", 0)
+	// 		.attr("y", 0);
+	// });
+	womenByWomen.forEach((painting, index) => {
+		defs.append("svg:pattern")
+			.attr("id", `painting${index}`)
+			.attr("preserveAspectRatio", "xMidYMid slice")
+			.attr("width", "100%") //in pixels//could this be changed to the width of the cell.
+			.attr("height", "100%") //in pixels
+			.attr("patternUnits", "objectBoundingBox")
+			// .style("fill-rule","evenodd")
+			.append("svg:image")
+			.attr("href", painting.primaryImageSmall)
+			.attr("preserveAspectRatio", "xMinYMid slice")
+			.attr("width", "100%")
+			.attr("height", "100%");
+	});
+	const color = d3.scaleOrdinal().range(d3.schemeCategory20);
+
 	//selects all the children of SVG's containers
 	const circle = svg
 		.selectAll("g")
@@ -82,6 +72,7 @@ container.render = (selector, cellCount) => {
 				.on("drag", dragged)
 				.on("end", dragended)
 		);
+
 	let cell = circle
 		.append("path")
 		.data(voronoi.polygons(circles))
@@ -90,6 +81,7 @@ container.render = (selector, cellCount) => {
 			return "cell-" + i;
 		})
 		.style("fill", (d, i) => `url(#painting${i % womenByWomen.length}`);
+
 	circle
 		.append("clipPath")
 		.attr("id", function (d, i) {
@@ -102,6 +94,7 @@ container.render = (selector, cellCount) => {
 		.style("fill", function (d, i) {
 			return color(i);
 		});
+
 	circle
 		.append("circle")
 		.attr("clip-path", function (d, i) {
@@ -117,9 +110,11 @@ container.render = (selector, cellCount) => {
 		.style("fill", function (d, i) {
 			return color(i);
 		});
+
 	function dragstarted(d) {
 		d3.select(this).raise().classed("active", true);
 	}
+
 	function dragged(d) {
 		d3.select(this)
 			.select("circle")
@@ -131,7 +126,8 @@ container.render = (selector, cellCount) => {
 		d3.select(this).classed("active", false);
 	}
 	function renderCell(d) {
-		return d == null ? null : "M" + d.join("L") + "Z";
+		const dPath = d == null ? null : "M" + d.join("L") + "Z";
+		return dPath;
 	}
 };
 export default container;
