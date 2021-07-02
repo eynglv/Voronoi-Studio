@@ -8,8 +8,8 @@ import Routes from "./Routes";
 
 class App extends React.Component {
 	componentDidMount() {
-		container.render("#svg1", 300);
-		container.render("#svg2", 10);
+		container.render("#svg1", 10);
+		// container.render("#svg2", 10);
 	}
 	render() {
 		return (

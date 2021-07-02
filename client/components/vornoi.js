@@ -12,6 +12,23 @@ container.render = (selector, cellCount) => {
 			y: Math.round(Math.random() * (height - radius * 2) + radius),
 		};
 	});
+	const defs = svg.append("svg:defs");
+
+	defs.append("svg:pattern")
+		.attr("id", "test_painting")
+		.attr("width", 3803) //in pixels
+		.attr("height", 3179) //in pixels
+		.attr("patternUnits", "userSpaceOnUse")
+		.append("svg:image")
+		.attr(
+			"xlink:href",
+			"https://images.metmuseum.org/CRDImages/ep/original/DT1928.jpg"
+		)
+		.attr("width", 3803)
+		.attr("height", 3179)
+		.attr("x", 0)
+		.attr("y", 0);
+
 	const color = d3.scaleOrdinal().range(d3.schemeCategory20);
 	const voronoi = d3
 		.voronoi()
@@ -44,7 +61,8 @@ container.render = (selector, cellCount) => {
 		.attr("d", renderCell)
 		.attr("id", function (d, i) {
 			return "cell-" + i;
-		});
+		})
+		.style("fill", "url(#test_painting");
 	circle
 		.append("clipPath")
 		.attr("id", function (d, i) {
