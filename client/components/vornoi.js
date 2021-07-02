@@ -1,4 +1,6 @@
 // const d3=require('d3')
+import womenByWomen from "../../womenByWomen";
+console.log(womenByWomen);
 const container = {};
 container.render = (selector, cellCount) => {
 	var svg = d3.select(selector), //selects element tagged svg
@@ -13,22 +15,47 @@ container.render = (selector, cellCount) => {
 		};
 	});
 	const defs = svg.append("svg:defs");
-
-	defs.append("svg:pattern")
-		.attr("id", "test_painting")
-		.attr("width", 3803) //in pixels
-		.attr("height", 3179) //in pixels
-		.attr("patternUnits", "userSpaceOnUse")
-		.append("svg:image")
-		.attr(
-			"xlink:href",
-			"https://images.metmuseum.org/CRDImages/ep/original/DT1928.jpg"
-		)
-		.attr("width", 3803)
-		.attr("height", 3179)
-		.attr("x", 0)
-		.attr("y", 0);
-
+	womenByWomen.forEach((painting, index) => {
+		defs.append("svg:pattern")
+			.attr("id", `painting${index}`)
+			.attr("width", 500) //in pixels
+			.attr("height", 400) //in pixels
+			.attr("patternUnits", "userSpaceOnUse")
+			.append("svg:image")
+			.attr("xlink:href", painting.primaryImageSmall)
+			.attr("width", 500)
+			.attr("height", 400)
+			.attr("x", 0)
+			.attr("y", 0);
+	});
+	// defs.append("svg:pattern")
+	// 	.attr("id", "test_painting1")
+	// 	.attr("width", 599) //in pixels
+	// 	.attr("height", 487) //in pixels
+	// 	.attr("patternUnits", "userSpaceOnUse")
+	// 	.append("svg:image")
+	// 	.attr(
+	// 		"xlink:href",
+	// 		"https://images.metmuseum.org/CRDImages/ep/web-large/DT1927.jpg"
+	// 	)
+	// 	.attr("width", 599)
+	// 	.attr("height", 487)
+	// 	.attr("x", 0)
+	// 	.attr("y", 0);
+	// defs.append("svg:pattern")
+	// 	.attr("id", "test_painting2")
+	// 	.attr("width", 599) //in pixels
+	// 	.attr("height", 501) //in pixels
+	// 	.attr("patternUnits", "userSpaceOnUse")
+	// 	.append("svg:image")
+	// 	.attr(
+	// 		"xlink:href",
+	// 		"https://images.metmuseum.org/CRDImages/ep/web-large/DT1928.jpg"
+	// 	)
+	// 	.attr("width", 599)
+	// 	.attr("height", 501)
+	// 	.attr("x", 0)
+	// 	.attr("y", 0);
 	const color = d3.scaleOrdinal().range(d3.schemeCategory20);
 	const voronoi = d3
 		.voronoi()
@@ -62,7 +89,7 @@ container.render = (selector, cellCount) => {
 		.attr("id", function (d, i) {
 			return "cell-" + i;
 		})
-		.style("fill", "url(#test_painting");
+		.style("fill", (d, i) => `url(#painting${i % womenByWomen.length}`);
 	circle
 		.append("clipPath")
 		.attr("id", function (d, i) {
