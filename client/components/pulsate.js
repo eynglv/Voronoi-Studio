@@ -20,13 +20,13 @@ chart.render = (selector, height, width, cellCount) => {
   // context.fillRect(0, 0, width, height);
   // context.fillStyle = "black";
 
-  // for (let i = 0; i < positions.length; ++i) {
-  //   const size = i & 1 ? height : width;
-  //   positions[i] += velocities[i];
-  //   if (positions[i] < 0) positions[i] += size;
-  //   else if (positions[i] > size) positions[i] -= size;
-  //   velocities[i] += 0.2 * (Math.random() - 0.5) - 0.01 * velocities[i];
-  // }
+  //   for (let i = 0; i < positions.length; ++i) {
+  //     const size = i & 1 ? height : width;
+  //     positions[i] += velocities[i];
+  //     if (positions[i] < 0) positions[i] += size;
+  //     else if (positions[i] > size) positions[i] -= size;
+  //     velocities[i] += 0.2 * (Math.random() - 0.5) - 0.01 * velocities[i];
+  //   }
 
   // context.beginPath();
   // voronoi.update().render(context);

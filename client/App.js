@@ -9,8 +9,8 @@ import chart from "./components/pulsate";
 
 class App extends React.Component {
   componentDidMount() {
-    // container.render("#svg1", 200);
-    chart.render("#container", 200, 950, 200);
+    container.render("#svg1", 13);
+    // chart.render("#container", 200, 950, 200);
   }
   render() {
     return (

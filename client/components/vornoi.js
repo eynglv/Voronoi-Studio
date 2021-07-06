@@ -6,31 +6,16 @@ container.render = (selector, cellCount) => {
     height = +svg.attr("height"), //accessing the height property
     radius = 10;
   //range sets the number of circles
-  const circles = d3.range(cellCount).map(function () {
+  let circles = d3.range(cellCount).map(function () {
     return {
       x: Math.round(Math.random() * (width - radius * 2) + radius),
       y: Math.round(Math.random() * (height - radius * 2) + radius),
     };
   });
-  const defs = svg.append("svg:defs");
 
-  defs
-    .append("svg:pattern")
-    .attr("id", "test_painting")
-    .attr("width", 960) //in pixels
-    .attr("height", 500) //in pixels
-    .attr("patternUnits", "userSpaceOnUse")
-    .append("svg:image")
-    .attr(
-      "xlink:href",
-      "https://images.metmuseum.org/CRDImages/ad/original/DP-12550-001.jpg"
-    )
-    .attr("width", 1260)
-    .attr("height", 500)
-    .attr("x", -50)
-    .attr("y", 80);
+  // const n = 100;
+  // const velocities = new Float64Array(n * 2);
 
-  const color = d3.scaleOrdinal().range(d3.schemeCategory20);
   const voronoi = d3
     .voronoi()
     .x(function (d) {
@@ -43,6 +28,27 @@ container.render = (selector, cellCount) => {
       [-1, -1],
       [width + 1, height + 1],
     ]);
+  const defs = svg.append("svg:defs");
+
+  defs
+    .append("svg:pattern")
+    .attr("id", "test_painting")
+    .attr("preserveAspectRatio", "xMidYMid slice")
+    .attr("width", "100%") //in pixels//could this be changed to the width of the cell.
+    .attr("height", "100%") //in pixels
+    .attr("patternUnits", "objectBoundingBox")
+    // .style("fill-rule","evenodd")
+    .append("svg:image")
+    .attr(
+      "href",
+      "https://images.metmuseum.org/CRDImages/ep/original/DT1928.jpg"
+    )
+    .attr("preserveAspectRatio", "xMinYMid slice")
+    .attr("width", "100%")
+    .attr("height", "100%");
+
+  const color = d3.scaleOrdinal().range(d3.schemeCategory20);
+
   //selects all the children of SVG's containers
   const circle = svg
     .selectAll("g")
@@ -56,6 +62,7 @@ container.render = (selector, cellCount) => {
         .on("drag", dragged)
         .on("end", dragended)
     );
+
   let cell = circle
     .append("path")
     .data(voronoi.polygons(circles))
@@ -63,7 +70,9 @@ container.render = (selector, cellCount) => {
     .attr("id", function (d, i) {
       return "cell-" + i;
     })
-    .style("fill", "url(#test_painting");
+    .style("fill", "url(#test_painting)");
+
+  //https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/clip-path
   circle
     .append("clipPath")
     .attr("id", function (d, i) {
@@ -76,8 +85,12 @@ container.render = (selector, cellCount) => {
     .style("fill", function (d, i) {
       return color(i);
     });
+
   circle
     .append("circle")
+    .attr("class", function (d, i) {
+      return "cell-" + i;
+    })
     .attr("clip-path", function (d, i) {
       return "url(#clip-" + i + ")";
     })
@@ -88,15 +101,34 @@ container.render = (selector, cellCount) => {
       return d.y;
     })
     .attr("r", radius)
-    .style(
-      "fill",
-      "none"
-      // function (d, i) {
-      //   return color(i);}
-    );
+    .style("fill", function (d, i) {
+      return color(i);
+    });
+
+  function moveCircles() {
+    circles = circles.map(function () {
+      return {
+        x: Math.round(Math.random() * (width - radius * 2) + radius),
+        y: Math.round(Math.random() * (height - radius * 2) + radius),
+      };
+    });
+
+    d3.selectAll("circle").each(function (i, d) {
+      d3.select(`.cell-${d}`)
+        .transition()
+        .attr("cx", circles[d].x)
+        .attr("cy", circles[d].y);
+    });
+
+    cell = cell.data(voronoi.polygons(circles)).attr("d", renderCell);
+  }
+
+  setInterval(moveCircles, 5000);
+
   function dragstarted(d) {
     d3.select(this).raise().classed("active", true);
   }
+
   function dragged(d) {
     d3.select(this)
       .select("circle")
@@ -108,7 +140,8 @@ container.render = (selector, cellCount) => {
     d3.select(this).classed("active", false);
   }
   function renderCell(d) {
-    return d == null ? null : "M" + d.join("L") + "Z";
+    const dPath = d == null ? null : "M" + d.join("L") + "Z";
+    return dPath;
   }
 };
 export default container;
