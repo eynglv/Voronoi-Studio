@@ -1,8 +1,8 @@
 const Sequelize = require("sequelize");
 const db = require("../db");
 
-module.exports = db.define("artPieces", {
-	objectID: {
+const ArtPieces = db.define("artPieces", {
+	objectId: {
 		type: Sequelize.INTEGER,
 		allowNull: false,
 		validate: {
@@ -18,9 +18,6 @@ module.exports = db.define("artPieces", {
 	artistGender: {
 		type: Sequelize.STRING,
 	},
-	endDate: {
-		type: Sequelize.INTEGER,
-	},
 	primaryImage: {
 		type: Sequelize.STRING,
 		validate: {
@@ -33,13 +30,21 @@ module.exports = db.define("artPieces", {
 			notEmpty: true,
 		},
 	},
-	culture: {
-		type: Sequelize.STRING,
+	endDate: {
+		type: Sequelize.INTEGER,
 	},
 	country: {
+		type: Sequelize.STRING,
+	},
+	culture: {
 		type: Sequelize.STRING,
 	},
 	isHighlighted: {
 		type: Sequelize.DataTypes.BOOLEAN,
 	},
+	isPublicDomain: {
+		type: Sequelize.DataTypes.BOOLEAN,
+	},
 });
+
+module.exports = ArtPieces

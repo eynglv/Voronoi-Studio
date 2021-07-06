@@ -1,4 +1,4 @@
-[
+module.exports = [
   {
     objectId: 436446,
     title: "Two Tahitian Women",

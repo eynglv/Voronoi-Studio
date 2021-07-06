@@ -27,6 +27,7 @@ const apiToSeedFile = async (route, filename) => {
       return artObj;
     })
   );
+  
   console.log("artData:", artData);
   const artDataString = JSON.stringify(artData);
   console.log("artDataString", artDataString);

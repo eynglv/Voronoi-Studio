@@ -1,4 +1,4 @@
-export default [
+module.exports = [
 	{
 		objectId: 438009,
 		title: "The Pink Dress (Albertie-Marguerite Carré, later Madame Ferdinand-Henri Himmes, 1854–1935)",
