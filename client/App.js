@@ -2,17 +2,11 @@ import React from "react";
 import container from "./components/vornoi";
 import Navbar from "./components/Navbar";
 import Routes from "./Routes";
-import * as Scroll from "react-scroll";
-import {
-  Link,
-  Button,
-  Element,
-  Events,
-  animateScroll as scroll,
-  scrollSpy,
-  scroller,
-} from "react-scroll";
 
+// import chart from "./components/pulsate";
+
+// import * as Scroll from 'react-scroll';
+import { animateScroll as scroll } from "react-scroll";
 // import { d3 } from "d3";
 // import { Delaunay } from "d3-delaunay";
 // import { Delaunay } from "https://cdn.skypack.dev/d3-delaunay@6%22";
@@ -24,9 +18,9 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    container.render("#svg1", 10);
+    container.render("#svg1", 20);
     container.render("#svg2", 20);
-    container.render("#svg3", 15);
+    container.render("#svg3", 20);
   }
 
   scrollToTop() {
