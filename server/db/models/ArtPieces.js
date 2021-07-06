@@ -39,7 +39,7 @@ const ArtPieces = db.define("artPieces", {
 	culture: {
 		type: Sequelize.STRING,
 	},
-	isHighlighted: {
+	isHighlight: {
 		type: Sequelize.DataTypes.BOOLEAN,
 	},
 	isPublicDomain: {
