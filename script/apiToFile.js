@@ -34,10 +34,6 @@ const apiToSeedFile = async (route, filename) => {
     console.error(err);
   });
 };
-apiToSeedFile(
-  "https://collectionapi.metmuseum.org/public/collection/v1/search?geoLocation=New York&q=paintings&medium=Paintings",
-  "american.json"
-);
 const idsToSeedFile = async (fileArray, filename) => {
   const artList = fileArray;
 

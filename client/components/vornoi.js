@@ -1,4 +1,6 @@
 // const d3=require('d3')
+import womenByWomen from "../../womenByWomen";
+
 const container = {};
 container.render = (selector, cellCount) => {
   var svg = d3.select(selector), //selects element tagged svg
@@ -48,20 +50,35 @@ container.render = (selector, cellCount) => {
     .attr("height", "100%");
 
   const color = d3.scaleOrdinal().range(d3.schemeCategory20);
+  function repeat(d) {
+    console.log(this);
+    d3.select(this).raise().classed("active", true);
+    d3.select(this)
+      .transition()
+      .duration(2000)
+      .delay(10000)
+      .attr("x", (d.x = d.x + 200))
+      .attr("y", (d.y = d.y + 100));
+    d3.select(this)
+      .selectAll("path")
+      .transition()
+      .delay(10000)
+      .duration(5000)
+      .attr("x", (d.x = d.x + 100))
+      .attr("y", (d.y = d.y + 100));
+  }
 
-  //selects all the children of SVG's containers
+  //selects all the children of SVG
   const circle = svg
     .selectAll("g")
     .data(circles)
     .enter()
     .append("g")
-    .call(
-      d3
-        .drag()
-        .on("start", dragstarted)
-        .on("drag", dragged)
-        .on("end", dragended)
-    );
+    .each(repeat);
+
+  circle.call(
+    d3.drag().on("start", dragstarted).on("drag", dragged).on("end", dragended)
+  );
 
   let cell = circle
     .append("path")
@@ -78,6 +95,7 @@ container.render = (selector, cellCount) => {
     .attr("id", function (d, i) {
       return "clip-" + i;
     })
+
     .append("use")
     .attr("xlink:href", function (d, i) {
       return "#cell-" + i;
@@ -130,18 +148,22 @@ container.render = (selector, cellCount) => {
   }
 
   function dragged(d) {
+    console.log(this);
     d3.select(this)
-      .select("circle")
-      .attr("cx", (d.x = d3.event.x))
-      .attr("cy", (d.y = d3.event.y));
+      .selectAll("path")
+      .attr("cx", (d.x = d3.event.x + 100))
+      .attr("cy", (d.y = d3.event.y + 10));
     cell = cell.data(voronoi.polygons(circles)).attr("d", renderCell);
   }
+
   function dragended(d, i) {
     d3.select(this).classed("active", false);
   }
+
   function renderCell(d) {
     const dPath = d == null ? null : "M" + d.join("L") + "Z";
     return dPath;
   }
 };
+
 export default container;
