@@ -38,7 +38,12 @@ class App extends React.Component {
 			<div>
 				<Navbar />
 				<Routes />
-				<canvas id="canvas1" width="960" height="500"></canvas>
+				<canvas
+					id="canvas1"
+					width="960"
+					height="500"
+					onClick={() => this.chartRender.next()}
+				></canvas>
 
 				<svg id="svg1" width="960" height="500"></svg>
 				<p>

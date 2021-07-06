@@ -15,8 +15,8 @@ const chart = {
 			width - 0.5,
 			height - 0.5,
 		]);
-		let j = 0;
-		while (j < 1000000000) {
+
+		while (true) {
 			context.fillStyle = "#ffffff33";
 			context.fillRect(0, 0, width, height);
 			context.fillStyle = "black";
@@ -38,7 +38,6 @@ const chart = {
 			context.beginPath();
 			voronoi.delaunay.renderPoints(context, 1);
 			context.fill();
-			j++;
 
 			yield context.canvas;
 		}
