@@ -1,45 +1,64 @@
 // const d3=require('d3')
+import womenByWomen from "../../womenByWomen";
+
+
 const container = {};
 container.render = (selector, cellCount) => {
-  var svg = d3.select(selector), //selects element tagged svg
-    width = +svg.attr("width"), //accessing the width property
-    height = +svg.attr("height"), //accessing the height property
-    radius = 10;
-  //range sets the number of circles
-  const circles = d3.range(cellCount).map(function () {
-    return {
-      x: Math.round(Math.random() * (width - radius * 2) + radius),
-      y: Math.round(Math.random() * (height - radius * 2) + radius),
-    };
-  });
+	var svg = d3.select(selector), //selects element tagged svg
+		width = +svg.attr("width"), //accessing the width property
+		height = +svg.attr("height"), //accessing the height property
+		radius = 10;
+	//range sets the number of circles
+	const circles = d3.range(cellCount).map(function () {
+		return {
+			x: Math.round(Math.random() * (width - radius * 2) + radius),
+			y: Math.round(Math.random() * (height - radius * 2) + radius),
+		};
+	});
 
-  const voronoi = d3
-    .voronoi()
-    .x(function (d) {
-      return d.x;
-    })
-    .y(function (d) {
-      return d.y;
-    })
-    .extent([
-      [-1, -1],
-      [width + 1, height + 1],
-    ]);
-  const defs = svg.append("svg:defs");
+	const voronoi = d3
+		.voronoi()
+		.x(function (d) {
+			return d.x;
+		})
+		.y(function (d) {
+			return d.y;
+		})
+		.extent([
+			[-1, -1],
+			[width + 1, height + 1],
+		]);
+	const defs = svg.append("svg:defs");
 
-  defs
-    .append("svg:pattern")
-    .attr("id", "test_painting")
-	.attr("preserveAspectRatio", "xMidYMid slice")
-    .attr("width", '100%') //in pixels//could this be changed to the width of the cell.
-    .attr("height", '100%') //in pixels
-    .attr("patternUnits", "objectBoundingBox")
-	// .style("fill-rule","evenodd")
-    .append("svg:image")
-	.attr(
-      "href",
-      "https://images.metmuseum.org/CRDImages/ep/original/DT1928.jpg"
-    ).attr("preserveAspectRatio", "xMinYMid slice").attr("width", '100%').attr("height", '100%')
+	// const defs = svg.append("svg:defs");
+	// womenByWomen.forEach((painting, index) => {
+	// 	defs.append("svg:pattern")
+	// 		.attr("id", `painting${index}`)
+	// 		.attr("width", 500) //in pixels
+	// 		.attr("height", 400) //in pixels
+	// 		.attr("patternUnits", "userSpaceOnUse")
+	// 		.append("svg:image")
+	// 		.attr("xlink:href", painting.primaryImageSmall)
+	// 		.attr("width", 500)
+	// 		.attr("height", 400)
+	// 		.attr("x", 0)
+	// 		.attr("y", 0);
+	// });
+	womenByWomen.forEach((painting, index) => {
+		defs.append("svg:pattern")
+			.attr("id", `painting${index}`)
+			.attr("preserveAspectRatio", "xMidYMid slice")
+			.attr("width", "100%") //in pixels//could this be changed to the width of the cell.
+			.attr("height", "100%") //in pixels
+			.attr("patternUnits", "objectBoundingBox")
+			// .style("fill-rule","evenodd")
+			.append("svg:image")
+			.attr("href", painting.primaryImageSmall)
+			.attr("preserveAspectRatio", "xMinYMid slice")
+			.attr("width", "100%")
+			.attr("height", "100%");
+	});
+	const color = d3.scaleOrdinal().range(d3.schemeCategory20);
 
   const color = d3.scaleOrdinal().range(d3.schemeCategory20);
   function repeat(d) {
@@ -71,17 +90,19 @@ container.render = (selector, cellCount) => {
     )
 
 	let cell = circle
-    .append("path")
-    .data(voronoi.polygons(circles))
-    .attr("d", renderCell)
-    .attr("id", function (d, i) {
-      return "cell-" + i;
-    }).style("fill", "url(#test_painting)")
+		.append("path")
+		.data(voronoi.polygons(circles))
+		.attr("d", renderCell)
+		.attr("id", function (d, i) {
+			return "cell-" + i;
+		})
+		.style("fill", (d, i) => `url(#painting${i % womenByWomen.length}`);
 
     circle.append("clipPath")
     .attr("id", function (d, i) {
       return "clip-" + i;
     })
+    
     .append("use")
     .attr("xlink:href", function (d, i) {
       return "#cell-" + i;
@@ -109,10 +130,9 @@ container.render = (selector, cellCount) => {
 
 
 
-  function dragstarted(d) {
-    d3.select(this).raise().classed("active", true);
-  }
-
+	function dragstarted(d) {
+		d3.select(this).raise().classed("active", true);
+	}
 
   function dragged(d) {
     console.log(this)
