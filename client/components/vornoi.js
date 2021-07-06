@@ -112,6 +112,9 @@ container.render = (selector, cellCount) => {
 
   circle
     .append("circle")
+    .attr("class", function (d, i) {
+      return "cell-" + i;
+    })
     .attr("clip-path", function (d, i) {
       return "url(#clip-" + i + ")";
     })
@@ -147,8 +150,8 @@ container.render = (selector, cellCount) => {
   }
 
   function renderCell(d) {
-   const dPath = d == null ? null : "M" + d.join("L") + "Z";
-	return dPath
+    const dPath = d == null ? null : "M" + d.join("L") + "Z";
+    return dPath;
   }
 }
 
