@@ -50,7 +50,6 @@ container.render = (selector, cellCount) => {
 			.attr("width", "100%") //in pixels//could this be changed to the width of the cell.
 			.attr("height", "100%") //in pixels
 			.attr("patternUnits", "objectBoundingBox")
-			.attr("patternContentUnits", "objectBoundingBox")
 			// .style("fill-rule","evenodd")
 			.append("svg:image")
 			.attr("href", painting.primaryImageSmall)
