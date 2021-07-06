@@ -18,9 +18,9 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    container.render("#svg1", 20);
-    container.render("#svg2", 20);
-    container.render("#svg3", 20);
+    container.render("#svg1", 17);
+    container.render("#svg2", 17);
+    container.render("#svg3", 17);
   }
 
   scrollToTop() {

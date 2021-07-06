@@ -123,10 +123,9 @@ container.render = (selector, cellCount) => {
     });
 
     d3.selectAll("circle").each(function (i, d) {
-      d3.select(`.cell-${d}`)
-        .transition()
-        .attr("cx", circles[d].x)
-        .attr("cy", circles[d].y);
+      d3.select(`.cell-${d}`).transition();
+      // .attr("cx", circles[d].x)
+      // .attr("cy", circles[d].y);
     });
 
     cell = cell.data(voronoi.polygons(circles)).attr("d", renderCell);
