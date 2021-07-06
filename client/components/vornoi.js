@@ -58,7 +58,6 @@ container.render = (selector, cellCount) => {
 			.attr("width", "100%")
 			.attr("height", "100%");
 	});
-	const color = d3.scaleOrdinal().range(d3.schemeCategory20);
 
   const color = d3.scaleOrdinal().range(d3.schemeCategory20);
   function repeat(d) {
