@@ -70,6 +70,5 @@ const idsToSeedFile = async (fileArray, filename) => {
 	});
 };
 
-idsToSeedFile([436446, 438018, 436501, 435594, 437786, 437069, 485728, 37990, 64839, 436004, 483458, 483437, 436022, 435867, 459110, 436173, 438821], 'femaleNudesByMen.js')
 
 module.exports = apiToSeedFile;
