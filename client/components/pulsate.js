@@ -40,8 +40,8 @@ const chart = {};
   context.fill();
   j++;
 
- return;
-  // yield context.canvas;
+//  return;
+  yield context.canvas;
     }
 }
 // }
