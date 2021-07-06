@@ -34,6 +34,7 @@ const apiToSeedFile = async (route, filename) => {
 		console.error(err);
 	});
 };
+
 const idsToSeedFile = async (fileArray, filename) => {
 	const artList = fileArray;
 
@@ -68,5 +69,6 @@ const idsToSeedFile = async (fileArray, filename) => {
 		console.error(err);
 	});
 };
+
 
 module.exports = apiToSeedFile;
