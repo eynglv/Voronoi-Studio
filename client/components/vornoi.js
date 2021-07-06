@@ -1,4 +1,5 @@
 // const d3=require('d3')
+import womenByWomen from "../../script/artdata/womenByWomen";
 const container = {};
 container.render = (selector, cellCount) => {
   var svg = d3.select(selector), //selects element tagged svg
@@ -12,9 +13,6 @@ container.render = (selector, cellCount) => {
       y: Math.round(Math.random() * (height - radius * 2) + radius),
     };
   });
-
-  // const n = 100;
-  // const velocities = new Float64Array(n * 2);
 
   const voronoi = d3
     .voronoi()
@@ -30,23 +28,35 @@ container.render = (selector, cellCount) => {
     ]);
   const defs = svg.append("svg:defs");
 
-  defs
-    .append("svg:pattern")
-    .attr("id", "test_painting")
-    .attr("preserveAspectRatio", "xMidYMid slice")
-    .attr("width", "100%") //in pixels//could this be changed to the width of the cell.
-    .attr("height", "100%") //in pixels
-    .attr("patternUnits", "objectBoundingBox")
-    // .style("fill-rule","evenodd")
-    .append("svg:image")
-    .attr(
-      "href",
-      "https://images.metmuseum.org/CRDImages/ep/original/DT1928.jpg"
-    )
-    .attr("preserveAspectRatio", "xMinYMid slice")
-    .attr("width", "100%")
-    .attr("height", "100%");
-
+  // const defs = svg.append("svg:defs");
+  // womenByWomen.forEach((painting, index) => {
+  // 	defs.append("svg:pattern")
+  // 		.attr("id", `painting${index}`)
+  // 		.attr("width", 500) //in pixels
+  // 		.attr("height", 400) //in pixels
+  // 		.attr("patternUnits", "userSpaceOnUse")
+  // 		.append("svg:image")
+  // 		.attr("xlink:href", painting.primaryImageSmall)
+  // 		.attr("width", 500)
+  // 		.attr("height", 400)
+  // 		.attr("x", 0)
+  // 		.attr("y", 0);
+  // });
+  womenByWomen.forEach((painting, index) => {
+    defs
+      .append("svg:pattern")
+      .attr("id", `painting${index}`)
+      .attr("preserveAspectRatio", "xMidYMid slice")
+      .attr("width", "100%") //in pixels//could this be changed to the width of the cell.
+      .attr("height", "100%") //in pixels
+      .attr("patternUnits", "objectBoundingBox")
+      // .style("fill-rule","evenodd")
+      .append("svg:image")
+      .attr("href", painting.primaryImageSmall)
+      .attr("preserveAspectRatio", "xMidYMid slice")
+      .attr("width", "75%")
+      .attr("height", "75%");
+  });
   const color = d3.scaleOrdinal().range(d3.schemeCategory20);
 
   //selects all the children of SVG's containers
@@ -70,9 +80,8 @@ container.render = (selector, cellCount) => {
     .attr("id", function (d, i) {
       return "cell-" + i;
     })
-    .style("fill", "url(#test_painting)");
+    .style("fill", (d, i) => `url(#painting${i % womenByWomen.length}`);
 
-  //https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/clip-path
   circle
     .append("clipPath")
     .attr("id", function (d, i) {
@@ -144,4 +153,5 @@ container.render = (selector, cellCount) => {
     return dPath;
   }
 };
+
 export default container;
