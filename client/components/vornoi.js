@@ -1,5 +1,5 @@
 // const d3=require('d3')
-import womenByWomen from "../../womenByWomen";
+// import womenByWomen from "../../womenByWomen";
 
 const container = {};
 container.render = (selector, cellCount) => {
