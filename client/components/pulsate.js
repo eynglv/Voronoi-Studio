@@ -27,7 +27,7 @@ const chart = {
 				if (positions[i] < 0) positions[i] += size;
 				else if (positions[i] > size) positions[i] -= size;
 				velocities[i] +=
-					0.2 * (Math.random() - 0.5) - 0.01 * velocities[i];
+					0.1 * (Math.random() - 0.5) - 0.01 * velocities[i]; //alter first decimal to change speed of vornois
 			}
 
 			context.beginPath();
