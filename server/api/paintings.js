@@ -15,3 +15,12 @@ router.get("/", async (req, res, next) => {
 		next(err);
 	}
 });
+router.get("/:paintingId", async (req, res, next) => {
+	try {
+		const painting = await ArtPieces.findByPk(req.params.paintingId);
+		if (painting) res.json(painting);
+		else res.status(404).send("No painting with that ID");
+	} catch (err) {
+		next(err);
+	}
+});
