@@ -15,7 +15,8 @@ class App extends React.Component {
   constructor() {
     super();
     this.scrollToTop = this.scrollToTop.bind(this);
-    this.chartRender = chart.render("#canvas1", 500, 960, 30);
+    this.chartRender1 = chart.render("#canvas1", 500, 960, 30);
+    this.chartRender2 = chart.render("#canvas2", 500, 960, 30);
     this.state = { toggle: false };
   }
 
@@ -24,7 +25,11 @@ class App extends React.Component {
     // container.render("#svg2", 20);
     // container.render("#svg3", 15);
     // chart.generator("#canvas1", 500, 960, 30)
-    this.chartRender.next();
+
+    this.interval = setInterval(() => {
+      this.chartRender1.next();
+      this.chartRender2.next();
+    }, 10);
   }
   componentDidUpdate() {
     this.chartRender.next();
@@ -32,14 +37,29 @@ class App extends React.Component {
   scrollToTop() {
     scroll.scrollToTop();
   }
+  componentWillUnmount() {
+    clearInterval(this.interval);
+  }
 
   render() {
     return (
       <div>
         <Navbar />
         <Routes />
-        <canvas id="canvas1" width="960" height="500"></canvas>
-
+        <canvas
+          id="canvas1"
+          width="960"
+          height="500"
+          onMouseEnter={() => this.chartRender.next()}
+          onMouseLeave={() => this.chartRender.next()}
+        ></canvas>
+        <canvas
+          id="canvas2"
+          width="960"
+          height="500"
+          onMouseEnter={() => this.chartRender.next()}
+          onMouseLeave={() => this.chartRender.next()}
+        ></canvas>
         <svg id="svg1" width="960" height="500"></svg>
         <p>
           Sed ut perspiciatis unde omnis iste natus error sit voluptatem

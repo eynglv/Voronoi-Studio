@@ -23,28 +23,66 @@ async function seed() {
   //   User.create({ username: 'murphy', password: '123' }),
   // ])
 
-  // const voronois = await Promise.all([
-  //   Voronoi.create({title: "Women By Women", context: }),
-  //   Voronoi.create({title: "Women By Men", context:}),
-  //   Voronoi.create({title: "American Art", context:}),
-  //   Voronoi.create({title: "Non-Western Art", context:})
-  // ])
-
-  const artPieces = await Promise.all([
-    // femaleNudesByMen.map((painting) => {
-    //   let artInstance = ArtPieces.create(painting);
-    //   artInstance.setVoronoi()
-    // }),
-    ArtPieces.bulkCreate(femaleNudesByMen),
-    ArtPieces.bulkCreate(womenByWomen),
-    ArtPieces.bulkCreate(nonEuro),
-    ArtPieces.bulkCreate(american),
+  const voronois = await Promise.all([
+    Voronoi.create({
+      title: "Women By Women",
+      context: "Depictions of women by women",
+    }),
+    Voronoi.create({
+      title: "Women By Men",
+      context: "Female nudes created by men",
+    }),
+    Voronoi.create({
+      title: "American Art",
+      context: "A collection of highlighted American artworks.",
+    }),
+    Voronoi.create({
+      title: "Non-Western Art",
+      context:
+        "Art from a diverse collection of countries whose paintings are underrepresented in highlighted work",
+    }),
   ]);
+
+  const femaleNudes = await Promise.all(
+    femaleNudesByMen.map((painting) => {
+      return ArtPieces.create(painting);
+    })
+  );
+
+  const women = await Promise.all(
+    womenByWomen.map((painting) => {
+      return ArtPieces.create(painting);
+    })
+  );
+
+  const nonAmerican = await Promise.all(
+    nonEuro.map((painting) => {
+      return ArtPieces.create(painting);
+    })
+  );
+
+  const usa = await Promise.all(
+    american.map((painting) => {
+      return ArtPieces.create(painting);
+    })
+  );
+
+  await Promise.all(
+    femaleNudes.map((instance) => instance.addVoronoi(voronois[1]))
+  );
+
+  await Promise.all(women.map((instance) => instance.addVoronoi(voronois[0])));
+
+  await Promise.all(
+    nonAmerican.map((instance) => instance.addVoronoi(voronois[3]))
+  );
+
+  await Promise.all(usa.map((instance) => instance.addVoronoi(voronois[2])));
 
   // console.log(`seeded ${users.length} users`)
   console.log(`seeded successfully`);
   return {
-    artPieces,
+    voronois,
   };
 }
 
