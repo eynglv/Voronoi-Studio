@@ -42,7 +42,8 @@ class App extends React.Component {
 					id="canvas1"
 					width="960"
 					height="500"
-					onClick={() => this.chartRender.next()}
+					onMouseEnter={() => this.chartRender.next()}
+					onMouseLeave={() => this.chartRender.next()}
 				></canvas>
 
 				<svg id="svg1" width="960" height="500"></svg>
