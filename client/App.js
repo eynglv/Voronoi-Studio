@@ -15,6 +15,8 @@ class App extends React.Component {
   constructor() {
     super();
     this.scrollToTop = this.scrollToTop.bind(this);
+    this.chartRender = chart.render("#canvas1", 500, 960, 30);
+    this.state = { toggle: false };
   }
 
   componentDidMount() {
@@ -22,9 +24,11 @@ class App extends React.Component {
     // container.render("#svg2", 20);
     // container.render("#svg3", 15);
     // chart.generator("#canvas1", 500, 960, 30)
-    chart.render("#canvas1", 500, 960, 30);
+    this.chartRender.next();
   }
-
+  componentDidUpdate() {
+    this.chartRender.next();
+  }
   scrollToTop() {
     scroll.scrollToTop();
   }

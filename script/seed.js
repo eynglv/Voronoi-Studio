@@ -1,19 +1,21 @@
-'use strict'
+"use strict";
 
-const {db, models: {User, ArtPieces} } = require('../server/db')
-const femaleNudesByMen = require("./artdata/femaleNudesByMen")
-const womenByWomen = require("./artdata/womenByWomen")
-const nonEuro = require("./artdata/non-european-art")
-const american = require("./artdata/american")
-
+const {
+  db,
+  models: { User, ArtPieces, Voronoi },
+} = require("../server/db");
+const femaleNudesByMen = require("./artdata/femaleNudesByMen");
+const womenByWomen = require("./artdata/womenByWomen");
+const nonEuro = require("./artdata/non-european-art");
+const american = require("./artdata/american");
 
 /**
  * seed - this function clears the database, updates tables to
  *      match the models, and populates the database.
  */
 async function seed() {
-  await db.sync({ force: true }) // clears db and matches models to tables
-  console.log('db synced!')
+  await db.sync({ force: true }); // clears db and matches models to tables
+  console.log("db synced!");
 
   // Creating Users
   // const users = await Promise.all([
@@ -21,18 +23,29 @@ async function seed() {
   //   User.create({ username: 'murphy', password: '123' }),
   // ])
 
+  // const voronois = await Promise.all([
+  //   Voronoi.create({title: "Women By Women", context: }),
+  //   Voronoi.create({title: "Women By Men", context:}),
+  //   Voronoi.create({title: "American Art", context:}),
+  //   Voronoi.create({title: "Non-Western Art", context:})
+  // ])
+
   const artPieces = await Promise.all([
+    // femaleNudesByMen.map((painting) => {
+    //   let artInstance = ArtPieces.create(painting);
+    //   artInstance.setVoronoi()
+    // }),
     ArtPieces.bulkCreate(femaleNudesByMen),
     ArtPieces.bulkCreate(womenByWomen),
     ArtPieces.bulkCreate(nonEuro),
-    ArtPieces.bulkCreate(american)
-  ])
+    ArtPieces.bulkCreate(american),
+  ]);
 
   // console.log(`seeded ${users.length} users`)
-  console.log(`seeded successfully`)
+  console.log(`seeded successfully`);
   return {
-artPieces
-  }
+    artPieces,
+  };
 }
 
 /*
@@ -41,16 +54,16 @@ artPieces
  The `seed` function is concerned only with modifying the database.
 */
 async function runSeed() {
-  console.log('seeding...')
+  console.log("seeding...");
   try {
-    await seed()
+    await seed();
   } catch (err) {
-    console.error(err)
-    process.exitCode = 1
+    console.error(err);
+    process.exitCode = 1;
   } finally {
-    console.log('closing db connection')
-    await db.close()
-    console.log('db connection closed')
+    console.log("closing db connection");
+    await db.close();
+    console.log("db connection closed");
   }
 }
 
@@ -60,8 +73,8 @@ async function runSeed() {
   any errors that might occur inside of `seed`.
 */
 if (module === require.main) {
-  runSeed()
+  runSeed();
 }
 
 // we export the seed function for testing purposes (see `./seed.spec.js`)
-module.exports = seed
+module.exports = seed;
