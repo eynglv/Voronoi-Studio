@@ -1,11 +1,11 @@
-import womenByWomen from "../../script/artdata/womenByWomen";
+// import womenByWomen from "../../script/artdata/womenByWomen";
 const chart = {
-	*render(selector, height, width, cellCount = 20) {
+	*render(selector, height, width, artData, cellCount = 2 * artData.length) {
 		const canvas = d3.select(selector);
 		const n = cellCount;
 		const context = canvas.node().getContext("2d");
 		const patterns = [];
-		const images = womenByWomen.map((painting, index) => {
+		const images = artData.map((painting, index) => {
 			const image = new Image();
 			image.src = painting.primaryImageSmall;
 			image.width = image.naturalWidth;

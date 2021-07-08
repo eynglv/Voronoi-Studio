@@ -2,6 +2,8 @@ import React from "react";
 import container from "./components/vornoi";
 import Navbar from "./components/Navbar";
 import Routes from "./Routes";
+import womenByWomen from "../script/artdata/womenByWomen";
+import womenByMen from "../script/artdata/femaleNudesByMen";
 
 import chart from "./components/pulsate";
 
@@ -15,8 +17,8 @@ class App extends React.Component {
 	constructor() {
 		super();
 		this.scrollToTop = this.scrollToTop.bind(this);
-		this.chartRender1 = chart.render("#canvas1", 500, 960, 30);
-		this.chartRender2 = chart.render("#canvas2", 500, 960, 30);
+		this.chartRender1 = chart.render("#canvas1", 500, 960, womenByWomen);
+		this.chartRender2 = chart.render("#canvas2", 500, 960, womenByMen);
 		this.state = { toggle: false };
 	}
 
