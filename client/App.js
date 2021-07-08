@@ -19,6 +19,12 @@ class App extends React.Component {
 		this.scrollToTop = this.scrollToTop.bind(this);
 		this.chartRender1 = chart.render("#canvas1", 500, 960, womenByWomen);
 		this.chartRender2 = chart.render("#canvas2", 500, 960, womenByMen);
+		this.chartRender3 = chart.render(
+			"#canvas3",
+			500,
+			960,
+			womenByWomen.concat(womenByMen)
+		);
 		this.state = { toggle: false };
 	}
 
@@ -31,6 +37,7 @@ class App extends React.Component {
 		this.interval = setInterval(() => {
 			this.chartRender1.next();
 			this.chartRender2.next();
+			this.chartRender3.next();
 		}, 10);
 	}
 	componentDidUpdate() {
@@ -48,9 +55,8 @@ class App extends React.Component {
 			<div>
 				<Navbar />
 				<Routes />
-				<canvas id="canvas1" width="960" height="500"></canvas>
-				<canvas id="canvas2" width="960" height="500"></canvas>
-				<svg id="svg1" width="960" height="500"></svg>
+				{/* <svg id="svg1" width="960" height="500"></svg> */}
+				<canvas id="canvas3" width="960" height="500"></canvas>
 				<p>
 					Sed ut perspiciatis unde omnis iste natus error sit
 					voluptatem accusantium doloremque laudantium, totam rem
@@ -68,7 +74,8 @@ class App extends React.Component {
 					voluptate velit esse quam nihil molestiae consequatur, vel
 					illum qui dolorem eum fugiat quo voluptas nulla pariatur?
 				</p>
-				<svg id="svg2" width="960" height="500"></svg>
+				<canvas id="canvas1" width="960" height="500"></canvas>
+				{/* <svg id="svg2" width="960" height="500"></svg> */}
 				<p>
 					At vero eos et accusamus et iusto odio dignissimos ducimus
 					qui blanditiis praesentium voluptatum deleniti atque
@@ -86,7 +93,8 @@ class App extends React.Component {
 					reiciendis voluptatibus maiores alias consequatur aut
 					perferendis doloribus asperiores repellat.
 				</p>
-				<svg id="svg3" width="960" height="500"></svg>
+				<canvas id="canvas2" width="960" height="500"></canvas>
+				{/* <svg id="svg3" width="960" height="500"></svg> */}
 				<br />
 				<a onClick={() => this.scrollToTop()}>To the top!</a>
 			</div>
