@@ -1,4 +1,3 @@
-// import womenByWomen from "../../script/artdata/womenByWomen";
 const chart = {
 	*render(selector, height, width, artData, cellCount = 2 * artData.length) {
 		const canvas = d3.select(selector);
@@ -6,10 +5,9 @@ const chart = {
 		const patterns = [];
 
 		artData.forEach((painting, index) => {
+			//make a pattern out of each image in artData
 			const image = new Image();
 			image.src = painting.primaryImageSmall;
-			image.width = image.naturalWidth;
-			image.height = image.naturalHeight;
 			image.onload = function () {
 				patterns[index] = context.createPattern(image, "repeat");
 			};
