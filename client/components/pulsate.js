@@ -52,11 +52,11 @@ const chart = {
 			context.beginPath();
 			// voronoi.update().render(context);
 			voronoi.renderBounds(context);
-			context.stroke();
+			// context.stroke();
 
-			context.beginPath();
-			voronoi.delaunay.renderPoints(context, 1);
-			context.fill();
+			// context.beginPath();
+			// voronoi.delaunay.renderPoints(context, 1);
+			// context.fill();
 
 			yield context.canvas;
 		}
