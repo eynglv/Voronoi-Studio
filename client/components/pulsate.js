@@ -2,7 +2,6 @@
 const chart = {
 	*render(selector, height, width, artData, cellCount = 2 * artData.length) {
 		const canvas = d3.select(selector);
-		const n = cellCount;
 		const context = canvas.node().getContext("2d");
 		const patterns = [];
 		const images = artData.map((painting, index) => {
@@ -15,21 +14,21 @@ const chart = {
 			};
 			return image;
 		});
-		console.log(patterns);
 		const positions = Float64Array.from(
-			{ length: n * 2 },
+			{ length: cellCount * 2 },
 			(_, i) => Math.random() * (i & 1 ? height : width)
 		);
-		const velocities = new Float64Array(n * 2);
+		const velocities = new Float64Array(cellCount * 2);
 		const voronoi = new d3.Delaunay(positions).voronoi([
 			0.5,
 			0.5,
 			width - 0.5,
 			height - 0.5,
 		]);
-		console.log(voronoi.cellPolygons());
 
 		while (true) {
+			//below block creates semitransparent rectangle over entire canvas
+
 			// context.fillStyle = "ffffff30";
 			// context.fillRect(0, 0, width, height);
 			// context.fillStyle = "white";
