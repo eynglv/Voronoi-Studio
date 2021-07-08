@@ -6,12 +6,12 @@ const chart = {
 
 		artData.forEach((painting, index) => {
 			//make a pattern out of each image in artData
-			const image = new Image();
-			image.src = painting.primaryImageSmall;
+			const image = new Image(); //make an <img> element
+			image.src = painting.primaryImageSmall; //set it's source to the painting's url
 			image.onload = function () {
-				patterns[index] = context.createPattern(image, "repeat");
+				//when it loads
+				patterns[index] = context.createPattern(image, "repeat"); //create a new canvas patter, and save it to the patterns array
 			};
-			return image;
 		});
 		const positions = Float64Array.from(
 			{ length: cellCount * 2 },
