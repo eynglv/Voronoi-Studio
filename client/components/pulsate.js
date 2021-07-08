@@ -38,9 +38,20 @@ const chart = {
 				//change every position
 				const size = i & 1 ? height : width; //alternate between height and width
 				positions[i] += velocities[i]; //change the position based on corresponding velocity
-				if (positions[i] < 0) positions[i] += size;
+
+				//below code block causes cells to wrap around
+
+				/*
+       if (positions[i] < 0) positions[i] += size;
 				//if position is less than 0, wrap around to the other side
 				else if (positions[i] > size) positions[i] -= size; //if position is greater than the canvas, wrap around to the other side
+        */
+
+				//below code block causes cells to bounce off of edges
+				if (positions[i] < 0) positions[i] *= -1;
+				else if (positions[i] > size)
+					positions[i] = size - (positions[i] - size);
+
 				velocities[i] +=
 					0.2 * (Math.random() - 0.5) - 0.01 * velocities[i]; //change the velocity by a random amount, with some consideration for it's previous value
 			}
