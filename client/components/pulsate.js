@@ -49,12 +49,15 @@ const chart = {
 				voronoi.renderCell(i, context);
 				context.fill();
 			}
+			//below block renders lines between cells
+
 			// context.beginPath();
 			// voronoi.update().render(context);
 			// voronoi.renderBounds(context);
 			// context.stroke();
 
 			//uncomment below to render dots in each cell
+
 			// context.beginPath();
 			// voronoi.delaunay.renderPoints(context, 1);
 			// context.fill();
