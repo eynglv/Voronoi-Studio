@@ -45,7 +45,7 @@ const chart = {
 					0.2 * (Math.random() - 0.5) - 0.01 * velocities[i]; //change the velocity by a random amount, with some consideration for it's previous value
 			}
 			voronoi.update(); //update the voronoi diagram with the new positions
-			for (let i = 0; i < positions.length / 2; i++) {
+			for (let i = 0; i < cellCount; i++) {
 				//for each cell
 				context.fillStyle = patterns[i % patterns.length]; //choose the next pattern in the array, looping back to the beginning if we go out of bounds
 				context.beginPath(); //start a new path
