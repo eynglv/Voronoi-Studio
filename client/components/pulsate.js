@@ -30,8 +30,8 @@ const chart = {
 		console.log(voronoi.cellPolygons());
 
 		while (true) {
-			context.fillStyle = "ffffff30";
-			context.fillRect(0, 0, width, height);
+			// context.fillStyle = "ffffff30";
+			// context.fillRect(0, 0, width, height);
 			// context.fillStyle = "white";
 
 			for (let i = 0; i < positions.length; ++i) {
