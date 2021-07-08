@@ -42,37 +42,6 @@ module.exports = [
     isPublicDomain: true,
   },
   {
-    objectId: 11050,
-    title: "Approaching Thunder Storm",
-    artistDisplayName: "Martin Johnson Heade",
-    artistGender: "",
-    primaryImage:
-      "https://images.metmuseum.org/CRDImages/ad/original/DP248013.jpg",
-    primaryImageSmall:
-      "https://images.metmuseum.org/CRDImages/ad/web-large/DP248013.jpg",
-    endDate: 1859,
-    country: "",
-    culture: "American",
-    isHighlight: true,
-    isPublicDomain: true,
-  },
-  {
-    objectId: 10497,
-    title:
-      "View from Mount Holyoke, Northampton, Massachusetts, after a Thunderstorm—The Oxbow",
-    artistDisplayName: "Thomas Cole",
-    artistGender: "",
-    primaryImage:
-      "https://images.metmuseum.org/CRDImages/ad/original/DP-12550-001.jpg",
-    primaryImageSmall:
-      "https://images.metmuseum.org/CRDImages/ad/web-large/DP-12550-001.jpg",
-    endDate: 1836,
-    country: "",
-    culture: "American",
-    isHighlight: true,
-    isPublicDomain: true,
-  },
-  {
     objectId: 10159,
     title: "Fur Traders Descending the Missouri",
     artistDisplayName: "George Caleb Bingham",
@@ -81,21 +50,6 @@ module.exports = [
     primaryImageSmall:
       "https://images.metmuseum.org/CRDImages/ad/web-large/DT73.jpg",
     endDate: 1845,
-    country: "",
-    culture: "American",
-    isHighlight: true,
-    isPublicDomain: true,
-  },
-  {
-    objectId: 11130,
-    title: "Northeaster",
-    artistDisplayName: "Winslow Homer",
-    artistGender: "",
-    primaryImage:
-      "https://images.metmuseum.org/CRDImages/ad/original/DT1545.jpg",
-    primaryImageSmall:
-      "https://images.metmuseum.org/CRDImages/ad/web-large/DT1545.jpg",
-    endDate: 1901,
     country: "",
     culture: "American",
     isHighlight: true,
@@ -175,21 +129,6 @@ module.exports = [
     isPublicDomain: true,
   },
   {
-    objectId: 13315,
-    title: "The Trout Pool",
-    artistDisplayName: "Worthington Whittredge",
-    artistGender: "",
-    primaryImage:
-      "https://images.metmuseum.org/CRDImages/ad/original/DT11615.jpg",
-    primaryImageSmall:
-      "https://images.metmuseum.org/CRDImages/ad/web-large/DT11615.jpg",
-    endDate: 1870,
-    country: "",
-    culture: "American",
-    isHighlight: true,
-    isPublicDomain: true,
-  },
-  {
     objectId: 10154,
     title: "The Rocky Mountains, Lander's Peak",
     artistDisplayName: "Albert Bierstadt",
@@ -212,20 +151,6 @@ module.exports = [
     primaryImageSmall:
       "https://images.metmuseum.org/CRDImages/ad/web-large/DT62.jpg",
     endDate: 1795,
-    country: "",
-    culture: "American",
-    isHighlight: true,
-    isPublicDomain: true,
-  },
-  {
-    objectId: 13211,
-    title: "Arrangement in Flesh Colour and Black: Portrait of Theodore Duret",
-    artistDisplayName: "James McNeill Whistler",
-    artistGender: "",
-    primaryImage: "https://images.metmuseum.org/CRDImages/ad/original/DT92.jpg",
-    primaryImageSmall:
-      "https://images.metmuseum.org/CRDImages/ad/web-large/DT92.jpg",
-    endDate: 1883,
     country: "",
     culture: "American",
     isHighlight: true,
@@ -255,20 +180,6 @@ module.exports = [
     primaryImageSmall:
       "https://images.metmuseum.org/CRDImages/ad/web-large/DT58.jpg",
     endDate: 1771,
-    country: "",
-    culture: "American",
-    isHighlight: true,
-    isPublicDomain: true,
-  },
-  {
-    objectId: 10481,
-    title: "Heart of the Andes",
-    artistDisplayName: "Frederic Edwin Church",
-    artistGender: "",
-    primaryImage: "https://images.metmuseum.org/CRDImages/ad/original/DT78.jpg",
-    primaryImageSmall:
-      "https://images.metmuseum.org/CRDImages/ad/web-large/DT78.jpg",
-    endDate: 1859,
     country: "",
     culture: "American",
     isHighlight: true,
@@ -349,21 +260,6 @@ module.exports = [
     isPublicDomain: true,
   },
   {
-    objectId: 11309,
-    title: "Gathering Storm on Long Island Sound",
-    artistDisplayName: "John Frederick Kensett",
-    artistGender: "",
-    primaryImage:
-      "https://images.metmuseum.org/CRDImages/ad/original/ap74.39.jpg",
-    primaryImageSmall:
-      "https://images.metmuseum.org/CRDImages/ad/web-large/ap74.39.jpg",
-    endDate: 1872,
-    country: "",
-    culture: "American",
-    isHighlight: false,
-    isPublicDomain: true,
-  },
-  {
     objectId: 10785,
     title: "Ariadne",
     artistDisplayName: "Asher Brown Durand",
@@ -388,36 +284,6 @@ module.exports = [
     primaryImageSmall:
       "https://images.metmuseum.org/CRDImages/ad/web-large/DT219411.jpg",
     endDate: 1835,
-    country: "",
-    culture: "American",
-    isHighlight: false,
-    isPublicDomain: true,
-  },
-  {
-    objectId: 10537,
-    title: "Samuel Verplanck",
-    artistDisplayName: "John Singleton Copley",
-    artistGender: "",
-    primaryImage:
-      "https://images.metmuseum.org/CRDImages/ad/original/DT207885.jpg",
-    primaryImageSmall:
-      "https://images.metmuseum.org/CRDImages/ad/web-large/DT207885.jpg",
-    endDate: 1771,
-    country: "United States",
-    culture: "American",
-    isHighlight: false,
-    isPublicDomain: true,
-  },
-  {
-    objectId: 13312,
-    title: "The Camp Meeting",
-    artistDisplayName: "Worthington Whittredge",
-    artistGender: "",
-    primaryImage:
-      "https://images.metmuseum.org/CRDImages/ad/original/DT228976.jpg",
-    primaryImageSmall:
-      "https://images.metmuseum.org/CRDImages/ad/web-large/DT228976.jpg",
-    endDate: 1874,
     country: "",
     culture: "American",
     isHighlight: false,
@@ -529,21 +395,6 @@ module.exports = [
     isPublicDomain: true,
   },
   {
-    objectId: 11408,
-    title: "Self-portrait",
-    artistDisplayName: "Jacob Hart Lazarus",
-    artistGender: "",
-    primaryImage:
-      "https://images.metmuseum.org/CRDImages/ad/original/DP-15885-001.jpg",
-    primaryImageSmall:
-      "https://images.metmuseum.org/CRDImages/ad/web-large/DP-15885-001.jpg",
-    endDate: 1880,
-    country: "",
-    culture: "American",
-    isHighlight: false,
-    isPublicDomain: true,
-  },
-  {
     objectId: 11104,
     title: "Rats amongst the Barley Sheaves",
     artistDisplayName: "Thomas Hewes Hinckley",
@@ -604,36 +455,6 @@ module.exports = [
     isPublicDomain: true,
   },
   {
-    objectId: 15579,
-    title: "Frederick Gore King",
-    artistDisplayName: "Thomas Seir Cummings",
-    artistGender: "",
-    primaryImage:
-      "https://images.metmuseum.org/CRDImages/ad/original/DP105580.jpg",
-    primaryImageSmall:
-      "https://images.metmuseum.org/CRDImages/ad/web-large/DP105580.jpg",
-    endDate: 1827,
-    country: "United States",
-    culture: "American",
-    isHighlight: false,
-    isPublicDomain: true,
-  },
-  {
-    objectId: 10600,
-    title: "A Mother's Pearls",
-    artistDisplayName: "Thomas Seir Cummings",
-    artistGender: "",
-    primaryImage:
-      "https://images.metmuseum.org/CRDImages/ad/original/DP168869.jpg",
-    primaryImageSmall:
-      "https://images.metmuseum.org/CRDImages/ad/web-large/DP168869.jpg",
-    endDate: 1841,
-    country: "United States",
-    culture: "American",
-    isHighlight: false,
-    isPublicDomain: true,
-  },
-  {
     objectId: 751622,
     title: "Autumn Scattering Leaves",
     artistDisplayName: "John La Farge",
@@ -644,51 +465,6 @@ module.exports = [
       "https://images.metmuseum.org/CRDImages/ad/web-large/DP-13889-001.jpg",
     endDate: 1905,
     country: "",
-    culture: "American",
-    isHighlight: false,
-    isPublicDomain: true,
-  },
-  {
-    objectId: 14451,
-    title: "Horse, Fort Stanton, New Mexico",
-    artistDisplayName: "Peter Moran",
-    artistGender: "",
-    primaryImage:
-      "https://images.metmuseum.org/CRDImages/ad/original/256693.jpg",
-    primaryImageSmall:
-      "https://images.metmuseum.org/CRDImages/ad/web-large/256693.jpg",
-    endDate: 1914,
-    country: "United States",
-    culture: "American",
-    isHighlight: false,
-    isPublicDomain: true,
-  },
-  {
-    objectId: 11391,
-    title: "The Wheel of Fortune",
-    artistDisplayName: "John La Farge",
-    artistGender: "",
-    primaryImage:
-      "https://images.metmuseum.org/CRDImages/ad/original/ap67.55.170.jpg",
-    primaryImageSmall:
-      "https://images.metmuseum.org/CRDImages/ad/web-large/ap67.55.170.jpg",
-    endDate: 1900,
-    country: "",
-    culture: "American",
-    isHighlight: false,
-    isPublicDomain: true,
-  },
-  {
-    objectId: 19389,
-    title: "Burnham Beeches",
-    artistDisplayName: "Thomas Charles Farrer",
-    artistGender: "",
-    primaryImage:
-      "https://images.metmuseum.org/CRDImages/ad/original/SFcs550.jpg",
-    primaryImageSmall:
-      "https://images.metmuseum.org/CRDImages/ad/web-large/SFcs550.jpg",
-    endDate: 1874,
-    country: "United States",
     culture: "American",
     isHighlight: false,
     isPublicDomain: true,

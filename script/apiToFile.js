@@ -70,5 +70,4 @@ const idsToSeedFile = async (fileArray, filename) => {
   });
 };
 
-
 module.exports = apiToSeedFile;

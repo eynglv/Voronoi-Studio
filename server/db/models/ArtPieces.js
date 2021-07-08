@@ -45,6 +45,7 @@ const ArtPieces = db.define("artPieces", {
 	isPublicDomain: {
 		type: Sequelize.DataTypes.BOOLEAN,
 	},
+
 });
 
-module.exports = ArtPieces
+module.exports = ArtPieces;
