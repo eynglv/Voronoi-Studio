@@ -4,7 +4,8 @@ const chart = {
 		const canvas = d3.select(selector);
 		const context = canvas.node().getContext("2d");
 		const patterns = [];
-		const images = artData.map((painting, index) => {
+
+		artData.forEach((painting, index) => {
 			const image = new Image();
 			image.src = painting.primaryImageSmall;
 			image.width = image.naturalWidth;
