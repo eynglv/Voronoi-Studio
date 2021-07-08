@@ -72,6 +72,7 @@ const chart = {
 
 			//uncomment below to render dots in each cell
 
+			// context.fillStyle = "hotpink";
 			// context.beginPath();
 			// voronoi.delaunay.renderPoints(context, 1);
 			// context.fill();
