@@ -48,10 +48,13 @@ const chart = {
         */
 
 				//below code block causes cells to bounce off of edges
-				if (positions[i] < 0) positions[i] *= -1;
-				else if (positions[i] > size)
+				if (positions[i] < 0) {
+					positions[i] *= -1;
+					velocities[i] *= -1;
+				} else if (positions[i] > size) {
 					positions[i] = 2 * size - positions[i];
-
+					velocities[i] *= -1;
+				}
 				velocities[i] +=
 					0.2 * (Math.random() - 0.5) - 0.01 * velocities[i]; //change the velocity by a random amount, with some consideration for it's previous value
 			}
