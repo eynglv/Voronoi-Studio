@@ -23,7 +23,7 @@ export default () => {
 				name="highlight"
 				type="checkbox"
 				value={highlight}
-				onChange={(evt) => setHighlight(!highlight)}
+				onChange={() => setHighlight(!highlight)}
 				checked={highlight}
 			/>
 			<p>Search Artist and Culture, or Tags?</p>
