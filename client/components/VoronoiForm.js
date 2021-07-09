@@ -15,9 +15,57 @@ export default () => {
 	const [query, setQuery] = useState("");
 	const [search, setSearch] = useState({});
 	const [artData, setArtData] = useState([]);
+	const getVoronoi = async (route) => {
+		const artList = (await axios.get(route)).data.objectIDs;
+
+		const artData = await Promise.all(
+			artList.map(async (artId) => {
+				//if more than 79 results, need to add a time out to wait 1 second
+				const artPiece = (
+					await axios.get(
+						`https://collectionapi.metmuseum.org/public/collection/v1/objects/${artId}`
+					)
+				).data;
+				const artObj = {
+					objectId: artId,
+					title: artPiece.title,
+					artistDisplayName: artPiece.artistDisplayName,
+					artistGender: artPiece.artistGender,
+					primaryImage: artPiece.primaryImage,
+					primaryImageSmall: artPiece.primaryImageSmall,
+					endDate: artPiece.objectEndDate,
+					country: artPiece.country,
+					culture: artPiece.culture,
+					isHighlight: artPiece.isHighlight,
+					isPublicDomain: artPiece.isPublicDomain,
+				};
+				return artObj;
+			})
+		);
+		return artData;
+	};
 
 	return (
-		<form id="new-voronoi-form">
+		<form
+			id="new-voronoi-form"
+			onSubmit={(evt) => {
+				evt.preventDefault();
+				console.log(
+					"highlight:",
+					highlight,
+					"tags",
+					tags,
+					"departmentId",
+					departmentId,
+					"location:",
+					location,
+					"artistOrCulture:",
+					artistOrCulture,
+					"query:",
+					query
+				);
+			}}
+		>
 			<label htmlFor="highlight">Show only highlighted works</label>
 			<input
 				name="highlight"
@@ -160,6 +208,7 @@ export default () => {
 				onChange={(evt) => setQuery(evt.target.value)}
 				required
 			/>
+			<button type="submit">Create Voronoi!</button>
 		</form>
 	);
 };
