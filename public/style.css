@@ -1,7 +1,8 @@
 * {
   overflow: visible;
-  /* background-color: black;
- color: white; */
+  background-color: #121619;
+  color: white;
+  margin: 0;
 }
 
 body {
@@ -25,3 +26,22 @@ form div {
   margin: 1em;
   display: inline-block;
 }
+
+.footer {
+  background-color: #5f7c8c;
+  height: 150px;
+  width: 100%;
+}
+
+.names {
+  background-color: #5f7c8c;
+  color: white;
+}
+
+.names.github:hover {
+  color: #ffcab1;
+}
+
+/* #enterBtn {
+  background-color: rgb(18, 22, 25, 0.5);
+} */
