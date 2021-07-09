@@ -17,35 +17,40 @@ export default () => {
 	const [femaleArtist, setFemaleArtist] = useState(false);
 	const [search, setSearch] = useState("");
 	const [artData, setArtData] = useState([]);
+	const [errorMessage, setErrorMessage] = useState("");
 	const getVoronoi = async (route) => {
-		const artList = (await axios.get(route)).data.objectIDs;
+		try {
+			const artList = (await axios.get(route)).data.objectIDs;
 
-		const artData = await Promise.all(
-			artList.map(async (artId) => {
-				//if more than 79 results, need to add a time out to wait 1 second
-				const artPiece = (
-					await axios.get(
-						`https://collectionapi.metmuseum.org/public/collection/v1/objects/${artId}`
-					)
-				).data;
-				const artObj = {
-					objectId: artId,
-					title: artPiece.title,
-					artistDisplayName: artPiece.artistDisplayName,
-					artistGender: artPiece.artistGender,
-					primaryImage: artPiece.primaryImage,
-					primaryImageSmall: artPiece.primaryImageSmall,
-					endDate: artPiece.objectEndDate,
-					country: artPiece.country,
-					culture: artPiece.culture,
-					isHighlight: artPiece.isHighlight,
-					isPublicDomain: artPiece.isPublicDomain,
-				};
-				return artObj;
-			})
-		);
-		console.log("art data in func", artData);
-		return artData;
+			const artData = await Promise.all(
+				artList.map(async (artId) => {
+					//if more than 79 results, need to add a time out to wait 1 second
+					const artPiece = (
+						await axios.get(
+							`https://collectionapi.metmuseum.org/public/collection/v1/objects/${artId}`
+						)
+					).data;
+					const artObj = {
+						objectId: artId,
+						title: artPiece.title,
+						artistDisplayName: artPiece.artistDisplayName,
+						artistGender: artPiece.artistGender,
+						primaryImage: artPiece.primaryImage,
+						primaryImageSmall: artPiece.primaryImageSmall,
+						endDate: artPiece.objectEndDate,
+						country: artPiece.country,
+						culture: artPiece.culture,
+						isHighlight: artPiece.isHighlight,
+						isPublicDomain: artPiece.isPublicDomain,
+					};
+					return artObj;
+				})
+			);
+			console.log("art data in func", artData);
+			return artData;
+		} catch (err) {
+			console.error(err);
+		}
 	};
 
 	useEffect(() => {
@@ -64,24 +69,30 @@ export default () => {
 		}
 	}, [search]);
 	useEffect(() => {
-		console.log("hello!!!!!");
-		if (artData.length) {
-			let workingArtData = [];
-			if (femaleArtist)
-				workingArtData = artData.filter(
-					(val) => val.artistGender === "female"
+		try {
+			console.log("hello!!!!!");
+			if (artData.length) {
+				let workingArtData = [];
+				if (femaleArtist)
+					workingArtData = artData.filter(
+						(val) => val.artistGender === "female"
+					);
+				else workingArtData = [...artData];
+				workingArtData = workingArtData.filter((_, i) => i < MAX);
+				console.log("working art data", workingArtData);
+				const chartRender = chart.render(
+					"#user-generated",
+					720,
+					1080,
+					workingArtData
 				);
-			else workingArtData = [...artData];
-			workingArtData = workingArtData.filter((_, i) => i < MAX);
-			console.log("working art data", workingArtData);
-			const chartRender = chart.render(
-				"#user-generated",
-				720,
-				1080,
-				workingArtData
-			);
-			const interval = setInterval(() => chartRender.next(), 10);
-			return () => clearInterval(interval);
+				const interval = setInterval(() => chartRender.next(), 10);
+				setErrorMessage("");
+				return () => clearInterval(interval);
+			}
+		} catch (err) {
+			console.error(err);
+			setErrorMessage("No results! Please change your search query!");
 		}
 	}, [artData]);
 
@@ -270,6 +281,7 @@ export default () => {
 				/>
 				<button type="submit">Create Voronoi!</button>
 			</form>
+			{errorMessage ? <p>{errorMessage}</p> : ""}
 			<canvas id="user-generated" height="720" width="1080">
 				This is your voronoi!
 			</canvas>
