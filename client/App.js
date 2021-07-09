@@ -2,6 +2,7 @@ import React from "react";
 import container from "./components/vornoi";
 import Navbar from "./components/Navbar";
 import Routes from "./Routes";
+import Home from "./components/Home"
 
 // import chart from "./components/pulsate";
 
@@ -30,6 +31,7 @@ class App extends React.Component {
 	render() {
 		return (
 			<div>
+				<Home />
 				<Navbar />
 				<Routes />
 				<svg id="svg1" width="960" height="500"></svg>
