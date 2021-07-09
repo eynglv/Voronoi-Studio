@@ -118,7 +118,7 @@ export default () => {
 					onChange={() => setHighlight(!highlight)}
 					checked={highlight}
 				/>
-				<label htmlFor="femalArtist">
+				<label htmlFor="femaleArtist">
 					Show only works by female artists
 				</label>
 				<input
