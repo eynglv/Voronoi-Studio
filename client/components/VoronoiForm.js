@@ -48,7 +48,14 @@ export default () => {
 				<label htmlFor="tags">Tags</label>
 			</div>
 			<label htmlFor="department">Filter to Department</label>
-			<select name="department" id="department">
+			<select
+				name="department"
+				id="department"
+				value={`${departmentId}`}
+				onChange={(evt) =>
+					setDepartmentId(parseInt(evt.target.value, 10))
+				}
+			>
 				<option value="0">Any</option>
 				{[
 					{
