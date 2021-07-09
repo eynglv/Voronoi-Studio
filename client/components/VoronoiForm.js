@@ -11,7 +11,8 @@ export default () => {
 	const [tags, setTags] = useState(true);
 	const [departmentId, setDepartmentId] = useState(null);
 	const [location, setLocation] = useState(null);
-	const [artistOrCultre, setArtistOrCulture] = useState(false);
+	const [artistOrCulture, setArtistOrCulture] = useState(false);
+	const [query, setQuery] = useState("");
 	const [search, setSearch] = useState({});
 	const [artData, setArtData] = useState([]);
 
@@ -25,6 +26,27 @@ export default () => {
 				onChange={(evt) => setHighlight(!highlight)}
 				checked={highlight}
 			/>
+			<p>Search Artist and Culture, or Tags?</p>
+			<div>
+				<input
+					type="radio"
+					id="artistCulture"
+					name="culture-or-tags"
+					value="artistOrCulture"
+					onChange={() => setArtistOrCulture(!artistOrCulture)}
+					checked={artistOrCulture}
+				/>
+				<label htmlFor="artistCulture">Artist and Culture</label>
+				<input
+					type="radio"
+					id="tags"
+					name="culture-or-tags"
+					value="tags"
+					checked={tags}
+					onChange={() => setTags(!tags)}
+				/>
+				<label htmlFor="tags">Tags</label>
+			</div>
 		</form>
 	);
 };
