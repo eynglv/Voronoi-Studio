@@ -147,9 +147,18 @@ export default () => {
 			<label htmlFor="location">Location</label>
 			<input
 				type="text"
+				id="location"
 				value={location}
 				onChange={(evt) => setLocation(evt.target.value)}
 				placeholder="any"
+			/>
+			<label htmlFor="query">Search Term</label>
+			<input
+				type="text"
+				id="query"
+				value={query}
+				onChange={(evt) => setQuery(evt.target.value)}
+				required
 			/>
 		</form>
 	);
