@@ -63,7 +63,9 @@ export default () => {
 					"artistOrCulture:",
 					artistOrCulture,
 					"query:",
-					query
+					query,
+					"femaleArtists",
+					femaleArtist
 				);
 			}}
 		>
@@ -74,6 +76,16 @@ export default () => {
 				value={highlight}
 				onChange={() => setHighlight(!highlight)}
 				checked={highlight}
+			/>
+			<label htmlFor="femalArtist">
+				Show only works by female artists
+			</label>
+			<input
+				name="femaleArtist"
+				type="checkbox"
+				value={femaleArtist}
+				onChange={() => setFemaleArtist(!femaleArtist)}
+				checked={femaleArtist}
 			/>
 			<p>Search Artist and Culture, or Tags?</p>
 			<div
