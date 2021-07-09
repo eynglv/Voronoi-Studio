@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
-
+const MAX = 10;
 // const handleSubmit=(evt)=>{
 //     evt.preventDefault();
 
@@ -14,7 +14,7 @@ export default () => {
 	const [artistOrCulture, setArtistOrCulture] = useState(false);
 	const [query, setQuery] = useState("");
 	const [femaleArtist, setFemaleArtist] = useState(false);
-	const [search, setSearch] = useState({});
+	const [search, setSearch] = useState("");
 	const [artData, setArtData] = useState([]);
 	const getVoronoi = async (route) => {
 		const artList = (await axios.get(route)).data.objectIDs;
@@ -43,8 +43,26 @@ export default () => {
 				return artObj;
 			})
 		);
+		console.log("art data in func", artData);
 		return artData;
 	};
+
+	useEffect(() => {
+		const fetchData = async () => {
+			const route = `https://collectionapi.metmuseum.org/public/collection/v1/search?hasImages=true&medium=Paintings${
+				highlight ? "&isHighlight=true" : ""
+			}${tags ? "&tags=true" : ""}${
+				artistOrCulture ? "&artistOrCulture=true" : ""
+			}${departmentId ? `&departmentId=${departmentId}` : ""}q=${query}`;
+			const artData = await getVoronoi(route);
+			console.log("artdata", artData);
+		};
+		let artData = fetchData();
+		if (femaleArtist)
+			artData = artData.filter((val) => val.artistGender === "female");
+		artData = artData.filter((_, i) => i < MAX);
+		console.log(artData); //feed this to voronoi
+	}, [search]);
 
 	return (
 		<form
@@ -67,6 +85,7 @@ export default () => {
 					"femaleArtists",
 					femaleArtist
 				);
+				setSearch(query);
 			}}
 		>
 			<label htmlFor="highlight">Show only highlighted works</label>
