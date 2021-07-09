@@ -46,7 +46,7 @@ export default () => {
 					return artObj;
 				})
 			);
-			console.log("art data in func", artData);
+
 			return artData;
 		} catch (err) {
 			console.error(err);
@@ -59,9 +59,12 @@ export default () => {
 				highlight ? "&isHighlight=true" : ""
 			}${tags ? "&tags=true" : ""}${
 				artistOrCulture ? "&artistOrCulture=true" : ""
-			}${departmentId ? `&departmentId=${departmentId}` : ""}q=${query}`;
+			}${departmentId ? `&departmentId=${departmentId}` : ""}${
+				location ? `geoLocation=${location.replaceAll(" ", "|")}` : ""
+			}q=${query.replaceAll(" ", "%20")}`;
+
 			const artDataHolder = await getVoronoi(route);
-			console.log("artdata", artDataHolder);
+
 			setArtData(artDataHolder);
 		};
 		if (search) {
