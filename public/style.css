@@ -1,5 +1,7 @@
 * {
-  overflow: visible
+  overflow: visible;
+  /* background-color: black;
+ color: white; */
 }
 
 body {
