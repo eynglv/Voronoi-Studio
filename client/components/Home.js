@@ -107,9 +107,9 @@ class Home extends React.Component {
             <span className="visually-hidden">Next</span>
           </button>
         </div>
-        <div id="enterBtn ">
+        <div id="enterBtn">
           <Button
-            className=" d-block mx-auto mt-4 btn-large col-6 rounded-0 "
+            className="d-block mx-auto mt-4 btn-large col-6 rounded-0 "
             outline
             color="secondary"
           >

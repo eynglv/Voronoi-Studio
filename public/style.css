@@ -1,8 +1,8 @@
 * {
-  overflow: visible;
+  /* overflow: visible; */
   background-color: #121619;
   color: white;
-  margin: 0;
+  /* margin: 0; */
 }
 
 body {
@@ -13,24 +13,20 @@ a {
   text-decoration: none;
 }
 
-label {
-  display: block;
-}
-
-nav a {
+/* nav a {
   display: inline-block;
   margin: 1em;
-}
+} */
 
-form div {
+/* form div {
   margin: 1em;
   display: inline-block;
-}
+} */
 
 .footer {
   background-color: #5f7c8c;
   height: 150px;
-  width: 100%;
+
 }
 
 .names {

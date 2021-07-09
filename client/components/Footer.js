@@ -6,8 +6,8 @@ class Footer extends React.Component {
   }
   render() {
     return (
-      <div className="footer card my-4 mb-4 rounded-0">
-        <div className="card-header row justify-content-center text-center">
+      <div className="footer pe-0 card my-4 mb-4  rounded-0">
+        <div className="footer card-body row justify-content-center text-center">
           <span className="names col-3">
             <a href="https://github.com/oterech" className="names github">
               Phoebe Torchia
@@ -31,6 +31,7 @@ class Footer extends React.Component {
             </a>
           </span>
         </div>
+        <div className="names row justify-content-center text-center">
         <p className="names text-center mt-4">
           All artworks provided by{" "}
           <a
@@ -41,7 +42,6 @@ class Footer extends React.Component {
             Metropolitan API
           </a>{" "}
         </p>
-        <div className=" names card-body row justify-content-center text-center">
           <span className="names h3">Voronoi Studio</span>
         </div>
       </div>
