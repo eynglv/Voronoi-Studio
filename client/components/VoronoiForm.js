@@ -10,7 +10,7 @@ export default () => {
 	const [highlight, setHighlight] = useState(true);
 	const [tags, setTags] = useState(true);
 	const [departmentId, setDepartmentId] = useState(0);
-	const [location, setLocation] = useState(null);
+	const [location, setLocation] = useState("");
 	const [artistOrCulture, setArtistOrCulture] = useState(false);
 	const [query, setQuery] = useState("");
 	const [search, setSearch] = useState({});
@@ -144,6 +144,13 @@ export default () => {
 					</option>
 				))}
 			</select>
+			<label htmlFor="location">Location</label>
+			<input
+				type="text"
+				value={location}
+				onChange={(evt) => setLocation(evt.target.value)}
+				placeholder="any"
+			/>
 		</form>
 	);
 };
