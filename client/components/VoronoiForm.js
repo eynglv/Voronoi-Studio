@@ -13,6 +13,7 @@ export default () => {
 	const [location, setLocation] = useState("");
 	const [artistOrCulture, setArtistOrCulture] = useState(false);
 	const [query, setQuery] = useState("");
+	const [femaleArtist, setFemaleArtist] = useState(false);
 	const [search, setSearch] = useState({});
 	const [artData, setArtData] = useState([]);
 	const getVoronoi = async (route) => {
@@ -75,14 +76,19 @@ export default () => {
 				checked={highlight}
 			/>
 			<p>Search Artist and Culture, or Tags?</p>
-			<div>
+			<div
+				onChange={() => {
+					setArtistOrCulture(!artistOrCulture);
+					setTags(!tags);
+				}}
+			>
 				<input
 					type="radio"
 					id="artistCulture"
 					name="culture-or-tags"
 					value="artistOrCulture"
-					onChange={() => setArtistOrCulture(!artistOrCulture)}
-					checked={artistOrCulture}
+
+					// checked={artistOrCulture}
 				/>
 				<label htmlFor="artistCulture">Artist and Culture</label>
 				<input
@@ -90,8 +96,8 @@ export default () => {
 					id="tags"
 					name="culture-or-tags"
 					value="tags"
-					checked={tags}
-					onChange={() => setTags(!tags)}
+					// checked={tags}
+					defaultChecked
 				/>
 				<label htmlFor="tags">Tags</label>
 			</div>
