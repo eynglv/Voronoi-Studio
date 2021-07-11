@@ -9,6 +9,7 @@ import chart from "./components/pulsate";
 
 // import * as Scroll from 'react-scroll';
 import { animateScroll as scroll } from "react-scroll";
+import axios from "axios";
 // import { d3 } from "d3";
 // import { Delaunay } from "d3-delaunay";
 // import { Delaunay } from "https://cdn.skypack.dev/d3-delaunay@6%22";
@@ -16,32 +17,31 @@ import { animateScroll as scroll } from "react-scroll";
 class App extends React.Component {
 	constructor() {
 		super();
+		this.state = {womenByMen: [], womenByWomen: []};
 		this.scrollToTop = this.scrollToTop.bind(this);
-		this.chartRender1 = chart.render("#canvas1", 500, 960, womenByWomen);
-		this.chartRender2 = chart.render("#canvas2", 500, 960, womenByMen);
+	}
+
+	async componentDidMount () {
+	const	womenByMen = await this.getVoronoiPieces(2)	
+	const	womenByWomen= await this.getVoronoiPieces(1)	
+	this.setState({ womenByMen: womenByMen, womenByWomen: womenByWomen
+	})}
+
+	componentDidUpdate(prevProps, prevState) {
+		if (prevState !== this.state){		
+			this.chartRender2 = chart.render("#canvas2", 500, 960, this.state.womenByMen);
+			this.chartRender1 = chart.render("#canvas1", 500, 960, this.state.womenByWomen);
 		this.chartRender3 = chart.render(
 			"#canvas3",
 			500,
 			960,
-			womenByWomen.concat(womenByMen)
-		);
-		this.state = { toggle: false };
-	}
-
-	componentDidMount() {
-		// container.render("#svg1", 10);
-		// container.render("#svg2", 20);
-		// container.render("#svg3", 15);
-		// chart.generator("#canvas1", 500, 960, 30)
-
+			this.state.womenByWomen.concat(this.state.womenByMen));
 		this.interval = setInterval(() => {
 			this.chartRender1.next();
 			this.chartRender2.next();
 			this.chartRender3.next();
 		}, 10);
 	}
-	componentDidUpdate() {
-		this.chartRender.next();
 	}
 	scrollToTop() {
 		scroll.scrollToTop();
@@ -50,6 +50,10 @@ class App extends React.Component {
 		clearInterval(this.interval);
 	}
 
+	async getVoronoiPieces(id){
+		const art = await axios.get(`api/voronois/${id}`)
+		return art.data;
+	}
 	render() {
 		return (
 			<div>
