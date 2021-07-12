@@ -1,6 +1,7 @@
 import React from "react";
 import { Button } from "reactstrap";
 import Footer from "./Footer";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 class Home extends React.Component {
   constructor() {
@@ -108,6 +109,7 @@ class Home extends React.Component {
           </button>
         </div>
         <div id="enterBtn">
+          <Link to="/main">
           <Button
             className="d-block mx-auto mt-4 btn-large col-6 rounded-0 "
             outline
@@ -115,6 +117,7 @@ class Home extends React.Component {
           >
             Enter
           </Button>
+          </Link>
         </div>
         <Footer />
       </div>

@@ -1,16 +1,9 @@
 import React from "react";
-import Navbar from "./components/Navbar";
-import Routes from "./Routes";
-import Home from "./components/Home"
 import womenByWomen from "../script/artdata/womenByWomen";
 import womenByMen from "../script/artdata/femaleNudesByMen";
 import chart from "./components/pulsate";
-
-// import * as Scroll from 'react-scroll';
 import { animateScroll as scroll } from "react-scroll";
-// import { d3 } from "d3";
-// import { Delaunay } from "d3-delaunay";
-// import { Delaunay } from "https://cdn.skypack.dev/d3-delaunay@6%22";
+
 
 class App extends React.Component {
 	constructor() {
@@ -26,13 +19,7 @@ class App extends React.Component {
 		);
 		this.state = { toggle: false };
 	}
-
 	componentDidMount() {
-		// container.render("#svg1", 10);
-		// container.render("#svg2", 20);
-		// container.render("#svg3", 15);
-		// chart.generator("#canvas1", 500, 960, 30)
-
 		this.interval = setInterval(() => {
 			this.chartRender1.next();
 			this.chartRender2.next();
@@ -52,10 +39,6 @@ class App extends React.Component {
 	render() {
 		return (
 			<div>
-				<Home />
-				<Navbar />
-				<Routes />
-				{/* <svg id="svg1" width="960" height="500"></svg> */}
 				<canvas id="canvas3" width="960" height="500"></canvas>
 				<p>
 					Sed ut perspiciatis unde omnis iste natus error sit
@@ -75,7 +58,6 @@ class App extends React.Component {
 					illum qui dolorem eum fugiat quo voluptas nulla pariatur?
 				</p>
 				<canvas id="canvas1" width="960" height="500"></canvas>
-				{/* <svg id="svg2" width="960" height="500"></svg> */}
 				<p>
 					At vero eos et accusamus et iusto odio dignissimos ducimus
 					qui blanditiis praesentium voluptatum deleniti atque
@@ -94,12 +76,10 @@ class App extends React.Component {
 					perferendis doloribus asperiores repellat.
 				</p>
 				<canvas id="canvas2" width="960" height="500"></canvas>
-				{/* <svg id="svg3" width="960" height="500"></svg> */}
 				<br />
 				<a onClick={() => this.scrollToTop()}>To the top!</a>
 			</div>
 		);
 	}
 }
-
 export default App;
