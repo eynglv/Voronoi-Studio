@@ -1,5 +1,8 @@
 * {
-  overflow: visible
+
+  background-color: #121619;
+  color: whitesmoke;
+
 }
 
 body {
@@ -10,16 +13,18 @@ a {
   text-decoration: none;
 }
 
-label {
-  display: block;
+.footer {
+  background-color: #5f7c8c;
+  height: 150px;
+
 }
 
-nav a {
-  display: inline-block;
-  margin: 1em;
+.names {
+  background-color: #5f7c8c;
+  color: white;
 }
 
-form div {
-  margin: 1em;
-  display: inline-block;
+.names.github:hover {
+  color: #ffcab1;
 }
+
