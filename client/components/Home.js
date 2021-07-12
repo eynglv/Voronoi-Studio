@@ -17,7 +17,7 @@ class Home extends React.Component {
         </p>
         <div
           id="carouselExampleCaptions"
-          className="carousel slide mx-auto"
+          className="carousel slide"
           data-bs-ride="carousel"
         >
           <div className="carousel-indicators" style={{ opacity: 0.5 }}>
@@ -42,7 +42,7 @@ class Home extends React.Component {
               aria-label="Slide 3"
             ></button>
           </div>
-          <div className="carousel-inner w-75 mx-auto">
+          <div className="carousel-inner">
             <div className="carousel-item active" style={{ opacity: 0.8 }}>
               <img
                 src="https://images.metmuseum.org/CRDImages/ep/web-large/DP-416-001.jpg"
@@ -50,7 +50,7 @@ class Home extends React.Component {
                 alt="..."
               />
               <div
-                className="carousel-caption d-none d-md-block" style={{ opacity: 0.8 }}
+                className="carousel-caption d-none d-md-block mx-auto" style={{ opacity: 0.8 }}
               >
                 <h5>Marie Joséphine Charlotte du Val d'Ognes </h5>
                 <p>

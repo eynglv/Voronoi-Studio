@@ -6,30 +6,24 @@
 
 }
 
-/* font-family: 'Poppins', sans-serif;
-font-family: 'Spartan', sans-serif; */
-
 body {
   font-family: sans-serif;
 }
 
 a {
   text-decoration: none;
+  
 }
 
 .names {
-  background-color: #5f7c8c;
-  color: white;
+  color: #FFF8F0;
+ background-color:  rgba(95,124,140, .35)
 }
 
 .names.github:hover {
   color: #ffcab1;
 }
 
-.footer {
-background-color:  #5f7c8c;
-opacity: .55
-}
 
 #welcome {
   font-family: 'Spartan', sans-serif;
