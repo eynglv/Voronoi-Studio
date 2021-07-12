@@ -81,6 +81,10 @@ export default () => {
 						(val) => val.artistGender === "female"
 					);
 				else workingArtData = [...artData];
+				if (!workingArtData.length)
+					setErrorMessage(
+						"No results! Please change your search query!"
+					);
 				workingArtData = workingArtData.filter((_, i) => i < MAX);
 				console.log("working art data", workingArtData);
 				const chartRender = chart.render(
