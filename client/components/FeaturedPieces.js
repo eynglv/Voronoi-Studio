@@ -14,7 +14,10 @@ export default ()=>{
     return(
         <div className='gallery-container'>
             {artPieces.map(painting=>(
-                <img src={painting.primaryImageSmall} key={painting.id} className="gallery-image" />
+                <span className="image-wrapper" key={painting.id} >
+                <img src={painting.primaryImageSmall} className="gallery-image" /> 
+                <div className='caption'>{painting.title} by {painting.artistDisplayName}</div>
+                </span>
             ))}
         </div>
     )
