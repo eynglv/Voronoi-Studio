@@ -6,8 +6,8 @@ class Footer extends React.Component {
   }
   render() {
     return (
-      <div className="footer card mt-4 mb-0 rounded-0 position-sticky" style={{opacity: .45}}>
-        <div className="card-header row-cols-auto text-center d-flex justify-content-around">
+      <div className="footer card mt-4 mb-0 rounded-0 position-sticky">
+        <div className="names card-header row-cols-auto text-center d-flex justify-content-evenly">
           <span className="names" >
             <a href="https://github.com/oterech" className="names github" >
               Phoebe Torchia
@@ -32,17 +32,17 @@ class Footer extends React.Component {
           </span>
         </div>
         <div className="names card-body text-center justify-content-center">
-        <p className="names  mt-4">
+        <p className="names mt-1">
           All artworks provided by{" "}
           <a
             href="https://www.metmuseum.org/blogs/now-at-the-met/2018/met-collection-api"
             className="names"
             style={{ color: "#FFCAB1" }}
           >
-            Metropolitan API
+            The Met Collection API
           </a>{" "}
         </p>
-          <span className="names h3">Voronoi Studio</span>
+          <span className="names h4">Voronoi Studio</span>
         </div>
       </div>
     );

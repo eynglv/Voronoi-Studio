@@ -2,8 +2,12 @@
 
   background-color: #121619;
   color: #FFF8F0;
+  font-family: 'Poppins', sans-serif
 
 }
+
+/* font-family: 'Poppins', sans-serif;
+font-family: 'Spartan', sans-serif; */
 
 body {
   font-family: sans-serif;
@@ -23,5 +27,10 @@ a {
 }
 
 .footer {
-  background-color:  #5f7c8c
+background-color:  #5f7c8c;
+opacity: .55
+}
+
+#welcome {
+  font-family: 'Spartan', sans-serif;
 }
