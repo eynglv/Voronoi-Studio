@@ -51,6 +51,7 @@ export default () => {
 
 			return artData;
 		} catch (err) {
+			setErrorMessage("No results! Please change your search query!");
 			console.error(err);
 		}
 	};
@@ -70,8 +71,8 @@ export default () => {
 				artDataHolder = artDataHolder.filter(
 					(val) => val.artistGender === "female"
 				);
-			if (!artDataHolder.length)
-				setErrorMessage("No results! Please change your search query!");
+			if (!artDataHolder.legth)
+			setErrorMessage("No results! Please change your search query!");
 			console.log(artDataHolder);
 			setArtData(artDataHolder);
 		};
