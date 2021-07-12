@@ -6,10 +6,10 @@ class Footer extends React.Component {
   }
   render() {
     return (
-      <div className="footer pe-0 card my-4 mb-4  rounded-0">
-        <div className="footer card-body row justify-content-center text-center">
-          <span className="names col-3">
-            <a href="https://github.com/oterech" className="names github">
+      <div className="footer pe-0 card my-4 mb-4 rounded-0" style={{opacity: .7}}>
+        <div className="footer card-header row justify-content-center text-center">
+          <span className="names col-3" >
+            <a href="https://github.com/oterech" className="names github" >
               Phoebe Torchia
             </a>
           </span>

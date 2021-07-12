@@ -1,8 +1,8 @@
 * {
-  /* overflow: visible; */
+
   background-color: #121619;
-  color: white;
-  /* margin: 0; */
+  color: whitesmoke;
+
 }
 
 body {
@@ -12,16 +12,6 @@ body {
 a {
   text-decoration: none;
 }
-
-/* nav a {
-  display: inline-block;
-  margin: 1em;
-} */
-
-/* form div {
-  margin: 1em;
-  display: inline-block;
-} */
 
 .footer {
   background-color: #5f7c8c;
@@ -38,6 +28,3 @@ a {
   color: #ffcab1;
 }
 
-/* #enterBtn {
-  background-color: rgb(18, 22, 25, 0.5);
-} */
