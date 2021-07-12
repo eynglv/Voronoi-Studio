@@ -89,7 +89,10 @@ const chart = {
 
       context.canvas.onclick = (event) => {
         // console.log(event);
-        delaunay.find(...d3.pointer(event));
+        const index = delaunay.find(...d3.pointer(event));
+        console.log(artData);
+        console.log(index);
+        console.log(artData[index % artData.length]);
         //Returns the index of the input point that is closest to the specified point ⟨x, y⟩
       };
 
