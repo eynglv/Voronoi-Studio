@@ -20,7 +20,7 @@ class Home extends React.Component {
           className="carousel slide"
           data-bs-ride="carousel"
         >
-          <div className="carousel-indicators">
+          <div className="carousel-indicators" style={{ opacity: 0.5 }}>
             <button
               type="button"
               data-bs-target="#carouselExampleCaptions"
@@ -43,39 +43,48 @@ class Home extends React.Component {
             ></button>
           </div>
           <div className="carousel-inner">
-            <div className="carousel-item active">
+            <div className="carousel-item active" style={{ opacity: 0.9 }}>
               <img
                 src="https://images.metmuseum.org/CRDImages/as/web-large/DP152319.jpg"
                 className="d-block w-75 mx-auto"
                 alt="..."
               />
-              <div className="carousel-caption d-none d-md-block">
+              <div
+                className="carousel-caption d-none d-md-block"
+                style={{ opacity: 0.5 }}
+              >
                 <h5>First slide label</h5>
                 <p>
                   Some representative placeholder content for the first slide.
                 </p>
               </div>
             </div>
-            <div className="carousel-item">
+            <div className="carousel-item" style={{ opacity: 0.9 }}>
               <img
-                src="https://images.metmuseum.org/CRDImages/as/web-large/DP152319.jpg"
+                src="https://images.metmuseum.org/CRDImages/ep/web-large/DT5181.jpg"
                 className="d-block w-75 mx-auto"
                 alt="..."
               />
-              <div className="carousel-caption d-none d-md-block">
+              <div
+                className="carousel-caption d-none d-md-block"
+                style={{ opacity: 0.5 }}
+              >
                 <h5>Second slide label</h5>
                 <p>
                   Some representative placeholder content for the second slide.
                 </p>
               </div>
             </div>
-            <div className="carousel-item">
+            <div className="carousel-item" style={{ opacity: 0.9 }}>
               <img
-                src="https://images.metmuseum.org/CRDImages/as/web-large/DP152319.jpg"
+                src="https://images.metmuseum.org/CRDImages/ep/web-large/DT887.jpg"
                 className="d-block w-75 mx-auto"
                 alt="..."
               />
-              <div className="carousel-caption d-none d-md-block">
+              <div
+                className="carousel-caption d-none d-md-block"
+                style={{ opacity: 0.5 }}
+              >
                 <h5>Third slide label</h5>
                 <p>
                   Some representative placeholder content for the third slide.
@@ -110,13 +119,13 @@ class Home extends React.Component {
         </div>
         <div id="enterBtn">
           <Link to="/main">
-          <Button
-            className="d-block mx-auto mt-4 btn-large col-6 rounded-0 "
-            outline
-            color="secondary"
-          >
-            Enter
-          </Button>
+            <Button
+              className="d-block mx-auto mt-4 btn-large col-6 rounded-0 "
+              outline
+              color="secondary"
+            >
+              Enter
+            </Button>
           </Link>
         </div>
         <Footer />
