@@ -17,6 +17,22 @@ const chart = {
       { length: cellCount * 2 }, //create an array of alternating x and y coordinates
       (_, i) => Math.random() * (i & 1 ? height : width) //that are between 0 and heigh and width, respectively
     );
+
+    const points = convertXY(positions);
+
+    function convertXY(array) {
+      const newArray = [];
+      let subArray = [];
+      for (let i = 0; i < array.length; i++) {
+        subArray[i % 2] = array[i];
+        if (i % 2 === 1) {
+          newArray.push(subArray);
+          subArray = [];
+        }
+      }
+      return newArray;
+    }
+
     const velocities = new Float64Array(cellCount * 2); //create an array of alternating x and y velocities
     const voronoi = new d3.Delaunay(positions).voronoi([
       0.5,
@@ -26,6 +42,7 @@ const chart = {
     ]); //create a new voronoi from our positions array, with infinite polygons clipped at the provided minimums and maximums
 
     while (true) {
+      const delaunay = d3.Delaunay.from(points);
       //we will yield control back to the caller at the end of this loop, so it isn't actually infinite
 
       //below block creates semitransparent rectangle over entire canvas
@@ -69,6 +86,12 @@ const chart = {
       // voronoi.update().render(context);
       // voronoi.renderBounds(context);
       // context.stroke();
+
+      context.canvas.onclick = (event) => {
+        // console.log(event);
+        delaunay.find(...d3.pointer(event));
+        //Returns the index of the input point that is closest to the specified point ⟨x, y⟩
+      };
 
       //uncomment below to render dots in each cell
 
