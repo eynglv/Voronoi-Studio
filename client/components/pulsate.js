@@ -1,3 +1,4 @@
+import renderModal from "./modal";
 const chart = {
   *render(selector, height, width, artData, cellCount = 2 * artData.length) {
     const canvas = d3.select(selector);
@@ -31,9 +32,10 @@ const chart = {
     const voronoi = delaunay.voronoi([0.5, 0.5, width - 0.5, height - 0.5]); //create a new voronoi from our positions array, with infinite polygons clipped at the provided minimums and maximums
 
     context.canvas.onclick = (event) => {
+      // const nodeId = event.path[0].id.substr(-1);
       const position = getMousePos(canvas._groups[0][0], event);
       const index = delaunay.find(position.x, position.y);
-      console.log(artData[index % artData.length]);
+      renderModal(`#modal`, artData[index % artData.length]);
     };
 
     while (true) {
