@@ -1,18 +1,9 @@
 import React from "react";
-import container from "./components/vornoi";
-import Navbar from "./components/Navbar";
-import Routes from "./Routes";
 import womenByWomen from "../script/artdata/womenByWomen";
 import womenByMen from "../script/artdata/femaleNudesByMen";
-
 import chart from "./components/pulsate";
-
-// import * as Scroll from 'react-scroll';
 import { animateScroll as scroll } from "react-scroll";
-import axios from "axios";
-// import { d3 } from "d3";
-// import { Delaunay } from "d3-delaunay";
-// import { Delaunay } from "https://cdn.skypack.dev/d3-delaunay@6%22";
+import axios from "axios"
 
 class App extends React.Component {
 	constructor() {
@@ -35,14 +26,25 @@ class App extends React.Component {
 			"#canvas3",
 			500,
 			960,
-			this.state.womenByWomen.concat(this.state.womenByMen));
+			this.state.womenByWomen.concat(this.state.womenByMen)
+		);
 		this.interval = setInterval(() => {
 			this.chartRender1.next();
 			this.chartRender2.next();
 			this.chartRender3.next();
 		}, 10);
 	}
+		// this.state = { toggle: false };
 	}
+
+	// componentDidMount() {
+	// 	this.interval = setInterval(() => {
+	// 		this.chartRender1.next();
+	// 		this.chartRender2.next();
+	// 		this.chartRender3.next();
+	// 	}, 10);
+	// } }
+	
 	scrollToTop() {
 		scroll.scrollToTop();
 	}
@@ -57,9 +59,6 @@ class App extends React.Component {
 	render() {
 		return (
 			<div>
-				<Navbar />
-				<Routes />
-				{/* <svg id="svg1" width="960" height="500"></svg> */}
 				<canvas id="canvas3" width="960" height="500"></canvas>
 				<p>
 					Sed ut perspiciatis unde omnis iste natus error sit
@@ -79,7 +78,6 @@ class App extends React.Component {
 					illum qui dolorem eum fugiat quo voluptas nulla pariatur?
 				</p>
 				<canvas id="canvas1" width="960" height="500"></canvas>
-				{/* <svg id="svg2" width="960" height="500"></svg> */}
 				<p>
 					At vero eos et accusamus et iusto odio dignissimos ducimus
 					qui blanditiis praesentium voluptatum deleniti atque
@@ -98,12 +96,10 @@ class App extends React.Component {
 					perferendis doloribus asperiores repellat.
 				</p>
 				<canvas id="canvas2" width="960" height="500"></canvas>
-				{/* <svg id="svg3" width="960" height="500"></svg> */}
 				<br />
 				<a onClick={() => this.scrollToTop()}>To the top!</a>
 			</div>
 		);
 	}
 }
-
 export default App;
