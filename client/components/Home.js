@@ -11,7 +11,7 @@ class Home extends React.Component {
     return (
       <div>
         <h1 className="display-1 text-center">Welcome</h1>
-        <p className="lead text-center">
+        <p className="lead text-center mx-2">
           Project Description: Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
           amet.
         </p>
@@ -46,7 +46,7 @@ class Home extends React.Component {
             <div className="carousel-item active" style={{ opacity: 0.9 }}>
               <img
                 src="https://images.metmuseum.org/CRDImages/as/web-large/DP152319.jpg"
-                className="d-block w-75 mx-auto"
+                className="d-block w-50 mx-auto"
                 alt="..."
               />
               <div
@@ -62,7 +62,7 @@ class Home extends React.Component {
             <div className="carousel-item" style={{ opacity: 0.9 }}>
               <img
                 src="https://images.metmuseum.org/CRDImages/ep/web-large/DT5181.jpg"
-                className="d-block w-75 mx-auto"
+gi                className="d-block w-50 mx-auto"
                 alt="..."
               />
               <div
@@ -78,7 +78,7 @@ class Home extends React.Component {
             <div className="carousel-item" style={{ opacity: 0.9 }}>
               <img
                 src="https://images.metmuseum.org/CRDImages/ep/web-large/DT887.jpg"
-                className="d-block w-75 mx-auto"
+                className="d-block w-50 mx-auto"
                 alt="..."
               />
               <div

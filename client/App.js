@@ -1,9 +1,8 @@
 import React from "react";
-import womenByWomen from "../script/artdata/womenByWomen";
-import womenByMen from "../script/artdata/femaleNudesByMen";
 import chart from "./components/pulsate";
 import { animateScroll as scroll } from "react-scroll";
 import axios from "axios"
+import VoronoiForm from "./components/VoronoiForm";
 
 class App extends React.Component {
 	constructor() {
@@ -11,21 +10,19 @@ class App extends React.Component {
 		this.state = {womenByMen: [], womenByWomen: []};
 		this.scrollToTop = this.scrollToTop.bind(this);
 	}
-
 	async componentDidMount () {
 	const	womenByMen = await this.getVoronoiPieces(2)	
 	const	womenByWomen= await this.getVoronoiPieces(1)	
 	this.setState({ womenByMen: womenByMen, womenByWomen: womenByWomen
 	})}
-
-	componentDidUpdate(prevProps, prevState) {
+componentDidUpdate(prevProps, prevState) {
 		if (prevState !== this.state){		
-			this.chartRender2 = chart.render("#canvas2", 500, 960, this.state.womenByMen);
-			this.chartRender1 = chart.render("#canvas1", 500, 960, this.state.womenByWomen);
-		this.chartRender3 = chart.render(
+			this.chartRender2 = chart.render("#canvas2", 500, 800, this.state.womenByMen);
+			this.chartRender1 = chart.render("#canvas1", 500, 800, this.state.womenByWomen);
+			this.chartRender3 = chart.render(
 			"#canvas3",
 			500,
-			960,
+			800,
 			this.state.womenByWomen.concat(this.state.womenByMen)
 		);
 		this.interval = setInterval(() => {
@@ -34,16 +31,8 @@ class App extends React.Component {
 			this.chartRender3.next();
 		}, 10);
 	}
-		// this.state = { toggle: false };
 	}
 
-	// componentDidMount() {
-	// 	this.interval = setInterval(() => {
-	// 		this.chartRender1.next();
-	// 		this.chartRender2.next();
-	// 		this.chartRender3.next();
-	// 	}, 10);
-	// } }
 	
 	scrollToTop() {
 		scroll.scrollToTop();
@@ -59,7 +48,7 @@ class App extends React.Component {
 	render() {
 		return (
 			<div>
-				<canvas id="canvas3" width="960" height="500"></canvas>
+				<canvas id="canvas3" width="800" height="500"></canvas>
 				<p>
 					Sed ut perspiciatis unde omnis iste natus error sit
 					voluptatem accusantium doloremque laudantium, totam rem
@@ -77,7 +66,7 @@ class App extends React.Component {
 					voluptate velit esse quam nihil molestiae consequatur, vel
 					illum qui dolorem eum fugiat quo voluptas nulla pariatur?
 				</p>
-				<canvas id="canvas1" width="960" height="500"></canvas>
+				<canvas id="canvas1" width="800" height="500"></canvas>
 				<p>
 					At vero eos et accusamus et iusto odio dignissimos ducimus
 					qui blanditiis praesentium voluptatum deleniti atque
@@ -95,7 +84,7 @@ class App extends React.Component {
 					reiciendis voluptatibus maiores alias consequatur aut
 					perferendis doloribus asperiores repellat.
 				</p>
-				<canvas id="canvas2" width="960" height="500"></canvas>
+				<canvas id="canvas2" width="800" height="500"></canvas>
 				<br />
 				<a onClick={() => this.scrollToTop()}>To the top!</a>
 			</div>

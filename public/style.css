@@ -1,7 +1,7 @@
 * {
 
   background-color: #121619;
-  color: whitesmoke;
+  color: #FFF8F0;
 
 }
 
@@ -13,12 +13,6 @@ a {
   text-decoration: none;
 }
 
-.footer {
-  background-color: #5f7c8c;
-  height: 150px;
-
-}
-
 .names {
   background-color: #5f7c8c;
   color: white;
@@ -28,3 +22,6 @@ a {
   color: #ffcab1;
 }
 
+.footer {
+  background-color:  #5f7c8c
+}

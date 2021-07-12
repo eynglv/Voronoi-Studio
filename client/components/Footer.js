@@ -6,33 +6,33 @@ class Footer extends React.Component {
   }
   render() {
     return (
-      <div className="footer pe-0 card my-4 mb-4 rounded-0" style={{opacity: .7}}>
-        <div className="footer card-header row justify-content-center text-center">
-          <span className="names col-3" >
+      <div className="footer card mt-4 mb-0 rounded-0 position-sticky" style={{opacity: .45}}>
+        <div className="card-header row-cols-auto text-center d-flex justify-content-around">
+          <span className="names" >
             <a href="https://github.com/oterech" className="names github" >
               Phoebe Torchia
             </a>
           </span>
-          <span className="names col-3">
+          <span className="names">
             {" "}
             <a href="https://github.com/eynglv" className="names github">
               Elvy Yang{" "}
             </a>
           </span>
-          <span className="names col-3">
+          <span className="names">
             {" "}
             <a href="https://github.com/Scutellicious" className="names github">
               Adrienne Scutellaro{" "}
             </a>
           </span>
-          <span className="names col-3">
+          <span className="names">
             <a href="https://github.com/jo-z" className="names github">
               Josephine Bartholoma
             </a>
           </span>
         </div>
-        <div className="names row justify-content-center text-center">
-        <p className="names text-center mt-4">
+        <div className="names card-body text-center justify-content-center">
+        <p className="names  mt-4">
           All artworks provided by{" "}
           <a
             href="https://www.metmuseum.org/blogs/now-at-the-met/2018/met-collection-api"
