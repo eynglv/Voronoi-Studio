@@ -15,13 +15,15 @@ export default () => {
 	const [artistOrCulture, setArtistOrCulture] = useState(false);
 	const [query, setQuery] = useState("");
 	const [femaleArtist, setFemaleArtist] = useState(false);
-	const [search, setSearch] = useState("");
+	const [numberOfCells, setNumberOfCells] = useState(10);
+	const [search, setSearch] = useState({});
 	const [artData, setArtData] = useState([]);
 	const [errorMessage, setErrorMessage] = useState("");
 	const getVoronoi = async (route) => {
 		try {
+			console.log("getting voronoi");
 			const artList = (await axios.get(route)).data.objectIDs;
-
+			console.log("art list", artList);
 			const artData = await Promise.all(
 				artList.map(async (artId) => {
 					//if more than 79 results, need to add a time out to wait 1 second
@@ -63,11 +65,17 @@ export default () => {
 				location ? `geoLocation=${location.replaceAll(" ", "|")}` : ""
 			}q=${query.replaceAll(" ", "%20")}`;
 
-			const artDataHolder = await getVoronoi(route);
-
+			let artDataHolder = await getVoronoi(route);
+			if (femaleArtist)
+				artDataHolder = artDataHolder.filter(
+					(val) => val.artistGender === "female"
+				);
+			if (!artDataHolder.length)
+				setErrorMessage("No results! Please change your search query!");
+			console.log(artDataHolder);
 			setArtData(artDataHolder);
 		};
-		if (search) {
+		if (search.query) {
 			fetchData();
 		}
 	}, [search]);
@@ -75,23 +83,13 @@ export default () => {
 		try {
 			console.log("hello!!!!!");
 			if (artData.length) {
-				let workingArtData = [];
-				if (femaleArtist)
-					workingArtData = artData.filter(
-						(val) => val.artistGender === "female"
-					);
-				else workingArtData = [...artData];
-				if (!workingArtData.length)
-					setErrorMessage(
-						"No results! Please change your search query!"
-					);
-				workingArtData = workingArtData.filter((_, i) => i < MAX);
-				console.log("working art data", workingArtData);
+				//only render a canvas if we have artData. Otherwise, we will just have a black box
 				const chartRender = chart.render(
 					"#user-generated",
 					720,
 					1080,
-					workingArtData
+					artData,
+					numberOfCells
 				);
 				const interval = setInterval(() => chartRender.next(), 10);
 				setErrorMessage("");
@@ -101,7 +99,7 @@ export default () => {
 			console.error(err);
 			setErrorMessage("No results! Please change your search query!");
 		}
-	}, [artData]);
+	}, [artData, numberOfCells]);
 
 	return (
 		<div>
@@ -125,7 +123,15 @@ export default () => {
 						"femaleArtists",
 						femaleArtist
 					);
-					setSearch(query);
+					setSearch({
+						query,
+						highlight,
+						tags,
+						artistOrCulture,
+						departmentId,
+						location,
+						femaleArtist,
+					});
 				}}
 			>
 				<label htmlFor="highlight">Show only highlighted works</label>
@@ -285,6 +291,21 @@ export default () => {
 					value={query}
 					onChange={(evt) => setQuery(evt.target.value)}
 					required
+				/>
+				<label htmlFor="cell-count">
+					Number of Cells (too many can impact performance)
+				</label>
+				<input
+					type="number"
+					id="cell-count"
+					value={numberOfCells}
+					min="3"
+					step="1"
+					onChange={(evt) => {
+						let cellCount = evt.target.value;
+						if (cellCount < 3) cellCount = 3;
+						setNumberOfCells(cellCount);
+					}}
 				/>
 				<button type="submit">Create Voronoi!</button>
 			</form>
