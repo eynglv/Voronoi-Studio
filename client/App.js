@@ -3,14 +3,26 @@ import womenByWomen from "../script/artdata/womenByWomen";
 import womenByMen from "../script/artdata/femaleNudesByMen";
 import chart from "./components/pulsate";
 import { animateScroll as scroll } from "react-scroll";
+import axios from "axios";
 
 
 class App extends React.Component {
 	constructor() {
 		super();
+		this.state = {womenByMen: [], womenByWomen: []};
 		this.scrollToTop = this.scrollToTop.bind(this);
-		this.chartRender1 = chart.render("#canvas1", 500, 960, womenByWomen);
-		this.chartRender2 = chart.render("#canvas2", 500, 960, womenByMen);
+	}
+
+	async componentDidMount () {
+	const	womenByMen = await this.getVoronoiPieces(2)	
+	const	womenByWomen= await this.getVoronoiPieces(1)	
+	this.setState({ womenByMen: womenByMen, womenByWomen: womenByWomen
+	})}
+
+	componentDidUpdate(prevProps, prevState) {
+		if (prevState !== this.state){		
+			this.chartRender2 = chart.render("#canvas2", 500, 960, this.state.womenByMen);
+			this.chartRender1 = chart.render("#canvas1", 500, 960, this.state.womenByWomen);
 		this.chartRender3 = chart.render(
 			"#canvas3",
 			500,
@@ -20,14 +32,14 @@ class App extends React.Component {
 		this.state = { toggle: false };
 	}
 	componentDidMount() {
+			this.state.womenByWomen.concat(this.state.womenByMen));
+
 		this.interval = setInterval(() => {
 			this.chartRender1.next();
 			this.chartRender2.next();
 			this.chartRender3.next();
 		}, 10);
 	}
-	componentDidUpdate() {
-		this.chartRender.next();
 	}
 	scrollToTop() {
 		scroll.scrollToTop();
@@ -36,6 +48,10 @@ class App extends React.Component {
 		clearInterval(this.interval);
 	}
 
+	async getVoronoiPieces(id){
+		const art = await axios.get(`api/voronois/${id}`)
+		return art.data;
+	}
 	render() {
 		return (
 			<div>
