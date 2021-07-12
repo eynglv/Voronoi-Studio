@@ -41,6 +41,15 @@ const chart = {
       height - 0.5,
     ]); //create a new voronoi from our positions array, with infinite polygons clipped at the provided minimums and maximums
 
+    context.canvas.onclick = (event) => {
+      // console.log(event);
+      for (let i = 0; i < cellCount; i++) {
+        if (voronoi.contains(i, event.x, event.y)) {
+          console.log(artData[i % artData.length]);
+        }
+      }
+    };
+
     while (true) {
       const delaunay = d3.Delaunay.from(points);
       //we will yield control back to the caller at the end of this loop, so it isn't actually infinite
@@ -86,15 +95,6 @@ const chart = {
       // voronoi.update().render(context);
       // voronoi.renderBounds(context);
       // context.stroke();
-
-      context.canvas.onclick = (event) => {
-        // console.log(event);
-        const index = delaunay.find(...d3.pointer(event));
-        console.log(artData);
-        console.log(index);
-        console.log(artData[index % artData.length]);
-        //Returns the index of the input point that is closest to the specified point ⟨x, y⟩
-      };
 
       //uncomment below to render dots in each cell
 
