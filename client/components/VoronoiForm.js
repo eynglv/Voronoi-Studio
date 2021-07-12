@@ -71,8 +71,8 @@ export default () => {
 				artDataHolder = artDataHolder.filter(
 					(val) => val.artistGender === "female"
 				);
-			if (!artDataHolder.legth)
-			setErrorMessage("No results! Please change your search query!");
+			if (!artDataHolder.length)
+				setErrorMessage("No results! Please change your search query!");
 			console.log(artDataHolder);
 			setArtData(artDataHolder);
 		};
