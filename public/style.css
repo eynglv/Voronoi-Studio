@@ -1,7 +1,8 @@
 * {
 
   background-color: #121619;
-  color: whitesmoke;
+  color: #FFF8F0;
+  font-family: 'Poppins', sans-serif
 
 }
 
@@ -11,22 +12,35 @@ body {
 
 a {
   text-decoration: none;
-}
-
-.footer {
-  background-color: #5f7c8c;
-  height: 150px;
-
+  
 }
 
 .names {
-  background-color: #5f7c8c;
-  color: white;
+  color: #FFF8F0;
+ background-color:  rgba(95,124,140, .35)
 }
 
 .names.github:hover {
   color: #ffcab1;
 }
+
+
+#welcome {
+  font-family: 'Spartan', sans-serif;
+}
+
+canvas{
+  display: block;
+  margin: auto
+}
+
+.title{
+  font-size: 50px;
+  color: #ffcab1;
+  text-align: center;
+  margin: auto;
+}
+
 
 .image-wrapper{
   position:relative
@@ -51,4 +65,10 @@ a {
 .gallery-image{
   flex-shrink:0;
   flex-basis:fit-content;
+
+p{
+  text-align: center;
+  margin: auto;
+  font-size: x-large;
+  width: 600px;
 }
