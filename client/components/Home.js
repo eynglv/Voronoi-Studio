@@ -10,8 +10,8 @@ class Home extends React.Component {
   render() {
     return (
       <div>
-        <h1 className="display-1 text-center">Welcome</h1>
-        <p className="lead text-center">
+        <h1 className="display-3 mt-5 mx-3 text-center text-nowrap" id="welcome">Welcome to Voronoi Studio</h1>
+        <p className="lead text-center mx-5">
           Project Description: Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
           amet.
         </p>
@@ -43,51 +43,50 @@ class Home extends React.Component {
             ></button>
           </div>
           <div className="carousel-inner">
-            <div className="carousel-item active" style={{ opacity: 0.9 }}>
+            <div className="carousel-item active" style={{ opacity: 0.8 }}>
               <img
-                src="https://images.metmuseum.org/CRDImages/as/web-large/DP152319.jpg"
-                className="d-block w-75 mx-auto"
+                src="https://images.metmuseum.org/CRDImages/ep/web-large/DP-416-001.jpg"
+                className="d-block mx-auto"
                 alt="..."
               />
               <div
-                className="carousel-caption d-none d-md-block"
-                style={{ opacity: 0.5 }}
+                className="carousel-caption d-none d-md-block mx-auto" style={{ opacity: 0.8 }}
               >
-                <h5>First slide label</h5>
+                <h5>Marie Joséphine Charlotte du Val d'Ognes </h5>
                 <p>
-                  Some representative placeholder content for the first slide.
+                "I like this one because it reverses subject and object. Just as you observe a painting of her, she is observing and drawing you." - Josephine
                 </p>
               </div>
             </div>
-            <div className="carousel-item" style={{ opacity: 0.9 }}>
+            <div className="carousel-item">
               <img
-                src="https://images.metmuseum.org/CRDImages/ep/web-large/DT5181.jpg"
-                className="d-block w-75 mx-auto"
+                src="https://images.metmuseum.org/CRDImages/ep/web-large/DT1342.jpg"
+gi                className="d-block mx-auto"
                 alt="..."
               />
               <div
                 className="carousel-caption d-none d-md-block"
-                style={{ opacity: 0.5 }}
+                style={{ opacity: 0.8 }}
               >
-                <h5>Second slide label</h5>
+                <h5>Two Tahitian Women</h5>
                 <p>
-                  Some representative placeholder content for the second slide.
+                  "The painting captures the artist's own views on the beauty and sexuality of Indigenous women. In this stunning rendition of two women, the male gaze permeates." - Phoebe
                 </p>
               </div>
             </div>
-            <div className="carousel-item" style={{ opacity: 0.9 }}>
+            <div className="carousel-item">
               <img
-                src="https://images.metmuseum.org/CRDImages/ep/web-large/DT887.jpg"
-                className="d-block w-75 mx-auto"
+                src="https://images.metmuseum.org/CRDImages/eg/web-large/DT564.jpg"
+                className="d-block mx-auto"
                 alt="..."
               />
               <div
                 className="carousel-caption d-none d-md-block"
-                style={{ opacity: 0.5 }}
+                style={{ opacity: 0.8 }}
               >
-                <h5>Third slide label</h5>
+                <h5>Portrait of the Boy Eutyches</h5>
                 <p>
-                  Some representative placeholder content for the third slide.
+                  " " - Adrienne
                 </p>
               </div>
             </div>
@@ -120,7 +119,7 @@ class Home extends React.Component {
         <div id="enterBtn">
           <Link to="/main">
             <Button
-              className="d-block mx-auto mt-4 btn-large col-6 rounded-0 "
+              className="d-block mx-auto mt-4 btn-lg col-6 rounded-0 "
               outline
               color="secondary"
             >

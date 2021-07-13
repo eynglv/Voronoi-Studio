@@ -2,11 +2,13 @@ import React from "react";
 import Navbar from './components/Navbar'
 import womenByWomen from "../script/artdata/womenByWomen";
 import womenByMen from "../script/artdata/femaleNudesByMen";
+
 import chart from "./components/pulsate";
 import { Controller, Scene } from 'react-scrollmagic';
 import { Tween, Timeline } from 'react-gsap';
 import { animateScroll as scroll } from "react-scroll";
 import axios from "axios"
+import VoronoiForm from "./components/VoronoiForm";
 
 class App extends React.Component {
 	constructor() {
@@ -14,10 +16,11 @@ class App extends React.Component {
 		this.state = {womenByMen: [], womenByWomen: []};
 		this.scrollToTop = this.scrollToTop.bind(this);
 	}
-
 	async componentDidMount () {
 	const	womenByMen = await this.getVoronoiPieces(2)	
 	const	womenByWomen= await this.getVoronoiPieces(1)	
+	this.setState({ womenByMen: womenByMen, womenByWomen: womenByWomen
+	})
 	const americanHighlights = await this.getVoronoiPieces(3);
 	const unusualHighlights = await this.getVoronoiPieces(4);
 	this.setState({ womenByMen: womenByMen, womenByWomen: womenByWomen, americanHighlights: americanHighlights, unusualHighlights: unusualHighlights
@@ -27,12 +30,12 @@ class App extends React.Component {
 
 	componentDidUpdate(prevProps, prevState) {
 		if (prevState !== this.state){		
-			this.chartRender2 = chart.render("#canvas2", 500, 960, this.state.womenByMen);
-			this.chartRender1 = chart.render("#canvas1", 500, 960, this.state.womenByWomen);
-		this.chartRender3 = chart.render(
+			this.chartRender2 = chart.render("#canvas2", 500, 800, this.state.womenByMen);
+			this.chartRender1 = chart.render("#canvas1", 500, 800, this.state.womenByWomen);
+			this.chartRender3 = chart.render(
 			"#canvas3",
 			500,
-			960,
+			800,
 			this.state.womenByWomen.concat(this.state.womenByMen)
 		);
 		this.chartRender4 = chart.render("#canvas4", 500, 960, this.state.americanHighlights);
@@ -54,13 +57,6 @@ class App extends React.Component {
 	}
 	}
 
-	// componentDidMount() {
-	// 	this.interval = setInterval(() => {
-	// 		this.chartRender1.next();
-	// 		this.chartRender2.next();
-	// 		this.chartRender3.next();
-	// 	}, 10);
-	// } }
 	
 	scrollToTop() {
 		scroll.scrollToTop();
@@ -105,6 +101,7 @@ class App extends React.Component {
 					voluptate velit esse quam nihil molestiae consequatur, vel
 					illum qui dolorem eum fugiat quo voluptas nulla pariatur?
 				</p>
+
 				<Scene duration = {1000} 
 				pin={true} 
 				// enabled={true}
@@ -114,6 +111,7 @@ class App extends React.Component {
 				<canvas id="canvas2" width="960" height="500"></canvas>
 				</div>
 				</Scene>
+
 				<p>
 					At vero eos et accusamus et iusto odio dignissimos ducimus
 					qui blanditiis praesentium voluptatum deleniti atque
@@ -131,6 +129,7 @@ class App extends React.Component {
 					reiciendis voluptatibus maiores alias consequatur aut
 					perferendis doloribus asperiores repellat.
 				</p>
+
 				<h2 className="title">Women by Men and Women</h2>
 				<canvas id="canvas3" width="960" height="500"></canvas>
 				<br />
