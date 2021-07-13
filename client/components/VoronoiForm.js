@@ -198,10 +198,6 @@ export default () => {
 							displayName: "Ancient Near Eastern Art",
 						},
 						{
-							departmentId: 4,
-							displayName: "Arms and Armor",
-						},
-						{
 							departmentId: 5,
 							displayName:
 								"Arts of Africa, Oceania, and the Americas",
@@ -215,25 +211,12 @@ export default () => {
 							displayName: "The Cloisters",
 						},
 						{
-							departmentId: 8,
-							displayName: "The Costume Institute",
-						},
-						{
-							departmentId: 9,
-							displayName: "Drawings and Prints",
-						},
-						{
 							departmentId: 10,
 							displayName: "Egyptian Art",
 						},
 						{
 							departmentId: 11,
 							displayName: "European Paintings",
-						},
-						{
-							departmentId: 12,
-							displayName:
-								"European Sculpture and Decorative Arts",
 						},
 						{
 							departmentId: 13,
@@ -254,14 +237,6 @@ export default () => {
 						{
 							departmentId: 17,
 							displayName: "Medieval Art",
-						},
-						{
-							departmentId: 18,
-							displayName: "Musical Instruments",
-						},
-						{
-							departmentId: 19,
-							displayName: "Photographs",
 						},
 						{
 							departmentId: 21,
