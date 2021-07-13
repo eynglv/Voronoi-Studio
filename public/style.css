@@ -41,6 +41,32 @@ canvas{
   margin: auto;
 }
 
+
+.image-wrapper{
+  position:relative
+}
+.caption{
+  position:relative; 
+  bottom:0;
+  visibility:none;
+  opacity:0;
+  transition: opacity 0.3s
+}
+
+.image-wrapper:hover .caption{
+  visibility: visible;
+  opacity: 1;
+}
+
+.gallery-container{
+  display:flex;
+  flex-wrap: wrap;
+}
+.gallery-image{
+  flex-shrink:0;
+  flex-basis:fit-content;
+}
+
 p{
   text-align: center;
   margin: auto;
