@@ -38,8 +38,8 @@ class App extends React.Component {
       );
       this.chartRender1 = chart.render(
         "#canvas1",
-        500,
-        800,
+        600,
+        900,
         this.state.womenByWomen
       );
       this.chartRender3 = chart.render(
@@ -94,17 +94,14 @@ class App extends React.Component {
         <Navbar />
         <Controller>
           <Scene
-            duration={1000}
+            duration={3000}
             pin={true}
-            // enabled={true}
-            offset={210}
+            offset = {210}
           >
-            <div>
-              <h2 className="title">Women by Women</h2>
-              <canvas id="canvas1" width="960" height="500"></canvas>
-            </div>
-          </Scene>
-          <p>
+            <div className = "mt-0">
+              <h2 className="title text-center">Women by Women</h2>
+              <canvas className = "d-block mt-5 mx-auto" id="canvas1" width="900" height="600"></canvas>
+              <p>
             Sed ut perspiciatis unde omnis iste natus error sit voluptatem
             accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
             quae ab illo inventore veritatis et quasi architecto beatae vitae
@@ -120,7 +117,8 @@ class App extends React.Component {
             consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla
             pariatur?
           </p>
-
+            </div>
+            </Scene>
           <Scene
             duration={1000}
             pin={true}
