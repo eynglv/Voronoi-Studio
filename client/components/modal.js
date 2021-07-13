@@ -31,13 +31,13 @@ const renderModal = (selector, artPiece, context) => {
             return `- ${data.artistDisplayName} -`;
           });
         return enter;
+      },
+      function (update) {
+        return update;
+      },
+      function (exit) {
+        return exit;
       }
-      // function (update) {
-      //   return update;
-      // },
-      // function (exit) {
-      //   return exit;
-      // }
     );
 
   d3.select(".closeBtn").on("click", closeModal);
