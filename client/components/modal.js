@@ -1,10 +1,12 @@
 const renderModal = (selector, artPiece) => {
   d3.select(selector).classed("open", true).classed("close", false);
+  const data = [artPiece];
+  console.log(data);
 
   const modal = d3
     .select(selector)
     .selectAll(".modalContent")
-    .data([artPiece])
+    .data(data)
     .join(function (enter) {
       enter.append("span").attr("class", "closeBtn").text("close");
       enter
@@ -27,11 +29,11 @@ const renderModal = (selector, artPiece) => {
       return enter;
     });
 
-  // d3.select(".closeBtn").on("click", closeModal);
+  d3.select(".closeBtn").on("click", closeModal);
   // d3.select("body").on("click", closeModal);
 
-  // function closeModal() {
-  //   d3.select(selector).classed("open", false).classed("close", true);
-  // }
+  function closeModal() {
+    d3.select(selector).classed("close", true).classed("open", false);
+  }
 };
 export default renderModal;

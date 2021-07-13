@@ -121,15 +121,14 @@ canvas {
   color: black;
 }
 
-/* .open {
+.open {
   display: block;
-  background-color: rgb(120, 118, 114, 0.9);
   overflow: auto;
-} */
+}
 
-/* .close {
+.close {
   display: none;
-} */
+}
 
 .closeBtn {
   cursor: pointer;
