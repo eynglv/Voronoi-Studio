@@ -2,7 +2,6 @@ import React from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { logout } from "../store";
-import SideNav from 'react-simple-sidenav'
 
 const Navbar = (props) => {
 
