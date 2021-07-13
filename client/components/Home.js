@@ -32,8 +32,6 @@ class Home extends React.Component {
         width={this.state.width}
         />
         </div>
-        <h1 className="display-1 text-center">Welcome</h1>
-        <p className="lead text-center">
         <h1 className="display-3 mt-5 mx-3 text-center text-nowrap" id="welcome">Welcome to Voronoi Studio</h1>
         <p className="lead text-center mx-3">
           Project Description: Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
@@ -151,12 +149,10 @@ class Home extends React.Component {
             </Button>
           </Link>
         </div>
-        <div  className="Footer">
         <Footer />
-        </div>
       </div>
     );
   }
 }
 
-export default Home;
+export default Home 
