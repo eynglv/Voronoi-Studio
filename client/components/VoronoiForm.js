@@ -51,6 +51,7 @@ export default () => {
 
 			return artData;
 		} catch (err) {
+			setErrorMessage("No results! Please change your search query!");
 			console.error(err);
 		}
 	};

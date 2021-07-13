@@ -28,3 +28,22 @@ a {
 #welcome {
   font-family: 'Spartan', sans-serif;
 }
+
+canvas{
+  display: block;
+  margin: auto
+}
+
+.title{
+  font-size: 50px;
+  color: #ffcab1;
+  text-align: center;
+  margin: auto;
+}
+
+p{
+  text-align: center;
+  margin: auto;
+  font-size: x-large;
+  width: 600px;
+}
