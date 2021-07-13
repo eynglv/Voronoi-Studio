@@ -7,47 +7,27 @@ import Navbar from "./Navbar";
 class Home extends React.Component {
   constructor() {
     super();
-    this.state = {
-      width: "2%",
-    };
-    this.handleMouseEnter = this.handleMouseEnter.bind(this);
-    this.handleMouseOut = this.handleMouseOut.bind(this);
-  }
-
-  handleMouseEnter() {
-    this.setState({ width: "20%" });
-  }
-
-  handleMouseOut() {
-    this.setState({ width: "2%" });
   }
 
   render() {
     return (
       <div>
-        <div>
-          <Navbar
-            handleMouseEnter={() => this.handleMouseEnter}
-            handleMouseOut={() => this.handleMouseOut}
-            width={this.state.width}
-          />
-        </div>
-        <h1 className="display-1 text-center">Welcome</h1>
-        <p className="lead text-center"></p>
+        <Navbar />
         <h1
           className="display-3 mt-5 mx-3 text-center text-nowrap"
           id="welcome"
         >
           Welcome to Voronoi Studio
         </h1>
-        <p className="lead text-center mx-3">
+        <p className="lead text-center mx-auto">
           Project Description: Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
           amet.
         </p>
         <div
           id="carouselExampleCaptions"
-          className="carousel slide"
+          className="carousel slide mx-auto"
           data-bs-ride="carousel"
+          style={{ width: "60%" }}
         >
           <div className="carousel-indicators" style={{ opacity: 0.5 }}>
             <button
@@ -124,7 +104,7 @@ class Home extends React.Component {
             </div>
           </div>
           <button
-            className="carousel-control-prev"
+            className="carousel-control-prev w-60"
             type="button"
             data-bs-target="#carouselExampleCaptions"
             data-bs-slide="prev"
@@ -159,9 +139,7 @@ class Home extends React.Component {
             </Button>
           </Link>
         </div>
-        <div className="Footer">
-          <Footer />
-        </div>
+        <Footer />
       </div>
     );
   }
