@@ -1,8 +1,6 @@
 * {
-
   background-color: #121619;
   color: whitesmoke;
-
 }
 
 body {
@@ -16,7 +14,6 @@ a {
 .footer {
   background-color: #5f7c8c;
   height: 150px;
-
 }
 
 .names {
@@ -28,3 +25,36 @@ a {
   color: #ffcab1;
 }
 
+#modal {
+  max-height: 500px;
+  max-width: 70%;
+  margin: auto;
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: black;
+}
+
+/* .open {
+  display: block;
+  background-color: rgb(120, 118, 114, 0.9);
+  overflow: auto;
+} */
+
+/* .close {
+  display: none;
+} */
+
+.closeBtn {
+  cursor: pointer;
+  float: right;
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 5px;
+  margin-right: 10px;
+}
+
+.closeBtn:hover {
+  color: #ffd60a;
+}

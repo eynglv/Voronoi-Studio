@@ -1,11 +1,45 @@
 const renderModal = (selector, artPiece) => {
-  const modal = d3.select(selector);
   console.log(artPiece);
-  modal.append("span").attr("class", "closeBtn").text("close");
-  modal
-    .append("div")
-    .attr("class", "modalContent")
-    .append("img")
-    .attr("src", artPiece.primaryImageSmall);
+  d3.select(selector).classed("open", true).classed("close", false);
+
+  const modal = d3
+    .select(selector)
+    .selectAll(".modalContent")
+    .data([artPiece])
+    .join(
+      function (enter) {
+        enter.append("span").attr("class", "closeBtn").text("close");
+        enter
+          .append("div")
+          .attr("class", "modalContent")
+          .append("img")
+          .attr("src", (data) => {
+            return data.primaryImageSmall;
+          });
+        enter.append("h3").text((data) => {
+          return data.title;
+        });
+        enter.append("p").text((data) => {
+          return `- ${data.artistDisplayName} -`;
+        });
+        return enter;
+      }
+      // function (update) {
+      //   return update;
+      // },
+      // function (exit) {
+      //   // return exit;
+      //   return exit.on("end", function () {
+      //     d3.select(this).remove();
+      //   });
+      // }
+    );
+
+  d3.select(".closeBtn").on("click", closeModal);
+  d3.select("body").on("click", closeModal);
+
+  function closeModal() {
+    d3.select(selector).classed("open", false).classed("close", true);
+  }
 };
 export default renderModal;
