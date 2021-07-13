@@ -104,7 +104,7 @@ class App extends React.Component {
               <Scene
     duration={'100%'} triggerHook={.20} pin={true}
           >  
-              <p className ="text-center mx-auto my-auto">
+           <Timeline target = {   <p className ="text-center mx-auto my-auto">
             Sed ut perspiciatis unde omnis iste natus error sit voluptatem
             accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
             quae ab illo inventore veritatis et quasi architecto beatae vitae
@@ -120,7 +120,23 @@ class App extends React.Component {
             consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla
             pariatur?
           </p>
-      
+           }>
+             <Tween
+                    from={{ opacity: 0 }}
+                    to={{ opacity: 1 }}
+                  />
+                  {/* <Tween
+                    to={{ x: '110%' }}
+                  /> */}
+             </Timeline> 
+             {/* <Timeline target = {
+             <p>hi</p>}
+             >
+             <Tween 
+             from = {{ x:'0%'}}
+             to = {{ x: '100%'}}
+             />
+             </Timeline> */}
             </Scene>
           <Scene
             duration={1000}
