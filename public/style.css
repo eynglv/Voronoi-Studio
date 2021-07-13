@@ -3,9 +3,78 @@
   color: #fff8f0;
   font-family: "Poppins", sans-serif;
 }
+.bi{
+  position: fixed; 
+  z-index: 1; 
+  top: 10px; 
+  left: 0; 
+  opacity: 1; 
+  padding-top:10px;
+  color: #FFF8F0
+}
+
+#nav {
+  height: 90%;  
+  width: 1%;  
+  position: fixed; 
+  z-index: 1; 
+  left: 0; 
+  background-color:#A63D40;
+  overflow-x: hidden; 
+  opacity: .75; 
+}
+
+#nav:hover {
+  width: 20%;
+  height: 90%
+}
+
+#nav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 14px;
+  color: #FFF8F0;
+  background-color:#A63D40;
+  display: block;
+  }
+#nav span {
+  font-size: 18px;
+  color: #FFF8F0;
+  background-color:#A63D40;
+}
+ #nav a:hover {
+    color:  #FFCAB1;
+    }
 
 body {
   font-family: sans-serif;
+}
+/* .bi-flower1{
+  background-color:#5F7C8C;
+} */
+.bi,
+.links-text {
+  vertical-align: middle;
+}
+
+.bi {
+  background-color:#A63D40;
+  margin-right: 30px;
+  /* vertical-align: left; */
+}
+
+/* a {
+  text-decoration: none;
+} */
+
+/* .links{
+  margin-left: 40;
+} */
+
+.footer {
+  background-color: #5f7c8c;
+  height: 150px;
+
 }
 
 a {
@@ -20,6 +89,7 @@ a {
   color: #fff8f0;
   background-color: rgba(95, 124, 140, 0.35);
 }
+
 
 .names.github:hover {
   color: #ffcab1;

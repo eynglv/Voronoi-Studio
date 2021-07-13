@@ -28,7 +28,6 @@ class App extends React.Component {
       unusualHighlights: unusualHighlights,
     });
   }
-
   componentDidUpdate(prevProps, prevState) {
     if (prevState !== this.state) {
       this.chartRender2 = chart.render(
@@ -52,13 +51,13 @@ class App extends React.Component {
       this.chartRender4 = chart.render(
         "#canvas4",
         500,
-        960,
+        800,
         this.state.americanHighlights
       );
       this.chartRender5 = chart.render(
         "#canvas5",
         500,
-        960,
+        800,
         this.state.unusualHighlights
       );
       this.chartRender6 = chart.render(
