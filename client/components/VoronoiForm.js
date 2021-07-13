@@ -63,9 +63,8 @@ export default () => {
 			}${tags ? "&tags=true" : ""}${
 				artistOrCulture ? "&artistOrCulture=true" : ""
 			}${departmentId ? `&departmentId=${departmentId}` : ""}${
-				location ? `geoLocation=${location.replaceAll(" ", "|")}` : ""
-			}q=${query.replaceAll(" ", "%20")}`;
-
+				location ? `&geoLocation=${location.replaceAll(" ", "|")}` : ""
+			}&q=${query.replaceAll(" ", "%20")}`;
 			let artDataHolder = await getVoronoi(route);
 			if (femaleArtist)
 				artDataHolder = artDataHolder.filter(
