@@ -15,7 +15,7 @@ class Home extends React.Component {
   }
   
   handleMouseEnter(){
-    this.setState({width: '12%'});
+    this.setState({width: '20%'});
   }
 
   handleMouseOut(){
@@ -25,11 +25,13 @@ class Home extends React.Component {
   render() {
     return (
       <div>
+        <div >
         <Navbar 
-        onMouseEnter={this.handleMouseEnter}
-        onMouseOut={this.handleMouseOut}
+        handleMouseEnter={()=>this.handleMouseEnter}
+        handleMouseOut={()=>this.handleMouseOut}
         width={this.state.width}
         />
+        </div>
         <h1 className="display-1 text-center">Welcome</h1>
         <p className="lead text-center">
           Project Description: Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
