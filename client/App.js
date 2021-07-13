@@ -1,4 +1,5 @@
 import React from "react";
+import Navbar from './components/Navbar'
 import womenByWomen from "../script/artdata/womenByWomen";
 import womenByMen from "../script/artdata/femaleNudesByMen";
 import chart from "./components/pulsate";
@@ -75,8 +76,18 @@ class App extends React.Component {
 	render() {
 		return (
 			<div>
+				<Navbar />
+				<Controller>
+				
+				<Scene duration = {1000} 
+				pin={true} 
+				// enabled={true}
+				offset={210}>
+				<div>
 				<h2 className="title">Women by Women</h2>
 				<canvas id="canvas1" width="960" height="500"></canvas>
+				</div>
+				</Scene>
 				<p>
 					Sed ut perspiciatis unde omnis iste natus error sit
 					voluptatem accusantium doloremque laudantium, totam rem
@@ -94,8 +105,15 @@ class App extends React.Component {
 					voluptate velit esse quam nihil molestiae consequatur, vel
 					illum qui dolorem eum fugiat quo voluptas nulla pariatur?
 				</p>
+				<Scene duration = {1000} 
+				pin={true} 
+				// enabled={true}
+				offset={210}>
+				<div>
 				<h2 className="title">Women by Men</h2>
 				<canvas id="canvas2" width="960" height="500"></canvas>
+				</div>
+				</Scene>
 				<p>
 					At vero eos et accusamus et iusto odio dignissimos ducimus
 					qui blanditiis praesentium voluptatum deleniti atque
@@ -176,8 +194,9 @@ class App extends React.Component {
 				<h2 className="title">Highlighted Artwork Combined</h2>
 				<canvas id="canvas6" width="960" height="500"></canvas>
 				<br />
-
+				</Controller>
 				<a onClick={() => this.scrollToTop()}>To the top!</a>
+			
 			</div>
 		);
 	}
