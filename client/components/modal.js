@@ -37,6 +37,7 @@ const renderModal = (selector, artPiece, context) => {
   function closeModal() {
     d3.select(selector).classed("close", true).classed("open", false);
     context.filter = "blur(0px)";
+    d3.select(selector).html("");
   }
 };
 export default renderModal;
