@@ -13,14 +13,12 @@ import VoronoiForm from "./components/VoronoiForm";
 class App extends React.Component {
 	constructor() {
 		super();
-		this.state = {womenByMen: [], womenByWomen: []};
+		this.state = {};
 		this.scrollToTop = this.scrollToTop.bind(this);
 	}
 	async componentDidMount () {
 	const	womenByMen = await this.getVoronoiPieces(2)	
 	const	womenByWomen= await this.getVoronoiPieces(1)	
-	this.setState({ womenByMen: womenByMen, womenByWomen: womenByWomen
-	})
 	const americanHighlights = await this.getVoronoiPieces(3);
 	const unusualHighlights = await this.getVoronoiPieces(4);
 	this.setState({ womenByMen: womenByMen, womenByWomen: womenByWomen, americanHighlights: americanHighlights, unusualHighlights: unusualHighlights

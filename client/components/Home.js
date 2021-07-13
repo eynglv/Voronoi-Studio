@@ -61,7 +61,7 @@ class Home extends React.Component {
             <div className="carousel-item">
               <img
                 src="https://images.metmuseum.org/CRDImages/ep/web-large/DT1342.jpg"
-gi                className="d-block mx-auto"
+                className="d-block mx-auto"
                 alt="..."
               />
               <div
