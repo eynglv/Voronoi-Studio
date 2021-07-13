@@ -24,7 +24,9 @@ class Routes extends Component {
 				<Route
 					exact
 					path="/womenbywomen"
-					render={(props) => <SingleVoronoi voronoiId={1} />}
+					render={(props) => (
+						<SingleVoronoi voronoiId={1} title="Women by Women" />
+					)}
 				/>
 				<Route exact path="/womenbymen" component={WomenByMen} />
 				{/* <Route exact path="/featured-pieces" component={FeaturedPieces} />
