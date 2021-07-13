@@ -17,10 +17,10 @@ class App extends React.Component {
     this.scrollToTop = this.scrollToTop.bind(this);
   }
   async componentDidMount() {
-    const womenByMen = await this.getVoronoiPieces(2);
-    const womenByWomen = await this.getVoronoiPieces(1);
-    const americanHighlights = await this.getVoronoiPieces(3);
-    const unusualHighlights = await this.getVoronoiPieces(4);
+    const womenByMen = await this.getVoronoiPieces("Women By Men");
+    const womenByWomen = await this.getVoronoiPieces("Women By Women");
+    const americanHighlights = await this.getVoronoiPieces("American Art");
+    const unusualHighlights = await this.getVoronoiPieces("Non-Western Art");
     this.setState({
       womenByMen: womenByMen,
       womenByWomen: womenByWomen,
@@ -84,8 +84,8 @@ class App extends React.Component {
     clearInterval(this.interval);
   }
 
-  async getVoronoiPieces(id) {
-    const art = await axios.get(`api/voronois/${id}`);
+  async getVoronoiPieces(title) {
+    const art = await axios.get(`api/voronois/${title}`);
     return art.data;
   }
   render() {
