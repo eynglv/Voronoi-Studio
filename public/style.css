@@ -65,7 +65,7 @@ canvas{
 .gallery-image{
   flex-shrink:0;
   flex-basis:fit-content;
-
+}
 p{
   text-align: center;
   margin: auto;
