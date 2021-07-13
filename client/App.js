@@ -30,40 +30,40 @@ class App extends React.Component {
   }
   componentDidUpdate(prevProps, prevState) {
     if (prevState !== this.state) {
-      this.chartRender2 = chart.render(
-        "#canvas2",
-        500,
-        800,
-        this.state.womenByMen
-      );
       this.chartRender1 = chart.render(
         "#canvas1",
         600,
         900,
         this.state.womenByWomen
       );
+      this.chartRender2 = chart.render(
+        "#canvas2",
+        600,
+        900,
+        this.state.womenByMen
+      );
       this.chartRender3 = chart.render(
         "#canvas3",
-        500,
-        800,
+        600,
+        900,
         this.state.womenByWomen.concat(this.state.womenByMen)
       );
       this.chartRender4 = chart.render(
         "#canvas4",
-        500,
-        800,
+        600,
+        900,
         this.state.americanHighlights
       );
       this.chartRender5 = chart.render(
         "#canvas5",
-        500,
-        800,
+        600,
+        900,
         this.state.unusualHighlights
       );
       this.chartRender6 = chart.render(
         "#canvas6",
-        500,
-        960,
+        600,
+        900,
         this.state.americanHighlights.concat(this.state.unusualHighlights)
       );
       this.interval = setInterval(() => {
@@ -94,9 +94,9 @@ class App extends React.Component {
         <Navbar />
         <Controller>
           <Scene
-            duration={3000}
-            pin={true}
-            offset = {210}
+           duration={1500}
+           pin={true}
+           offset = {400}
           >
             <div className = "mt-0">
               <h2 className="title text-center">Women by Women</h2>
@@ -126,8 +126,8 @@ class App extends React.Component {
             offset={210}
           >
             <div>
-              <h2 className="title">Women by Men</h2>
-              <canvas id="canvas2" width="960" height="500"></canvas>
+              <h2 className="title text-center">Women by Men</h2>
+              <canvas className = "d-block mt-5 mx-auto" id="canvas2" width="900" height="600"></canvas>
             </div>
           </Scene>
 
@@ -147,8 +147,8 @@ class App extends React.Component {
             consequatur aut perferendis doloribus asperiores repellat.
           </p>
 
-          <h2 className="title">Women by Men and Women</h2>
-          <canvas id="canvas3" width="960" height="500"></canvas>
+          <h2 className="title text-center">Women by Men and Women</h2>
+          <canvas className = "d-block mt-5 mx-auto" id="canvas3" width="900" height="600"></canvas>
           <br />
           <p>
             At vero eos et accusamus et iusto odio dignissimos ducimus qui
@@ -165,8 +165,8 @@ class App extends React.Component {
             sapiente delectus, ut aut reiciendis voluptatibus maiores alias
             consequatur aut perferendis doloribus asperiores repellat.
           </p>
-          <h2 className="title">American Art hightlighted at the Met</h2>
-          <canvas id="canvas4" width="960" height="500"></canvas>
+          <h2 className="title text-center">American Art hightlighted at the Met</h2>
+          <canvas className = "d-block mt-5 mx-auto" id="canvas4" width="900" height="600"></canvas>
           <br />
           <p>
             At vero eos et accusamus et iusto odio dignissimos ducimus qui
@@ -183,10 +183,10 @@ class App extends React.Component {
             sapiente delectus, ut aut reiciendis voluptatibus maiores alias
             consequatur aut perferendis doloribus asperiores repellat.
           </p>
-          <h2 className="title">
+          <h2 className="title text-center">
             Highlighted art from Underepresented Countries
           </h2>
-          <canvas id="canvas5" width="960" height="500"></canvas>
+          <canvas className = "d-block mt-5 mx-auto" id="canvas5" width="900" height="600"></canvas>
           <br />
           <p>
             At vero eos et accusamus et iusto odio dignissimos ducimus qui
@@ -203,8 +203,8 @@ class App extends React.Component {
             sapiente delectus, ut aut reiciendis voluptatibus maiores alias
             consequatur aut perferendis doloribus asperiores repellat.
           </p>
-          <h2 className="title">Highlighted Artwork Combined</h2>
-          <canvas id="canvas6" width="960" height="500"></canvas>
+          <h2 className="title text-center">Highlighted Artwork Combined</h2>
+          <canvas className = "d-block mt-5 mx-auto" id="canvas6" width="900" height="600"></canvas>
           <br />
         </Controller>
         <a onClick={() => this.scrollToTop()}>To the top!</a>

@@ -91,10 +91,6 @@ a {
   font-family: 'Spartan', sans-serif;
 }
 
-canvas{
-  display: block;
-  margin: auto
-}
 
 .title{
   font-size: 50px;
