@@ -2,14 +2,34 @@ import React from "react";
 import { Button } from "reactstrap";
 import Footer from "./Footer";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import Navbar from "./Navbar"
 
 class Home extends React.Component {
   constructor() {
     super();
+    this.state ={
+      width: '2%'
+    } 
+    this.handleMouseEnter = this.handleMouseEnter.bind(this)
+    this.handleMouseOut = this.handleMouseOut.bind(this)
   }
+  
+  handleMouseEnter(){
+    this.setState({width: '12%'});
+  }
+
+  handleMouseOut(){
+    this.setState({width: '2%'})
+  }
+
   render() {
     return (
       <div>
+        <Navbar 
+        onMouseEnter={this.handleMouseEnter}
+        onMouseOut={this.handleMouseOut}
+        width={this.state.width}
+        />
         <h1 className="display-1 text-center">Welcome</h1>
         <p className="lead text-center">
           Project Description: Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
@@ -128,7 +148,9 @@ class Home extends React.Component {
             </Button>
           </Link>
         </div>
+        <div  className="Footer">
         <Footer />
+        </div>
       </div>
     );
   }
