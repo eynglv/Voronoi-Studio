@@ -2,6 +2,7 @@ import React, {Component, Fragment} from 'react'
 import {connect} from 'react-redux'
 import {withRouter, Route, Switch, Redirect} from 'react-router-dom'
 import App from './App'
+import FeaturedPieces from './components/FeaturedPieces'
 import Home from './components/Home'
 import Navbar from './components/Navbar'
 import WomenByWomen from './components/WomenByWomen'
@@ -24,6 +25,7 @@ class Routes extends Component {
         <Route exact path="/womenbymen" component={WomenByMen} />
         {/* <Route exact path="/featured-pieces" component={FeaturedPieces} />
         <Route exact path="/voronoi-form" component={VoronoiForm} /> */}
+        <Route path='/all-art' component={FeaturedPieces} />
 
       </div>
     )
