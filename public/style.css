@@ -124,8 +124,8 @@ a {
 }
 
 p{
-  text-align: center;
-  margin: auto;
+  /* text-align: center;
+    margin: auto; */
   font-size: x-large;
-  width: 600px;
+  width: 75%
 }

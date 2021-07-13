@@ -94,17 +94,17 @@ class App extends React.Component {
         <Navbar />
         <Controller>
           <Scene
-       duration={1800} pin={true} enabled={true} triggerHook="onLeave"
+       duration={'100%'} triggerHook={0.05} pin={true}
           >
-            <div className = "mt-0">
+            <div>
               <h2 className="title text-center">Women by Women</h2>
-              <canvas className = "d-block mt-5 mx-auto" id="canvas1" width="900" height="600"></canvas>
+              <canvas className= "d-block my-auto mx-auto" id="canvas1" width="900" height="600"></canvas>
               </div>
               </Scene>
               <Scene
-       duration={1800} pin={true} triggerHook={0} pin={{ pushFollowers: false }}
+    duration={'100%'} triggerHook={.20} pin={true}
           >  
-              <p>
+              <p className ="text-center mx-auto my-auto">
             Sed ut perspiciatis unde omnis iste natus error sit voluptatem
             accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
             quae ab illo inventore veritatis et quasi architecto beatae vitae
@@ -125,21 +125,17 @@ class App extends React.Component {
           <Scene
             duration={1000}
             pin={true}
-            // enabled={true}
-            triggerHook={0}
+            triggerHook={0.05}
           >
             <div>
               <h2 className="title text-center">Women by Men</h2>
-              <canvas className = "d-block mt-5 mx-auto" id="canvas2" width="900" height="600"></canvas>
+              <canvas className = "d-block my-auto mx-auto" id="canvas2" width="900" height="600"></canvas>
             </div>
           </Scene>
           <Scene
-            duration={1000}
-            pin={true}
-            // enabled={true}
-            triggerHook={0}
+            duration={'100%'} triggerHook={.20} pin={true}
           >
-          <p>
+          <p className ="text-center mx-auto my-auto">
             At vero eos et accusamus et iusto odio dignissimos ducimus qui
             blanditiis praesentium voluptatum deleniti atque corrupti quos
             dolores et quas molestias excepturi sint occaecati cupiditate non
@@ -156,24 +152,20 @@ class App extends React.Component {
           </p>
           </Scene>
           <Scene
-            duration={1000}
-            pin={true}
-            // enabled={true}
-            triggerHook={0}
+       duration={1000}
+       pin={true}
+       triggerHook={0.05}
           >
             <div>
           <h2 className="title text-center">Women by Men and Women</h2>
-          <canvas className = "d-block mt-5 mx-auto" id="canvas3" width="900" height="600"></canvas>
+          <canvas className ="d-block my-auto mx-auto" id="canvas3" width="900" height="600"></canvas>
           </div>
           </Scene>
           <br />
           <Scene
-            duration={1000}
-            pin={true}
-            // enabled={true}
-            triggerHook={0}
+    duration={'100%'} triggerHook={.20} pin={true}
           >
-          <p>
+          <p className ="text-center mx-auto my-auto">
             At vero eos et accusamus et iusto odio dignissimos ducimus qui
             blanditiis praesentium voluptatum deleniti atque corrupti quos
             dolores et quas molestias excepturi sint occaecati cupiditate non
@@ -190,24 +182,20 @@ class App extends React.Component {
           </p>
           </Scene>
           <Scene
-            duration={1000}
-            pin={true}
-            // enabled={true}
-            triggerHook={0}
+       duration={1000}
+       pin={true}
+       triggerHook={0.05}
           >
             <div>
           <h2 className="title text-center">American Art hightlighted at the Met</h2>
-          <canvas className = "d-block mt-5 mx-auto" id="canvas4" width="900" height="600"></canvas>
+          <canvas className = "d-block my-auto mx-auto" id="canvas4" width="900" height="600"></canvas>
           </div>
           </Scene>
           <br />
           <Scene
-            duration={1000}
-            pin={true}
-            // enabled={true}
-            triggerHook={0}
+     duration={'100%'} triggerHook={.20} pin={true}
           >
-          <p>
+          <p className ="text-center mx-auto my-auto">
             At vero eos et accusamus et iusto odio dignissimos ducimus qui
             blanditiis praesentium voluptatum deleniti atque corrupti quos
             dolores et quas molestias excepturi sint occaecati cupiditate non
@@ -224,26 +212,22 @@ class App extends React.Component {
           </p>
           </Scene>
           <Scene
-            duration={1000}
-            pin={true}
-            // enabled={true}
-            triggerHook={0}
+       duration={1000}
+       pin={true}
+       triggerHook={0.05}
           >
             <div>
           <h2 className="title text-center">
             Highlighted art from Underepresented Countries
           </h2>
-          <canvas className = "d-block mt-5 mx-auto" id="canvas5" width="900" height="600"></canvas>
+          <canvas className = "d-block my-auto mx-auto" id="canvas5" width="900" height="600"></canvas>
           </div>
           </Scene>
           <br />
           <Scene
-            duration={1000}
-            pin={true}
-            // enabled={true}
-            triggerHook={0}
+    duration={'100%'} triggerHook={.20} pin={true}
           >
-          <p>
+          <p className ="text-center mx-auto my-auto">
             At vero eos et accusamus et iusto odio dignissimos ducimus qui
             blanditiis praesentium voluptatum deleniti atque corrupti quos
             dolores et quas molestias excepturi sint occaecati cupiditate non
@@ -260,19 +244,20 @@ class App extends React.Component {
           </p>
           </Scene>
           <Scene
-            duration={1000}
-            pin={true}
-            // enabled={true}
-            triggerHook={0}
+       duration={1000}
+       pin={true}
+       triggerHook={0.05}
           >
             <div>
           <h2 className="title text-center">Highlighted Artwork Combined</h2>
-          <canvas className = "d-block mt-5 mx-auto" id="canvas6" width="900" height="600"></canvas>
+          <canvas className = "d-block my-auto mx-auto" id="canvas6" width="900" height="600"></canvas>
           </div>
           </Scene>
           <br />
         </Controller>
-        <a className="text-center" onClick={() => this.scrollToTop()}>Top</a>
+        <div className="mx-auto mb-4 text-center" >
+        <a onClick={() => this.scrollToTop()}>Top</a>
+        </div>
       </div>
     );
   }
