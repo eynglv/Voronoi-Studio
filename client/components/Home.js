@@ -2,39 +2,44 @@ import React from "react";
 import { Button } from "reactstrap";
 import Footer from "./Footer";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import Navbar from "./Navbar"
+import Navbar from "./Navbar";
 
 class Home extends React.Component {
   constructor() {
     super();
-    this.state ={
-      width: '2%'
-    } 
-    this.handleMouseEnter = this.handleMouseEnter.bind(this)
-    this.handleMouseOut = this.handleMouseOut.bind(this)
-  }
-  
-  handleMouseEnter(){
-    this.setState({width: '20%'});
+    this.state = {
+      width: "2%",
+    };
+    this.handleMouseEnter = this.handleMouseEnter.bind(this);
+    this.handleMouseOut = this.handleMouseOut.bind(this);
   }
 
-  handleMouseOut(){
-    this.setState({width: '2%'})
+  handleMouseEnter() {
+    this.setState({ width: "20%" });
+  }
+
+  handleMouseOut() {
+    this.setState({ width: "2%" });
   }
 
   render() {
     return (
       <div>
-        <div >
-        <Navbar 
-        handleMouseEnter={()=>this.handleMouseEnter}
-        handleMouseOut={()=>this.handleMouseOut}
-        width={this.state.width}
-        />
+        <div>
+          <Navbar
+            handleMouseEnter={() => this.handleMouseEnter}
+            handleMouseOut={() => this.handleMouseOut}
+            width={this.state.width}
+          />
         </div>
         <h1 className="display-1 text-center">Welcome</h1>
-        <p className="lead text-center">
-        <h1 className="display-3 mt-5 mx-3 text-center text-nowrap" id="welcome">Welcome to Voronoi Studio</h1>
+        <p className="lead text-center"></p>
+        <h1
+          className="display-3 mt-5 mx-3 text-center text-nowrap"
+          id="welcome"
+        >
+          Welcome to Voronoi Studio
+        </h1>
         <p className="lead text-center mx-3">
           Project Description: Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
           amet.
@@ -74,11 +79,14 @@ class Home extends React.Component {
                 alt="..."
               />
               <div
-                className="carousel-caption d-none d-md-block mx-auto" style={{ opacity: 0.8 }}
+                className="carousel-caption d-none d-md-block mx-auto"
+                style={{ opacity: 0.8 }}
               >
                 <h5>Marie Joséphine Charlotte du Val d'Ognes </h5>
                 <p>
-                "I like this one because it reverses subject and object. Just as you observe a painting of her, she is observing and drawing you." - Josephine
+                  "I like this one because it reverses subject and object. Just
+                  as you observe a painting of her, she is observing and drawing
+                  you." - Josephine
                 </p>
               </div>
             </div>
@@ -94,7 +102,9 @@ class Home extends React.Component {
               >
                 <h5>Two Tahitian Women</h5>
                 <p>
-                  "The painting captures the artist's own views on the beauty and sexuality of Indigenous women. In this stunning rendition of two women, the male gaze permeates." - Phoebe
+                  "The painting captures the artist's own views on the beauty
+                  and sexuality of Indigenous women. In this stunning rendition
+                  of two women, the male gaze permeates." - Phoebe
                 </p>
               </div>
             </div>
@@ -109,9 +119,7 @@ class Home extends React.Component {
                 style={{ opacity: 0.8 }}
               >
                 <h5>Portrait of the Boy Eutyches</h5>
-                <p>
-                  " " - Adrienne
-                </p>
+                <p>" " - Adrienne</p>
               </div>
             </div>
           </div>
@@ -151,8 +159,8 @@ class Home extends React.Component {
             </Button>
           </Link>
         </div>
-        <div  className="Footer">
-        <Footer />
+        <div className="Footer">
+          <Footer />
         </div>
       </div>
     );
