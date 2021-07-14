@@ -108,7 +108,7 @@ class App extends React.Component {
           <Scene duration={"100%"} triggerHook={0.2} pin={true}>
             <Timeline
               target={
-                <p className="text-center mt-2 mb-3 mx-auto my-auto">
+                <p className="text-center mt-2 mb-5 mx-auto my-auto">
                   Sed ut perspiciatis unde omnis iste natus error sit voluptatem
                   accusantium doloremque laudantium, totam rem aperiam, eaque
                   ipsa quae ab illo inventore veritatis et quasi architecto
@@ -141,7 +141,7 @@ class App extends React.Component {
              />
              </Timeline> */}
           </Scene>
-          <Scene duration={1000} pin={true} triggerHook={0.05}>
+          <Scene duration={"100%"} pin={true} triggerHook={0.05}>
             <div>
               <h2 className="title text-center">Women by Men</h2>
               <canvas
@@ -153,7 +153,7 @@ class App extends React.Component {
             </div>
           </Scene>
           <Scene duration={"100%"} triggerHook={0.2} pin={true}>
-            <p className="text-center mt-2 mb-3 mx-auto my-auto">
+            <p className="text-center mt-2 mb-5 mx-auto my-auto">
               At vero eos et accusamus et iusto odio dignissimos ducimus qui
               blanditiis praesentium voluptatum deleniti atque corrupti quos
               dolores et quas molestias excepturi sint occaecati cupiditate non
@@ -183,7 +183,7 @@ class App extends React.Component {
           </Scene>
           <br />
           <Scene duration={"100%"} triggerHook={0.2} pin={true}>
-            <p className="text-center mx-auto my-auto">
+            <p className="text-center mt-2 mb-5 mx-auto my-auto">
               At vero eos et accusamus et iusto odio dignissimos ducimus qui
               blanditiis praesentium voluptatum deleniti atque corrupti quos
               dolores et quas molestias excepturi sint occaecati cupiditate non
@@ -215,7 +215,7 @@ class App extends React.Component {
           </Scene>
           <br />
           <Scene duration={"100%"} triggerHook={0.2} pin={true}>
-            <p className="text-center mx-auto my-auto">
+            <p className="text-center mt-2 mb-5 mx-auto my-auto">
               At vero eos et accusamus et iusto odio dignissimos ducimus qui
               blanditiis praesentium voluptatum deleniti atque corrupti quos
               dolores et quas molestias excepturi sint occaecati cupiditate non
@@ -247,7 +247,7 @@ class App extends React.Component {
           </Scene>
           <br />
           <Scene duration={"100%"} triggerHook={0.2} pin={true}>
-            <p className="text-center mx-auto my-auto">
+            <p className="text-center mt-2 mb-5 mx-auto my-auto">
               At vero eos et accusamus et iusto odio dignissimos ducimus qui
               blanditiis praesentium voluptatum deleniti atque corrupti quos
               dolores et quas molestias excepturi sint occaecati cupiditate non
@@ -279,7 +279,7 @@ class App extends React.Component {
           </Scene>
           <br />
         </Controller>
-        <div className="mx-auto mb-4 text-center">
+        <div className="mx-auto mb-5 text-center">
           <a onClick={() => this.scrollToTop()}>Top</a>
         </div>
       </div>
