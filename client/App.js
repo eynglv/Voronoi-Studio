@@ -91,7 +91,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Navbar />
+      <Navbar />
         <Controller>
           <Scene
        duration={'100%'} triggerHook={0.05} pin={true}
@@ -104,7 +104,7 @@ class App extends React.Component {
               <Scene
     duration={'100%'} triggerHook={.20} pin={true}
           >  
-           <Timeline target = {   <p className ="text-center mx-auto my-auto">
+           <Timeline target = { <p className ="text-center mt-2 mb-3 mx-auto my-auto">
             Sed ut perspiciatis unde omnis iste natus error sit voluptatem
             accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
             quae ab illo inventore veritatis et quasi architecto beatae vitae
@@ -151,7 +151,7 @@ class App extends React.Component {
           <Scene
             duration={'100%'} triggerHook={.20} pin={true}
           >
-          <p className ="text-center mx-auto my-auto">
+          <p className ="text-center mt-2 mb-3 mx-auto my-auto">
             At vero eos et accusamus et iusto odio dignissimos ducimus qui
             blanditiis praesentium voluptatum deleniti atque corrupti quos
             dolores et quas molestias excepturi sint occaecati cupiditate non

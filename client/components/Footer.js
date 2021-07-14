@@ -32,11 +32,11 @@ class Footer extends React.Component {
           </span>
         </div>
         <div className="names card-body text-center justify-content-center" >
-        <p className="mt-1 names"style={{backgroundColor: "transparent"}}>
+        <p className="mt-1 mx-auto text-center names"style={{backgroundColor: "transparent"}}>
           All artworks provided by{" "}
           <a
             href="https://www.metmuseum.org/blogs/now-at-the-met/2018/met-collection-api"
-            className="names"
+            className="names mx-auto text-center"
             style={{ color: "#FFCAB1" }, {backgroundColor:"transparent"}}
           >
             The Met Collection API
