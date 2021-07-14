@@ -1,6 +1,6 @@
 import renderModal from "./modal";
 const chart = {
-  *render(selector, height, width, artData, cellCount = 2 * artData.length) {
+  *render(selector, height, width, artData, cellCount = artData.length) {
     const canvas = d3.select(selector);
     // console.log(canvas);
     const context = canvas.node().getContext("2d");
