@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import chart from "./pulsate";
 import axios from "axios";
+import Navbar from "./Navbar";
 
 export default (props) => {
 	const [paintings, setPaintings] = useState([]);
@@ -28,6 +29,7 @@ export default (props) => {
 	}, [paintings]);
 	return (
 		<div>
+			<Navbar />
 			<h1>{props.voronoiId}</h1>
 			<canvas id="single-voronoi" width="1080" height="720"></canvas>
 		</div>
