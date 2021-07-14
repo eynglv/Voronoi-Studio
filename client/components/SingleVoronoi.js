@@ -28,7 +28,7 @@ export default (props) => {
 	}, [paintings]);
 	return (
 		<div>
-			<h1>{props.title}</h1>
+			<h1>{props.voronoiId}</h1>
 			<canvas id="single-voronoi" width="1080" height="720"></canvas>
 		</div>
 	);
