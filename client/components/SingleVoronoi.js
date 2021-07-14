@@ -30,7 +30,10 @@ export default (props) => {
 	return (
 		<div>
 			<Navbar />
-			<h1>{props.voronoiId}</h1>
+			<h1 className="text-center display-3 mt-4">{props.voronoiId}</h1>
+			<h3 className="text-center mb-5 mt-3">
+				Curated by {props.curator}
+			</h3>
 			<canvas id="single-voronoi" width="1080" height="720"></canvas>
 		</div>
 	);
