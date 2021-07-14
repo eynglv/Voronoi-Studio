@@ -2,6 +2,7 @@ import renderModal from "./modal";
 const chart = {
   *render(selector, height, width, artData, cellCount = artData.length) {
     const canvas = d3.select(selector);
+
     // console.log(canvas);
     const context = canvas.node().getContext("2d");
     const patterns = [];
@@ -12,7 +13,7 @@ const chart = {
         y: evt.clientY - rect.top,
       };
     }
-
+    
     artData.forEach((painting, index) => {
       //make a pattern out of each image in artData
       const image = new Image(); //make an <img> element
@@ -27,6 +28,7 @@ const chart = {
       (_, i) => Math.random() * (i & 1 ? height : width) //that are between 0 and heigh and width, respectively
     );
 
+
     const velocities = new Float64Array(cellCount * 2); //create an array of alternating x and y velocities
     const delaunay = new d3.Delaunay(positions);
     const voronoi = delaunay.voronoi([0.5, 0.5, width - 0.5, height - 0.5]); //create a new voronoi from our positions array, with infinite polygons clipped at the provided minimums and maximums
@@ -38,6 +40,7 @@ const chart = {
       renderModal(`#modal`, artData[index % artData.length], context);
       context.filter = "blur(5px)";
     };
+
 
     while (true) {
       //we will yield control back to the caller at the end of this loop, so it isn't actually infinite
@@ -54,6 +57,7 @@ const chart = {
         positions[i] += velocities[i]; //change the position based on corresponding velocity
 
         //below code block causes cells to wrap around
+
 
         if (positions[i] < 0) positions[i] += size;
         //if position is less than 0, wrap around to the other side
