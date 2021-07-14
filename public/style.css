@@ -4,6 +4,15 @@
 	font-family: "Poppins", sans-serif;
 }
 
+h1 {
+  font-family: "Spartan"
+}
+
+img {
+max-height: max-content;
+min-height: min-content;
+}
+
 #nav {
 	background-color: #a63d40;
 	height: 100%;
@@ -30,11 +39,12 @@
 }
 
 #nav a {
-	text-decoration: none;
 
-	font-size: 12px;
-	color: #fff8f0;
-	background-color: #a63d40;
+  text-decoration: none;
+  font-size: 12px;
+  color: #fff8f0;
+  background-color: #a63d40;
+
 }
 
 #nav span {
@@ -78,8 +88,9 @@ a {
 	color: #ffcab1;
 }
 
-#welcome {
-	font-family: "Spartan", sans-serif;
+h1 #welcome {
+  font-family: "Spartan", sans-serif;
+
 }
 
 canvas {
@@ -88,8 +99,10 @@ canvas {
 }
 
 .title {
-	font-size: 50px;
-	color: #ffcab1;
+
+  color: #ffcab1;
+  font-family: "Spartan", sans-serif;
+
 }
 
 #modal {
@@ -129,15 +142,14 @@ canvas {
 	color: #a63d40;
 }
 
-.image-wrapper {
-	position: relative;
-}
+
 .caption {
-	position: relative;
-	bottom: 0;
-	visibility: none;
-	opacity: 0;
-	transition: opacity 0.3s;
+  position: relative;
+  font-size: .75em;
+  visibility: none;
+  opacity: 0;
+  transition: opacity 0.7s;
+  color: #fff8f0
 }
 
 .image-wrapper:hover .caption {
