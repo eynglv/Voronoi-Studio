@@ -94,13 +94,13 @@ canvas {
 
 #modal {
   z-index: 10;
-  /* max-height: 500px; */
   max-width: 70%;
   margin: auto;
   position: fixed;
   top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
+  background-color: rgba(100, 111, 88, 0.9);
 }
 
 #modal.open {
@@ -113,8 +113,9 @@ canvas {
   height: 100%;
   margin: auto;
   position: relative;
-  /* margin-top: 20px; */
   top: 10%;
+  background-color: rgba(125, 133, 112, 0);
+  padding-bottom: 18px;
 }
 
 .modalImage {
@@ -126,12 +127,14 @@ canvas {
   width: 100%;
   position: absolute;
   bottom: 40px;
+  background-color: rgba(125, 133, 112, 0);
 }
 
 #modalAuthor {
   width: 100%;
   position: absolute;
   bottom: 0;
+  background-color: rgba(125, 133, 112, 0);
 }
 
 .open {
@@ -153,7 +156,7 @@ canvas {
 }
 
 .closeBtn:hover {
-  color: #a63d40;
+  color: #121619;
 }
 
 .image-wrapper {

@@ -10,7 +10,11 @@ const renderModal = (selector, artPiece, context) => {
     .data(data)
     .join(function (enter) {
       //enter = d3.select(selector)
-      enter.append("span").attr("class", "closeBtn").text("close");
+      enter
+        .append("span")
+        .attr("class", "closeBtn")
+        .text("close")
+        .style("background-color", " rgba(125, 133, 112, 0)");
       enter
         .append("div")
         .attr("class", "modalContent")
