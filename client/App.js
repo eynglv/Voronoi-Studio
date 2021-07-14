@@ -94,9 +94,10 @@ class App extends React.Component {
         <Navbar />
         <div id="modal"></div>
         <Controller>
+          {/* CANVAS1 */}
           <Scene duration={"100%"} triggerHook={0.05} pin={true}>
           {(progress) => (
-            <div className="sticky">
+            <div>
             <Timeline totalProgress={progress} paused>   
             
               <h2 className="title text-center">Women by Women</h2>
@@ -108,7 +109,7 @@ class App extends React.Component {
               >
               </canvas>
              
-            <Timeline target = { <h1 className="test">THIS IS A FUN OR IMPACTFUL FACT</h1>}>
+            <Timeline target = { <h1 className="animate animation1">THIS IS A FUN OR IMPACTFUL FACT</h1>}>
 
             <Tween
              from={{ opacity: -1}} to={{ opacity: 1}} />
@@ -117,9 +118,7 @@ class App extends React.Component {
 
              <Tween
              from={{ opacity: 1}} to={{ opacity: -1}} />
-             
-            
-              {/* <Tween /> */}
+
              </Timeline>
              </Timeline>
              </div>
@@ -149,13 +148,13 @@ class App extends React.Component {
             >
               
               <Tween from={{ opacity: 0 }} to={{ opacity: 1 }} />
-              {/* <Tween
-                    to={{ x: '110%' }}
-                  /> */}
               </Timeline>
           </Scene>
+          {/* CANVAS2 */}
           <Scene duration={1000} pin={true} triggerHook={0.05}>
+          {(progress) => (
             <div>
+               <Timeline totalProgress={progress} paused>  
               <h2 className="title text-center">Women by Men</h2>
               <canvas
                 className="d-block my-auto mx-auto"
@@ -163,7 +162,21 @@ class App extends React.Component {
                 width="900"
                 height="600"
               ></canvas>
-            </div>
+
+            <Timeline target = { <h1 className="animate animation2">HERE'S ONE ABOUT MEN PAINTING WOMEN</h1>}>
+
+            <Tween
+             from={{ opacity: -1}} to={{ opacity: 1}} />
+
+             <Tween from={{ top: '15%', x: '100%'}} to={{ x: '0%', top: '50%' }} />
+
+             <Tween
+             from={{ opacity: 1}} to={{ opacity: -1, x: '-100%'}} />
+
+             </Timeline>
+             </Timeline>
+             </div>
+          )}
           </Scene>
           <Scene duration={"100%"} triggerHook={0.2} pin={true}>
             <p className="text-center mt-2 mb-3 mx-auto my-auto">

@@ -164,13 +164,21 @@ p {
   width: 75%;
 }
 
-.test{
+.animate{
   font-size: 20px;
   font-weight: bold;
   color: #fff8f0;
   z-index: 2;
   position: absolute;
+}
+.animation1{
   top:50; 
   right:1%;
   background-color: #5f7c8c;
 }
+.animation2{
+  top:50; 
+  left: 0%;
+  background-color: #a63d40;
+}
+
