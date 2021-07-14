@@ -32,6 +32,7 @@ const chart = {
     const voronoi = delaunay.voronoi([0.5, 0.5, width - 0.5, height - 0.5]); //create a new voronoi from our positions array, with infinite polygons clipped at the provided minimums and maximums
 
     context.canvas.onclick = (event) => {
+      // event.stopPropagation()
       const position = getMousePos(canvas._groups[0][0], event);
       const index = delaunay.find(position.x, position.y);
       renderModal(`#modal`, artData[index % artData.length], context);
