@@ -93,43 +93,45 @@ class App extends React.Component {
       <div>
         <Navbar />
         <Controller>
-          <Scene
-       duration={'100%'} triggerHook={0.05} pin={true}
-          >
+          <Scene duration={"100%"} triggerHook={0.05} pin={true}>
             <div>
               <h2 className="title text-center">Women by Women</h2>
-              <canvas className= "d-block my-auto mx-auto" id="canvas1" width="900" height="600"></canvas>
-              </div>
-              </Scene>
-              <Scene
-    duration={'100%'} triggerHook={.20} pin={true}
-          >  
-           <Timeline target = {   <p className ="text-center mx-auto my-auto">
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-            accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-            quae ab illo inventore veritatis et quasi architecto beatae vitae
-            dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
-            aspernatur aut odit aut fugit, sed quia consequuntur magni dolores
-            eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est,
-            qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,
-            sed quia non numquam eius modi tempora incidunt ut labore et dolore
-            magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis
-            nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut
-            aliquid ex ea commodi consequatur? Quis autem vel eum iure
-            reprehenderit qui in ea voluptate velit esse quam nihil molestiae
-            consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla
-            pariatur?
-          </p>
-           }>
-             <Tween
-                    from={{ opacity: 0 }}
-                    to={{ opacity: 1 }}
-                  />
-                  {/* <Tween
+              <canvas
+                className="d-block my-auto mx-auto"
+                id="canvas1"
+                width="900"
+                height="600"
+              ></canvas>
+            </div>
+          </Scene>
+          <Scene duration={"100%"} triggerHook={0.2} pin={true}>
+            <Timeline
+              target={
+                <p className="text-center mt-2 mb-3 mx-auto my-auto">
+                  Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                  accusantium doloremque laudantium, totam rem aperiam, eaque
+                  ipsa quae ab illo inventore veritatis et quasi architecto
+                  beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem
+                  quia voluptas sit aspernatur aut odit aut fugit, sed quia
+                  consequuntur magni dolores eos qui ratione voluptatem sequi
+                  nesciunt. Neque porro quisquam est, qui dolorem ipsum quia
+                  dolor sit amet, consectetur, adipisci velit, sed quia non
+                  numquam eius modi tempora incidunt ut labore et dolore magnam
+                  aliquam quaerat voluptatem. Ut enim ad minima veniam, quis
+                  nostrum exercitationem ullam corporis suscipit laboriosam,
+                  nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum
+                  iure reprehenderit qui in ea voluptate velit esse quam nihil
+                  molestiae consequatur, vel illum qui dolorem eum fugiat quo
+                  voluptas nulla pariatur?
+                </p>
+              }
+            >
+              <Tween from={{ opacity: 0 }} to={{ opacity: 1 }} />
+              {/* <Tween
                     to={{ x: '110%' }}
                   /> */}
-             </Timeline> 
-             {/* <Timeline target = {
+            </Timeline>
+            {/* <Timeline target = {
              <p>hi</p>}
              >
              <Tween 
@@ -137,142 +139,147 @@ class App extends React.Component {
              to = {{ x: '100%'}}
              />
              </Timeline> */}
-            </Scene>
-          <Scene
-            duration={1000}
-            pin={true}
-            triggerHook={0.05}
-          >
+          </Scene>
+          <Scene duration={1000} pin={true} triggerHook={0.05}>
             <div>
               <h2 className="title text-center">Women by Men</h2>
-              <canvas className = "d-block my-auto mx-auto" id="canvas2" width="900" height="600"></canvas>
+              <canvas
+                className="d-block my-auto mx-auto"
+                id="canvas2"
+                width="900"
+                height="600"
+              ></canvas>
             </div>
           </Scene>
-          <Scene
-            duration={'100%'} triggerHook={.20} pin={true}
-          >
-          <p className ="text-center mx-auto my-auto">
-            At vero eos et accusamus et iusto odio dignissimos ducimus qui
-            blanditiis praesentium voluptatum deleniti atque corrupti quos
-            dolores et quas molestias excepturi sint occaecati cupiditate non
-            provident, similique sunt in culpa qui officia deserunt mollitia
-            animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis
-            est et expedita distinctio. Nam libero tempore, cum soluta nobis est
-            eligendi optio cumque nihil impedit quo minus id quod maxime placeat
-            facere possimus, omnis voluptas assumenda est, omnis dolor
-            repellendus. Temporibus autem quibusdam et aut officiis debitis aut
-            rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint
-            et molestiae non recusandae. Itaque earum rerum hic tenetur a
-            sapiente delectus, ut aut reiciendis voluptatibus maiores alias
-            consequatur aut perferendis doloribus asperiores repellat.
-          </p>
+          <Scene duration={"100%"} triggerHook={0.2} pin={true}>
+            <p className="text-center mt-2 mb-3 mx-auto my-auto">
+              At vero eos et accusamus et iusto odio dignissimos ducimus qui
+              blanditiis praesentium voluptatum deleniti atque corrupti quos
+              dolores et quas molestias excepturi sint occaecati cupiditate non
+              provident, similique sunt in culpa qui officia deserunt mollitia
+              animi, id est laborum et dolorum fuga. Et harum quidem rerum
+              facilis est et expedita distinctio. Nam libero tempore, cum soluta
+              nobis est eligendi optio cumque nihil impedit quo minus id quod
+              maxime placeat facere possimus, omnis voluptas assumenda est,
+              omnis dolor repellendus. Temporibus autem quibusdam et aut
+              officiis debitis aut rerum necessitatibus saepe eveniet ut et
+              voluptates repudiandae sint et molestiae non recusandae. Itaque
+              earum rerum hic tenetur a sapiente delectus, ut aut reiciendis
+              voluptatibus maiores alias consequatur aut perferendis doloribus
+              asperiores repellat.
+            </p>
           </Scene>
-          <Scene
-       duration={1000}
-       pin={true}
-       triggerHook={0.05}
-          >
+          <Scene duration={1000} pin={true} triggerHook={0.05}>
             <div>
-          <h2 className="title text-center">Women by Men and Women</h2>
-          <canvas className ="d-block my-auto mx-auto" id="canvas3" width="900" height="600"></canvas>
-          </div>
+              <h2 className="title text-center">Women by Men and Women</h2>
+              <canvas
+                className="d-block my-auto mx-auto"
+                id="canvas3"
+                width="900"
+                height="600"
+              ></canvas>
+            </div>
           </Scene>
           <br />
-          <Scene
-    duration={'100%'} triggerHook={.20} pin={true}
-          >
-          <p className ="text-center mx-auto my-auto">
-            At vero eos et accusamus et iusto odio dignissimos ducimus qui
-            blanditiis praesentium voluptatum deleniti atque corrupti quos
-            dolores et quas molestias excepturi sint occaecati cupiditate non
-            provident, similique sunt in culpa qui officia deserunt mollitia
-            animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis
-            est et expedita distinctio. Nam libero tempore, cum soluta nobis est
-            eligendi optio cumque nihil impedit quo minus id quod maxime placeat
-            facere possimus, omnis voluptas assumenda est, omnis dolor
-            repellendus. Temporibus autem quibusdam et aut officiis debitis aut
-            rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint
-            et molestiae non recusandae. Itaque earum rerum hic tenetur a
-            sapiente delectus, ut aut reiciendis voluptatibus maiores alias
-            consequatur aut perferendis doloribus asperiores repellat.
-          </p>
+          <Scene duration={"100%"} triggerHook={0.2} pin={true}>
+            <p className="text-center mx-auto my-auto">
+              At vero eos et accusamus et iusto odio dignissimos ducimus qui
+              blanditiis praesentium voluptatum deleniti atque corrupti quos
+              dolores et quas molestias excepturi sint occaecati cupiditate non
+              provident, similique sunt in culpa qui officia deserunt mollitia
+              animi, id est laborum et dolorum fuga. Et harum quidem rerum
+              facilis est et expedita distinctio. Nam libero tempore, cum soluta
+              nobis est eligendi optio cumque nihil impedit quo minus id quod
+              maxime placeat facere possimus, omnis voluptas assumenda est,
+              omnis dolor repellendus. Temporibus autem quibusdam et aut
+              officiis debitis aut rerum necessitatibus saepe eveniet ut et
+              voluptates repudiandae sint et molestiae non recusandae. Itaque
+              earum rerum hic tenetur a sapiente delectus, ut aut reiciendis
+              voluptatibus maiores alias consequatur aut perferendis doloribus
+              asperiores repellat.
+            </p>
           </Scene>
-          <Scene
-       duration={1000}
-       pin={true}
-       triggerHook={0.05}
-          >
+          <Scene duration={1000} pin={true} triggerHook={0.05}>
             <div>
-          <h2 className="title text-center">American Art hightlighted at the Met</h2>
-          <canvas className = "d-block my-auto mx-auto" id="canvas4" width="900" height="600"></canvas>
-          </div>
+              <h2 className="title text-center">
+                American Art hightlighted at the Met
+              </h2>
+              <canvas
+                className="d-block my-auto mx-auto"
+                id="canvas4"
+                width="900"
+                height="600"
+              ></canvas>
+            </div>
           </Scene>
           <br />
-          <Scene
-     duration={'100%'} triggerHook={.20} pin={true}
-          >
-          <p className ="text-center mx-auto my-auto">
-            At vero eos et accusamus et iusto odio dignissimos ducimus qui
-            blanditiis praesentium voluptatum deleniti atque corrupti quos
-            dolores et quas molestias excepturi sint occaecati cupiditate non
-            provident, similique sunt in culpa qui officia deserunt mollitia
-            animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis
-            est et expedita distinctio. Nam libero tempore, cum soluta nobis est
-            eligendi optio cumque nihil impedit quo minus id quod maxime placeat
-            facere possimus, omnis voluptas assumenda est, omnis dolor
-            repellendus. Temporibus autem quibusdam et aut officiis debitis aut
-            rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint
-            et molestiae non recusandae. Itaque earum rerum hic tenetur a
-            sapiente delectus, ut aut reiciendis voluptatibus maiores alias
-            consequatur aut perferendis doloribus asperiores repellat.
-          </p>
+          <Scene duration={"100%"} triggerHook={0.2} pin={true}>
+            <p className="text-center mx-auto my-auto">
+              At vero eos et accusamus et iusto odio dignissimos ducimus qui
+              blanditiis praesentium voluptatum deleniti atque corrupti quos
+              dolores et quas molestias excepturi sint occaecati cupiditate non
+              provident, similique sunt in culpa qui officia deserunt mollitia
+              animi, id est laborum et dolorum fuga. Et harum quidem rerum
+              facilis est et expedita distinctio. Nam libero tempore, cum soluta
+              nobis est eligendi optio cumque nihil impedit quo minus id quod
+              maxime placeat facere possimus, omnis voluptas assumenda est,
+              omnis dolor repellendus. Temporibus autem quibusdam et aut
+              officiis debitis aut rerum necessitatibus saepe eveniet ut et
+              voluptates repudiandae sint et molestiae non recusandae. Itaque
+              earum rerum hic tenetur a sapiente delectus, ut aut reiciendis
+              voluptatibus maiores alias consequatur aut perferendis doloribus
+              asperiores repellat.
+            </p>
           </Scene>
-          <Scene
-       duration={1000}
-       pin={true}
-       triggerHook={0.05}
-          >
+          <Scene duration={1000} pin={true} triggerHook={0.05}>
             <div>
-          <h2 className="title text-center">
-            Highlighted art from Underepresented Countries
-          </h2>
-          <canvas className = "d-block my-auto mx-auto" id="canvas5" width="900" height="600"></canvas>
-          </div>
+              <h2 className="title text-center">
+                Highlighted art from Underepresented Countries
+              </h2>
+              <canvas
+                className="d-block my-auto mx-auto"
+                id="canvas5"
+                width="900"
+                height="600"
+              ></canvas>
+            </div>
           </Scene>
           <br />
-          <Scene
-    duration={'100%'} triggerHook={.20} pin={true}
-          >
-          <p className ="text-center mx-auto my-auto">
-            At vero eos et accusamus et iusto odio dignissimos ducimus qui
-            blanditiis praesentium voluptatum deleniti atque corrupti quos
-            dolores et quas molestias excepturi sint occaecati cupiditate non
-            provident, similique sunt in culpa qui officia deserunt mollitia
-            animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis
-            est et expedita distinctio. Nam libero tempore, cum soluta nobis est
-            eligendi optio cumque nihil impedit quo minus id quod maxime placeat
-            facere possimus, omnis voluptas assumenda est, omnis dolor
-            repellendus. Temporibus autem quibusdam et aut officiis debitis aut
-            rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint
-            et molestiae non recusandae. Itaque earum rerum hic tenetur a
-            sapiente delectus, ut aut reiciendis voluptatibus maiores alias
-            consequatur aut perferendis doloribus asperiores repellat.
-          </p>
+          <Scene duration={"100%"} triggerHook={0.2} pin={true}>
+            <p className="text-center mx-auto my-auto">
+              At vero eos et accusamus et iusto odio dignissimos ducimus qui
+              blanditiis praesentium voluptatum deleniti atque corrupti quos
+              dolores et quas molestias excepturi sint occaecati cupiditate non
+              provident, similique sunt in culpa qui officia deserunt mollitia
+              animi, id est laborum et dolorum fuga. Et harum quidem rerum
+              facilis est et expedita distinctio. Nam libero tempore, cum soluta
+              nobis est eligendi optio cumque nihil impedit quo minus id quod
+              maxime placeat facere possimus, omnis voluptas assumenda est,
+              omnis dolor repellendus. Temporibus autem quibusdam et aut
+              officiis debitis aut rerum necessitatibus saepe eveniet ut et
+              voluptates repudiandae sint et molestiae non recusandae. Itaque
+              earum rerum hic tenetur a sapiente delectus, ut aut reiciendis
+              voluptatibus maiores alias consequatur aut perferendis doloribus
+              asperiores repellat.
+            </p>
           </Scene>
-          <Scene
-       duration={1000}
-       pin={true}
-       triggerHook={0.05}
-          >
+          <Scene duration={1000} pin={true} triggerHook={0.05}>
             <div>
-          <h2 className="title text-center">Highlighted Artwork Combined</h2>
-          <canvas className = "d-block my-auto mx-auto" id="canvas6" width="900" height="600"></canvas>
-          </div>
+              <h2 className="title text-center">
+                Highlighted Artwork Combined
+              </h2>
+              <canvas
+                className="d-block my-auto mx-auto"
+                id="canvas6"
+                width="900"
+                height="600"
+              ></canvas>
+            </div>
           </Scene>
           <br />
         </Controller>
-        <div className="mx-auto mb-4 text-center" >
-        <a onClick={() => this.scrollToTop()}>Top</a>
+        <div className="mx-auto mb-4 text-center">
+          <a onClick={() => this.scrollToTop()}>Top</a>
         </div>
       </div>
     );
