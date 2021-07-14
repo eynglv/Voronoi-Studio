@@ -69,7 +69,7 @@ export default () => {
 			let artDataHolder = await getVoronoi(route);
 			if (femaleArtist)
 				artDataHolder = artDataHolder.filter(
-					(val) => val.artistGender === "female"
+					(val) => val.artistGender === "Female"
 				);
 			if (!artDataHolder.length)
 				setErrorMessage("No results! Please change your search query!");
