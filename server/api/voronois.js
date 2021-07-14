@@ -8,9 +8,12 @@ module.exports = router;
 
 //get routes
 
-router.get("/:voronoiId", async (req, res, next) => {
+router.get("/:voronoiTitle", async (req, res, next) => {
 	try {
-		const voronoi = await Voronoi.findByPk(req.params.voronoiId);
+		const voronoi = await Voronoi.findOne({
+			where:
+			{title: req.params.voronoiTitle}
+		});
 		if (voronoi){
       const art = await voronoi.getArtPieces()
       res.json(art);

@@ -58,14 +58,14 @@ export default () => {
 
 	useEffect(() => {
 		const fetchData = async () => {
+			setErrorMessage("");
 			const route = `https://collectionapi.metmuseum.org/public/collection/v1/search?hasImages=true&medium=Paintings${
 				highlight ? "&isHighlight=true" : ""
 			}${tags ? "&tags=true" : ""}${
 				artistOrCulture ? "&artistOrCulture=true" : ""
 			}${departmentId ? `&departmentId=${departmentId}` : ""}${
-				location ? `geoLocation=${location.replaceAll(" ", "|")}` : ""
-			}q=${query.replaceAll(" ", "%20")}`;
-
+				location ? `&geoLocation=${location.replaceAll(" ", "|")}` : ""
+			}&q=${query.replaceAll(" ", "%20")}`;
 			let artDataHolder = await getVoronoi(route);
 			if (femaleArtist)
 				artDataHolder = artDataHolder.filter(
@@ -83,7 +83,7 @@ export default () => {
 	useEffect(() => {
 		try {
 			console.log("hello!!!!!");
-			if (artData.length) {
+			if (artData.length > 1) {
 				//only render a canvas if we have artData. Otherwise, we will just have a black box
 				const chartRender = chart.render(
 					"#user-generated",
@@ -95,6 +95,8 @@ export default () => {
 				const interval = setInterval(() => chartRender.next(), 10);
 				setErrorMessage("");
 				return () => clearInterval(interval);
+			} else if (artData.length === 1) {
+				setErrorMessage("Only one result, please relax search terms");
 			}
 		} catch (err) {
 			console.error(err);
@@ -199,10 +201,6 @@ export default () => {
 							displayName: "Ancient Near Eastern Art",
 						},
 						{
-							departmentId: 4,
-							displayName: "Arms and Armor",
-						},
-						{
 							departmentId: 5,
 							displayName:
 								"Arts of Africa, Oceania, and the Americas",
@@ -216,25 +214,12 @@ export default () => {
 							displayName: "The Cloisters",
 						},
 						{
-							departmentId: 8,
-							displayName: "The Costume Institute",
-						},
-						{
-							departmentId: 9,
-							displayName: "Drawings and Prints",
-						},
-						{
 							departmentId: 10,
 							displayName: "Egyptian Art",
 						},
 						{
 							departmentId: 11,
 							displayName: "European Paintings",
-						},
-						{
-							departmentId: 12,
-							displayName:
-								"European Sculpture and Decorative Arts",
 						},
 						{
 							departmentId: 13,
@@ -255,14 +240,6 @@ export default () => {
 						{
 							departmentId: 17,
 							displayName: "Medieval Art",
-						},
-						{
-							departmentId: 18,
-							displayName: "Musical Instruments",
-						},
-						{
-							departmentId: 19,
-							displayName: "Photographs",
 						},
 						{
 							departmentId: 21,

@@ -1,26 +1,39 @@
 import React from "react";
-import { connect } from "react-redux";
-import { Link } from "react-router-dom";
-import { logout } from "../store";
 
 class Navbar extends React.Component {
-constructor() {
-  super()
-  
-}
+  constructor() {
+    super();
+  }
   render() {
     return (
-      <nav id="nav" className="nav-flex-column">
-      <a href="main" className="links-text">Home</a>
-      <a href="womenbywomen" className="links-text">Women by Women</a>
-      <a href="womenbymen" className="links-text">Women by Men</a>
-      <a href="highlighted-american" className="links-text">American Highlights</a>
-      <a href="highlighted-underrepresented" className="links-text">Unusual Highlights</a>
-      <a href="featured-pieces" className="links-text">Featured Art pieces</a>
-      <a href="voronoi-form" className="links-text">Create your own voronoi</a>
-      </ nav>
-  )
-    }
+      <nav
+        id="nav"
+        className="top-0 nav justify-content-around mx-auto d-flex flex-column position-fixed"
+      >
+        <a href="main" className="mx-auto links-text">
+          Home
+        </a>
+        <a href="womenbywomen" className="mx-auto links-text">
+          Women by Women
+        </a>
+        <a href="womenbymen" className="mx-auto links-text">
+          Women by Men
+        </a>
+        <a href="highlighted-american" className="mx-auto links-text">
+          American Highlights
+        </a>
+        <a href="highlighted-underrepresented" className="mx-auto links-text">
+          Unusual Highlights
+        </a>
+        <a href="featured-pieces" className="mx-auto links-text">
+          Featured Art Pieces
+        </a>
+        <a href="voronoi-form" className="mx-auto links-text">
+          Create Your Own Voronoi
+        </a>
+      </nav>
+    );
+  }
 }
 
 export default Navbar;
