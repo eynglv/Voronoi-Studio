@@ -5,8 +5,7 @@ import App from "./App";
 import FeaturedPieces from "./components/FeaturedPieces";
 import Home from "./components/Home";
 import Navbar from "./components/Navbar";
-import WomenByWomen from "./components/WomenByWomen";
-import WomenByMen from "./components/WomenByMen";
+
 // import FeaturedPieces from './components/FeaturedPieces'
 import VoronoiForm from "./components/VoronoiForm";
 import SingleVoronoi from "./components/SingleVoronoi";
@@ -24,28 +23,40 @@ class Routes extends Component {
 					exact
 					path="/womenbywomen"
 					render={(props) => (
-						<SingleVoronoi voronoiId="Women By Women" />
+						<SingleVoronoi
+							voronoiId="Women By Women"
+							curator="Josephine Bartholoma"
+						/>
 					)}
 				/>
 				<Route
 					exact
 					path="/womenbymen"
 					render={(props) => (
-						<SingleVoronoi voronoiId="Women By Men" />
+						<SingleVoronoi
+							voronoiId="Women By Men"
+							curator="Phoebe Torchia"
+						/>
 					)}
 				/>
 				<Route
 					exact
 					path="/highlighted-american"
 					render={(props) => (
-						<SingleVoronoi voronoiId="American Art" />
+						<SingleVoronoi
+							voronoiId="American Art"
+							curator="Elvy Yang"
+						/>
 					)}
 				/>
 				<Route
 					exact
 					path="/highlighted-underrepresented"
 					render={(props) => (
-						<SingleVoronoi voronoiId="Non-Western Art" />
+						<SingleVoronoi
+							voronoiId="Non-Western Art"
+							curator="Adrienne Scutellaro"
+						/>
 					)}
 				/>
 				<Route exact path="/voronoi-form" component={VoronoiForm} />
