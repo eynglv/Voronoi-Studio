@@ -43,7 +43,7 @@ class Routes extends Component {
 				/>
 				<Route
 					exact
-					path="/nonwesternart"
+					path="/highlighted-underrepresented"
 					render={(props) => (
 						<SingleVoronoi voronoiId="Non-Western Art" />
 					)}
