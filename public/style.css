@@ -193,7 +193,3 @@ p {
 .scrollToTop {
   cursor: pointer;
 }
-
-#blur {
-  filter: (blur(2px));
-}
