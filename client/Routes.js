@@ -1,18 +1,22 @@
-import React, {Component, Fragment} from 'react'
-import {connect} from 'react-redux'
-import {withRouter, Route, Switch, Redirect} from 'react-router-dom'
-import App from './App'
-import FeaturedPieces from './components/FeaturedPieces'
-import Home from './components/Home'
 
-import WomenByWomen from './components/WomenByWomen'
-import WomenByMen from './components/WomenByMen'
-import VoronoiForm from './components/VoronoiForm'
+import React, { Component, Fragment } from "react";
+import { connect } from "react-redux";
+import { withRouter, Route, Switch, Redirect } from "react-router-dom";
+import App from "./App";
+import FeaturedPieces from "./components/FeaturedPieces";
+import Home from "./components/Home";
+import Navbar from "./components/Navbar";
+import WomenByWomen from "./components/WomenByWomen";
+import WomenByMen from "./components/WomenByMen";
+// import FeaturedPieces from './components/FeaturedPieces'
+import VoronoiForm from "./components/VoronoiForm";
+
 
 /**
  * COMPONENT
  */
 class Routes extends Component {
+
 
   render() {
     return (
@@ -26,6 +30,7 @@ class Routes extends Component {
       </div>
     )
   }
+
 }
 
-export default withRouter(connect(null)(Routes))
+export default withRouter(connect(null)(Routes));
