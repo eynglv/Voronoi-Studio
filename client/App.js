@@ -92,10 +92,12 @@ class App extends React.Component {
     return (
       <div>
         <Navbar />
+        <div id="modal"></div>
         <Controller>
           <Scene duration={"100%"} triggerHook={0.05} pin={true}>
-          <div>
-          <div id="modal"></div>
+          {(progress) => (
+            <div className="sticky">
+            <Timeline totalProgress={progress} paused>    
               <h2 className="title text-center">Women by Women</h2>
               <canvas
                 className="d-block my-auto mx-auto"
@@ -103,7 +105,20 @@ class App extends React.Component {
                 width="900"
                 height="600"
               ></canvas>
-            </div>
+               
+            <Timeline target = {
+             <h1 className="test">THIS IS A FUN OR IMPACTFUL FACT</h1>}
+             >
+             <Tween from={{ opacity: 0 }} to={{ opacity: 1 }} />
+             <Tween 
+             
+             from={{ x: '10%', top: '60%' }}
+              to={{ x: '60%', top: '10%' }}
+             />
+             </Timeline>
+             </Timeline>
+             </div>
+          )}
           </Scene>
           <Scene duration={"100%"} triggerHook={0.2} pin={true}>
             <Timeline
@@ -127,19 +142,12 @@ class App extends React.Component {
                 </p>
               }
             >
+              
               <Tween from={{ opacity: 0 }} to={{ opacity: 1 }} />
               {/* <Tween
                     to={{ x: '110%' }}
                   /> */}
-            </Timeline>
-            {/* <Timeline target = {
-             <p>hi</p>}
-             >
-             <Tween 
-             from = {{ x:'0%'}}
-             to = {{ x: '100%'}}
-             />
-             </Timeline> */}
+              </Timeline>
           </Scene>
           <Scene duration={1000} pin={true} triggerHook={0.05}>
             <div>
