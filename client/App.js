@@ -2,13 +2,11 @@ import React from "react";
 import Navbar from "./components/Navbar";
 import womenByWomen from "../script/artdata/womenByWomen";
 import womenByMen from "../script/artdata/femaleNudesByMen";
-
 import chart from "./components/pulsate";
 import { Controller, Scene } from "react-scrollmagic";
 import { Tween, Timeline } from "react-gsap";
 import { animateScroll as scroll } from "react-scroll";
 import axios from "axios";
-import VoronoiForm from "./components/VoronoiForm";
 
 class App extends React.Component {
   constructor() {

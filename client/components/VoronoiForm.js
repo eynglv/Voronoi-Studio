@@ -99,11 +99,12 @@ export default () => {
   }, [artData, numberOfCells]);
 
   return (
-    <div className="mx-auto row">
-      <h2 className="display-5 text-center mt-5">Create Your Own Voronoi</h2>
+	<div className="d-flex min-vh-100 flex-row">
+    <div className="mx-auto d-flex justify-content-end flex-column">
+      <h2 className="display-6 text-center mt-5">Create Your Own Voronoi</h2>
       <form
         id="new-voronoi-form"
-        className="mx-auto w-50"
+        className="mx-auto ms-3 d-flex flex-column flex-grow-1 justify-content-around"
         onSubmit={(evt) => {
           evt.preventDefault();
           setSearch({
@@ -117,8 +118,8 @@ export default () => {
           });
         }}
       >
-		<div className="row row-cols-auto">
-        <label className="text-center mx-auto form-label" htmlFor="highlight">
+
+        <span><label className="text-center mx-auto form-label" htmlFor="highlight">
           Show only highlighted works
         </label>
         <input
@@ -128,8 +129,8 @@ export default () => {
           value={highlight}
           onChange={() => setHighlight(!highlight)}
           checked={highlight}
-        />
-        <label className="form-label mx-auto" htmlFor="femaleArtist">
+        /></span>
+		<span>        <label className="form-label mx-auto" htmlFor="femaleArtist">
           Show only works by female artists
         </label>
         <input
@@ -138,9 +139,10 @@ export default () => {
           value={femaleArtist}
           onChange={() => setFemaleArtist(!femaleArtist)}
           checked={femaleArtist}
-        />
-		</div>
-        <div className="row row-cols"
+        /></span>
+
+
+        <div className=""
           onChange={() => {
             setArtistOrCulture(!artistOrCulture);
             setTags(!tags);
@@ -167,11 +169,12 @@ export default () => {
             </span>
           </p>
         </div>
-        <span className="row row-cols-auto">
-          <label htmlFor="department">Filter to Department:</label>
+        <span className="d-flex justify-content-end">
+          <label className="align-self-center me-3" htmlFor="department">Filter to Department</label>
           <select
             name="department"
             id="department"
+			className="w-50"
             value={`${departmentId}`}
             onChange={(evt) => setDepartmentId(parseInt(evt.target.value, 10))}
           >
@@ -236,29 +239,32 @@ export default () => {
             ))}
           </select>
         </span>
-		<br/>
-		<div className="row row-cols-auto"><label htmlFor="location">Location</label>
+		<div className="d-flex justify-content-end"><label className="me-3 align-self-center" htmlFor="location">Location</label>
         <input
+			className="w-50"
           type="text"
           id="location"
           value={location}
           onChange={(evt) => setLocation(evt.target.value)}
           placeholder="any"
         /></div>
-		<div className="row row-cols-auto">
-		<label htmlFor="query">Search Term</label>
+		<div className="d-flex justify-content-end">
+		<label className="align-self-center me-3" htmlFor="query">Search Term</label>
         <input
           type="text"
+		  className="w-50"
           id="query"
           value={query}
           onChange={(evt) => setQuery(evt.target.value)}
           required
         />
 		</div>
-        <label htmlFor="cell-count">
-          Number of Cells (too many can impact performance)
+		<div  className="d-flex justify-content-end">
+		<label className="align-self-center me-3" htmlFor="cell-count">
+          Number of Cells
         </label>
         <input
+		className="w-50"
           type="number"
           id="cell-count"
           value={numberOfCells}
@@ -270,17 +276,18 @@ export default () => {
             setNumberOfCells(cellCount);
           }}
         />
+		</div>
+		<p className="align-self-end">(too many can impact performance)</p>
         <button type="submit">Create Voronoi!</button>
       </form>
       {errorMessage ? <p>{errorMessage}</p> : ""}
-      <canvas
+	  </div>
+	  <canvas
         id="user-generated"
-        className="mt-5 mb-5"
-        height="600"
-        width="900"
+        className="flex-grow-1 mx-auto"
+        height="600"  width="900"
       >
-        This is your voronoi!
       </canvas>
-    </div>
+	  </div>
   );
 };
