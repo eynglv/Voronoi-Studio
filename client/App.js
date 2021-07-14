@@ -94,8 +94,8 @@ class App extends React.Component {
         <Navbar />
         <Controller>
           <Scene duration={"100%"} triggerHook={0.05} pin={true}>
-          <div>
-          <div id="modal"></div>
+            <div>
+              <div id="modal"></div>
               <h2 className="title text-center">Women by Women</h2>
               <canvas
                 className="d-block my-auto mx-auto"
@@ -280,7 +280,9 @@ class App extends React.Component {
           <br />
         </Controller>
         <div className="mx-auto mb-5 text-center">
-          <a onClick={() => this.scrollToTop()}>Top</a>
+          <a onClick={() => this.scrollToTop()} className="scrollToTop h4">
+            Top
+          </a>
         </div>
       </div>
     );
