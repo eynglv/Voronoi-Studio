@@ -4,14 +4,6 @@
   font-family: "Poppins", sans-serif;
 }
 
-.background {
-  background-image: none;
-}
-
-/* .blur {
-  backdrop-filter: blur(8px);
-} */
-
 #nav {
   background-color: #a63d40;
   height: 100%;
@@ -102,17 +94,44 @@ canvas {
 
 #modal {
   z-index: 10;
-  max-height: 500px;
+  /* max-height: 500px; */
   max-width: 70%;
   margin: auto;
   position: fixed;
-  top: 40%;
+  top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
 #modal.open {
-  padding: 60px;
+  height: 500px;
+  width: 50%;
+}
+
+.modalContent {
+  width: 80%;
+  height: 100%;
+  margin: auto;
+  position: relative;
+  /* margin-top: 20px; */
+  top: 10%;
+}
+
+.modalImage {
+  margin: auto;
+  width: 100%;
+}
+
+#modalTitle {
+  width: 100%;
+  position: absolute;
+  bottom: 40px;
+}
+
+#modalAuthor {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
 }
 
 .open {

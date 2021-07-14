@@ -14,21 +14,30 @@ const renderModal = (selector, artPiece, context) => {
       enter
         .append("div")
         .attr("class", "modalContent")
+        // .append("div")
+        // .attr("class", "modalImage")
+        // .style("background-image", (data) => {
+        //   return `url("${data.primaryImageSmall}")`;
+        // });
         .append("img")
-        .attr("class", "mx-auto")
-        .attr("id", "clickedImage")
+        .attr("class", "modalImage")
         .attr("src", (data) => {
           return data.primaryImageSmall;
-        });
+        })
+        .attr("height", "70%")
+        .attr("width", "80%");
+
       enter
         .append("h3")
         .attr("class", "text-center")
+        .attr("id", "modalTitle")
         .text((data) => {
           return data.title;
         });
       enter
         .append("p")
         .attr("class", "text-center")
+        .attr("id", "modalAuthor")
         .text((data) => {
           return `- ${data.artistDisplayName} -`;
         });
