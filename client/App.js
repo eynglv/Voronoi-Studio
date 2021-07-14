@@ -179,6 +179,8 @@ class App extends React.Component {
           )}
           </Scene>
           <Scene duration={"100%"} triggerHook={0.2} pin={true}>
+          <Timeline
+              target={
             <p className="text-center mt-2 mb-3 mx-auto my-auto">
               At vero eos et accusamus et iusto odio dignissimos ducimus qui
               blanditiis praesentium voluptatum deleniti atque corrupti quos
@@ -195,20 +197,42 @@ class App extends React.Component {
               voluptatibus maiores alias consequatur aut perferendis doloribus
               asperiores repellat.
             </p>
+              }
+              >
+                <Tween from={{ opacity: 0 }} to={{ opacity: 1 }} />
+              </Timeline>
           </Scene>
+           {/* CANVAS3 */}
           <Scene duration={1000} pin={true} triggerHook={0.05}>
+          {(progress) => (
             <div>
-              <h2 className="title text-center">Women by Men and Women</h2>
-              <canvas
+               <Timeline totalProgress={progress} paused>  
+                <h2 className="title text-center">Women by Men and Women</h2>
+                <canvas
                 className="d-block my-auto mx-auto"
                 id="canvas3"
                 width="900"
                 height="600"
-              ></canvas>
+                ></canvas>
+                <Timeline target = { <h1 className="animate animation3">HERE THEY ARE ALL TOGETHER</h1>}>
+
+                  {/* <Tween
+                  from={{ opacity: -1}} to={{ opacity: 1}} /> */}
+
+                  <Tween from={{ top: '50%', x: '200%'}} to={{ x: '-400%'}} />
+
+                  {/* <Tween
+                  from={{ opacity: 1}} to={{ opacity: -1}} /> */}
+
+                </Timeline>
+              </Timeline>
             </div>
+          )}
           </Scene>
           <br />
           <Scene duration={"100%"} triggerHook={0.2} pin={true}>
+          <Timeline
+              target={
             <p className="text-center mx-auto my-auto">
               At vero eos et accusamus et iusto odio dignissimos ducimus qui
               blanditiis praesentium voluptatum deleniti atque corrupti quos
@@ -225,22 +249,46 @@ class App extends React.Component {
               voluptatibus maiores alias consequatur aut perferendis doloribus
               asperiores repellat.
             </p>
+            }
+            >
+              
+              <Tween from={{ opacity: 0 }} to={{ opacity: 1 }} />
+             </Timeline> 
           </Scene>
+          {/* CANVAS4 */}
           <Scene duration={1000} pin={true} triggerHook={0.05}>
+          {(progress) => (
             <div>
+              <Timeline totalProgress={progress} paused>   
               <h2 className="title text-center">
-                American Art hightlighted at the Met
+                American Art Hightlighted at the Met
               </h2>
               <canvas
                 className="d-block my-auto mx-auto"
                 id="canvas4"
                 width="900"
                 height="600"
-              ></canvas>
-            </div>
+                >
+              </canvas>
+                <Timeline target = { <h1 className="animate animation4">THIS IS A FUN OR IMPACTFUL FACT</h1>}>
+
+                    <Tween
+                    from={{ opacity: -1}} to={{ opacity: 1}} />
+
+                    <Tween from={{ top: '15%'}} to={{ top: '90%' }} />
+
+                    <Tween
+                    from={{ opacity: 1}} to={{ opacity: -1}} />
+
+                  </Timeline>
+                </Timeline>
+                </div>
+                )}
           </Scene>
           <br />
           <Scene duration={"100%"} triggerHook={0.2} pin={true}>
+          <Timeline
+              target={
             <p className="text-center mx-auto my-auto">
               At vero eos et accusamus et iusto odio dignissimos ducimus qui
               blanditiis praesentium voluptatum deleniti atque corrupti quos
@@ -257,22 +305,45 @@ class App extends React.Component {
               voluptatibus maiores alias consequatur aut perferendis doloribus
               asperiores repellat.
             </p>
+            }
+            >
+              
+              <Tween from={{ opacity: 0 }} to={{ opacity: 1 }} />
+              </Timeline>
           </Scene>
+           {/* CANVAS5 */}
           <Scene duration={1000} pin={true} triggerHook={0.05}>
+          {(progress) => (
             <div>
-              <h2 className="title text-center">
-                Highlighted art from Underepresented Countries
-              </h2>
-              <canvas
-                className="d-block my-auto mx-auto"
-                id="canvas5"
-                width="900"
-                height="600"
-              ></canvas>
+               <Timeline totalProgress={progress} paused>  
+                  <h2 className="title text-center">
+                Highlighted Art from Underepresented Countries
+                  </h2>
+                  <canvas
+                    className="d-block my-auto mx-auto"
+                    id="canvas5"
+                    width="900"
+                    height="600"
+                  ></canvas>
+                    <Timeline target = { <h1 className="animate animation5">LOOK AT THESE UNDERREPRESENTED ARTISTS</h1>}>
+
+                      <Tween
+                      from={{ opacity: -1}} to={{ opacity: 1}} />
+
+                      <Tween from={{ top: '15%', x: '-100%'}} to={{ x: '50%', top: '75%' }} />
+
+                      <Tween
+                      from={{ opacity: 1}} to={{ opacity: -1, x: '200%'}} />
+
+                    </Timeline>
+                </Timeline>
             </div>
+            )}
           </Scene>
           <br />
           <Scene duration={"100%"} triggerHook={0.2} pin={true}>
+          <Timeline
+              target={
             <p className="text-center mx-auto my-auto">
               At vero eos et accusamus et iusto odio dignissimos ducimus qui
               blanditiis praesentium voluptatum deleniti atque corrupti quos
@@ -289,19 +360,31 @@ class App extends React.Component {
               voluptatibus maiores alias consequatur aut perferendis doloribus
               asperiores repellat.
             </p>
+            }
+            >
+              <Tween from={{ opacity: 0 }} to={{ opacity: 1 }} />
+            </Timeline>
           </Scene>
+           {/* CANVAS6 */}
           <Scene duration={1000} pin={true} triggerHook={0.05}>
+          {(progress) => (
             <div>
-              <h2 className="title text-center">
-                Highlighted Artwork Combined
-              </h2>
-              <canvas
-                className="d-block my-auto mx-auto"
-                id="canvas6"
-                width="900"
-                height="600"
-              ></canvas>
+               <Timeline totalProgress={progress} paused>  
+                  <h2 className="title text-center">
+                Highlighted Artwork From Around the World
+                  </h2>
+                  <canvas
+                  className="d-block my-auto mx-auto"
+                  id="canvas6"
+                  width="900"
+                  height="600"
+                  ></canvas>
+                  <Timeline target = { <h1 className="animate animation3">HERE THEY ARE ALL TOGETHER</h1>}>
+                    <Tween from={{ top: '50%', x: '200%'}} to={{ x: '-400%'}} />
+                  </Timeline>
+                </Timeline>
             </div>
+          )}
           </Scene>
           <br />
         </Controller>
