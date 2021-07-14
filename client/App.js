@@ -93,7 +93,9 @@ class App extends React.Component {
       <div>
         <Navbar />
         <Controller>
+
           <Scene duration={"100%"} triggerHook={0.05} pin={true}>
+          <div id="modal"></div>
             <div>
               <h2 className="title text-center">Women by Women</h2>
               <canvas

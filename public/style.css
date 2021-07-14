@@ -27,10 +27,12 @@
 #nav:hover {
   width: 13%;
   padding-left: 0;
+
 }
 
 #nav a {
   text-decoration: none;
+
   font-size: 12px;
   color: #fff8f0;
   background-color: #a63d40;
@@ -43,6 +45,7 @@
   background-color: #a63d40;
 }
 
+
 #nav a:hover {
   color: #ffcab1;
 }
@@ -51,16 +54,10 @@ body {
   font-family: sans-serif;
 }
 
-<<<<<<< HEAD .bi,
 .links-text {
   vertical-align: middle;
 }
 
-.bi {
-  background-color: #a63d40;
-  margin-right: 30px;
-  /* vertical-align: left; */
-}
 
 .footer {
   background-color: #5f7c8c;
@@ -71,6 +68,10 @@ a {
   text-decoration: none;
 }
 
+.footer {
+  background-color: #5f7c8c;
+  height: 150px;
+}
 .names {
   color: #fff8f0;
   background-color: rgba(95, 124, 140, 0.35);
@@ -84,9 +85,52 @@ a {
   font-family: "Spartan", sans-serif;
 }
 
+canvas {
+  display: block;
+  margin: auto;
+}
+
 .title {
   font-size: 50px;
   color: #ffcab1;
+}
+
+
+#modal {
+  z-index: 10;
+  max-height: 500px;
+  max-width: 70%;
+  margin: auto;
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#modal.open {
+  padding: 60px;
+}
+
+.open {
+  display: block;
+  overflow: auto;
+}
+
+.close {
+  display: none;
+}
+
+.closeBtn {
+  cursor: pointer;
+  float: right;
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 5px;
+  margin-right: 10px;
+}
+
+.closeBtn:hover {
+  color: #a63d40;
 }
 
 .image-wrapper {
@@ -109,14 +153,13 @@ a {
   display: flex;
   flex-wrap: wrap;
 }
+
 .gallery-image {
   flex-shrink: 0;
   flex-basis: fit-content;
 }
 
 p {
-  /* text-align: center;
-    margin: auto; */
   font-size: x-large;
   width: 75%;
 }
