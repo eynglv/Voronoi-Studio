@@ -90,7 +90,7 @@ class App extends React.Component {
   }
   render() {
     return (
-      <div>
+      <div id="main">
         <Navbar />
         <Controller>
           <Scene duration={"100%"} triggerHook={0.05} pin={true}>
