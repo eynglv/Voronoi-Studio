@@ -31,7 +31,7 @@ class Routes extends Component {
 					exact
 					path="/womenbymen"
 					render={(props) => (
-						<SingleVoronoi voronoiId="Women by Men" />
+						<SingleVoronoi voronoiId="Women By Men" />
 					)}
 				/>
 				<Route
