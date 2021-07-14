@@ -90,7 +90,7 @@ class App extends React.Component {
   }
   render() {
     return (
-      <div>
+      <div className="background">
         <Navbar />
         <Controller>
           <Scene duration={"100%"} triggerHook={0.05} pin={true}>
@@ -280,7 +280,9 @@ class App extends React.Component {
           <br />
         </Controller>
         <div className="mx-auto mb-4 text-center">
-          <a onClick={() => this.scrollToTop()}>Top</a>
+          <a onClick={() => this.scrollToTop()} className="scrollToTop h4">
+            Top
+          </a>
         </div>
       </div>
     );
