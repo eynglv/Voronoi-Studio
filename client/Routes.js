@@ -26,7 +26,7 @@ class Routes extends Component {
         <Route exact path="/womenbywomen" component={WomenByWomen} />
         <Route exact path="/womenbymen" component={WomenByMen} />
         <Route exact path="/voronoi-form" component={VoronoiForm} />
-        <Route path='/all-art' component={FeaturedPieces} />
+        <Route path='/all' component={FeaturedPieces} />
       </div>
     )
   }
