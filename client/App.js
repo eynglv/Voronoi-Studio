@@ -97,24 +97,29 @@ class App extends React.Component {
           <Scene duration={"100%"} triggerHook={0.05} pin={true}>
           {(progress) => (
             <div className="sticky">
-            <Timeline totalProgress={progress} paused>    
+            <Timeline totalProgress={progress} paused>   
+            
               <h2 className="title text-center">Women by Women</h2>
               <canvas
                 className="d-block my-auto mx-auto"
                 id="canvas1"
                 width="900"
                 height="600"
-              ></canvas>
-               
-            <Timeline target = {
-             <h1 className="test">THIS IS A FUN OR IMPACTFUL FACT</h1>}
-             >
-             <Tween from={{ opacity: 0 }} to={{ opacity: 1 }} />
-             <Tween 
+              >
+              </canvas>
              
-             from={{ x: '10%', top: '60%' }}
-              to={{ x: '60%', top: '10%' }}
-             />
+            <Timeline target = { <h1 className="test">THIS IS A FUN OR IMPACTFUL FACT</h1>}>
+
+            <Tween
+             from={{ opacity: -1}} to={{ opacity: 1}} />
+
+             <Tween from={{ top: '15%'}} to={{ x: '0%', top: '90%' }} />
+
+             <Tween
+             from={{ opacity: 1}} to={{ opacity: -1}} />
+             
+            
+              {/* <Tween /> */}
              </Timeline>
              </Timeline>
              </div>
