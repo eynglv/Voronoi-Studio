@@ -93,6 +93,7 @@ class App extends React.Component {
       <div>
         <Navbar />
         <Controller>
+          <div id="modal"></div>
           <Scene
             duration={1000}
             pin={true}
