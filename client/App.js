@@ -17,10 +17,10 @@ class App extends React.Component {
     this.scrollToTop = this.scrollToTop.bind(this);
   }
   async componentDidMount() {
-    const womenByMen = await this.getVoronoiPieces(2);
-    const womenByWomen = await this.getVoronoiPieces(1);
-    const americanHighlights = await this.getVoronoiPieces(3);
-    const unusualHighlights = await this.getVoronoiPieces(4);
+    const womenByMen = await this.getVoronoiPieces("Women By Men");
+    const womenByWomen = await this.getVoronoiPieces("Women By Women");
+    const americanHighlights = await this.getVoronoiPieces("American Art");
+    const unusualHighlights = await this.getVoronoiPieces("Non-Western Art");
     this.setState({
       womenByMen: womenByMen,
       womenByWomen: womenByWomen,
@@ -30,40 +30,40 @@ class App extends React.Component {
   }
   componentDidUpdate(prevProps, prevState) {
     if (prevState !== this.state) {
-      this.chartRender2 = chart.render(
-        "#canvas2",
-        500,
-        800,
-        this.state.womenByMen
-      );
       this.chartRender1 = chart.render(
         "#canvas1",
-        500,
-        800,
+        600,
+        900,
         this.state.womenByWomen
+      );
+      this.chartRender2 = chart.render(
+        "#canvas2",
+        600,
+        900,
+        this.state.womenByMen
       );
       this.chartRender3 = chart.render(
         "#canvas3",
-        500,
-        800,
+        600,
+        900,
         this.state.womenByWomen.concat(this.state.womenByMen)
       );
       this.chartRender4 = chart.render(
         "#canvas4",
-        500,
-        800,
+        600,
+        900,
         this.state.americanHighlights
       );
       this.chartRender5 = chart.render(
         "#canvas5",
-        500,
-        800,
+        600,
+        900,
         this.state.unusualHighlights
       );
       this.chartRender6 = chart.render(
         "#canvas6",
-        500,
-        960,
+        600,
+        900,
         this.state.americanHighlights.concat(this.state.unusualHighlights)
       );
       this.interval = setInterval(() => {
@@ -84,8 +84,8 @@ class App extends React.Component {
     clearInterval(this.interval);
   }
 
-  async getVoronoiPieces(id) {
-    const art = await axios.get(`api/voronois/${id}`);
+  async getVoronoiPieces(title) {
+    const art = await axios.get(`api/voronois/${title}`);
     return art.data;
   }
   render() {
@@ -94,17 +94,17 @@ class App extends React.Component {
         <Navbar />
         <Controller>
           <Scene
-            duration={1000}
-            pin={true}
-            // enabled={true}
-            offset={210}
+       duration={'100%'} triggerHook={0.05} pin={true}
           >
             <div>
-              <h2 className="title">Women by Women</h2>
-              <canvas id="canvas1" width="960" height="500"></canvas>
-            </div>
-          </Scene>
-          <p>
+              <h2 className="title text-center">Women by Women</h2>
+              <canvas className= "d-block my-auto mx-auto" id="canvas1" width="900" height="600"></canvas>
+              </div>
+              </Scene>
+              <Scene
+    duration={'100%'} triggerHook={.20} pin={true}
+          >  
+           <Timeline target = {   <p className ="text-center mx-auto my-auto">
             Sed ut perspiciatis unde omnis iste natus error sit voluptatem
             accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
             quae ab illo inventore veritatis et quasi architecto beatae vitae
@@ -120,20 +120,38 @@ class App extends React.Component {
             consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla
             pariatur?
           </p>
-
+           }>
+             <Tween
+                    from={{ opacity: 0 }}
+                    to={{ opacity: 1 }}
+                  />
+                  {/* <Tween
+                    to={{ x: '110%' }}
+                  /> */}
+             </Timeline> 
+             {/* <Timeline target = {
+             <p>hi</p>}
+             >
+             <Tween 
+             from = {{ x:'0%'}}
+             to = {{ x: '100%'}}
+             />
+             </Timeline> */}
+            </Scene>
           <Scene
             duration={1000}
             pin={true}
-            // enabled={true}
-            offset={210}
+            triggerHook={0.05}
           >
             <div>
-              <h2 className="title">Women by Men</h2>
-              <canvas id="canvas2" width="960" height="500"></canvas>
+              <h2 className="title text-center">Women by Men</h2>
+              <canvas className = "d-block my-auto mx-auto" id="canvas2" width="900" height="600"></canvas>
             </div>
           </Scene>
-
-          <p>
+          <Scene
+            duration={'100%'} triggerHook={.20} pin={true}
+          >
+          <p className ="text-center mx-auto my-auto">
             At vero eos et accusamus et iusto odio dignissimos ducimus qui
             blanditiis praesentium voluptatum deleniti atque corrupti quos
             dolores et quas molestias excepturi sint occaecati cupiditate non
@@ -148,11 +166,22 @@ class App extends React.Component {
             sapiente delectus, ut aut reiciendis voluptatibus maiores alias
             consequatur aut perferendis doloribus asperiores repellat.
           </p>
-
-          <h2 className="title">Women by Men and Women</h2>
-          <canvas id="canvas3" width="960" height="500"></canvas>
+          </Scene>
+          <Scene
+       duration={1000}
+       pin={true}
+       triggerHook={0.05}
+          >
+            <div>
+          <h2 className="title text-center">Women by Men and Women</h2>
+          <canvas className ="d-block my-auto mx-auto" id="canvas3" width="900" height="600"></canvas>
+          </div>
+          </Scene>
           <br />
-          <p>
+          <Scene
+    duration={'100%'} triggerHook={.20} pin={true}
+          >
+          <p className ="text-center mx-auto my-auto">
             At vero eos et accusamus et iusto odio dignissimos ducimus qui
             blanditiis praesentium voluptatum deleniti atque corrupti quos
             dolores et quas molestias excepturi sint occaecati cupiditate non
@@ -167,10 +196,22 @@ class App extends React.Component {
             sapiente delectus, ut aut reiciendis voluptatibus maiores alias
             consequatur aut perferendis doloribus asperiores repellat.
           </p>
-          <h2 className="title">American Art hightlighted at the Met</h2>
-          <canvas id="canvas4" width="960" height="500"></canvas>
+          </Scene>
+          <Scene
+       duration={1000}
+       pin={true}
+       triggerHook={0.05}
+          >
+            <div>
+          <h2 className="title text-center">American Art hightlighted at the Met</h2>
+          <canvas className = "d-block my-auto mx-auto" id="canvas4" width="900" height="600"></canvas>
+          </div>
+          </Scene>
           <br />
-          <p>
+          <Scene
+     duration={'100%'} triggerHook={.20} pin={true}
+          >
+          <p className ="text-center mx-auto my-auto">
             At vero eos et accusamus et iusto odio dignissimos ducimus qui
             blanditiis praesentium voluptatum deleniti atque corrupti quos
             dolores et quas molestias excepturi sint occaecati cupiditate non
@@ -185,12 +226,24 @@ class App extends React.Component {
             sapiente delectus, ut aut reiciendis voluptatibus maiores alias
             consequatur aut perferendis doloribus asperiores repellat.
           </p>
-          <h2 className="title">
+          </Scene>
+          <Scene
+       duration={1000}
+       pin={true}
+       triggerHook={0.05}
+          >
+            <div>
+          <h2 className="title text-center">
             Highlighted art from Underepresented Countries
           </h2>
-          <canvas id="canvas5" width="960" height="500"></canvas>
+          <canvas className = "d-block my-auto mx-auto" id="canvas5" width="900" height="600"></canvas>
+          </div>
+          </Scene>
           <br />
-          <p>
+          <Scene
+    duration={'100%'} triggerHook={.20} pin={true}
+          >
+          <p className ="text-center mx-auto my-auto">
             At vero eos et accusamus et iusto odio dignissimos ducimus qui
             blanditiis praesentium voluptatum deleniti atque corrupti quos
             dolores et quas molestias excepturi sint occaecati cupiditate non
@@ -205,11 +258,22 @@ class App extends React.Component {
             sapiente delectus, ut aut reiciendis voluptatibus maiores alias
             consequatur aut perferendis doloribus asperiores repellat.
           </p>
-          <h2 className="title">Highlighted Artwork Combined</h2>
-          <canvas id="canvas6" width="960" height="500"></canvas>
+          </Scene>
+          <Scene
+       duration={1000}
+       pin={true}
+       triggerHook={0.05}
+          >
+            <div>
+          <h2 className="title text-center">Highlighted Artwork Combined</h2>
+          <canvas className = "d-block my-auto mx-auto" id="canvas6" width="900" height="600"></canvas>
+          </div>
+          </Scene>
           <br />
         </Controller>
-        <a onClick={() => this.scrollToTop()}>To the top!</a>
+        <div className="mx-auto mb-4 text-center" >
+        <a onClick={() => this.scrollToTop()}>Top</a>
+        </div>
       </div>
     );
   }

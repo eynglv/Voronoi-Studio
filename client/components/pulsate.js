@@ -1,5 +1,5 @@
 const chart = {
-	*render(selector, height, width, artData, cellCount = 2 * artData.length) {
+	*render(selector, height, width, artData, cellCount = artData.length) {
 		const canvas = d3.select(selector);
 		const context = canvas.node().getContext("2d");
 		const patterns = [];
