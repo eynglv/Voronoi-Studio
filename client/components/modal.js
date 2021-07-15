@@ -47,6 +47,7 @@ const renderModal = (selector, artPiece, context) => {
         .append("p")
         .attr("class", "text-center")
         .attr("id", "modalAuthor")
+        .style("width", "100%")
         .text((data) => {
           return `- ${data.artistDisplayName} -`;
         });
