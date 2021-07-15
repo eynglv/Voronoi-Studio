@@ -85,6 +85,8 @@ export default () => {
 	}, [search]);
 	useEffect(() => {
 		try {
+			setCurrentProgress(0);
+			setProgressMax(0);
 			if (artData.length > 1) {
 				//only render a canvas if we have artData. Otherwise, we will just have a black box
 				const chartRender = chart.render(
