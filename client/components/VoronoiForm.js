@@ -14,9 +14,9 @@ export default () => {
 	const [search, setSearch] = useState({});
 	const [artData, setArtData] = useState([]);
 	const [errorMessage, setErrorMessage] = useState("");
-	const [progressMax, setProgressMax] = useState(1);
-	const [currentProgress, setCurrentProgress] = useState(0);
 	const [currentIndex, setCurrentIndex] = useState(0);
+	const [progressMax, setProgressMax] = useState(0);
+	const [currentProgress, setCurrentProgress] = useState(0);
 	const getVoronoi = async (route) => {
 		try {
 			const artList = (await axios.get(route)).data.objectIDs;
@@ -329,6 +329,26 @@ export default () => {
 					<p className="align-self-end">
 						(too many cells can impact performance)
 					</p>
+					{progressMax ? (
+						<div className="progress" style={{ width: "100%" }}>
+							<div
+								className="progress-bar bg-success"
+								role="progressbar"
+								aria-valuenow={currentProgress}
+								aria-valuemin="0"
+								aria-valuemax={progressMax}
+								style={{
+									width: `${
+										(currentProgress / progressMax) * 100
+									}%`,
+								}}
+							>
+								{currentProgress}/{progressMax}
+							</div>
+						</div>
+					) : (
+						""
+					)}
 					<button type="submit">Create Voronoi!</button>
 				</form>
 				{errorMessage ? <p>{errorMessage}</p> : ""}
@@ -339,20 +359,6 @@ export default () => {
 				height="600"
 				width="900"
 			></canvas>
-			<div className="progress" style={{ width: "50%" }}>
-				<div
-					className="progress-bar bg-success"
-					role="progressbar"
-					aria-valuenow={currentProgress}
-					aria-valuemin="0"
-					aria-valuemax={progressMax}
-					style={{
-						width: `${(currentProgress / progressMax) * 100}%`,
-					}}
-				>
-					{currentProgress}/{progressMax}
-				</div>
-			</div>
 		</div>
 	);
 };
