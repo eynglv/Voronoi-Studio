@@ -2,8 +2,12 @@
   background-color: #121619;
   color: #fff8f0;
   font-family: "Poppins", sans-serif;
+	overflow: -moz-hidden-unscrollable;
 }
 
+#main {
+	overflow: scroll;
+}
 h1 {
   font-family: "Spartan";
 }
@@ -216,29 +220,27 @@ p {
 	
 }
 .animation1{
-  top:50; 
-  right:1%;
+  top:10; 
+  /* right:1%; */
 }
 .animation2{
   top:50; 
 }
 
 .animation3{
-	right:1%
+	right:1%;
 }
 
 .animation4{
   top:50; 
   left:1%;
+	opacity: 0;
 }
 .animation5{
   top:50; 
 }
 
 .animation6{
-	left:1%
+	left:1%;
 }
 
-#main {
-	overflow: scroll;
-}
