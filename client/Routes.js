@@ -61,10 +61,11 @@ class Routes extends Component {
 					)}
 				/>
 				<Route exact path="/voronoi-form" component={VoronoiForm} />
-				<Route path="/all-art" component={FeaturedPieces} />
+				<Route path="/all" component={FeaturedPieces} />
 			</div>
 		);
 	}
+
 }
 
 export default withRouter(connect(null)(Routes));

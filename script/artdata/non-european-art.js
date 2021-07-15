@@ -90,21 +90,6 @@ module.exports = [
     isPublicDomain: true,
   },
   {
-    objectId: 37942,
-    title: "Shiva and Parvati Playing Chaupar: Folio from a Rasamanjari Series",
-    artistDisplayName: "Devidasa of Nurpur",
-    artistGender: "",
-    primaryImage:
-      "https://images.metmuseum.org/CRDImages/as/original/DT5245.jpg",
-    primaryImageSmall:
-      "https://images.metmuseum.org/CRDImages/as/web-large/DT5245.jpg",
-    endDate: 1695,
-    country: "",
-    culture: "India (Basohli, Jammu)",
-    isHighlight: true,
-    isPublicDomain: true,
-  },
-  {
     objectId: 36029,
     title: "Water-moon Avalokiteshvara",
     artistDisplayName: "Unidentified Artist",
