@@ -141,6 +141,15 @@ canvas {
   bottom: 40px;
   background-color: rgba(125, 133, 112, 0);
 }
+#modalLink {
+  background-color: rgba(125, 133, 112, 0);
+  color: #fff8f0;
+}
+
+#modalLink:hover {
+  cursor: pointer;
+  color: #121619;
+}
 
 #modalAuthor {
   width: 100%;
