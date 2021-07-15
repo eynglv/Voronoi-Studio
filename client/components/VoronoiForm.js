@@ -332,7 +332,7 @@ export default () => {
 					{progressMax ? (
 						<div className="progress" style={{ width: "100%" }}>
 							<div
-								className="progress-bar bg-success"
+								className="progress-bar"
 								role="progressbar"
 								aria-valuenow={currentProgress}
 								aria-valuemin="0"
@@ -341,10 +341,9 @@ export default () => {
 									width: `${
 										(currentProgress / progressMax) * 100
 									}%`,
+									backgroundColor: "#a63d40",
 								}}
-							>
-								{currentProgress}/{progressMax}
-							</div>
+							></div>
 						</div>
 					) : (
 						""
