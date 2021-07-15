@@ -203,3 +203,40 @@ p {
 .scrollToTop {
   cursor: pointer;
 }
+
+.animate{
+  font-size: 30px;
+  font-weight: 1000;
+  color: #fff8f0;
+  z-index: 2;
+  position: absolute;
+	background-color: rgba(18, 22, 25, 0.65);
+	text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+	width: 40%;
+}
+.animation1{
+  top:50; 
+  right:1%;
+}
+.animation2{
+  top:50; 
+  left: 0%;
+}
+
+.animation3{
+	right:1%
+}
+
+.animation4{
+  top:50; 
+  left:1%;
+}
+.animation5{
+  top:50; 
+  right: 0%;
+}
+
+.animation6{
+	left:1%
+}
+
