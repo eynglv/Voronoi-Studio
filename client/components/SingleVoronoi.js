@@ -27,8 +27,8 @@ export default (props) => {
 		}
 	}, [paintings]);
 	return (
-		<div>
-			<h1 className="text-center display-3 mt-3">{props.voronoiId}</h1>
+			<div id="modal"></div>
+	<h1 className="text-center display-3 mt-3">{props.voronoiId}</h1>
 			<h3 className="text-center mb-2 mt-2">
 				Curated by {props.curator}
 			</h3>

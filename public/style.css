@@ -14,7 +14,7 @@ img {
 }
 
 .CYO {
-	color: #ffcab1
+  color: #ffcab1;
 }
 
 #nav {
@@ -195,9 +195,10 @@ canvas {
   flex-basis: fit-content;
 }
 
-#main p {
-	font-size: x-large;
-	width: 75%;
+p {
+  font-size: x-large;
+  width: 75%;
+}
 
 }
 
