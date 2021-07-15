@@ -352,6 +352,7 @@ export default () => {
 				</form>
 				{errorMessage ? <p>{errorMessage}</p> : ""}
 			</div>
+      <div id="modal"></div>
 			<canvas
 				id="user-generated"
 				className="flex-grow-1 mx-4 my-auto"
