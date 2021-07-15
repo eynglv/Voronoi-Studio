@@ -2,13 +2,11 @@ import React from "react";
 import Navbar from "./components/Navbar";
 import womenByWomen from "../script/artdata/womenByWomen";
 import womenByMen from "../script/artdata/femaleNudesByMen";
-
 import chart from "./components/pulsate";
 import { Controller, Scene } from "react-scrollmagic";
 import { Tween, Timeline } from "react-gsap";
 import { animateScroll as scroll } from "react-scroll";
 import axios from "axios";
-import VoronoiForm from "./components/VoronoiForm";
 
 class App extends React.Component {
   constructor() {
@@ -91,7 +89,6 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Navbar />
         <div id="modal"></div>
         <Controller>
           <Scene duration={1000} triggerHook={0.1}pin={true}>
@@ -147,8 +144,9 @@ Only 3 of these pieces are highlighted works</h1>}>
               <Tween from={{ opacity: 0 }} to={{ opacity: 1 }} />
               </Timeline>
           </Scene>
+
           {/* CANVAS2 */}
-          <Scene duration={1000} pin={true} triggerHook={0.05}>
+          <Scene duration={"100%"} pin={true} triggerHook={0.05}>
           {(progress) => (
             <div>
                <Timeline totalProgress={progress} paused>  
@@ -340,8 +338,10 @@ Only 3 of these pieces are highlighted works</h1>}>
             </Timeline>
           </Scene>
         </Controller>
-        <div className="mx-auto mb-4 text-center">
-          <a onClick={() => this.scrollToTop()}>Top</a>
+        <div className="mx-auto mb-5 text-center">
+          <a onClick={() => this.scrollToTop()} className="scrollToTop h4">
+            Top
+          </a>
         </div>
       </div>
     );

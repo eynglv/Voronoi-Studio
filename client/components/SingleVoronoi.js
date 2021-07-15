@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from "react";
 import chart from "./pulsate";
 import axios from "axios";
-import Navbar from "./Navbar";
 
 export default (props) => {
 	const [paintings, setPaintings] = useState([]);
@@ -29,7 +28,7 @@ export default (props) => {
 	}, [paintings]);
 	return (
 		<div>
-			<Navbar />
+			<div id="modal"></div>
 			<h1 className="text-center display-3 mt-4">{props.voronoiId}</h1>
 			<h3 className="text-center mb-5 mt-3">
 				Curated by {props.curator}

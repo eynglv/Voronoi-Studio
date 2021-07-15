@@ -25,7 +25,7 @@ class Navbar extends React.Component {
         <a href="highlighted-underrepresented" className="mx-auto links-text">
           Unusual Highlights
         </a>
-        <a href="featured-pieces" className="mx-auto links-text">
+        <a href="all" className="mx-auto links-text">
           Featured Art Pieces
         </a>
         <a href="voronoi-form" className="mx-auto links-text">
