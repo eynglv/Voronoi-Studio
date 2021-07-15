@@ -16,6 +16,9 @@ class Navbar extends React.Component {
         <a href="main" className="mx-auto links-text">
           Visual Essay
         </a>
+        <a href="all" className="mx-auto links-text">
+          Featured Art Pieces
+        </a>
         <a href="womenbywomen" className="mx-auto links-text">
           Women by Women
         </a>
@@ -27,9 +30,6 @@ class Navbar extends React.Component {
         </a>
         <a href="highlighted-underrepresented" className="mx-auto links-text">
           Unusual Highlights
-        </a>
-        <a href="all" className="mx-auto links-text">
-          Featured Art Pieces
         </a>
         <a href="voronoi-form" className="mx-auto links-text">
           Create Your Own Voronoi
