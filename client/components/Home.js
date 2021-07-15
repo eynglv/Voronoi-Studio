@@ -12,7 +12,6 @@ class Home extends React.Component {
   render() {
     return (
       <div>
-        <Navbar />
         <h1
           className="display-3 mt-5 mx-3 text-center text-nowrap"
           id="welcome"

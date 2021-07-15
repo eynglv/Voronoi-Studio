@@ -13,6 +13,10 @@ img {
   min-height: min-content;
 }
 
+.CYO {
+	color: #ffcab1
+}
+
 #nav {
   background-color: #a63d40;
   height: 100%;
@@ -191,10 +195,9 @@ canvas {
   flex-basis: fit-content;
 }
 
-p {
-  font-size: x-large;
-  width: 75%;
-}
+#main p {
+	font-size: x-large;
+	width: 75%;
 
 .scrollToTop {
   cursor: pointer;
