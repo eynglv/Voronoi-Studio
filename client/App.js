@@ -89,40 +89,32 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Navbar />
         <div id="modal"></div>
         <Controller>
           <Scene duration={1000} triggerHook={0.1} pin={true}>
-            <Timeline
-              target={
-                <p className="text-center mt-2 mb-3 mx-auto my-auto">
-                  Voronoi Studio aims to visually dissect the disproportionate
-                  representation of male and western artists, compared to female
-                  and non-western artists. The Met’s digital collection contains
-                  over 375,000 pieces of artwork available through the Open
-                  Access program. We created two sets of contrasting art works
-                  to highlight the overt bias in the Met's Collection, one
-                  depicting women by women artists juxtaposed with nude
-                  paintings of women by male artists, while the other queried
-                  the Met's "highlighted" works and contrasted American pieces
-                  with pieces from underrepresented countries. The art we are
-                  presenting comes in the form of live-motion voronoi diagrams,
-                  allowing us to present multiple views and elements from many
-                  different artworks. Voronoi diagrams are created by mapping
-                  the relationships between data, which seemed metaphoric for
-                  our demonstration. In 2019, The Met was the 3rd most visited
-                  art museum in the world, with nearly 7,000,000 visitors
-                  annually, and was the most visited art museum in America. What
-                  responsibility does the most prominent art museum in the
-                  country have to highlight diverse and underrepresented artists
-                  and their cultures? How can we demand accountability from
-                  historically biased institutions, if we can't observe the
-                  current dismal state of affairs?
-                </p>
-              }
-            >
-              <Tween from={{ opacity: -1 }} to={{ opacity: 1 }} />
-            </Timeline>
+            <p className="text-center mt-2 mb-3 mx-auto my-auto">
+              Voronoi Studio aims to visually dissect the disproportionate
+              representation of male and western artists, compared to female and
+              non-western artists. The Met’s digital collection contains over
+              375,000 pieces of artwork available through the Open Access
+              program. We created two sets of contrasting art works to highlight
+              the overt bias in the Met's Collection, one depicting women by
+              women artists, juxtaposed with nude paintings of women by male
+              artists, while the other queried the Met's "highlighted" works and
+              contrasted American pieces with pieces from underrepresented
+              countries. The art we are presenting comes in the form of
+              live-motion voronoi diagrams, allowing us to present multiple
+              views and elements from many different artworks. Voronoi diagrams
+              are created by mapping the relationships between data, which
+              seemed metaphoric for our demonstration. In 2019, The Met was the
+              3rd most visited art museum in the world, with nearly 7,000,000
+              visitors annually, and was the most visited art museum in America.
+              What responsibility does the most prominent art museum in the
+              country have to highlight diverse and underrepresented artists and
+              their cultures? How can we demand accountability from historically
+              biased institutions, if we can't observe the current dismal state
+              of affairs?
+            </p>
           </Scene>
           {/* CANVAS1 */}
           <Scene duration={"100%"} triggerHook={0.05} pin={true}>
@@ -147,7 +139,11 @@ class App extends React.Component {
                       </h1>
                     }
                   >
-                    <Tween from={{ opacity: -1 }} to={{ opacity: 1 }} />
+                    <Tween
+                      from={{ top: "15%", x: "150%" }}
+                      to={{ top: "15%", x: "0%" }}
+                    />
+                    <Tween from={{ top: "15%" }} to={{ x: "0%", top: "90%" }} />
 
                     <Tween from={{ top: "15%" }} to={{ x: "0%", top: "90%" }} />
 
@@ -172,8 +168,9 @@ class App extends React.Component {
               <Tween from={{ opacity: 0 }} to={{ opacity: 1 }} />
             </Timeline>
           </Scene>
+
           {/* CANVAS2 */}
-          <Scene duration={1000} pin={true} triggerHook={0.05}>
+          <Scene duration={"100%"} pin={true} triggerHook={0.05}>
             {(progress) => (
               <div>
                 <Timeline totalProgress={progress} paused>
@@ -193,7 +190,10 @@ class App extends React.Component {
                       </h1>
                     }
                   >
-                    <Tween from={{ opacity: -1 }} to={{ opacity: 1 }} />
+                    <Tween
+                      from={{ top: "5%", x: "300%" }}
+                      to={{ x: "0%", top: "85%" }}
+                    />
 
                     <Tween
                       from={{ top: "15%", x: "100%" }}
@@ -293,12 +293,17 @@ class App extends React.Component {
                   <Timeline
                     target={
                       <h1 className="animate animation4">
-                        In 2020, the Met hired it's first Native-American
-                        curator for the American Wing.
+                        In 2020, the Met hired its first Native-American curator
+                        for the American Wing.
                       </h1>
                     }
                   >
-                    <Tween from={{ opacity: -1 }} to={{ opacity: 1 }} />
+                    <Tween
+                      from={{ top: "15%", x: "-150%" }}
+                      to={{ top: "15%", x: "10%" }}
+                    />
+
+                    <Tween from={{ top: "15%" }} to={{ top: "90%" }} />
 
                     <Tween from={{ top: "15%" }} to={{ top: "90%" }} />
 
@@ -352,11 +357,14 @@ class App extends React.Component {
                       </h1>
                     }
                   >
-                    <Tween from={{ opacity: -1 }} to={{ opacity: 1 }} />
+                    <Tween
+                      from={{ top: "0%", x: "-100%" }}
+                      to={{ x: "150%", top: "75%" }}
+                    />
 
                     <Tween
-                      from={{ top: "15%", x: "-100%" }}
-                      to={{ x: "50%", top: "75%" }}
+                      from={{ opacity: 1 }}
+                      to={{ opacity: -1, x: "200%" }}
                     />
 
                     <Tween
@@ -406,7 +414,7 @@ class App extends React.Component {
                   <Timeline
                     target={
                       <h1 className="animate animation3">
-                        The Department the Arts of Africa, Oceania, and the
+                        The Department of the Arts of Africa, Oceania, and the
                         Americas did not exist at the Met until 1969, when
                         Nelson Rockefeller offered to gift over 3000 works from
                         the Museum of Primitive Art
@@ -428,7 +436,7 @@ class App extends React.Component {
               target={
                 <p className="text-center mx-auto my-auto">
                   Following widespread criticism, in 2020, the Metropolitan
-                  Museum of Art delcared their intention to address racism and
+                  Museum of Art declared their intention to address racism and
                   lack of diversity within their institution. They promised to
                   "establish specified acquisition endowments with a total value
                   of $10 million to increase the amount of works by BIPOC
@@ -439,7 +447,6 @@ class App extends React.Component {
               }
             >
               <Tween from={{ opacity: -1 }} to={{ opacity: 1 }} />
-              <Tween from={{ opacity: 1 }} to={{ opacity: -1 }} />
             </Timeline>
           </Scene>
         </Controller>
