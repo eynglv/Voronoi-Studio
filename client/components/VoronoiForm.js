@@ -100,11 +100,11 @@ export default () => {
 
   return (
 	<div className="d-flex min-vh-100 flex-row">
-    <div className="mx-auto d-flex justify-content-end flex-column">
-      <h2 className="display-6 text-center mt-5">Create Your Own Voronoi</h2>
+    <div className="mx-auto me-2 d-flex justify-content-end flex-column">
+      <h2 className="fs-2 text-center mt-5">Create Your Own Voronoi</h2>
       <form
         id="new-voronoi-form"
-        className="mx-auto ms-3 d-flex flex-column flex-grow-1 justify-content-around"
+        className="mx-auto fs-7 p-4 d-flex flex-column flex-grow-1 justify-content-around"
         onSubmit={(evt) => {
           evt.preventDefault();
           setSearch({
@@ -121,7 +121,7 @@ export default () => {
 
         <span><label className="text-center mx-auto form-label" htmlFor="highlight">
           Show only highlighted works
-        </label>
+        </label> {" "}
         <input
           name="highlight"
           type="checkbox"
@@ -132,7 +132,7 @@ export default () => {
         /></span>
 		<span>        <label className="form-label mx-auto" htmlFor="femaleArtist">
           Show only works by female artists
-        </label>
+        </label>  {" "}
         <input
           name="femaleArtist"
           type="checkbox"
@@ -149,7 +149,7 @@ export default () => {
           }}
         >
           <p className="">
-            Search by Artist & Culture or by Tags:{" "}
+            Search by Artist & Culture or by Tags: <br></br>{" "}
             <span>
               <input
                 type="radio"
@@ -157,14 +157,17 @@ export default () => {
                 name="culture-or-tags"
                 value="artistOrCulture"
               />
+               {" "}
               <label htmlFor="artistCulture">Artist and Culture</label>
+              {" "}
               <input
                 type="radio"
                 id="tags"
                 name="culture-or-tags"
                 value="tags"
+                className="bs-pink"
                 defaultChecked
-              />
+              />  {" "}
               <label htmlFor="tags">Tags</label>
             </span>
           </p>
@@ -284,7 +287,7 @@ export default () => {
 	  </div>
 	  <canvas
         id="user-generated"
-        className="flex-grow-1 mx-auto"
+        className="flex-grow-1 mx-4 my-auto"
         height="600"  width="900"
       >
       </canvas>
