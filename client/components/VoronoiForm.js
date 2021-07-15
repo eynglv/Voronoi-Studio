@@ -21,7 +21,7 @@ export default () => {
 	const getVoronoi = async (route) => {
 		try {
 			const artList = (await axios.get(route)).data.objectIDs;
-			setProgressMax(femaleArtist ? artList.length * 2 : artList.length);
+			setProgressMax(artList.length);
 			const artData = await Promise.all(
 				artList.map(async (artId, i) => {
 					//if more than 79 results, need to add a time out to wait 1 second
@@ -69,9 +69,7 @@ export default () => {
 
 			let artDataHolder = await getVoronoi(route);
 			if (femaleArtist)
-				artDataHolder = artDataHolder.filter((val, i) => {
-					setCurrentIndex(i);
-					console.log("female progress", currentProgress);
+				artDataHolder = artDataHolder.filter((val) => {
 					return val.artistGender === "Female";
 				});
 			if (!artDataHolder.length)
@@ -86,6 +84,8 @@ export default () => {
 	}, [search]);
 	useEffect(() => {
 		try {
+			setCurrentProgress(0);
+			setProgressMax(0);
 			if (artData.length > 1) {
 				//only render a canvas if we have artData. Otherwise, we will just have a black box
 				const chartRender = chart.render(
