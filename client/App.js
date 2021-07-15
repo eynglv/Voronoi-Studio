@@ -124,10 +124,7 @@ class App extends React.Component {
              
             <Timeline target = { <h1 className="animate animation1">These 17 pieces are the only oil paintings available by women, featuring women via the MET API.<br/> <br/> 
 Only 3 of these pieces are highlighted works</h1>}>
-
-            <Tween
-             from={{ opacity: -1}} to={{ opacity: 1}} />
-
+            <Tween from={{ top: '15%', x: '150%' }} to={{top: '15%', x: '0%'}} />
              <Tween from={{ top: '15%'}} to={{ x: '0%', top: '90%' }} />
 
              <Tween
@@ -165,10 +162,7 @@ Only 3 of these pieces are highlighted works</h1>}>
 
             <Timeline target = { <h1 className="animate animation2">There are no paintings of nude men painted by women available in the Met API.</h1>}>
 
-            <Tween
-             from={{ opacity: -1}} to={{ opacity: 1}} />
-
-             <Tween from={{ top: '15%', x: '100%'}} to={{ x: '0%', top: '50%' }} />
+            <Tween from={{ top: '5%', x: '300%'}} to={{ x: '0%', top: '85%' }} />
 
              <Tween
              from={{ opacity: 1}} to={{ opacity: -1, x: '-100%'}} />
@@ -246,8 +240,7 @@ Only 3 of these pieces are highlighted works</h1>}>
               </canvas>
                 <Timeline target = { <h1 className="animate animation4">In 2020, the Met hired it's first Native-American curator for the American Wing.</h1>}>
 
-                    <Tween
-                    from={{ opacity: -1}} to={{ opacity: 1}} />
+                <Tween from={{ top: '15%', x: '-150%' }} to={{top: '15%', x: '10%'}} />
 
                     <Tween from={{ top: '15%'}} to={{ top: '90%' }} />
 
@@ -289,10 +282,9 @@ Only 3 of these pieces are highlighted works</h1>}>
                     <Timeline target = { <h1 className="animate animation5">The Met has 107 pieces of highlighted work <br/>  from NY (population 19 million ), but <br/> only 177 from all of Africa (population 1.35 billion).
 </h1>}>
 
-                      <Tween
-                      from={{ opacity: -1}} to={{ opacity: 1}} />
+                      
+                      <Tween from={{ top: '0%', x: '-100%'}} to={{ x: '150%', top: '75%' }} />
 
-                      <Tween from={{ top: '15%', x: '-100%'}} to={{ x: '50%', top: '75%' }} />
 
                       <Tween
                       from={{ opacity: 1}} to={{ opacity: -1, x: '200%'}} />
@@ -345,7 +337,6 @@ Only 3 of these pieces are highlighted works</h1>}>
             }
             >
               <Tween from={{ opacity: -1 }} to={{ opacity: 1 }} />
-              <Tween from={{ opacity: 1 }} to={{ opacity: -1 }} />
             </Timeline>
           </Scene>
         </Controller>
