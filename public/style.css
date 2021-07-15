@@ -14,7 +14,7 @@ img {
 }
 
 .CYO {
-	color: #ffcab1
+  color: #ffcab1;
 }
 
 #nav {
@@ -196,8 +196,9 @@ canvas {
 }
 
 #main p {
-	font-size: x-large;
-	width: 75%;
+  font-size: x-large;
+  width: 75%;
+}
 
 .scrollToTop {
   cursor: pointer;
