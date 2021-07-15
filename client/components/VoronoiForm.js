@@ -51,52 +51,53 @@ export default () => {
     }
   };
 
-  useEffect(() => {
-    const fetchData = async () => {
-      setErrorMessage("");
-      const route = `https://collectionapi.metmuseum.org/public/collection/v1/search?hasImages=true&medium=Paintings${
-        highlight ? "&isHighlight=true" : ""
-      }${tags ? "&tags=true" : ""}${
-        artistOrCulture ? "&artistOrCulture=true" : ""
-      }${departmentId ? `&departmentId=${departmentId}` : ""}${
-        location ? `&geoLocation=${location.replaceAll(" ", "|")}` : ""
-      }&q=${query.replaceAll(" ", "%20")}`;
-      let artDataHolder = await getVoronoi(route);
-      if (femaleArtist)
-        artDataHolder = artDataHolder.filter(
-          (val) => val.artistGender === "female"
-        );
-      if (!artDataHolder.length)
-        setErrorMessage("No results! Please change your search query!");
+	useEffect(() => {
+		const fetchData = async () => {
+			setErrorMessage("");
+			const route = `https://collectionapi.metmuseum.org/public/collection/v1/search?hasImages=true&medium=Paintings${
+				highlight ? "&isHighlight=true" : ""
+			}${tags ? "&tags=true" : ""}${
+				artistOrCulture ? "&artistOrCulture=true" : ""
+			}${departmentId ? `&departmentId=${departmentId}` : ""}${
+				location ? `&geoLocation=${location.replaceAll(" ", "|")}` : ""
+			}&q=${query.replaceAll(" ", "%20")}`;
+			let artDataHolder = await getVoronoi(route);
+			if (femaleArtist)
+				artDataHolder = artDataHolder.filter(
+					(val) => val.artistGender === "Female"
+				);
+			if (!artDataHolder.length)
+				setErrorMessage("No results! Please change your search query!");
+			console.log(artDataHolder);
+			setArtData(artDataHolder);
+		};
+		if (search.query) {
+			fetchData();
+		}
+	}, [search]);
+	useEffect(() => {
+		try {
 
-      setArtData(artDataHolder);
-    };
-    if (search.query) {
-      fetchData();
-    }
-  }, [search]);
-  useEffect(() => {
-    try {
-      if (artData.length > 1) {
-        //only render a canvas if we have artData. Otherwise, we will just have a black box
-        const chartRender = chart.render(
-          "#user-generated",
-          600,
-          900,
-          artData,
-          numberOfCells
-        );
-        const interval = setInterval(() => chartRender.next(), 10);
-        setErrorMessage("");
-        return () => clearInterval(interval);
-      } else if (artData.length === 1) {
-        setErrorMessage("Only one result, please relax search terms");
-      }
-    } catch (err) {
-      console.error(err);
-      setErrorMessage("No results! Please change your search query!");
-    }
-  }, [artData, numberOfCells]);
+			if (artData.length > 1) {
+				//only render a canvas if we have artData. Otherwise, we will just have a black box
+				const chartRender = chart.render(
+					"#user-generated",
+					720,
+					1080,
+					artData,
+					numberOfCells
+				);
+				const interval = setInterval(() => chartRender.next(), 10);
+				setErrorMessage("");
+				return () => clearInterval(interval);
+			} else if (artData.length === 1) {
+				setErrorMessage("Only one result, please relax search terms");
+			}
+		} catch (err) {
+			console.error(err);
+			setErrorMessage("No results! Please change your search query!");
+		}
+	}, [artData, numberOfCells]);
 
   return (
 	<div className="d-flex min-vh-100 flex-row">
