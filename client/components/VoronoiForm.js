@@ -100,8 +100,8 @@ export default () => {
 
   return (
 	<div className="d-flex min-vh-100 flex-row">
-    <div className="mx-auto me-2 d-flex justify-content-end flex-column">
-      <h2 className="fs-2 text-center mt-5">Create Your Own Voronoi</h2>
+    <div className="mx-auto ms-2 me-2 d-flex justify-content-end flex-column">
+      <h2 className="CYO fs-2 text-center mx-auto mt-5">Create Your Own Voronoi</h2>
       <form
         id="new-voronoi-form"
         className="mx-auto fs-7 p-4 d-flex flex-column flex-grow-1 justify-content-around"
@@ -280,7 +280,7 @@ export default () => {
           }}
         />
 		</div>
-		<p className="align-self-end">(too many can impact performance)</p>
+		<p className="align-self-end">(too many cells can impact performance)</p>
         <button type="submit">Create Voronoi!</button>
       </form>
       {errorMessage ? <p>{errorMessage}</p> : ""}
