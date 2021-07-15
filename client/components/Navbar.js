@@ -10,8 +10,11 @@ class Navbar extends React.Component {
         id="nav"
         className="top-0 nav justify-content-around mx-auto d-flex flex-column position-fixed"
       >
-        <a href="main" className="mx-auto links-text">
+        <a href="/" className="mx-auto links-text">
           Home
+        </a>
+        <a href="main" className="mx-auto links-text">
+          Visual Essay
         </a>
         <a href="womenbywomen" className="mx-auto links-text">
           Women by Women

@@ -18,8 +18,8 @@ export default (props) => {
 		if (paintings.length) {
 			const voronoiRender = chart.render(
 				"#single-voronoi",
-				720,
-				1080,
+				600,
+				1000,
 				paintings
 			);
 			const interval = setInterval(() => voronoiRender.next(), 8);
@@ -28,11 +28,11 @@ export default (props) => {
 	}, [paintings]);
 	return (
 		<div>
-			<h1 className="text-center display-3 mt-4">{props.voronoiId}</h1>
-			<h3 className="text-center mb-5 mt-3">
+			<h1 className="text-center display-3 mt-3">{props.voronoiId}</h1>
+			<h3 className="text-center mb-2 mt-2">
 				Curated by {props.curator}
 			</h3>
-			<canvas id="single-voronoi" width="1080" height="720"></canvas>
+			<canvas id="single-voronoi" className="mx-auto mb-3" width="1000" height="600"></canvas>
 		</div>
 	);
 };
