@@ -195,7 +195,7 @@ canvas {
   flex-basis: fit-content;
 }
 
-#main p {
+p {
   font-size: x-large;
   width: 75%;
 }
