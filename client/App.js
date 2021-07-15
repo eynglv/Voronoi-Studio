@@ -232,7 +232,7 @@ class App extends React.Component {
           <Scene duration={1000} pin={true} triggerHook={0.05}>
             <div>
               <h2 className="title text-center">
-                Highlighted art from Underepresented Countries
+                Highlighted Art from Underepresented Countries
               </h2>
               <canvas
                 className="d-block my-auto mx-auto"
