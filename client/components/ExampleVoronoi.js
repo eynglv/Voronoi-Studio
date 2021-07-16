@@ -61,6 +61,12 @@ const chart = {
 				voronoi.renderCell(i, context); //trace the path of the current cell
 				context.fill(); //fill the cell withour chosen pattern
 			}
+			//render dots in each cell
+
+			context.fillStyle = "#FFF8F0";
+			context.beginPath();
+			voronoi.delaunay.renderPoints(context, 5);
+			context.fill();
 
 			//below block renders lines between cells
 			context.lineWidth = 10;
@@ -68,13 +74,6 @@ const chart = {
 			voronoi.render(context);
 			voronoi.renderBounds(context);
 			context.stroke();
-
-			//uncomment below to render dots in each cell
-
-			context.fillStyle = "#FFF8F0";
-			context.beginPath();
-			voronoi.delaunay.renderPoints(context, 5);
-			context.fill();
 
 			yield context.canvas; //return to caller with the canvas
 		}
