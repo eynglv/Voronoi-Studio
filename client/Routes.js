@@ -9,6 +9,7 @@ import Navbar from "./components/Navbar";
 // import FeaturedPieces from './components/FeaturedPieces'
 import VoronoiForm from "./components/VoronoiForm";
 import SingleVoronoi from "./components/SingleVoronoi";
+import VoronoiExplanation from "./components/VoronoiExplanation";
 
 /**
  * COMPONENT
@@ -17,7 +18,7 @@ class Routes extends Component {
 	render() {
 		return (
 			<div>
-				<Navbar/>
+				<Navbar />
 				<Route exact path="/" component={Home} />
 				<Route exact path="/main" component={App} />
 				<Route
@@ -61,11 +62,14 @@ class Routes extends Component {
 					)}
 				/>
 				<Route exact path="/voronoi-form" component={VoronoiForm} />
+				<Route
+					path="/voronois-explained"
+					component={VoronoiExplanation}
+				/>
 				<Route path="/all" component={FeaturedPieces} />
 			</div>
 		);
 	}
-
 }
 
 export default withRouter(connect(null)(Routes));
