@@ -1,255 +1,231 @@
 * {
-  background-color: #121619;
-  color: #fff8f0;
-  font-family: "Poppins", sans-serif;
-	overflow: -moz-hidden-unscrollable;
+	background-color: #121619;
+	color: #fff8f0;
+	font-family: "Poppins", sans-serif;
 }
 
-#main {
-	overflow: scroll;
-}
 h1 {
-  font-family: "Spartan";
+	font-family: "Spartan";
 }
 
 img {
-  max-height: max-content;
-  min-height: min-content;
+	max-height: max-content;
+	min-height: min-content;
 }
 
 .CYO {
-  color: #ffcab1;
+	color: #ffcab1;
 }
 
 #nav {
-  background-color: #a63d40;
-  height: 100%;
-  width: 0.5%;
-  z-index: 1;
-  padding-left: 1vw;
-  left: 0;
-  overflow-x: hidden;
-  opacity: 0.5;
+	background-color: #a63d40;
+	height: 100%;
+	width: 0.5%;
+	z-index: 1;
+	padding-left: 1vw;
+	left: 0;
+	overflow-x: hidden;
+	opacity: 0.5;
 }
 
 .carousel-item img {
-  height: 650px;
-  width: auto;
+	height: 650px;
+	width: auto;
 }
 
 .carousel-item p {
-  font-size: 12px;
+	font-size: 12px;
 }
 
 #nav:hover {
-  width: 13%;
-  padding-left: 0;
+	width: 13%;
+	padding-left: 0;
 }
 
 #nav a {
-  text-decoration: none;
-  font-size: 12px;
-  color: #fff8f0;
-  background-color: #a63d40;
+	text-decoration: none;
+	font-size: 12px;
+	color: #fff8f0;
+	background-color: #a63d40;
 }
 
 #nav span {
-  font-size: 18px;
-  overflow: hidden;
-  color: #fff8f0;
-  background-color: #a63d40;
+	font-size: 18px;
+	overflow: hidden;
+	color: #fff8f0;
+	background-color: #a63d40;
 }
 
 #nav a:hover {
-  color: #ffcab1;
+	color: #ffcab1;
 }
 
 body {
-  font-family: sans-serif;
+	font-family: sans-serif;
 }
 
 .links-text {
-  vertical-align: middle;
+	vertical-align: middle;
 }
 
 .footer {
-  background-color: #5f7c8c;
-  height: 150px;
+	background-color: #5f7c8c;
+	height: 150px;
 }
 
 a {
-  text-decoration: none;
+	text-decoration: none;
 }
 
 .footer {
-  background-color: #5f7c8c;
-  height: 150px;
+	background-color: #5f7c8c;
+	height: 150px;
 }
 .names {
-  color: #fff8f0;
-  background-color: rgba(95, 124, 140, 0.35);
+	color: #fff8f0;
+	background-color: rgba(95, 124, 140, 0.35);
 }
 
 .names.github:hover {
-  color: #ffcab1;
+	color: #ffcab1;
 }
 
 h1 #welcome {
-  font-family: "Spartan", sans-serif;
+	font-family: "Spartan", sans-serif;
 }
 
 canvas {
-  display: block;
-  margin: auto;
+	display: block;
+	margin: auto;
 }
 
+small {
+	text-align: center;
+	display: block;
+	margin: auto;
+}
 .title {
-  color: #ffcab1;
-  font-family: "Spartan", sans-serif;
+	color: #ffcab1;
+	font-family: "Spartan", sans-serif;
 }
 
 #modal {
-  z-index: 10;
-  max-width: 70%;
-  margin: auto;
-  position: fixed;
-  top: 55%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: rgba(100, 111, 88, 0.9);
+	z-index: 10;
+	max-width: 70%;
+	margin: auto;
+	position: fixed;
+	top: 55%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: rgba(100, 111, 88, 0.9);
 }
 
 #modal.open {
-  height: 500px;
-  width: 50%;
+	height: 500px;
+	width: 50%;
 }
 
 .modalContent {
-  width: 80%;
-  height: 100%;
-  margin: auto;
-  position: relative;
-  top: 10%;
-  background-color: rgba(125, 133, 112, 0);
-  padding-bottom: 18px;
+	width: 80%;
+	height: 100%;
+	margin: auto;
+	position: relative;
+	top: 10%;
+	background-color: rgba(125, 133, 112, 0);
+	padding-bottom: 18px;
 }
 
 .modalImage {
-  margin: auto;
-  width: 100%;
+	margin: auto;
+	width: 100%;
 }
 
 #modalTitle {
-  width: 100%;
-  position: absolute;
-  bottom: 40px;
-  background-color: rgba(125, 133, 112, 0);
+	width: 100%;
+	position: absolute;
+	bottom: 40px;
+	background-color: rgba(125, 133, 112, 0);
 }
 #modalLink {
-  background-color: rgba(125, 133, 112, 0);
-  color: #fff8f0;
+	background-color: rgba(125, 133, 112, 0);
+	color: #fff8f0;
 }
 
 #modalLink:hover {
-  cursor: pointer;
-  color: #121619;
+	cursor: pointer;
+	color: #121619;
 }
 
 #modalAuthor {
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-  background-color: rgba(125, 133, 112, 0);
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	background-color: rgba(125, 133, 112, 0);
 }
 
 .open {
-  display: block;
-  overflow: auto;
+	display: block;
+	overflow: auto;
 }
 
 .close {
-  display: none;
+	display: none;
 }
 
 .closeBtn {
-  cursor: pointer;
-  float: right;
-  font-size: 14px;
-  font-weight: bold;
-  margin-top: 5px;
-  margin-right: 10px;
+	cursor: pointer;
+	float: right;
+	font-size: 14px;
+	font-weight: bold;
+	margin-top: 5px;
+	margin-right: 10px;
 }
 
 .closeBtn:hover {
-  color: #121619;
+	color: #121619;
 }
 
 .caption {
-  position: relative;
-  font-size: 0.75em;
-  visibility: none;
-  opacity: 0;
-  transition: opacity 0.7s;
-  color: #fff8f0;
+	position: relative;
+	font-size: 0.75em;
+	visibility: none;
+	opacity: 0;
+	transition: opacity 0.7s;
+	color: #fff8f0;
 }
 
 .image-wrapper:hover .caption {
-  visibility: visible;
-  opacity: 1;
+	visibility: visible;
+	opacity: 1;
 }
 
 .gallery-container {
-  display: flex;
-  flex-wrap: wrap;
+	display: flex;
+	flex-wrap: wrap;
 }
 
 .gallery-image {
-  flex-shrink: 0;
-  flex-basis: fit-content;
+	flex-shrink: 0;
+	flex-basis: fit-content;
 }
 
 #main p {
-  font-size: x-large;
-  width: 75%;
+	font-size: x-large;
+	width: 75%;
 }
 
 .scrollToTop {
-  cursor: pointer;
+	cursor: pointer;
 }
 
-.animate{
-  font-size: 30px;
-  font-weight: 1000;
-  color: #fff8f0;
-  z-index: 2;
-  position: absolute;
+.animate {
+	font-size: 30px;
+	font-weight: 1000;
+	color: #fff8f0;
+	z-index: 2;
+	position: absolute;
 	background-color: rgba(18, 22, 25, 0.65);
-	text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-	width: 40%;
-	
+	text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+		1px 1px 0 #000;
+	width: 350px;
 }
-.animation1{
-  top:10; 
-  /* right:1%; */
-}
-.animation2{
-  top:50; 
-}
-
-.animation3{
-	right:1%;
-}
-
-.animation4{
-  top:50; 
-  left:1%;
-	opacity: 0;
-}
-.animation5{
-  top:50; 
-}
-
-.animation6{
-	left:1%;
-}
-
