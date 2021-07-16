@@ -38,10 +38,11 @@ export default () => {
 				</blockquote>
 			</p>
 			<p className="text-center mt-2 mb-3 mx-auto my-auto">
-				To put it more plainly: if we put a bunch of dots on a piece of
-				paper, canvas, or any other 2D surface, each dot will have a
-				cell that contains everywhere on the 2D surface that's closer to
-				it than any other dot. Consider the following example:
+				<strong>To put it more plainly:</strong> if we put a bunch of
+				dots on a piece of paper, canvas, or any other 2D surface, each
+				dot will have a cell that contains everywhere on the 2D surface
+				that's closer to it than any other dot. Consider the following
+				example:
 			</p>
 			<canvas
 				id="example-one"
@@ -69,7 +70,9 @@ export default () => {
 			<p className="text-center mt-2 mb-5 mx-auto my-auto">
 				the same rules apply. Any line that runs between two dots is
 				equidistant from both of them, and everything in a cell is
-				closer to the dot in there than any of the others.
+				closer to the dot in there than any of the others. This is how
+				we generate our Voronois. We make imaginary dots, and fill the
+				resulting cells with art from The Met Open Access API.
 			</p>
 		</div>
 	);
