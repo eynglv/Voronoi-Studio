@@ -12,7 +12,7 @@ const chart = {
 		);
 
 		const velocities = new Float64Array(cellCount * 2); //create an array of alternating x and y velocities
-		const voronoi = new d3.Delaunay(positions).delaunay.voronoi([
+		const voronoi = new d3.Delaunay(positions).voronoi([
 			0.5,
 			0.5,
 			width - 0.5,
