@@ -113,11 +113,10 @@ class App extends React.Component {
 Only 3 of these pieces are "highlighted" works</h1>}>
             <Tween from={{top: '20%', left: -2000 }} to={{left: 30}} />
              <Tween from={{ opacity: 1}} to={{ opacity: -1}} />
-
-             </Timeline>
-             </Timeline>
-             </div>
-          )}
+                  </Timeline>
+                </Timeline>
+              </div>
+            )}
           </Scene>
           <Scene duration={"100%"} triggerHook={0.2} pin={true}>
             <Timeline
@@ -127,9 +126,8 @@ Only 3 of these pieces are "highlighted" works</h1>}>
                 </p>
               }
             >
-              
               <Tween from={{ opacity: 0 }} to={{ opacity: 1 }} />
-              </Timeline>
+            </Timeline>
           </Scene>
           {/* CANVAS2*/}
           <Scene duration={1500} pin={true} triggerHook={0.05}>
@@ -163,15 +161,22 @@ Only 3 of these pieces are "highlighted" works</h1>}>
           )}
           </Scene>
           <Scene duration={"100%"} triggerHook={0.2} pin={true}>
-          <Timeline
+            <Timeline
               target={
-            <p className="text-center mt-2 mb-3 mx-auto my-auto">
-              Of the 14,350 artworks featured in the Modern and Contemporary Art Collection, 2,027 artworks are by women while 10,829 are by men. It’s hard to read those numbers without thinking of the question posed by the Guerrilla Girls 1989 piece, ‘Do Women Have To Be Naked To Get Into the Met Museum?” At the time of the creation less than 5% of the artists in the Modern Art Sections were women, while 85% of the nudes featured in the Met are of women.
-            </p>
+                <p className="text-center mt-2 mb-3 mx-auto my-auto">
+                  Of the 14,350 artworks featured in the Modern and Contemporary
+                  Art Collection, 2,027 artworks are by women while 10,829 are
+                  by men. It’s hard to read those numbers without thinking of
+                  the question posed by the Guerrilla Girls 1989 piece, ‘Do
+                  Women Have To Be Naked To Get Into the Met Museum?” At the
+                  time of the creation less than 5% of the artists in the Modern
+                  Art Sections were women, while 85% of the nudes featured in
+                  the Met are of women.
+                </p>
               }
-              >
-                <Tween from={{ opacity: 0 }} to={{ opacity: 1 }} />
-              </Timeline>
+            >
+              <Tween from={{ opacity: 0 }} to={{ opacity: 1 }} />
+            </Timeline>
           </Scene>
            {/* CANVAS3 */}
            <Scene duration={1000} pin={true} triggerHook={0.05}>
@@ -236,32 +241,29 @@ By combining all of the artwork from the previous two diagrams, we show a more b
 
                     <Tween from={{ top: '15%'}} to={{ top: '80%' }} />
 
-                    <Tween
-                    from={{ opacity: 1}} to={{ opacity: -1}} />
-
+                    <Tween from={{ opacity: 1 }} to={{ opacity: -1 }} />
                   </Timeline>
                 </Timeline>
-                </div>
-                )}
+              </div>
+            )}
           </Scene>
           <br />
           <Scene duration={"100%"} triggerHook={0.2} pin={true}>
-          <Timeline
+            <Timeline
               target={
             <p className="text-center mx-auto my-auto">
               We wanted to acknowledge the problematic Eurocentric lens that prominent institutions like the Metropolitan Museum present. The paintings included in this last voronoi were the result of a simple query into the Met's "highlighted" works and contained the parameter "Location: New York." It yielded over 50 results, resulting in a more complex voronoi than its underrepresented counterpart. Details that are noteworthy include the stark lack of people of color (BIPOC) as subjects, and the fact that only three paintings are by women artists (two of which are by the same woman).
             </p>
             }
             >
-              
               <Tween from={{ opacity: 0 }} to={{ opacity: 1 }} />
-              </Timeline>
+            </Timeline>
           </Scene>
-           {/* CANVAS5 */}
+          {/* CANVAS5 */}
           <Scene duration={1000} pin={true} triggerHook={0.05}>
-          {(progress) => (
-            <div>
-               <Timeline totalProgress={progress} paused>  
+            {(progress) => (
+              <div>
+                <Timeline totalProgress={progress} paused>
                   <h2 className="title text-center">
                 Highlighted Art from Underrepresented Countries
                   </h2>
@@ -281,14 +283,14 @@ By combining all of the artwork from the previous two diagrams, we show a more b
                       <Tween
                       from={{ opacity: 1}} to={{ opacity: -1}} />
 
-                    </Timeline>
+                  </Timeline>
                 </Timeline>
-            </div>
+              </div>
             )}
           </Scene>
           <br />
           <Scene duration={"100%"} triggerHook={0.2} pin={true}>
-          <Timeline
+            <Timeline
               target={
             <p className="text-center mx-auto my-auto">
               In stark contrast to the availability of work from American and major European countries, this last piece shows art from countries with very limited highlighted work. Many countries have no available paintings in the "highlights" section. While there are so many from New York, there are just 4 from India, 1 from Korea, and 3 from Japan, to name only a few. There are 3 from all of Africa. These images all come from countries that are largely underrepresented in the chosen “highlights” of the Met, but also in the collection at large. Most are from Middle Eastern or Eastern countries.
@@ -298,36 +300,43 @@ By combining all of the artwork from the previous two diagrams, we show a more b
               <Tween from={{ opacity: 0 }} to={{ opacity: 1 }} />
             </Timeline>
           </Scene>
-           {/* CANVAS6 */}
+          {/* CANVAS6 */}
           <Scene duration={1000} pin={true} triggerHook={0.05}>
-          {(progress) => (
-            <div>
-               <Timeline totalProgress={progress} paused>  
+            {(progress) => (
+              <div>
+                <Timeline totalProgress={progress} paused>
                   <h2 className="title text-center">
-                Highlighted Artwork From Around the World
+                    Highlighted Artwork From Around the World
                   </h2>
                   <canvas
-                  className="d-block my-auto mx-auto"
-                  id="canvas6"
-                  width="900"
-                  height="600"
+                    className="d-block my-auto mx-auto"
+                    id="canvas6"
+                    width="900"
+                    height="600"
                   ></canvas>
                   <Timeline target = { <h1 className="animate animation3">The Department the Arts of Africa, Oceania, and the Americas did not exist at the Met until 1969, when Nelson Rockefeller offered to gift over 3000 works from the Museum of Primitive Art.</h1>}>
                     <Tween from={{ top: '50%', right: 500}} to={{ right: -10}} />
                     <Tween from={{ opacity: 0 }} to={{ opacity: 1 }} />
                   </Timeline>
                 </Timeline>
-            </div>
-          )}
+              </div>
+            )}
           </Scene>
           <br />
           <Scene duration={"100%"} triggerHook={0.2} pin={true}>
-          <Timeline
+            <Timeline
               target={
-            <p className="text-center mx-auto my-auto">
-              Following widespread criticism, in 2020, the Metropolitan Museum of Art delcared their intention to address racism and lack of diversity within their institution. They promised to "establish specified acquisition endowments with a total value of $10 million to increase the amount of works by BIPOC artists in our 20th- and 21st-century collections."  We anxiously await the opportunity to see the benefits of this push toward a more comprehensive collection and approach. 
-            </p>
-            }
+                <p className="text-center mx-auto my-auto">
+                  Following widespread criticism, in 2020, the Metropolitan
+                  Museum of Art declared their intention to address racism and
+                  lack of diversity within their institution. They promised to
+                  "establish specified acquisition endowments with a total value
+                  of $10 million to increase the amount of works by BIPOC
+                  artists in our 20th- and 21st-century collections." We
+                  anxiously await the opportunity to see the benefits of this
+                  push toward a more comprehensive collection and approach.
+                </p>
+              }
             >
               <Tween from={{ opacity: -1 }} to={{ opacity: 2 }} />
             </Timeline>
