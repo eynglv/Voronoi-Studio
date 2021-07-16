@@ -14,10 +14,7 @@ export default () => {
 	}, []);
 	return (
 		<div id="explanation">
-			<h1 className="text-center display-3 mt-3">
-				{" "}
-				What the heck is a Voronoi Anyways?{" "}
-			</h1>
+			<h1 className="text-center display-3 mt-3"> What is a Voronoi? </h1>
 			<p className="text-center mt-2 mb-3 mx-auto my-auto">
 				Well, to quote{" "}
 				<u>
