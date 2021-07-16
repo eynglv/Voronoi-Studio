@@ -20,10 +20,12 @@ export default () => {
 			</h1>
 			<p className="text-center mt-2 mb-3 mx-auto my-auto">
 				Well, to quote{" "}
-				<a href="https://en.wikipedia.org/wiki/Voronoi_diagram">
-					wikipedia
-				</a>
-				, it's
+				<u>
+					<a href="https://en.wikipedia.org/wiki/Voronoi_diagram">
+						wikipedia
+					</a>
+				</u>
+				, it's:
 			</p>
 			<p className="text-center mt-2 mb-3 mx-auto my-auto">
 				<blockquote className="blockquote">
