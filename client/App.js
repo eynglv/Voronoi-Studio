@@ -92,9 +92,23 @@ class App extends React.Component {
         <div id="modal"></div>
         <Controller>
           <Scene duration={'100%'} triggerHook={0.1}pin={true}>
+                <div>
                 <p className="text-center mt-2 mb-3 mx-auto my-auto">
                   Voronoi Studio aims to visually dissect the disproportionate representation of male and western artists, compared to female and non-western artists. The Met’s digital collection contains over 375,000 pieces of artwork available through the Open Access program. We created two sets of contrasting art works to highlight the overt bias in the Met's Collection, one depicting women by women artists juxtaposed with nude paintings of women by male artists, while the other queried the Met's "highlighted" works and contrasted American pieces with pieces from underrepresented countries.
-                  The art we are presenting comes in the form of live-motion voronoi diagrams, allowing us to present multiple views and elements from many different artworks. Voronoi diagrams are created by mapping the relationships between data, which seemed metaphoric for our demonstration.  In 2019, The Met was the 3rd most visited art museum in the world, with nearly 7,000,000 visitors annually, and was the most visited art museum in America. What responsibility does the most prominent art museum in the country have to highlight diverse and underrepresented artists and their cultures? How can we demand accountability from historically biased institutions, without observing the current dismal state of affairs?</p>
+                  </p>
+                  <small>scroll to continue</small>
+                  </div>
+              
+          </Scene>
+            <Scene duration={'100%'} triggerHook={0.1}pin={true}>
+            <Timeline
+              target={
+                <p className="text-center mt-2 mb-3 mx-auto my-auto">  
+                The art we are presenting comes in the form of live-motion voronoi diagrams, allowing us to present multiple views and elements from many different artworks. Voronoi diagrams are created by mapping the relationships between data, which seemed metaphoric for our demonstration.  In 2019, The Met was the 3rd most visited art museum in the world, with nearly 7,000,000 visitors annually, and was the most visited art museum in America. What responsibility does the most prominent art museum in the country have to highlight diverse and underrepresented artists and their cultures? How can we demand accountability from historically biased institutions, without observing the current dismal state of affairs?</p>
+              }
+                >
+                  <Tween from={{ opacity: 0 }} to={{ opacity: 1 }} />
+                </Timeline>
           </Scene>
           {/* CANVAS1 */}
           <Scene duration={"100%"} triggerHook={0.05} pin={true}>

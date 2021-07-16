@@ -103,6 +103,10 @@ canvas {
   margin: auto;
 }
 
+small{
+  text-align: center;
+  margin: auto;
+}
 .title {
   color: #ffcab1;
   font-family: "Spartan", sans-serif;
