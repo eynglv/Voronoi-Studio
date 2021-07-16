@@ -26,12 +26,13 @@ export default () => {
 			</p>
 			<p className="text-center mt-2 mb-3 mx-auto my-auto">
 				<blockquote className="blockquote">
-					a partition of a plane into regions close to each of a given
-					set of objects. In the simplest case, these objects are just
-					finitely many points in the plane (called seeds, sites, or
-					generators). For each seed there is a corresponding region,
-					called a Voronoi cell, consisting of all points of the plane
-					closer to that seed than to any other.{" "}
+					"a partition of a plane into regions close to each of a
+					given set of objects. In the simplest case, these objects
+					are just finitely many points in the plane (called seeds,
+					sites, or generators). For each seed there is a
+					corresponding region, called a Voronoi cell, consisting of
+					all points of the plane closer to that seed than to any
+					other."
 				</blockquote>
 			</p>
 			<p className="text-center mt-2 mb-3 mx-auto my-auto">
