@@ -100,24 +100,24 @@ class App extends React.Component {
           <Scene duration={"100%"} triggerHook={0.05} pin={true}>
           {(progress) => (
             <div className="sticky">
-            <Timeline totalProgress={progress} paused>   
-              <h2 className="title text-center">Women by Women</h2>
-              <canvas
-                className="d-block my-auto mx-auto"
-                id="canvas1"
-                width="900"
-                height="600"
-              >
-              </canvas>
-            <Timeline target = { <h1 className="animate animation1">These 17 pieces are the only oil paintings available tagged as depicting women by women artists via the MET API.<br/> <br/> 
-Only 3 of these pieces are "highlighted" works</h1>}>
-            <Tween from={{top: '20%', left: -2000 }} to={{left: 30}} />
-            <Tween from={{top: '20%'}} to={{top: '85%'}} />
-             <Tween from={{ opacity: 1}} to={{ opacity: -1}} />
-                  </Timeline>
+              <Timeline totalProgress={progress} paused>   
+                <h2 className="title text-center">Women by Women</h2>
+                <canvas
+                  className="d-block my-auto mx-auto"
+                  id="canvas1"
+                  width="900"
+                  height="600"
+                >
+                </canvas>
+                <Timeline target = { <h1 className="animate animation1">These 17 pieces are the only oil paintings available tagged as depicting women by women artists via the MET API.<br/> <br/> 
+                Only 3 of these pieces are "highlighted" works</h1>}>
+                  <Tween from={{top: '20%', left: -2000 }} to={{left: 30}} />
+                  <Tween from={{top: '20%'}} to={{top: '85%'}} />
+                  <Tween from={{ opacity: 1}} to={{ opacity: -1}} />
                 </Timeline>
-              </div>
-            )}
+              </Timeline>
+            </div>
+          )}
           </Scene>
           <Scene duration={"100%"} triggerHook={0.2} pin={true}>
             <Timeline
@@ -135,30 +135,23 @@ Only 3 of these pieces are "highlighted" works</h1>}>
           {(progress) => (
             <div>
                <Timeline totalProgress={progress} paused>  
-               <Tween>
-              <h2 className="title text-center">Women by Men</h2>
-              <canvas
-                className="d-block my-auto mx-auto"
-                id="canvas2"
-                width="900"
-                height="600"
-              ></canvas>
-</Tween>
-            
-            <Timeline target = { <h1 className="animate animation2">There are no paintings of nude men painted by women available in the Met API.</h1>}>
-            
-  
-            <Tween from={{ top: '25%', left: -800}} to={{ left: 800, top: '25%' }} />
-           
-            
-             <Tween
-             from={{ opacity: 1}} to={{ opacity: -1}} />
-
-             </Timeline>
-            
-
-             </Timeline>
-             </div>
+                <Tween>
+                  <h2 className="title text-center">Women by Men</h2>
+                  <canvas
+                    className="d-block my-auto mx-auto"
+                    id="canvas2"
+                    width="900"
+                    height="600"
+                  ></canvas>
+                  </Tween>
+              
+                    <Timeline target = { <h1 className="animate animation2">There are no paintings of nude men painted by women available in the Met API.</h1>}>
+                    <Tween from={{ top: '25%', left: -800}} to={{ left: 800, top: '25%' }} />
+                    <Tween
+                    from={{ opacity: 1}} to={{ opacity: -1}} />
+                    </Timeline>
+                </Timeline>
+            </div>
           )}
           </Scene>
           <Scene duration={"100%"} triggerHook={0.2} pin={true}>
@@ -184,69 +177,66 @@ Only 3 of these pieces are "highlighted" works</h1>}>
           {(progress) => (
             <div>
                <Timeline totalProgress={progress} paused> 
-               <Tween>
-                <h2 className="title text-center">Women by Men and Women</h2>
-                <canvas
-                className="d-block my-auto mx-auto"
-                id="canvas3"
-                width="900"
-                height="600"
-                ></canvas>
-                </Tween> 
-                <Timeline target = { <h1 className="animate animation3">In 2018, only 14.13% of the Met's 14,350 Modern and Contemporary Art pieces were by women artists.</h1>}>
+                <Tween>
+                  <h2 className="title text-center">Women by Men and Women</h2>
+                  <canvas
+                  className="d-block my-auto mx-auto"
+                  id="canvas3"
+                  width="900"
+                  height="600"
+                  ></canvas>
+                  </Tween> 
+                    <Timeline target = { <h1 className="animate animation3">In 2018, only 14.13% of the Met's 14,350 Modern and Contemporary Art pieces were by women artists.</h1>}>
 
-                  {/* <Tween
-                  from={{ opacity: -1}} to={{ opacity: 1}} /> */}
+                  <Tween from={{ top: '50%', left: -500}} to={{ left: 500}} />
 
-<Tween from={{ top: '50%', left: -500}} to={{ left: 500}} />
+                  <Tween
+                  from={{ opacity: 1}} to={{ opacity: -1}} />
 
-<Tween
-from={{ opacity: 1}} to={{ opacity: -1}} />
-
- </Timeline>
-</Timeline>
-</div>
-)}
-</Scene>
-<br />
-<Scene duration={"100%"} triggerHook={0.2} pin={true}>
-<Timeline
-target={
-<p className="text-center mx-auto my-auto">
-By combining all of the artwork from the previous two diagrams, we show a more balanced view of artwork depicting women from both male and female artists.
-</p>
-}
->
-
-<Tween from={{ opacity: 0 }} to={{ opacity: 1 }} />
-</Timeline> 
-</Scene>
-{/* CANVAS4 */}
-<Scene duration={1000} pin={true} triggerHook={0.05}>
-          {(progress) => (
-            <div>
-              <Timeline totalProgress={progress} paused>   
-              <h2 className="title text-center">
-                American Art Hightlighted at the Met
-              </h2>
-              <canvas
-                className="d-block my-auto mx-auto"
-                id="canvas4"
-                width="900"
-                height="600"
-                >
-              </canvas>
-                <Timeline target = { <h1 className="animate animation4">In 2020, the Met hired it's first Native-American curator for the American Wing.</h1>}>
-
-                <Tween from={{ top: '15%', left: -2000 }} to={{top: '15%', left: 25}} />
-
-                    <Tween from={{ top: '15%'}} to={{ top: '80%' }} />
-
-                    <Tween from={{ opacity: 1 }} to={{ opacity: -1 }} />
-                  </Timeline>
+                    </Timeline>
                 </Timeline>
               </div>
             )}
+            </Scene>
+            <br />
+            <Scene duration={"100%"} triggerHook={0.2} pin={true}>
+            <Timeline
+            target={
+            <p className="text-center mx-auto my-auto">
+            By combining all of the artwork from the previous two diagrams, we show a more balanced view of artwork depicting women from both male and female artists.
+            </p>
+            }
+            >
+
+            <Tween from={{ opacity: 0 }} to={{ opacity: 1 }} />
+            </Timeline> 
+            </Scene>
+            {/* CANVAS4 */}
+            <Scene duration={1000} pin={true} triggerHook={0.05}>
+              {(progress) => (
+                <div>
+                  <Timeline totalProgress={progress} paused>   
+                  <h2 className="title text-center">
+                    American Art Hightlighted at the Met
+                  </h2>
+                  <canvas
+                    className="d-block my-auto mx-auto"
+                    id="canvas4"
+                    width="900"
+                    height="600"
+                    >
+                  </canvas>
+                    <Timeline target = { <h1 className="animate animation4">In 2020, the Met hired it's first Native-American curator for the American Wing.</h1>}>
+
+                      <Tween from={{ top: '15%', left: -2000 }} to={{top: '15%', left: 25}} />
+
+                      <Tween from={{ top: '15%'}} to={{ top: '80%' }} />
+
+                      <Tween from={{ opacity: 1 }} to={{ opacity: -1 }} />
+                    </Timeline>
+                  </Timeline>
+                </div>
+             )}
           </Scene>
           <br />
           <Scene duration={"100%"} triggerHook={0.2} pin={true}>
@@ -274,16 +264,10 @@ By combining all of the artwork from the previous two diagrams, we show a more b
                     width="900"
                     height="600"
                   ></canvas>
-                    <Timeline target = { <h1 className="animate animation5">The Met has 107 pieces of highlighted work from NY (population 19 million ), but only 177 from all of Africa (population 1.35 billion).
-</h1>}>
-
-                      
+                    <Timeline target = { <h1 className="animate animation5">The Met has 107 pieces of highlighted work from NY (population 19 million ), but only 177 from all of Africa (population 1.35 billion).</h1>}>
                       <Tween from={{ top: '75%', left: -2000}} to={{ top: '75%', left: 700 }} />
-
-
                       <Tween
                       from={{ opacity: 1}} to={{ opacity: -1}} />
-
                   </Timeline>
                 </Timeline>
               </div>
