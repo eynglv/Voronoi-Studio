@@ -233,3 +233,31 @@ small {
 #formBtn:hover {
   background-color: #a63d40;
 }
+
+#infoModalLabel {
+  background-color: rgba(36, 123, 160, 0);
+}
+
+.modal-header {
+  background-color: rgba(36, 123, 160, 0.9);
+}
+
+.modal-body {
+  background-color: rgba(241, 222, 222, 0.9);
+}
+
+.modal-footer {
+  background-color: rgba(241, 222, 222, 0.9);
+}
+
+#infoBullets {
+  background-color: rgba(241, 222, 222, 0);
+  color: black;
+}
+#sampleTermBtn {
+  background-color: rgba(36, 123, 160, 0.9);
+  color: white;
+}
+#sampleTermBtn:hover {
+  background-color: rgba(36, 123, 160, 0.7);
+}

@@ -34,8 +34,8 @@
     "pg": "^8.5.1",
     "react-gsap": "^3.2.1",
     "react-scroll": "^1.8.2",
-    "react-simple-sidenav": "^2.0.0",
     "react-scrollmagic": "^2.3.0",
+    "react-simple-sidenav": "^2.0.0",
     "reactstrap": "^8.9.0",
     "sequelize": "^6.3.5"
   },
