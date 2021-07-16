@@ -63,11 +63,11 @@ const chart = {
 			}
 
 			//below block renders lines between cells
-
-			// context.beginPath();
-			// voronoi.render(context);
-			// voronoi.renderBounds(context);
-			// context.stroke();
+			context.lineWidth = 10;
+			context.beginPath();
+			voronoi.render(context);
+			voronoi.renderBounds(context);
+			context.stroke();
 
 			//uncomment below to render dots in each cell
 
