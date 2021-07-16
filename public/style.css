@@ -120,24 +120,28 @@ small {
   background-color: rgba(100, 111, 88, 0.9);
 }
 
+
 #modal.open {
-  height: 500px;
-  width: 50%;
+	/* height: 500px;
+	width: 50%; */
+	/* overflow:hidden; */
 }
 
 .modalContent {
-  width: 80%;
-  height: 100%;
-  margin: auto;
-  position: relative;
-  top: 10%;
-  background-color: rgba(125, 133, 112, 0);
-  padding-bottom: 18px;
+	height: 70%;
+	width: 80%;
+	margin: auto;
+	position: relative;
+	top: 20%;
+	background-color: rgba(125, 133, 112, 0);
+	padding-bottom: 18px;
 }
 
 .modalImage {
-  margin: auto;
-  width: 100%;
+	margin: auto;
+	width: 100%;
+	margin-top: 40px;
+	margin-bottom: 100px; 
 }
 
 #modalTitle {
@@ -260,4 +264,8 @@ small {
 }
 #sampleTermBtn:hover {
   background-color: rgba(36, 123, 160, 0.7);
+}
+
+.noscroll{
+	overflow:hidden;
 }
