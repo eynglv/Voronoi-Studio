@@ -197,7 +197,7 @@ export default () => {
               ></button>
             </div>
             <div class="modal-body">
-              <ul class="list-group list-group-flush">
+              <ul class="list-group list-group-flush fw-bold">
                 <li class="list-group-item">
                   Tag: Women, Highlighted Works Only
                 </li>
