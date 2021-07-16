@@ -2,11 +2,8 @@
   background-color: #121619;
   color: #fff8f0;
   font-family: "Poppins", sans-serif;
+	overflow: -moz-hidden-unscrollable;
 }
-
-/* #main{
-  overflow:scroll;
-} */
 
 h1 {
   font-family: "Spartan";
@@ -150,6 +147,15 @@ small{
   bottom: 40px;
   background-color: rgba(125, 133, 112, 0);
 }
+#modalLink {
+  background-color: rgba(125, 133, 112, 0);
+  color: #fff8f0;
+}
+
+#modalLink:hover {
+  cursor: pointer;
+  color: #121619;
+}
 
 #modalAuthor {
   width: 100%;
@@ -204,7 +210,7 @@ small{
   flex-basis: fit-content;
 }
 
-p {
+#main p {
   font-size: x-large;
   width: 75%;
 }
@@ -224,31 +230,4 @@ p {
 	width: 350px;
 	
 }
-/* .animation1{
-  top:50; 
-  right:0;
-}  */
-/* 
-.animation2{
-  top:50; 
-}
 
-.animation3{
-	right:1%
-}
-
-.animation4{
-  top:50; 
-  left:1%;
-}
-.animation5{
-  top:50; 
-}
-
-.animation6{
-	left:1%
-} */
-
-#main {
-	overflow: scroll;
-}

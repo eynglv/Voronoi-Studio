@@ -35,6 +35,11 @@ const renderModal = (selector, artPiece, context) => {
         .append("h3")
         .attr("class", "text-center")
         .attr("id", "modalTitle")
+        .append("a")
+        .attr("href", (data) => {
+          return `https://www.metmuseum.org/art/collection/search/${data.objectId}`;
+        })
+        .attr("id", "modalLink")
         .text((data) => {
           return data.title;
         });
@@ -42,6 +47,7 @@ const renderModal = (selector, artPiece, context) => {
         .append("p")
         .attr("class", "text-center")
         .attr("id", "modalAuthor")
+        .style("width", "100%")
         .text((data) => {
           return `- ${data.artistDisplayName} -`;
         });

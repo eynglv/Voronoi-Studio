@@ -19,8 +19,7 @@ class Home extends React.Component {
           Welcome to Voronoi Studio
         </h1>
         <p className="lead text-center mx-auto">
-          Project Description: Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
-          amet.
+        an art and data visualization exploration
         </p>
         <div
           id="carouselExampleCaptions"

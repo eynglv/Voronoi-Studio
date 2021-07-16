@@ -132,12 +132,14 @@ class App extends React.Component {
               </Timeline>
             </div>
           )}
+
           </Scene>
           <Scene duration={"100%"} triggerHook={0.2} pin={true}>
             <Timeline
               target={
                 <p className="text-center mt-2 mb-3 mx-auto my-auto">
                   The voronoi above consists of art by women with at least one woman subject. Originally, the plan was to only use works highlighted by The Met, but there were only 3. I decided to limit my selection to just oil paintings in order to create a cohesive look.
+
                 </p>
               }
             >
@@ -150,7 +152,7 @@ class App extends React.Component {
             <div>
                <Timeline totalProgress={progress} paused>  
                 <Tween>
-                  <h2 className="title text-center">Women by Men</h2>
+   <h2 className="title text-center">Women by Men</h2>
                   <canvas
                     className="d-block my-auto mx-auto"
                     id="canvas2"
@@ -167,6 +169,7 @@ class App extends React.Component {
                 </Timeline>
             </div>
           )}
+
           </Scene>
           <Scene duration={"100%"} triggerHook={0.2} pin={true}>
             <Timeline
@@ -238,6 +241,7 @@ class App extends React.Component {
                     id="canvas4"
                     width="900"
                     height="600"
+
                     >
                   </canvas>
                     <Timeline target = { <h1 className="animate animation4">In 2020, the Met hired it's first Native-American curator for the American Wing.</h1>}>
@@ -251,6 +255,7 @@ class App extends React.Component {
                   </Timeline>
                 </div>
              )}
+
           </Scene>
           <br />
           <Scene duration={"100%"} triggerHook={0.2} pin={true}>
