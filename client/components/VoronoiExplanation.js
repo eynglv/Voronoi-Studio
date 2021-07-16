@@ -64,7 +64,7 @@ export default () => {
 			>
 				three cell example
 			</canvas>
-			<p className="text-center mt-2 mb-3 mx-auto my-auto">
+			<p className="text-center mt-2 mb-5 mx-auto my-auto">
 				the same rules apply. Any line that runs between two dots is
 				equidistant from both of them, and everything in a cell is
 				closer to the dot in there than any of the others.
