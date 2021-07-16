@@ -1,5 +1,6 @@
 const renderModal = (selector, artPiece, context) => {
   d3.select(selector).classed("open", true).classed("close", false);
+  d3.select('body').classed("noscroll", true);
   //the modal will toggle between open and close class (see closeModal function)
   const data = [artPiece];
   //data is required to be an array to be bound on line 10
@@ -57,6 +58,7 @@ const renderModal = (selector, artPiece, context) => {
   d3.select(".closeBtn").on("click", closeModal);
 
   function closeModal() {
+    d3.select('body').classed("noscroll", false);
     d3.select(selector).classed("close", true).classed("open", false);
     context.filter = "blur(0px)";
     //unblurs the canvas
