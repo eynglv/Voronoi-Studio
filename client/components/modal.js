@@ -29,7 +29,7 @@ const renderModal = (selector, artPiece, context) => {
           return data.primaryImageSmall;
         })
         .attr("height", "70%")
-        .attr("width", "80%");
+        // .attr("width", "auto");
 
       enter
         .append("h3")
