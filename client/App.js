@@ -112,6 +112,7 @@ class App extends React.Component {
             <Timeline target = { <h1 className="animate animation1">These 17 pieces are the only oil paintings available tagged as depicting women by women artists via the MET API.<br/> <br/> 
 Only 3 of these pieces are "highlighted" works</h1>}>
             <Tween from={{top: '20%', left: -2000 }} to={{left: 30}} />
+            <Tween from={{top: '20%'}} to={{top: '85%'}} />
              <Tween from={{ opacity: 1}} to={{ opacity: -1}} />
                   </Timeline>
                 </Timeline>
@@ -277,7 +278,7 @@ By combining all of the artwork from the previous two diagrams, we show a more b
 </h1>}>
 
                       
-                      <Tween from={{ top: '75%', left: -2000}} to={{ top: '75%', left: 100 }} />
+                      <Tween from={{ top: '75%', left: -2000}} to={{ top: '75%', left: 700 }} />
 
 
                       <Tween
@@ -314,7 +315,7 @@ By combining all of the artwork from the previous two diagrams, we show a more b
                     width="900"
                     height="600"
                   ></canvas>
-                  <Timeline target = { <h1 className="animate animation3">The Department the Arts of Africa, Oceania, and the Americas did not exist at the Met until 1969, when Nelson Rockefeller offered to gift over 3000 works from the Museum of Primitive Art.</h1>}>
+                  <Timeline target = { <h1 className="animate animation3">The Department of the Arts of Africa, Oceania, and the Americas did not exist at the Met until 1969, when Nelson Rockefeller offered to gift over 3000 works from the Museum of Primitive Art.</h1>}>
                     <Tween from={{ top: '50%', right: 500}} to={{ right: -10}} />
                     <Tween from={{ opacity: 0 }} to={{ opacity: 1 }} />
                   </Timeline>
