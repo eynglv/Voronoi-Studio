@@ -209,7 +209,8 @@ small {
 	flex-basis: fit-content;
 }
 
-#main p {
+#main p,
+#explanation p {
 	font-size: x-large;
 	width: 75%;
 }
