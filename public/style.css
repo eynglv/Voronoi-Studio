@@ -87,10 +87,12 @@ a {
 }
 
 .names.github:hover,
-#explanation a:hover {
+#explanation a:hover,
+#voronoi-explained-link:hover {
 	color: #ffcab1;
 }
-#explanation a {
+#explanation a,
+#voronoi-explained-link {
 	color: #fff8f0;
 }
 

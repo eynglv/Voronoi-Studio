@@ -19,7 +19,7 @@ class Home extends React.Component {
 					Welcome to Voronoi Studio
 				</h1>
 				<p className="lead text-center mx-auto">
-					<a href="/voronois-explained">
+					<a href="/voronois-explained" id="voronoi-explained-link">
 						<em>Vor•o•noi</em> — a partition of a plane into regions
 						close to each of a given set of objects
 					</a>
