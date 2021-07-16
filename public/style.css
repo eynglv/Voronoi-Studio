@@ -8,10 +8,14 @@ h1 {
 	font-family: "Spartan";
 }
 
-img {
+body {
+	font-family: sans-serif;
+}
+
+/* img {
 	max-height: max-content;
 	min-height: min-content;
-}
+} */
 
 .CYO {
 	color: #ffcab1;
@@ -20,12 +24,13 @@ img {
 #nav {
 	background-color: #a63d40;
 	height: 100%;
-	width: 0.5%;
+	width: 3%;
 	z-index: 1;
 	padding-left: 1vw;
 	left: 0;
-	overflow-x: hidden;
-	opacity: 0.5;
+	opacity: .9;
+	overflow: hidden;
+	transition: 2s;
 }
 
 .carousel-item img {
@@ -37,9 +42,27 @@ img {
 	font-size: 12px;
 }
 
-#nav:hover {
-	width: 13%;
-	padding-left: 0;
+.menu {
+	background-color: #a63d40;
+	opacity: 0;
+	transition: opacity .2s;
+}
+
+.material-icons {
+	background-color: #a63d40 ;
+	position: relative;
+	left: -20%;
+	top: 2%
+}
+
+.menu:hover {
+	opacity: 1;
+	transition: opacity 2s;
+}
+
+.image-wrapper:hover .caption {
+	visibility: visible;
+	opacity: 1;
 }
 
 #nav a {
@@ -49,20 +72,23 @@ img {
 	background-color: #a63d40;
 }
 
-#nav span {
+#nav:hover {
+	width: 15%;
+	transition: 1s
+}
+
+/* #nav span {
 	font-size: 18px;
 	overflow: hidden;
 	color: #fff8f0;
 	background-color: #a63d40;
-}
+} */
 
 #nav a:hover {
 	color: #ffcab1;
 }
 
-body {
-	font-family: sans-serif;
-}
+
 
 .links-text {
 	vertical-align: middle;

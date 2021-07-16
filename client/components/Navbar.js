@@ -8,8 +8,11 @@ class Navbar extends React.Component {
     return (
       <nav
         id="nav"
-        className="top-0 nav justify-content-around mx-auto d-flex flex-column position-fixed"
-      >
+        className="top-0 nav  mx-auto d-flex flex-column position-fixed"
+      > <span className="material-icons">
+      fingerprint
+      </span>
+        <div className = "menu flex-grow-1 d-flex flex-column justify-content-around">
         <a href="/" className="mx-auto links-text">
           Home
         </a>
@@ -34,6 +37,7 @@ class Navbar extends React.Component {
         <a href="voronoi-form" className="mx-auto links-text">
           Create Your Own Voronoi
         </a>
+        </div>
       </nav>
     );
   }
