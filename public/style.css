@@ -229,3 +229,20 @@ small {
 		1px 1px 0 #000;
 	width: 350px;
 }
+#how-to{
+	display: block;
+	border: 5px;
+	margin: auto;
+	width: 350px;
+	border-color: #ffcab1;
+	background-color:#fff8f0;
+	color:rgba(18, 22, 25);
+	margin-bottom: 500px;
+}
+
+#how-to p{
+	font-size: 14px;
+	background-color:#fff8f0;
+	color:rgba(18, 22, 25);
+	margin: auto;
+}

@@ -91,6 +91,19 @@ class App extends React.Component {
       <div id='main'>
         <div id="modal"></div>
         <Controller>
+          <Scene duration={600} triggerHook={0} pin={true}>
+            <Timeline
+              target={
+                <div id="how-to" className="text-center">
+                  <h5>Welcome to Voronoi Studio</h5>
+                  <p>Scroll down to view our digital essay.</p>
+                  <p>You can click on any of the moving images to get more detail.</p>
+                  <p>Use the pop-out nav bar on the left to explore more of the site.</p>
+                  <p>Please enjoy responsibly.</p>
+                </div>}>
+                <Tween from={{ opacity: 3 }} to={{ opacity: 0 }} />
+              </Timeline>
+          </Scene>
           <Scene duration={'100%'} triggerHook={0.1}pin={true}>
                 <div>
                 <p className="text-center mt-2 mb-3 mx-auto my-auto">
