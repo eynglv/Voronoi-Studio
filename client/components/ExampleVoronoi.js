@@ -69,7 +69,7 @@ const chart = {
 			context.fill();
 
 			//below block renders lines between cells
-			context.lineWidth = 9;
+			context.lineWidth = 8;
 			context.beginPath();
 			voronoi.render(context);
 			voronoi.renderBounds(context);
