@@ -86,8 +86,12 @@ a {
 	background-color: rgba(95, 124, 140, 0.35);
 }
 
-.names.github:hover {
+.names.github:hover,
+#explanation a:hover {
 	color: #ffcab1;
+}
+#explanation a {
+	color: #fff8f0;
 }
 
 h1 #welcome {
