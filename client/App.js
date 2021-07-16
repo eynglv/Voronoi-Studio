@@ -147,7 +147,7 @@ class App extends React.Component {
             </Timeline>
           </Scene>
           {/* CANVAS2*/}
-          <Scene duration={1500} pin={true} triggerHook={0.05}>
+          <Scene duration={'100%'} pin={true} triggerHook={0.05}>
           {(progress) => (
             <div>
                <Timeline totalProgress={progress} paused>  
@@ -190,7 +190,7 @@ class App extends React.Component {
             </Timeline>
           </Scene>
            {/* CANVAS3 */}
-           <Scene duration={1000} pin={true} triggerHook={0.05}>
+           <Scene duration={'100%'} pin={true} triggerHook={0.05}>
           {(progress) => (
             <div>
                <Timeline totalProgress={progress} paused> 
@@ -229,7 +229,7 @@ class App extends React.Component {
             </Timeline> 
             </Scene>
             {/* CANVAS4 */}
-            <Scene duration={1000} pin={true} triggerHook={0.05}>
+            <Scene duration={"100%"} pin={true} triggerHook={0.05}>
               {(progress) => (
                 <div>
                   <Timeline totalProgress={progress} paused>   
@@ -284,7 +284,7 @@ class App extends React.Component {
                     height="600"
                   ></canvas>
                     <Timeline target = { <h1 className="animate animation5">The Met has 107 pieces of highlighted work from NY (population 19 million ), but only 177 from all of Africa (population 1.35 billion).</h1>}>
-                      <Tween from={{ top: '75%', left: -2000}} to={{ top: '75%', left: 700 }} />
+                      <Tween from={{ top: '60%', left: -2000}} to={{ top: '60%', left: 700 }} />
                       <Tween
                       from={{ opacity: 1}} to={{ opacity: -1}} />
                   </Timeline>
@@ -305,7 +305,7 @@ class App extends React.Component {
             </Timeline>
           </Scene>
           {/* CANVAS6 */}
-          <Scene duration={1000} pin={true} triggerHook={0.05}>
+          <Scene duration={"100%"} pin={true} triggerHook={0.05}>
             {(progress) => (
               <div>
                 <Timeline totalProgress={progress} paused>
@@ -319,7 +319,7 @@ class App extends React.Component {
                     height="600"
                   ></canvas>
                   <Timeline target = { <h1 className="animate animation3">The Department of the Arts of Africa, Oceania, and the Americas did not exist at the Met until 1969, when Nelson Rockefeller offered to gift over 3000 works from the Museum of Primitive Art.</h1>}>
-                    <Tween from={{ top: '50%', right: 500}} to={{ right: -10}} />
+                    <Tween from={{ top: '50%', right: 500}} to={{ right: 0}} />
                     <Tween from={{ opacity: 0 }} to={{ opacity: 1 }} />
                   </Timeline>
                 </Timeline>
