@@ -105,6 +105,7 @@ canvas {
 
 small{
   text-align: center;
+  display: block;
   margin: auto;
 }
 .title {
