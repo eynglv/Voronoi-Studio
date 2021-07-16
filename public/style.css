@@ -4,6 +4,10 @@
   font-family: "Poppins", sans-serif;
 }
 
+.paintingsAll {
+	border-color: #fff8f0 !important;
+}
+
 h1 {
   font-family: "Spartan";
 }

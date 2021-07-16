@@ -17,8 +17,8 @@ export default ()=>{
             {
             artPieces.map(painting=>(
                 <div className= "mb-5 mt-2 d-flex justify-content-center flex-column image-wrapper" key={painting.id} >
-                <img height="auto" width="100%"  className ="border border-light border-4 " src={painting.primaryImageSmall} /> 
-                <div className='mt-1 text-center caption'>{painting.title} by {painting.artistDisplayName ? painting.artistDisplayName : 'Unknown'}</div>
+                <img height="auto" width="100%"  className ="paintingsAll border border-5" src={painting.primaryImageSmall} /> 
+                <div className='mt-1 text-center fs-6 caption'>{painting.title} by {painting.artistDisplayName ? painting.artistDisplayName : 'Unknown'}</div>
                 </div>
             ))}
         </div>
