@@ -86,8 +86,16 @@ a {
   background-color: rgba(95, 124, 140, 0.35);
 }
 
-.names.github:hover {
-  color: #ffcab1;
+
+.names.github:hover,
+#explanation a:hover,
+#voronoi-explained-link:hover {
+	color: #ffcab1;
+
+}
+#explanation a,
+#voronoi-explained-link {
+	color: #fff8f0;
 }
 
 h1 #welcome {
@@ -213,9 +221,11 @@ small {
   flex-basis: fit-content;
 }
 
-#main p {
-  font-size: x-large;
-  width: 75%;
+#main p,
+#explanation p {
+	font-size: x-large;
+	width: 75%;
+
 }
 
 .scrollToTop {
