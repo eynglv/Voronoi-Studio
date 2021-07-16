@@ -8,28 +8,25 @@ h1 {
   font-family: "Spartan";
 }
 
-
 /* img {
 	max-height: max-content;
 	min-height: min-content;
 } */
-
 
 .CYO {
   color: #ffcab1;
 }
 
 #nav {
-	background-color: #a63d40;
-	height: 100%;
-	width: 3%;
-	z-index: 1;
-	padding-left: 1vw;
-	left: 0;
-	opacity: .9;
-	overflow: hidden;
-	transition: 2s;
-
+  background-color: #a63d40;
+  height: 100%;
+  width: 3%;
+  z-index: 1;
+  padding-left: 1vw;
+  left: 0;
+  opacity: 0.9;
+  overflow: hidden;
+  transition: 2s;
 }
 
 .carousel-item img {
@@ -42,26 +39,26 @@ h1 {
 }
 
 .menu {
-	background-color: #a63d40;
-	opacity: 0;
-	transition: opacity .2s;
+  background-color: #a63d40;
+  opacity: 0;
+  transition: opacity 0.2s;
 }
 
 .material-icons {
-	background-color: #a63d40 ;
-	position: relative;
-	left: -20%;
-	top: 2%
+  background-color: #a63d40;
+  position: relative;
+  left: -20%;
+  top: 2%;
 }
 
 .menu:hover {
-	opacity: 1;
-	transition: opacity 2s;
+  opacity: 1;
+  transition: opacity 2s;
 }
 
 .image-wrapper:hover .caption {
-	visibility: visible;
-	opacity: 1;
+  visibility: visible;
+  opacity: 1;
 }
 
 #nav a {
@@ -72,23 +69,16 @@ h1 {
 }
 
 #nav:hover {
-	width: 15%;
-	transition: 1s
+  width: 15%;
+  transition: 1s;
 }
-
-
-
 
 #nav a:hover {
   color: #ffcab1;
 }
 
-
-
-
 body {
   font-family: sans-serif;
-
 }
 
 .links-text {
@@ -113,16 +103,14 @@ a {
   background-color: rgba(95, 124, 140, 0.35);
 }
 
-
 .names.github:hover,
 #explanation a:hover,
 #voronoi-explained-link:hover {
-	color: #ffcab1;
-
+  color: #ffcab1;
 }
 #explanation a,
 #voronoi-explained-link {
-	color: #fff8f0;
+  color: #fff8f0;
 }
 
 h1 #welcome {
@@ -155,28 +143,27 @@ small {
   background-color: rgba(100, 111, 88, 0.9);
 }
 
-
 #modal.open {
-	/* height: 500px;
+  /* height: 500px;
 	width: 50%; */
-	/* overflow:hidden; */
+  /* overflow:hidden; */
 }
 
 .modalContent {
-	height: 70%;
-	width: 80%;
-	margin: auto;
-	position: relative;
-	top: 20%;
-	background-color: rgba(125, 133, 112, 0);
-	padding-bottom: 18px;
+  height: 70%;
+  width: 80%;
+  margin: auto;
+  position: relative;
+  top: 20%;
+  background-color: rgba(125, 133, 112, 0);
+  padding-bottom: 18px;
 }
 
 .modalImage {
-	margin: auto;
-	width: 100%;
-	margin-top: 40px;
-	margin-bottom: 100px; 
+  margin: auto;
+  width: 100%;
+  margin-top: 40px;
+  margin-bottom: 100px;
 }
 
 #modalTitle {
@@ -250,9 +237,8 @@ small {
 
 #main p,
 #explanation p {
-	font-size: x-large;
-	width: 75%;
-
+  font-size: x-large;
+  width: 75%;
 }
 
 .scrollToTop {
@@ -305,9 +291,8 @@ small {
 
 canvas:hover {
   cursor: pointer;
+}
 
-
-.noscroll{
-	overflow:hidden;
-
+.noscroll {
+  overflow: hidden;
 }
