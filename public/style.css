@@ -4,6 +4,10 @@
   font-family: "Poppins", sans-serif;
 }
 
+#main{
+  overflow:scroll;
+}
+
 h1 {
   font-family: "Spartan";
 }
@@ -212,13 +216,14 @@ p {
   position: absolute;
 	background-color: rgba(18, 22, 25, 0.65);
 	text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-	width: 40%;
+	width: 350px;
 	
 }
-.animation1{
+/* .animation1{
   top:50; 
-  right:1%;
-}
+  right:0;
+}  */
+/* 
 .animation2{
   top:50; 
 }
@@ -237,7 +242,7 @@ p {
 
 .animation6{
 	left:1%
-}
+} */
 
 #main {
 	overflow: scroll;
