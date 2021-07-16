@@ -73,7 +73,7 @@ const chart = {
 
 			context.fillStyle = "#FFF8F0";
 			context.beginPath();
-			voronoi.delaunay.renderPoints(context, 1);
+			voronoi.delaunay.renderPoints(context, 5);
 			context.fill();
 
 			yield context.canvas; //return to caller with the canvas
