@@ -242,10 +242,18 @@ small {
 
 .scrollToTop {
   cursor: pointer;
+  color: #fff8f0;
+  font-size: 2rem;
 }
 
+.scrollToTop:hover {
+  color: #a63d40
+}
+
+
+
 .animate {
-  font-size: 30px;
+  font-size: 24px;
   font-weight: 1000;
   color: #fff8f0;
   z-index: 2;
@@ -294,4 +302,9 @@ canvas:hover {
 
 .noscroll {
   overflow: hidden;
+}
+
+.paragraphsMain {
+  text-align: justify;
+  text-justify: inter-word
 }
