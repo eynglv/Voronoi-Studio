@@ -224,10 +224,6 @@ class App extends React.Component {
 											}}
 										/>
 										<Tween
-											from={{ top: "25%", left: -800 }}
-											to={{ left: 800, top: "25%" }}
-										/>
-										<Tween
 											from={{ opacity: 1 }}
 											to={{ opacity: -1 }}
 										/>
@@ -288,10 +284,6 @@ class App extends React.Component {
 											to={{ left: 500 }}
 										/>
 
-										<Tween
-											from={{ opacity: 1 }}
-											to={{ opacity: -1 }}
-										/>
 
 										<Tween
 											from={{ opacity: 1 }}
@@ -331,19 +323,6 @@ class App extends React.Component {
 										width="900"
 										height="600"
 									></canvas>
-									<Timeline
-										target={
-											<h1 className="animate animation4">
-												In 2020, the Met hired its first
-												Native-American curator for the
-												American Wing.
-											</h1>
-										}
-									>
-										<Tween
-											from={{ top: "15%", left: -2000 }}
-											to={{ top: "15%", left: 25 }}
-										/>
 										<Timeline
 											target={
 												<h1 className="paragraphsMain animate animation4">
@@ -372,7 +351,6 @@ class App extends React.Component {
 												to={{ opacity: -1 }}
 											/>
 										</Timeline>
-									</Timeline>
 								</Timeline>
 							</div>
 						)}
