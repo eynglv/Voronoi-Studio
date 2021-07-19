@@ -131,7 +131,7 @@ export default () => {
       <div
         className="modal"
         id="infoModal"
-        tabindex="-1"
+        tabIndex="-1"
         aria-labelledby="infoModalLabel"
         aria-hidden="true"
       >
@@ -199,7 +199,7 @@ export default () => {
         id="sampleSearchTerms"
         aria-hidden="true"
         aria-labelledby="infoModalLabel"
-        tabindex="-1"
+        tabIndex="-1"
       >
         <div className="modal-dialog modal-dialog-centered">
           <div className="modal-content">
