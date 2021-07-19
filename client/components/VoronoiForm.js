@@ -3,6 +3,7 @@ import axios from "axios";
 import chart from "./pulsate";
 
 export default () => {
+	//state for form component
 	const [highlight, setHighlight] = useState(true);
 	const [tags, setTags] = useState(true);
 	const [departmentId, setDepartmentId] = useState(0);
@@ -14,9 +15,15 @@ export default () => {
 	const [search, setSearch] = useState({});
 	const [artData, setArtData] = useState([]);
 	const [errorMessage, setErrorMessage] = useState("");
+	//state for progress bar
 	const [currentIndex, setCurrentIndex] = useState(0);
 	const [progressMax, setProgressMax] = useState(0);
 	const [currentProgress, setCurrentProgress] = useState(0);
+	//state for keeping number of intervals to 1
+	const [oldInterval, setOldInterval] = useState({});
+	const [newInterval, setNewInterval] = useState({});
+
+	//function to get data from MET API
 	const getVoronoi = async (route) => {
 		try {
 			const artList = (await axios.get(route)).data.objectIDs;
@@ -42,7 +49,7 @@ export default () => {
 						isHighlight: artPiece.isHighlight,
 						isPublicDomain: artPiece.isPublicDomain,
 					};
-					setCurrentIndex(i);
+					setCurrentIndex(i); //once we get a new piece of art, we change the currentIndex
 					return artObj;
 				})
 			);
@@ -54,9 +61,11 @@ export default () => {
 			console.error(err);
 		}
 	};
+	//when we change the current index (which means we've loaded another piece of art) we increment progress
 	useEffect(() => {
 		setCurrentProgress(currentProgress + 1);
 	}, [currentIndex]);
+	//queries the met API when we search, and loads the results to artData
 	useEffect(() => {
 		const fetchData = async () => {
 			setErrorMessage("");
@@ -83,20 +92,25 @@ export default () => {
 			fetchData();
 		}
 	}, [search]);
+
+	//creates a new voronoi when we get new art data or cell counts
 	useEffect(() => {
 		try {
+			//resets progress bar
 			setCurrentProgress(0);
 			setProgressMax(0);
+
 			if (artData.length > 1) {
 				//only render a canvas if we have artData. Otherwise, we will just have a black box
 				const chartRender = chart.render(
 					"#user-generated",
-					600,
-					800,
+					720,
+					1080,
 					artData,
 					numberOfCells
 				);
 				const interval = setInterval(() => chartRender.next(), 10);
+				setNewInterval(interval);
 				setErrorMessage("");
 				return () => clearInterval(interval);
 			} else if (artData.length === 1) {
@@ -107,11 +121,15 @@ export default () => {
 			setErrorMessage("No results! Please change your search query!");
 		}
 	}, [artData, numberOfCells]);
-
+	//clears old interval when we get a new one
+	useEffect(() => {
+		clearInterval(oldInterval);
+		setOldInterval(newInterval);
+	}, [newInterval]);
 	return (
 		<div className="d-flex min-vh-100 flex-row-reverse">
 			<div
-				class="modal"
+				className="modal"
 				id="infoModal"
 				tabindex="-1"
 				aria-labelledby="infoModalLabel"
@@ -212,8 +230,7 @@ export default () => {
 									Artist & Culture: Gogh
 								</li>
 								<li class="list-group-item">
-									Tag: Cat, Department: Asian Art (Turn off
-									highlighted works)
+									Department: Asian Art, Tag: Cat
 								</li>
 								<li class="list-group-item">
 									Tag: Angel, Highlighted Works Only
@@ -239,7 +256,7 @@ export default () => {
 			</div>
 			<div
 				className="mx-auto ms-2 me-2 d-flex justify-content-end flex-column"
-				style={{ minWidth: "400px" }} //or 30%
+				style={{ minWidth: "500px" }} //or 30%
 			>
 				<h2 className="CYO fs-2 text-center mx-auto mt-5">
 					Create Your Own Voronoi
@@ -509,9 +526,15 @@ export default () => {
 			) : (
 				<canvas
 					id="user-generated"
+<<<<<<< HEAD
+					className="flex-grow-1 mx-4 my-auto"
+					height="600"
+					width="800"
+=======
 					className="flex-grow-1 mx-4 me-0 my-auto"
 					height="500"
 					width="700"
+>>>>>>> origin/main
 				></canvas>
 			)}
 		</div>
