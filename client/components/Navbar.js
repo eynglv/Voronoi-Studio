@@ -32,7 +32,7 @@ class Navbar extends React.Component {
             American Highlights
           </a>
           <a href="highlighted-underrepresented" className="mx-auto links-text">
-            Unusual Highlights
+            Non-Western Highlights
           </a>
           <a href="voronoi-form" className="mx-auto links-text">
             Create Your Own Voronoi
