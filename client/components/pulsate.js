@@ -8,13 +8,8 @@ const chart = {
 		const patterns = [];
 		function getMousePos(canvas, evt) {
 			const rect = canvas.getBoundingClientRect();
-			const transform = context.getTransform();
-			console.log(transform);
-			console.log(rect);
-			console.log(evt.clientX, evt.clientY);
 			const horizontalScalar = width / rect.width;
 			const verticalScalar = height / rect.height;
-			console.log(horizontalScalar, verticalScalar);
 			return {
 				x: (evt.clientX - rect.left) * horizontalScalar,
 				y: (evt.clientY - rect.top) * verticalScalar,
