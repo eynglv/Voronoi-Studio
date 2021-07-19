@@ -212,7 +212,8 @@ export default () => {
 									Artist & Culture: Gogh
 								</li>
 								<li class="list-group-item">
-									Department: Asian Art, Tag: Cat
+									Tag: Cat, Department: Asian Art (Turn off
+									highlighted works)
 								</li>
 								<li class="list-group-item">
 									Tag: Angel, Highlighted Works Only
@@ -238,7 +239,7 @@ export default () => {
 			</div>
 			<div
 				className="mx-auto ms-2 me-2 d-flex justify-content-end flex-column"
-				style={{ minWidth: "500px" }} //or 30%
+				style={{ minWidth: "400px" }} //or 30%
 			>
 				<h2 className="CYO fs-2 text-center mx-auto mt-5">
 					Create Your Own Voronoi
@@ -508,9 +509,9 @@ export default () => {
 			) : (
 				<canvas
 					id="user-generated"
-					className="flex-grow-1 mx-4 my-auto"
-					height="600"
-					width="800"
+					className="flex-grow-1 mx-4 me-0 my-auto"
+					height="500"
+					width="700"
 				></canvas>
 			)}
 		</div>
