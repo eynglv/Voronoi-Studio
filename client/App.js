@@ -386,8 +386,7 @@ class App extends React.Component {
 							<div>
 								<Timeline totalProgress={progress} paused>
 									<h2 className="title mb-4 display-6 text-center">
-										Highlighted Art from Underrepresented
-										Countries
+										Non-Western Art Highlighted at the Met
 									</h2>
 									<canvas
 										className=" my-auto mx-auto"
