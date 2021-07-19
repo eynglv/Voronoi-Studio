@@ -88,7 +88,7 @@ class App extends React.Component {
   }
   render() {
     return (
-      <div id='main'>
+      <div id="main">
         <div id="modal"></div>
         <Controller>
           <Scene duration={165} triggerHook={0.3}pin={true}>
@@ -98,23 +98,23 @@ class App extends React.Component {
                   </p>
                   <small>scroll to continue</small>
                   </div>
-              
+
           </Scene>
             <Scene duration={'100%'} triggerHook={0.07}pin={true}>
             <Timeline
               target={
-                <p className="paragraphsMain mt-5 mb-3 mx-auto my-auto">  
+                <p className="paragraphsMain mt-5 mb-3 mx-auto my-auto">
                 The art we are presenting comes in the form of live-motion voronoi diagrams, allowing us to present multiple views and elements from many different artworks. Voronoi diagrams are created by mapping the relationships between data, which seemed metaphoric for our demonstration.  In 2019, The Met was the 3rd most visited art museum in the world, with nearly 7,000,000 visitors annually, and was the most visited art museum in America. What responsibility does the most prominent art museum in the country have to highlight diverse and underrepresented artists and their cultures? How can we demand accountability from historically biased institutions, without observing the current dismal state of affairs?</p>
               }
-                >
-                  <Tween from={{ opacity: 0 }} to={{ opacity: 1 }} />
-                </Timeline>
+            >
+              <Tween from={{ opacity: 0 }} to={{ opacity: 1 }} />
+            </Timeline>
           </Scene>
           {/* CANVAS1 */}
           <Scene duration={"100%"} triggerHook={0.08} pin={true}>
           {(progress) => (
             <div className="sticky">
-              <Timeline totalProgress={progress} paused>   
+              <Timeline totalProgress={progress} paused>
                 <h2 className="title mb-4 display-5  text-center">Women by Women</h2>
                 <canvas
                   className="my-auto mx-auto"
@@ -123,16 +123,14 @@ class App extends React.Component {
                   height="600"
                 >
                 </canvas>
-                <Timeline target = { <h1 className="fs-4 animate animation1">These 17 pieces are the only oil paintings available tagged as depicting women by women artists via the MET API.<br/> <br/> 
+                <Timeline target = { <h1 className="fs-4 animate animation1">These 17 pieces are the only oil paintings available tagged as depicting women by women artists via the MET API.<br/> <br/>
                 Only 3 of these pieces are "highlighted" works</h1>}>
                   <Tween from={{top: '10%', left: -2000 }} to={{left: 40}} />
                   <Tween from={{top: '20%'}} to={{top: '85%'}} />
                   <Tween from={{ opacity: 1}} to={{ opacity: -1}} />
                 </Timeline>
-              </Timeline>
-            </div>
-          )}
-
+              </div>
+            )}
           </Scene>
           <Scene duration={'100%'} triggerHook={0.2} pin={true}>
             <Timeline
@@ -149,7 +147,7 @@ class App extends React.Component {
           <Scene duration={'100%'} pin={true} triggerHook={0.05}>
           {(progress) => (
             <div>
-               <Timeline totalProgress={progress} paused>  
+               <Timeline totalProgress={progress} paused>
                 <Tween>
    <h2 className="title mb-4 pt-1 display-5 text-center">Women by Men</h2>
                   <canvas
@@ -159,16 +157,18 @@ class App extends React.Component {
                     height="600"
                   ></canvas>
                   </Tween>
-              
+
                     <Timeline target = { <h1 className="paragraphsMain animate animation2">There are no paintings of nude men painted by women available in the Met API.</h1>}>
                     <Tween from={{ top: '25%', left: -800}} to={{ left: 800, top: '25%', ease: 'Strong.easeOut' } } />
                     <Tween
-                    from={{ opacity: 1}} to={{ opacity: -1}} />
-                    </Timeline>
+                      from={{ top: "25%", left: -800 }}
+                      to={{ left: 800, top: "25%" }}
+                    />
+                    <Tween from={{ opacity: 1 }} to={{ opacity: -1 }} />
+                  </Timeline>
                 </Timeline>
-            </div>
-          )}
-
+              </div>
+            )}
           </Scene>
           <Scene duration={"100%"} triggerHook={0.2} pin={true}>
             <Timeline
@@ -192,7 +192,7 @@ class App extends React.Component {
            <Scene duration={'100%'} pin={true} triggerHook={0.05}>
           {(progress) => (
             <div>
-               <Timeline totalProgress={progress} paused> 
+               <Timeline totalProgress={progress} paused>
                 <Tween>
                   <h2 className="title mb-4 display-5 text-center">Women by Men and Women</h2>
                   <canvas
@@ -201,7 +201,7 @@ class App extends React.Component {
                   width="900"
                   height="600"
                   ></canvas>
-                  </Tween> 
+                  </Tween>
                     <Timeline target = { <h1 className="paragraphsMain animate animation3">In 2018, only 14.13% of the Met's 14,350 Modern and Contemporary Art pieces were by women artists.</h1>}>
 
                   <Tween from={{ top: '50%', left: -500}} to={{ left: 500}} />
@@ -209,13 +209,14 @@ class App extends React.Component {
                   <Tween
                   from={{ opacity: 1}} to={{ opacity: -1}} />
 
-                    </Timeline>
+                    <Tween from={{ opacity: 1 }} to={{ opacity: -1 }} />
+                  </Timeline>
                 </Timeline>
               </div>
             )}
-            </Scene>
-            <br />
-            <Scene duration={"100%"} triggerHook={0.2} pin={true}>
+          </Scene>
+          <br />
+          <Scene duration={"100%"} triggerHook={0.2} pin={true}>
             <Timeline
             target={
             <p className="paragraphsMain mt-2 mb-3 mx-auto my-auto">
@@ -225,13 +226,13 @@ class App extends React.Component {
             >
 
             <Tween from={{ opacity: 0 }} to={{ opacity: 1 }} />
-            </Timeline> 
+            </Timeline>
             </Scene>
             {/* CANVAS4 */}
             <Scene duration={"100%"} pin={true} triggerHook={0.05}>
               {(progress) => (
                 <div>
-                  <Timeline totalProgress={progress} paused>   
+                  <Timeline totalProgress={progress} paused>
                   <h2 className="title mb-4 display-5 text-center">
                     American Art Hightlighted at the Met
                   </h2>
@@ -240,6 +241,19 @@ class App extends React.Component {
                     id="canvas4"
                     width="900"
                     height="600"
+                  ></canvas>
+                  <Timeline
+                    target={
+                      <h1 className="animate animation4">
+                        In 2020, the Met hired its first Native-American curator
+                        for the American Wing.
+                      </h1>
+                    }
+                  >
+                    <Tween
+                      from={{ top: "15%", left: -2000 }}
+                      to={{ top: "15%", left: 25 }}
+                    />
 
                     >
                   </canvas>
@@ -249,12 +263,11 @@ class App extends React.Component {
 
                       <Tween from={{ top: '15%'}} to={{ top: '80%' }} />
 
-                      <Tween from={{ opacity: 1 }} to={{ opacity: -1 }} />
-                    </Timeline>
+                    <Tween from={{ opacity: 1 }} to={{ opacity: -1 }} />
                   </Timeline>
-                </div>
-             )}
-
+                </Timeline>
+              </div>
+            )}
           </Scene>
           <br />
           <Scene duration={"100%"} triggerHook={0.2} pin={true}>
@@ -317,8 +330,20 @@ class App extends React.Component {
                     width="900"
                     height="600"
                   ></canvas>
-                  <Timeline target = { <h1 className="animate animation3">The Department of the Arts of Africa, Oceania, and the Americas did not exist at the Met until 1969, when Nelson Rockefeller offered to gift over 3000 works from the Museum of Primitive Art.</h1>}>
-                    <Tween from={{ top: '50%', right: 500}} to={{ right: 0}} />
+                  <Timeline
+                    target={
+                      <h1 className="animate animation3">
+                        The Department of the Arts of Africa, Oceania, and the
+                        Americas did not exist at the Met until 1969, when
+                        Nelson Rockefeller offered to gift over 3000 works from
+                        the Museum of Primitive Art.
+                      </h1>
+                    }
+                  >
+                    <Tween
+                      from={{ top: "50%", right: 500 }}
+                      to={{ right: 0 }}
+                    />
                     <Tween from={{ opacity: 0 }} to={{ opacity: 1 }} />
                   </Timeline>
                 </Timeline>
