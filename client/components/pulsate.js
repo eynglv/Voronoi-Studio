@@ -1,8 +1,9 @@
 import renderModal from "./modal";
 const chart = {
-	*render(selector, height, width, artData, cellCount = artData.length) {
+	*render(selector, artData, cellCount = artData.length) {
 		const canvas = d3.select(selector);
-
+		const height = canvas.node().height;
+		const width = canvas.node().width;
 		// console.log(canvas);
 		const context = canvas.node().getContext("2d");
 		const patterns = [];
