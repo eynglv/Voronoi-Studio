@@ -228,7 +228,8 @@ export default () => {
 									Artist & Culture: Gogh
 								</li>
 								<li class="list-group-item">
-									Department: Asian Art, Tag: Cat
+									Department: Asian Art, Tag: Cat (Highlighted
+									Option Unchecked)
 								</li>
 								<li class="list-group-item">
 									Tag: Angel, Highlighted Works Only
