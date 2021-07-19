@@ -345,7 +345,7 @@ export default () => {
 						</div>
 						<button
 							type="button"
-							class="btn btn-outline-info rounded-circle mx-4"
+							className="btn btn-outline-info rounded-circle mx-4"
 							style={{ width: "50px", height: "50px" }}
 							data-bs-toggle="modal"
 							data-bs-target="#infoModal"
