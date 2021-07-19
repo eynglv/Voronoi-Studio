@@ -19,7 +19,10 @@ class Home extends React.Component {
           Welcome to Voronoi Studio
         </h1>
         <p className="lead text-center mx-auto">
-        an art and data visualization exploration
+          <a href="/voronois-explained" id="voronoi-explained-link">
+            <em>Vor•o•noi</em> — a partition of a plane into regions close to
+            each of a given set of objects
+          </a>
         </p>
         <div
           id="carouselExampleCaptions"
@@ -156,10 +159,10 @@ class Home extends React.Component {
             <span className="visually-hidden">Next</span>
           </button>
         </div>
-        <div id="enterBtn">
+        <div id="enterBtn" className="mx-auto" style={{ width: "70%" }}>
           <Link to="/main">
             <Button
-              className="d-block mx-auto mt-4 btn-lg col-6 rounded-0 "
+              className="d-block mx-auto mt-4 btn-lg col-6 rounded-0"
               outline
               color="secondary"
             >

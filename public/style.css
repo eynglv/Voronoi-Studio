@@ -4,13 +4,12 @@
 	font-family: "Poppins", sans-serif;
 }
 
-h1 {
-	font-family: "Spartan";
+.paintingsAll {
+	border-color: #fff8f0 !important;
 }
 
-img {
-	max-height: max-content;
-	min-height: min-content;
+h1 {
+	font-family: "Spartan";
 }
 
 .CYO {
@@ -20,12 +19,13 @@ img {
 #nav {
 	background-color: #a63d40;
 	height: 100%;
-	width: 0.5%;
+	width: 3%;
 	z-index: 1;
 	padding-left: 1vw;
 	left: 0;
-	overflow-x: hidden;
-	opacity: 0.5;
+	opacity: 0.9;
+	overflow: hidden;
+	transition: 2s;
 }
 
 .carousel-item img {
@@ -37,9 +37,27 @@ img {
 	font-size: 12px;
 }
 
-#nav:hover {
-	width: 13%;
-	padding-left: 0;
+.menu {
+	background-color: #a63d40;
+	opacity: 0;
+	transition: opacity 0.2s;
+}
+
+.material-icons {
+	background-color: #a63d40;
+	position: relative;
+	left: -20%;
+	top: 2%;
+}
+
+.menu:hover {
+	opacity: 1;
+	transition: opacity 2s;
+}
+
+.image-wrapper:hover .caption {
+	visibility: visible;
+	opacity: 1;
 }
 
 #nav a {
@@ -49,11 +67,9 @@ img {
 	background-color: #a63d40;
 }
 
-#nav span {
-	font-size: 18px;
-	overflow: hidden;
-	color: #fff8f0;
-	background-color: #a63d40;
+#nav:hover {
+	width: 15%;
+	transition: 1s;
 }
 
 #nav a:hover {
@@ -86,8 +102,16 @@ a {
 	background-color: rgba(95, 124, 140, 0.35);
 }
 
-.names.github:hover {
+.names.github:hover,
+#explanation a:hover,
+#voronoi-explained-link:hover,
+.citation-link:hover {
 	color: #ffcab1;
+}
+#explanation a,
+#voronoi-explained-link,
+.citation-link {
+	color: #fff8f0;
 }
 
 h1 #welcome {
@@ -121,16 +145,17 @@ small {
 }
 
 #modal.open {
-	height: 500px;
-	width: 50%;
+	/* height: 500px;
+	width: 50%; */
+	/* overflow:hidden; */
 }
 
 .modalContent {
+	height: 70%;
 	width: 80%;
-	height: 100%;
 	margin: auto;
 	position: relative;
-	top: 10%;
+	top: 20%;
 	background-color: rgba(125, 133, 112, 0);
 	padding-bottom: 18px;
 }
@@ -138,6 +163,8 @@ small {
 .modalImage {
 	margin: auto;
 	width: 100%;
+	margin-top: 40px;
+	margin-bottom: 100px;
 }
 
 #modalTitle {
@@ -209,25 +236,50 @@ small {
 	flex-basis: fit-content;
 }
 
-#main p {
+#main p,
+#explanation p {
 	font-size: x-large;
 	width: 75%;
 }
 
 .scrollToTop {
-	cursor: pointer;
+
+  cursor: pointer;
+  color: #fff8f0;
+  font-size: 2rem;
+
 }
 
+.scrollToTop:hover {
+  color: #a63d40
+}
+
+
+
 .animate {
-	font-size: 30px;
-	font-weight: 1000;
-	color: #fff8f0;
-	z-index: 2;
-	position: absolute;
-	background-color: rgba(18, 22, 25, 0.65);
-	text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
-		1px 1px 0 #000;
-	width: 350px;
+
+  font-size: 24px;
+  font-weight: 1000;
+  color: #fff8f0;
+  z-index: 2;
+  position: absolute;
+  background-color: rgba(18, 22, 25, 0.65);
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+  width: 350px;
+
+}
+
+#formBtn:hover {
+	background-color: #a63d40;
+}
+
+#infoModalLabel {
+	background-color: rgba(36, 123, 160, 0);
+}
+
+.modal-header {
+	background-color: rgba(36, 123, 160, 0.9);
 }
 #how-to{
 	display: block;
@@ -259,4 +311,37 @@ small {
   display: flex;
   margin: 100px;
   align-items: center;
+}
+
+.modal-body {
+	background-color: rgba(241, 222, 222, 0.9);
+}
+
+.modal-footer {
+	background-color: rgba(241, 222, 222, 0.9);
+}
+
+#infoBullets {
+	background-color: rgba(241, 222, 222, 0);
+	color: black;
+}
+#sampleTermBtn {
+	background-color: rgba(36, 123, 160, 0.9);
+	color: white;
+}
+#sampleTermBtn:hover {
+	background-color: rgba(36, 123, 160, 0.7);
+}
+
+canvas:hover {
+	cursor: pointer;
+}
+
+.noscroll {
+	overflow: hidden;
+}
+
+.paragraphsMain {
+  text-align: justify;
+  text-justify: inter-word
 }

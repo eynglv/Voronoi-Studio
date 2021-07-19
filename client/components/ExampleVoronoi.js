@@ -1,47 +1,24 @@
-import renderModal from "./modal";
 const chart = {
-	*render(selector, artData, cellCount = artData.length) {
+	*render(selector, cellCount = 2) {
 		const canvas = d3.select(selector);
 		const height = canvas.node().height;
 		const width = canvas.node().width;
 		// console.log(canvas);
 		const context = canvas.node().getContext("2d");
-		const patterns = [];
-		function getMousePos(canvas, evt) {
-			const rect = canvas.getBoundingClientRect();
-			const horizontalScalar = width / rect.width;
-			const verticalScalar = height / rect.height;
-			return {
-				x: (evt.clientX - rect.left) * horizontalScalar,
-				y: (evt.clientY - rect.top) * verticalScalar,
-			};
-		}
+		const colors = ["#a63d40", "#7d8570", "#5F7C8C"];
 
-		artData.forEach((painting, index) => {
-			//make a pattern out of each image in artData
-			const image = new Image(); //make an <img> element
-			image.src = painting.primaryImageSmall; //set it's source to the painting's url
-			image.onload = function () {
-				//when it loads
-				patterns[index] = context.createPattern(image, "repeat"); //create a new canvas patter, and save it to the patterns array
-			};
-		});
 		const positions = Float64Array.from(
 			{ length: cellCount * 2 }, //create an array of alternating x and y coordinates
 			(_, i) => Math.random() * (i & 1 ? height : width) //that are between 0 and heigh and width, respectively
 		);
 
 		const velocities = new Float64Array(cellCount * 2); //create an array of alternating x and y velocities
-		const delaunay = new d3.Delaunay(positions);
-		const voronoi = delaunay.voronoi([0.5, 0.5, width - 0.5, height - 0.5]); //create a new voronoi from our positions array, with infinite polygons clipped at the provided minimums and maximums
-
-		context.canvas.onclick = (event) => {
-			// event.stopPropagation()
-			const position = getMousePos(canvas._groups[0][0], event);
-			const index = delaunay.find(position.x, position.y);
-			renderModal(`#modal`, artData[index % artData.length], context);
-			context.filter = "blur(5px)";
-		};
+		const voronoi = new d3.Delaunay(positions).voronoi([
+			0.5,
+			0.5,
+			width - 0.5,
+			height - 0.5,
+		]); //create a new voronoi from our positions array, with infinite polygons clipped at the provided minimums and maximums
 
 		while (true) {
 			//we will yield control back to the caller at the end of this loop, so it isn't actually infinite
@@ -80,25 +57,24 @@ const chart = {
 
 			for (let i = 0; i < cellCount; i++) {
 				//for each cell
-				context.fillStyle = patterns[i % patterns.length]; //choose the next pattern in the array, looping back to the beginning if we go out of bounds
+				context.fillStyle = colors[i % colors.length]; //choose the next pattern in the array, looping back to the beginning if we go out of bounds
 				context.beginPath(); //start a new path
 				voronoi.renderCell(i, context); //trace the path of the current cell
 				context.fill(); //fill the cell withour chosen pattern
 			}
+			//render dots in each cell
+
+			context.fillStyle = "#FFF8F0";
+			context.beginPath();
+			voronoi.delaunay.renderPoints(context, 5);
+			context.fill();
 
 			//below block renders lines between cells
-
-			// context.beginPath();
-			// voronoi.update().render(context);
-			// voronoi.renderBounds(context);
-			// context.stroke();
-
-			//uncomment below to render dots in each cell
-
-			// context.fillStyle = "hotpink";
-			// context.beginPath();
-			// voronoi.delaunay.renderPoints(context, 1);
-			// context.fill();
+			context.lineWidth = 8;
+			context.beginPath();
+			voronoi.render(context);
+			voronoi.renderBounds(context);
+			context.stroke();
 
 			yield context.canvas; //return to caller with the canvas
 		}
