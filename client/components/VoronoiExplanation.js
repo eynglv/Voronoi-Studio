@@ -4,8 +4,8 @@ import React, { useEffect } from "react";
 
 export default () => {
 	useEffect(() => {
-		const exampleOne = chart.render("#example-one", 600, 1000);
-		const exampleTwo = chart.render("#example-two", 600, 1000, 3);
+		const exampleOne = chart.render("#example-one");
+		const exampleTwo = chart.render("#example-two", 3);
 		const interval = setInterval(() => {
 			exampleOne.next();
 			exampleTwo.next();
