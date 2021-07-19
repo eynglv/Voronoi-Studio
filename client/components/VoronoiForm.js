@@ -526,15 +526,9 @@ export default () => {
 			) : (
 				<canvas
 					id="user-generated"
-<<<<<<< HEAD
-					className="flex-grow-1 mx-4 my-auto"
-					height="600"
-					width="800"
-=======
 					className="flex-grow-1 mx-4 me-0 my-auto"
 					height="500"
 					width="700"
->>>>>>> origin/main
 				></canvas>
 			)}
 		</div>

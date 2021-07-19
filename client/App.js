@@ -113,7 +113,7 @@ class App extends React.Component {
           {/* CANVAS1 */}
           <Scene duration={"100%"} triggerHook={0.08} pin={true}>
           {(progress) => (
-            <div className="sticky">
+            <div>
               <Timeline totalProgress={progress} paused>
                 <h2 className="title mb-4 display-5  text-center">Women by Women</h2>
                 <canvas
@@ -123,14 +123,15 @@ class App extends React.Component {
                   height="600"
                 >
                 </canvas>
-                <Timeline target = { <h1 className="fs-4 animate animation1">These 17 pieces are the only oil paintings available tagged as depicting women by women artists via the MET API.<br/> <br/>
-                Only 3 of these pieces are "highlighted" works</h1>}>
+                <Timeline target = { <h1 className="fs-4 animate animation1" > These 17 pieces are the only oil paintings available tagged as depicting women by women artists via the MET API.<br/> <br/>
+                Only 3 of these pieces are "highlighted" works</h1> } >
                   <Tween from={{top: '10%', left: -2000 }} to={{left: 40}} />
                   <Tween from={{top: '20%'}} to={{top: '85%'}} />
                   <Tween from={{ opacity: 1}} to={{ opacity: -1}} />
                 </Timeline>
+                </Timeline>
               </div>
-            )}
+            ) }
           </Scene>
           <Scene duration={'100%'} triggerHook={0.2} pin={true}>
             <Timeline
@@ -254,9 +255,6 @@ class App extends React.Component {
                       from={{ top: "15%", left: -2000 }}
                       to={{ top: "15%", left: 25 }}
                     />
-
-                    >
-                  </canvas>
                     <Timeline target = { <h1 className="paragraphsMain animate animation4">In 2020, the Met hired it's first Native-American curator for the American Wing.</h1>}>
 
                       <Tween from={{ top: '15%', left: -2000 }} to={{top: '15%', left: 40}} />
@@ -265,6 +263,7 @@ class App extends React.Component {
 
                     <Tween from={{ opacity: 1 }} to={{ opacity: -1 }} />
                   </Timeline>
+                </Timeline>
                 </Timeline>
               </div>
             )}
@@ -379,4 +378,5 @@ class App extends React.Component {
     );
   }
 }
+
 export default App;
