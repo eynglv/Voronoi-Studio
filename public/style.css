@@ -246,3 +246,16 @@ small {
 	color:rgba(18, 22, 25);
 	margin: auto;
 }
+
+.extra-artists{
+  display: inline-flex;
+  flex-direction: row;
+  flex-grow:inherit;
+  flex-wrap: nowrap;
+  margin: auto;
+  margin-top: 40px;
+}
+
+#artist-description p{
+  flex-shrink: inherit;
+}

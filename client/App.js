@@ -1,7 +1,4 @@
 import React from "react";
-import Navbar from "./components/Navbar";
-import womenByWomen from "../script/artdata/womenByWomen";
-import womenByMen from "../script/artdata/femaleNudesByMen";
 import chart from "./components/pulsate";
 import { Controller, Scene } from "react-scrollmagic";
 import { Tween, Timeline } from "react-gsap";
@@ -117,12 +114,24 @@ class App extends React.Component {
             <Timeline
               target={
                 <p className="text-center mt-2 mb-3 mx-auto my-auto">  
-                The art we are presenting comes in the form of live-motion voronoi diagrams, allowing us to present multiple views and elements from many different artworks. Voronoi diagrams are created by mapping the relationships between data, which seemed metaphoric for our demonstration.  In 2019, The Met was the 3rd most visited art museum in the world, with nearly 7,000,000 visitors annually, and was the most visited art museum in America. What responsibility does the most prominent art museum in the country have to highlight diverse and underrepresented artists and their cultures? How can we demand accountability from historically biased institutions, without observing the current dismal state of affairs?</p>
+                The art we are presenting comes in the form of live-motion voronoi diagrams, allowing us to present multiple views and elements from many different artworks. Voronoi diagrams are created by mapping the relationships between data, which seemed metaphoric for our demonstration. We've also included a sprinkling of works from outside the Met's collection from female and non-binary artists, and artists from diverse cultural backgrounds.</p>
               }
                 >
                   <Tween from={{ opacity: 0 }} to={{ opacity: 1 }} />
                 </Timeline>
           </Scene>
+            <Scene duration={'100%'} triggerHook={0.1}pin={true}>
+            <Timeline
+              target={
+                <p className="text-center mt-2 mb-3 mx-auto my-auto">  
+                In 2019, The Met was the 3rd most visited art museum in the world, with nearly 7,000,000 visitors annually, and was the most visited art museum in America. What responsibility does the most prominent art museum in the country have to highlight diverse and underrepresented artists and their cultures? How can we demand accountability from historically biased institutions, without observing the current dismal state of affairs?</p>
+              }
+                >
+                  <Tween from={{ opacity: 0 }} to={{ opacity: 1 }} />
+                </Timeline>
+          </Scene>
+
+
           {/* CANVAS1 */}
           <Scene duration={"100%"} triggerHook={0.05} pin={true}>
           {(progress) => (
@@ -151,7 +160,7 @@ class App extends React.Component {
             <Timeline
               target={
                 <p className="text-center mt-2 mb-3 mx-auto my-auto">
-                  The voronoi above consists of art by women with at least one woman subject. Originally, the plan was to only use works highlighted by The Met, but there were only 3. I decided to limit my selection to just oil paintings in order to create a cohesive look.
+                  The voronoi above consists of art by women with at least one woman subject. We limited the selection to just oil paintings in order to create a cohesive look. Originally, the plan was to only use works "highlighted" by The Met, but there were only 3.  This piece presents the only ones available that fit these criteria out of the entire collection. 
 
                 </p>
               }
@@ -159,6 +168,58 @@ class App extends React.Component {
               <Tween from={{ opacity: 0 }} to={{ opacity: 1 }} />
             </Timeline>
           </Scene>
+
+          {/*New Artist info*/}
+          <Scene duration={"100%"} triggerHook={0.05} pin={true}>
+          {(progress) => (
+            <div className="sticky">
+              <Timeline totalProgress={progress} paused>   
+                <Timeline target = { 
+                <div className="extra-artists">
+                <span>
+                <img className="extra-artists" src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Catharina_van_Hemessen_-_Portrait_of_a_Lady.jpg" height="500px"></img>
+                <p className="extra-artists" id="artist-description">
+                 This pieces is entitled Portrait of a Woman by Catharina van Hemmessen painted in the mid-1500s.  She is widely credited with with first self-portrait depicting an artist (of any gender) working at an easel. Her work is not available at the Met.
+                </p>
+                </span>
+                </div>}>
+                  <Tween from={{top: '20%', left: -2000 }} to={{left: 30}} />
+                  <Tween from={{top: '20%'}} to={{top: '85%'}} />
+                  <Tween from={{ opacity: 1}} to={{ opacity: -1}} />
+                  
+                </Timeline>
+              </Timeline>
+            </div>
+          )}
+
+          </Scene>
+          <Scene duration={"100%"} triggerHook={0.05} pin={true}>
+          {(progress) => (
+            <div className="sticky">
+              <Timeline totalProgress={progress} paused>   
+                <Timeline target = { 
+                <div className="extra-artists">
+                <span>
+                <p className="extra-artists" id="artist-description">
+                  This painting, "afro died" was painted in 2011 by Iona Rozeal Brown.  It is part of the National Gallery of Art collection, but it is not on view.
+                </p>
+                <img className="extra-artists" src="https://secureservercdn.net/160.153.138.53/6mj.cc8.myftpupload.com/wp-content/uploads/2020/06/Rozeal-.jpg" height="500px"></img>
+                
+                </span>
+                </div>}>
+                  <Tween from={{top: '20%', left: -2000 }} to={{left: 30}} />
+                  <Tween from={{top: '20%'}} to={{top: '85%'}} />
+                  <Tween from={{ opacity: 1}} to={{ opacity: -1}} />
+                  
+                </Timeline>
+              </Timeline>
+            </div>
+          )}
+
+          </Scene>
+          
+
+
           {/* CANVAS2*/}
           <Scene duration={'100%'} pin={true} triggerHook={0.05}>
           {(progress) => (
@@ -202,6 +263,32 @@ class App extends React.Component {
               <Tween from={{ opacity: 0 }} to={{ opacity: 1 }} />
             </Timeline>
           </Scene>
+
+{/*New Artist info*/}
+<Scene duration={"100%"} triggerHook={0.05} pin={true}>
+          {(progress) => (
+            <div className="sticky">
+              <Timeline totalProgress={progress} paused>   
+                <Timeline target = { 
+                <div className="extra-artists">
+                <span>
+                <img className="extra-artists" src="https://cdn.shopify.com/s/files/1/0585/0461/files/fullsizeoutput_31fa_2048x2048.jpeg?v=1561381118" height="400px"></img>
+                <p className="extra-artists" id="artist-description">
+                 Jane Clatworthy is a contemporary artist based in London.  She paints nudes of men as she strives "to address the imbalance we see across gallery walls. If men can paint women, why not the other way around?" 
+                </p>
+                </span>
+                </div>}>
+                  <Tween from={{top: '20%', left: -2000 }} to={{left: 30}} />
+                  <Tween from={{top: '20%'}} to={{top: '85%'}} />
+                  <Tween from={{ opacity: 1}} to={{ opacity: -1}} />
+                  
+                </Timeline>
+              </Timeline>
+            </div>
+          )}
+
+          </Scene>
+
            {/* CANVAS3 */}
            <Scene duration={'100%'} pin={true} triggerHook={0.05}>
           {(progress) => (
@@ -241,6 +328,34 @@ class App extends React.Component {
             <Tween from={{ opacity: 0 }} to={{ opacity: 1 }} />
             </Timeline> 
             </Scene>
+
+            {/*New Artist info*/}
+<Scene duration={"100%"} triggerHook={0.05} pin={true}>
+          {(progress) => (
+            <div className="sticky">
+              <Timeline totalProgress={progress} paused>   
+                <Timeline target = { 
+                <div className="extra-artists">
+                <span>
+                <img className="extra-artists" src="https://images.squarespace-cdn.com/content/v1/5b0fd1ca31d4df1c5e5588b2/1598099279839-
+RM2YQGZ0TBN0CXC3BQJU/GayatriFinal.jpg?format=750w" height="500px"></img>
+                <p className="extra-artists" id="artist-description">
+                Non-binary artists are even less represented in museum walls.  Shiva Raichandani is a contemporary artist helping to promote gender-diverse representation in art through their work. 
+                </p>
+                </span>
+                </div>}>
+                  <Tween from={{top: '20%', left: -2000 }} to={{left: 30}} />
+                  <Tween from={{top: '20%'}} to={{top: '85%'}} />
+                  <Tween from={{ opacity: 1}} to={{ opacity: -1}} />
+                  
+                </Timeline>
+              </Timeline>
+            </div>
+          )}
+
+          </Scene>
+
+
             {/* CANVAS4 */}
             <Scene duration={"100%"} pin={true} triggerHook={0.05}>
               {(progress) => (
@@ -282,6 +397,32 @@ class App extends React.Component {
               <Tween from={{ opacity: 0 }} to={{ opacity: 1 }} />
             </Timeline>
           </Scene>
+
+          <Scene duration={"100%"} triggerHook={0.05} pin={true}>
+          {(progress) => (
+            <div className="sticky">
+              <Timeline totalProgress={progress} paused>   
+                <Timeline target = { 
+                <div className="extra-artists">
+                <span>
+                <p className="extra-artists" id="artist-description">
+                Wangechi Mutu is a Kenyan-born, Brooklyn-based contemporary artist. This piece was produced in 2009 and titled Cactus Green Nips.  Mutu's sculpture work was actually featured at the Met in 2019 as part of their new annual Facade Commission.
+                </p>
+                <img className="extra-artists" src="https://blog.artsper.com/wp-content/uploads/2018/11/Wangechi-Mutu-3.jpg" heigh="500px"></img>
+                
+                </span>
+                </div>}>
+                  <Tween from={{top: '20%', left: -2000 }} to={{left: 30}} />
+                  <Tween from={{top: '20%'}} to={{top: '85%'}} />
+                  <Tween from={{ opacity: 1}} to={{ opacity: -1}} />
+                  
+                </Timeline>
+              </Timeline>
+            </div>
+          )}
+
+          </Scene>
+
           {/* CANVAS5 */}
           <Scene duration={1000} pin={true} triggerHook={0.05}>
             {(progress) => (
@@ -317,6 +458,33 @@ class App extends React.Component {
               <Tween from={{ opacity: 0 }} to={{ opacity: 1 }} />
             </Timeline>
           </Scene>
+
+          <Scene duration={"100%"} triggerHook={0.05} pin={true}>
+          {(progress) => (
+            <div className="sticky">
+              <Timeline totalProgress={progress} paused>   
+                <Timeline target = { 
+                <div className="extra-artists">
+                <span>
+                <img className="extra-artists" src="https://images.squarespace-cdn.com/content/v1/53e3c23ee4b018c6bdf89fdb/1519431980659-PLY4UV7OJ8FSMUICD2LB/amaringo-auca_yachai.jpg?format=2500w" width="600px"></img>
+                
+                <p className="extra-artists" id="artist-description">
+               This beautiful piece is by the late Pablo Amaringo.  He was a Peruvian artist who depicted images which conjure the Amazon jungle, as well as the culture and traditions of the people there.  His work was not widely known and he helped to create the The Usko-Ayae, a free school for artists of the Peruvian Amazon.
+                </p>
+                </span>
+                </div>}>
+                  <Tween from={{top: '20%', left: -2000 }} to={{left: 30}} />
+                  <Tween from={{top: '20%'}} to={{top: '85%'}} />
+                  <Tween from={{ opacity: 1}} to={{ opacity: -1}} />
+                  
+                </Timeline>
+              </Timeline>
+            </div>
+          )}
+
+          </Scene>
+          
+
           {/* CANVAS6 */}
           <Scene duration={"100%"} pin={true} triggerHook={0.05}>
             {(progress) => (
