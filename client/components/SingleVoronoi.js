@@ -16,12 +16,7 @@ export default (props) => {
 	}, []);
 	useEffect(() => {
 		if (paintings.length) {
-			const voronoiRender = chart.render(
-				"#single-voronoi",
-				600,
-				1000,
-				paintings
-			);
+			const voronoiRender = chart.render("#single-voronoi", paintings);
 			const interval = setInterval(() => voronoiRender.next(), 8);
 			return () => clearInterval(interval);
 		}

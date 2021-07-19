@@ -1,7 +1,8 @@
 const chart = {
-	*render(selector, height, width, cellCount = 2) {
+	*render(selector, cellCount = 2) {
 		const canvas = d3.select(selector);
-
+		const height = canvas.node().height;
+		const width = canvas.node().width;
 		// console.log(canvas);
 		const context = canvas.node().getContext("2d");
 		const colors = ["#a63d40", "#7d8570", "#5F7C8C"];

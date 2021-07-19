@@ -9,374 +9,542 @@ import { animateScroll as scroll } from "react-scroll";
 import axios from "axios";
 
 class App extends React.Component {
-  constructor() {
-    super();
-    this.state = {};
-    this.scrollToTop = this.scrollToTop.bind(this);
-  }
-  async componentDidMount() {
-    const womenByMen = await this.getVoronoiPieces("Women By Men");
-    const womenByWomen = await this.getVoronoiPieces("Women By Women");
-    const americanHighlights = await this.getVoronoiPieces("American Art");
-    const unusualHighlights = await this.getVoronoiPieces("Non-Western Art");
-    this.setState({
-      womenByMen: womenByMen,
-      womenByWomen: womenByWomen,
-      americanHighlights: americanHighlights,
-      unusualHighlights: unusualHighlights,
-    });
-  }
-  componentDidUpdate(prevProps, prevState) {
-    if (prevState !== this.state) {
-      this.chartRender1 = chart.render(
-        "#canvas1",
-        600,
-        900,
-        this.state.womenByWomen
-      );
-      this.chartRender2 = chart.render(
-        "#canvas2",
-        600,
-        900,
-        this.state.womenByMen
-      );
-      this.chartRender3 = chart.render(
-        "#canvas3",
-        600,
-        900,
-        this.state.womenByWomen.concat(this.state.womenByMen)
-      );
-      this.chartRender4 = chart.render(
-        "#canvas4",
-        600,
-        900,
-        this.state.americanHighlights
-      );
-      this.chartRender5 = chart.render(
-        "#canvas5",
-        600,
-        900,
-        this.state.unusualHighlights
-      );
-      this.chartRender6 = chart.render(
-        "#canvas6",
-        600,
-        900,
-        this.state.americanHighlights.concat(this.state.unusualHighlights)
-      );
-      this.interval = setInterval(() => {
-        this.chartRender1.next();
-        this.chartRender2.next();
-        this.chartRender3.next();
-        this.chartRender4.next();
-        this.chartRender5.next();
-        this.chartRender6.next();
-      }, 10);
-    }
-  }
+	constructor() {
+		super();
+		this.state = {};
+		this.scrollToTop = this.scrollToTop.bind(this);
+	}
+	async componentDidMount() {
+		const womenByMen = await this.getVoronoiPieces("Women By Men");
+		const womenByWomen = await this.getVoronoiPieces("Women By Women");
+		const americanHighlights = await this.getVoronoiPieces("American Art");
+		const unusualHighlights = await this.getVoronoiPieces(
+			"Non-Western Art"
+		);
+		this.setState({
+			womenByMen: womenByMen,
+			womenByWomen: womenByWomen,
+			americanHighlights: americanHighlights,
+			unusualHighlights: unusualHighlights,
+		});
+	}
+	componentDidUpdate(prevProps, prevState) {
+		if (prevState !== this.state) {
+			this.chartRender1 = chart.render(
+				"#canvas1",
+				this.state.womenByWomen
+			);
+			this.chartRender2 = chart.render("#canvas2", this.state.womenByMen);
+			this.chartRender3 = chart.render(
+				"#canvas3",
+				this.state.womenByWomen.concat(this.state.womenByMen)
+			);
+			this.chartRender4 = chart.render(
+				"#canvas4",
+				this.state.americanHighlights
+			);
+			this.chartRender5 = chart.render(
+				"#canvas5",
+				this.state.unusualHighlights
+			);
+			this.chartRender6 = chart.render(
+				"#canvas6",
+				this.state.americanHighlights.concat(
+					this.state.unusualHighlights
+				)
+			);
+			this.interval = setInterval(() => {
+				this.chartRender1.next();
+				this.chartRender2.next();
+				this.chartRender3.next();
+				this.chartRender4.next();
+				this.chartRender5.next();
+				this.chartRender6.next();
+			}, 10);
+		}
+	}
 
-  scrollToTop() {
-    scroll.scrollToTop();
-  }
-  componentWillUnmount() {
-    clearInterval(this.interval);
-  }
+	scrollToTop() {
+		scroll.scrollToTop();
+	}
+	componentWillUnmount() {
+		clearInterval(this.interval);
+	}
 
-  async getVoronoiPieces(title) {
-    const art = await axios.get(`api/voronois/${title}`);
-    return art.data;
-  }
-  render() {
-    return (
-      <div id="main">
-        <div id="modal"></div>
-        <Controller>
-          <Scene duration={165} triggerHook={0.3}pin={true}>
-                <div>
-                <p className="paragraphsMain mt-5 mb-5 mx-auto my-auto">
-                  Voronoi Studio aims to visually dissect the disproportionate representation of male and western artists, compared to female and non-western artists. The Met’s digital collection contains over 375,000 pieces of artwork available through the Open Access program. We created two sets of contrasting art works to highlight the overt bias in the Met's Collection, one depicting women by women artists juxtaposed with nude paintings of women by male artists, while the other queried the Met's "highlighted" works and contrasted American pieces with pieces from underrepresented countries.
-                  </p>
-                  <small>scroll to continue</small>
-                  </div>
+	async getVoronoiPieces(title) {
+		const art = await axios.get(`api/voronois/${title}`);
+		return art.data;
+	}
+	render() {
+		return (
+			<div id="main">
+				<div id="modal"></div>
+				<Controller>
+					<Scene duration={165} triggerHook={0.3} pin={true}>
+						<div>
+							<p className="paragraphsMain mt-5 mb-5 mx-auto my-auto">
+								Voronoi Studio aims to visually dissect the
+								disproportionate representation of male and
+								western artists, compared to female and
+								non-western artists. The Met’s digital
+								collection contains over 375,000 pieces of
+								artwork available through the Open Access
+								program. We created two sets of contrasting art
+								works to highlight the overt bias in the Met's
+								Collection, one depicting women by women artists
+								juxtaposed with nude paintings of women by male
+								artists, while the other queried the Met's
+								"highlighted" works and contrasted American
+								pieces with pieces from underrepresented
+								countries.
+							</p>
+							<small>scroll to continue</small>
+						</div>
+					</Scene>
+					<Scene duration={"100%"} triggerHook={0.07} pin={true}>
+						<Timeline
+							target={
+								<p className="paragraphsMain mt-5 mb-3 mx-auto my-auto">
+									The art we are presenting comes in the form
+									of live-motion voronoi diagrams, allowing us
+									to present multiple views and elements from
+									many different artworks. Voronoi diagrams
+									are created by mapping the relationships
+									between data, which seemed metaphoric for
+									our demonstration. In 2019, The Met was the
+									3rd most visited art museum in the world,
+									with nearly 7,000,000 visitors annually, and
+									was the most visited art museum in America.
+									What responsibility does the most prominent
+									art museum in the country have to highlight
+									diverse and underrepresented artists and
+									their cultures? How can we demand
+									accountability from historically biased
+									institutions, without observing the current
+									dismal state of affairs?
+								</p>
+							}
+						>
+							<Tween from={{ opacity: 0 }} to={{ opacity: 1 }} />
+						</Timeline>
+					</Scene>
+					{/* CANVAS1 */}
+					<Scene duration={"100%"} triggerHook={0.08} pin={true}>
+						{(progress) => (
+							<div>
+								<Timeline totalProgress={progress} paused>
+									<h2 className="title mb-4 display-5  text-center">
+										Women by Women
+									</h2>
+									<canvas
+										className="my-auto mx-auto"
+										id="canvas1"
+										width="900"
+										height="600"
+									></canvas>
+									<Timeline
+										target={
+											<h1 className="fs-4 animate animation1">
+												{" "}
+												These 17 pieces are the only oil
+												paintings available tagged as
+												depicting women by women artists
+												via the MET API.
+												<br /> <br />
+												Only 3 of these pieces are
+												"highlighted" works
+											</h1>
+										}
+									>
+										<Tween
+											from={{ top: "10%", left: -2000 }}
+											to={{ left: 40 }}
+										/>
+										<Tween
+											from={{ top: "20%" }}
+											to={{ top: "85%" }}
+										/>
+										<Tween
+											from={{ opacity: 1 }}
+											to={{ opacity: -1 }}
+										/>
+									</Timeline>
+								</Timeline>
+							</div>
+						)}
+					</Scene>
+					<Scene duration={"100%"} triggerHook={0.2} pin={true}>
+						<Timeline
+							target={
+								<p className="paragraphsMain mt-2 mb-3 mx-auto my-auto">
+									The voronoi above consists of art by women
+									with at least one woman subject. Originally,
+									the plan was to only use works highlighted
+									by The Met, but there were only 3. I decided
+									to limit my selection to just oil paintings
+									in order to create a cohesive look.
+								</p>
+							}
+						>
+							<Tween from={{ opacity: 0 }} to={{ opacity: 1 }} />
+						</Timeline>
+					</Scene>
+					{/* CANVAS2*/}
+					<Scene duration={"100%"} pin={true} triggerHook={0.05}>
+						{(progress) => (
+							<div>
+								<Timeline totalProgress={progress} paused>
+									<Tween>
+										<h2 className="title mb-4 pt-1 display-5 text-center">
+											Women by Men
+										</h2>
+										<canvas
+											className="my-auto mx-auto"
+											id="canvas2"
+											width="900"
+											height="600"
+										></canvas>
+									</Tween>
 
-          </Scene>
-            <Scene duration={'100%'} triggerHook={0.07}pin={true}>
-            <Timeline
-              target={
-                <p className="paragraphsMain mt-5 mb-3 mx-auto my-auto">
-                The art we are presenting comes in the form of live-motion voronoi diagrams, allowing us to present multiple views and elements from many different artworks. Voronoi diagrams are created by mapping the relationships between data, which seemed metaphoric for our demonstration.  In 2019, The Met was the 3rd most visited art museum in the world, with nearly 7,000,000 visitors annually, and was the most visited art museum in America. What responsibility does the most prominent art museum in the country have to highlight diverse and underrepresented artists and their cultures? How can we demand accountability from historically biased institutions, without observing the current dismal state of affairs?</p>
-              }
-            >
-              <Tween from={{ opacity: 0 }} to={{ opacity: 1 }} />
-            </Timeline>
-          </Scene>
-          {/* CANVAS1 */}
-          <Scene duration={"100%"} triggerHook={0.08} pin={true}>
-          {(progress) => (
-            <div>
-              <Timeline totalProgress={progress} paused>
-                <h2 className="title mb-4 display-5  text-center">Women by Women</h2>
-                <canvas
-                  className="my-auto mx-auto"
-                  id="canvas1"
-                  width="900"
-                  height="600"
-                >
-                </canvas>
-                <Timeline target = { <h1 className="fs-4 animate animation1" > These 17 pieces are the only oil paintings available tagged as depicting women by women artists via the MET API.<br/> <br/>
-                Only 3 of these pieces are "highlighted" works</h1> } >
-                  <Tween from={{top: '10%', left: -2000 }} to={{left: 40}} />
-                  <Tween from={{top: '20%'}} to={{top: '85%'}} />
-                  <Tween from={{ opacity: 1}} to={{ opacity: -1}} />
-                </Timeline>
-                </Timeline>
-              </div>
-            ) }
-          </Scene>
-          <Scene duration={'100%'} triggerHook={0.2} pin={true}>
-            <Timeline
-              target={
-                <p className="paragraphsMain mt-2 mb-3 mx-auto my-auto">
-                  The voronoi above consists of art by women with at least one woman subject. Originally, the plan was to only use works highlighted by The Met, but there were only 3. I decided to limit my selection to just oil paintings in order to create a cohesive look.
-                </p>
-              }
-            >
-              <Tween from={{ opacity: 0 }} to={{ opacity: 1 }} />
-            </Timeline>
-          </Scene>
-          {/* CANVAS2*/}
-          <Scene duration={'100%'} pin={true} triggerHook={0.05}>
-          {(progress) => (
-            <div>
-               <Timeline totalProgress={progress} paused>
-                <Tween>
-   <h2 className="title mb-4 pt-1 display-5 text-center">Women by Men</h2>
-                  <canvas
-                    className="my-auto mx-auto"
-                    id="canvas2"
-                    width="900"
-                    height="600"
-                  ></canvas>
-                  </Tween>
+									<Timeline
+										target={
+											<h1 className="paragraphsMain animate animation2">
+												There are no paintings of nude
+												men painted by women available
+												in the Met API.
+											</h1>
+										}
+									>
+										<Tween
+											from={{ top: "25%", left: -800 }}
+											to={{
+												left: 800,
+												top: "25%",
+												ease: "Strong.easeOut",
+											}}
+										/>
+										<Tween
+											from={{ top: "25%", left: -800 }}
+											to={{ left: 800, top: "25%" }}
+										/>
+										<Tween
+											from={{ opacity: 1 }}
+											to={{ opacity: -1 }}
+										/>
+									</Timeline>
+								</Timeline>
+							</div>
+						)}
+					</Scene>
+					<Scene duration={"100%"} triggerHook={0.2} pin={true}>
+						<Timeline
+							target={
+								<p className="paragraphsMain mt-2 mb-3 mx-auto my-auto">
+									Of the 14,350 artworks featured in the
+									Modern and Contemporary Art Collection,
+									2,027 artworks are by women while 10,829 are
+									by men. It’s hard to read those numbers
+									without thinking of the question posed by
+									the Guerrilla Girls 1989 piece, ‘Do Women
+									Have To Be Naked To Get Into the Met
+									Museum?” At the time of the creation less
+									than 5% of the artists in the Modern Art
+									Sections were women, while 85% of the nudes
+									featured in the Met are of women.
+								</p>
+							}
+						>
+							<Tween from={{ opacity: 0 }} to={{ opacity: 1 }} />
+						</Timeline>
+					</Scene>
+					{/* CANVAS3 */}
+					<Scene duration={"100%"} pin={true} triggerHook={0.05}>
+						{(progress) => (
+							<div>
+								<Timeline totalProgress={progress} paused>
+									<Tween>
+										<h2 className="title mb-4 display-5 text-center">
+											Women by Men and Women
+										</h2>
+										<canvas
+											className="my-auto mx-auto"
+											id="canvas3"
+											width="900"
+											height="600"
+										></canvas>
+									</Tween>
+									<Timeline
+										target={
+											<h1 className="paragraphsMain animate animation3">
+												In 2018, only 14.13% of the
+												Met's 14,350 Modern and
+												Contemporary Art pieces were by
+												women artists.
+											</h1>
+										}
+									>
+										<Tween
+											from={{ top: "50%", left: -500 }}
+											to={{ left: 500 }}
+										/>
 
-                    <Timeline target = { <h1 className="paragraphsMain animate animation2">There are no paintings of nude men painted by women available in the Met API.</h1>}>
-                    <Tween from={{ top: '25%', left: -800}} to={{ left: 800, top: '25%', ease: 'Strong.easeOut' } } />
-                    <Tween
-                      from={{ top: "25%", left: -800 }}
-                      to={{ left: 800, top: "25%" }}
-                    />
-                    <Tween from={{ opacity: 1 }} to={{ opacity: -1 }} />
-                  </Timeline>
-                </Timeline>
-              </div>
-            )}
-          </Scene>
-          <Scene duration={"100%"} triggerHook={0.2} pin={true}>
-            <Timeline
-              target={
-                <p className="paragraphsMain mt-2 mb-3 mx-auto my-auto">
-                  Of the 14,350 artworks featured in the Modern and Contemporary
-                  Art Collection, 2,027 artworks are by women while 10,829 are
-                  by men. It’s hard to read those numbers without thinking of
-                  the question posed by the Guerrilla Girls 1989 piece, ‘Do
-                  Women Have To Be Naked To Get Into the Met Museum?” At the
-                  time of the creation less than 5% of the artists in the Modern
-                  Art Sections were women, while 85% of the nudes featured in
-                  the Met are of women.
-                </p>
-              }
-            >
-              <Tween from={{ opacity: 0 }} to={{ opacity: 1 }} />
-            </Timeline>
-          </Scene>
-           {/* CANVAS3 */}
-           <Scene duration={'100%'} pin={true} triggerHook={0.05}>
-          {(progress) => (
-            <div>
-               <Timeline totalProgress={progress} paused>
-                <Tween>
-                  <h2 className="title mb-4 display-5 text-center">Women by Men and Women</h2>
-                  <canvas
-                  className="my-auto mx-auto"
-                  id="canvas3"
-                  width="900"
-                  height="600"
-                  ></canvas>
-                  </Tween>
-                    <Timeline target = { <h1 className="paragraphsMain animate animation3">In 2018, only 14.13% of the Met's 14,350 Modern and Contemporary Art pieces were by women artists.</h1>}>
+										<Tween
+											from={{ opacity: 1 }}
+											to={{ opacity: -1 }}
+										/>
 
-                  <Tween from={{ top: '50%', left: -500}} to={{ left: 500}} />
+										<Tween
+											from={{ opacity: 1 }}
+											to={{ opacity: -1 }}
+										/>
+									</Timeline>
+								</Timeline>
+							</div>
+						)}
+					</Scene>
+					<br />
+					<Scene duration={"100%"} triggerHook={0.2} pin={true}>
+						<Timeline
+							target={
+								<p className="paragraphsMain mt-2 mb-3 mx-auto my-auto">
+									By combining all of the artwork from the
+									previous two diagrams, we show a more
+									balanced view of artwork depicting women
+									from both male and female artists.
+								</p>
+							}
+						>
+							<Tween from={{ opacity: 0 }} to={{ opacity: 1 }} />
+						</Timeline>
+					</Scene>
+					{/* CANVAS4 */}
+					<Scene duration={"100%"} pin={true} triggerHook={0.05}>
+						{(progress) => (
+							<div>
+								<Timeline totalProgress={progress} paused>
+									<h2 className="title mb-4 display-5 text-center">
+										American Art Hightlighted at the Met
+									</h2>
+									<canvas
+										className="my-auto mx-auto"
+										id="canvas4"
+										width="900"
+										height="600"
+									></canvas>
+									<Timeline
+										target={
+											<h1 className="animate animation4">
+												In 2020, the Met hired its first
+												Native-American curator for the
+												American Wing.
+											</h1>
+										}
+									>
+										<Tween
+											from={{ top: "15%", left: -2000 }}
+											to={{ top: "15%", left: 25 }}
+										/>
+										<Timeline
+											target={
+												<h1 className="paragraphsMain animate animation4">
+													In 2020, the Met hired it's
+													first Native-American
+													curator for the American
+													Wing.
+												</h1>
+											}
+										>
+											<Tween
+												from={{
+													top: "15%",
+													left: -2000,
+												}}
+												to={{ top: "15%", left: 40 }}
+											/>
 
-                  <Tween
-                  from={{ opacity: 1}} to={{ opacity: -1}} />
+											<Tween
+												from={{ top: "15%" }}
+												to={{ top: "80%" }}
+											/>
 
-                    <Tween from={{ opacity: 1 }} to={{ opacity: -1 }} />
-                  </Timeline>
-                </Timeline>
-              </div>
-            )}
-          </Scene>
-          <br />
-          <Scene duration={"100%"} triggerHook={0.2} pin={true}>
-            <Timeline
-            target={
-            <p className="paragraphsMain mt-2 mb-3 mx-auto my-auto">
-            By combining all of the artwork from the previous two diagrams, we show a more balanced view of artwork depicting women from both male and female artists.
-            </p>
-            }
-            >
-
-            <Tween from={{ opacity: 0 }} to={{ opacity: 1 }} />
-            </Timeline>
-            </Scene>
-            {/* CANVAS4 */}
-            <Scene duration={"100%"} pin={true} triggerHook={0.05}>
-              {(progress) => (
-                <div>
-                  <Timeline totalProgress={progress} paused>
-                  <h2 className="title mb-4 display-5 text-center">
-                    American Art Hightlighted at the Met
-                  </h2>
-                  <canvas
-                    className="my-auto mx-auto"
-                    id="canvas4"
-                    width="900"
-                    height="600"
-                  ></canvas>
-                  <Timeline
-                    target={
-                      <h1 className="animate animation4">
-                        In 2020, the Met hired its first Native-American curator
-                        for the American Wing.
-                      </h1>
-                    }
-                  >
-                    <Tween
-                      from={{ top: "15%", left: -2000 }}
-                      to={{ top: "15%", left: 25 }}
-                    />
-                    <Timeline target = { <h1 className="paragraphsMain animate animation4">In 2020, the Met hired it's first Native-American curator for the American Wing.</h1>}>
-
-                      <Tween from={{ top: '15%', left: -2000 }} to={{top: '15%', left: 40}} />
-
-                      <Tween from={{ top: '15%'}} to={{ top: '80%' }} />
-
-                    <Tween from={{ opacity: 1 }} to={{ opacity: -1 }} />
-                  </Timeline>
-                </Timeline>
-                </Timeline>
-              </div>
-            )}
-          </Scene>
-          <br />
-          <Scene duration={"100%"} triggerHook={0.2} pin={true}>
-            <Timeline
-              target={
-            <p className="paragraphsMain mt-2 mb-3 mx-auto my-auto">
-              We wanted to acknowledge the problematic Eurocentric lens that prominent institutions like the Metropolitan Museum present. The paintings included in this last voronoi were the result of a simple query into the Met's "highlighted" works and contained the parameter "Location: New York." It yielded over 50 results, resulting in a more complex voronoi than its underrepresented counterpart. Details that are noteworthy include the stark lack of people of color (BIPOC) as subjects, and the fact that only three paintings are by women artists (two of which are by the same woman).
-            </p>
-            }
-            >
-              <Tween from={{ opacity: 0 }} to={{ opacity: 1 }} />
-            </Timeline>
-          </Scene>
-          {/* CANVAS5 */}
-          <Scene duration={1000} pin={true} triggerHook={0.05}>
-            {(progress) => (
-              <div>
-                <Timeline totalProgress={progress} paused>
-                  <h2 className="title mb-4 display-6 text-center">
-                Highlighted Art from Underrepresented Countries
-                  </h2>
-                  <canvas
-                    className=" my-auto mx-auto"
-                    id="canvas5"
-                    width="900"
-                    height="600"
-                  ></canvas>
-                    <Timeline target = { <h1 className="paragraphsMain animate animation5">The Met has 107 pieces of highlighted work from NY (population 19 million ), but only 177 from all of Africa (population 1.35 billion).</h1>}>
-                      <Tween from={{ top: '60%', left: -2000}} to={{ top: '60%', left: 700 }} />
-                      <Tween
-                      from={{ opacity: 1}} to={{ opacity: -1}} />
-                  </Timeline>
-                </Timeline>
-              </div>
-            )}
-          </Scene>
-          <br />
-          <Scene duration={"100%"} triggerHook={0.2} pin={true}>
-            <Timeline
-              target={
-            <p className="paragraphsMain mt-2 mb-3 mx-auto my-auto">
-              In stark contrast to the availability of work from American and major European countries, this last piece shows art from countries with very limited highlighted work. Many countries have no available paintings in the "highlights" section. While there are so many from New York, there are just 4 from India, 1 from Korea, and 3 from Japan, to name only a few. There are 3 from all of Africa. These images all come from countries that are largely underrepresented in the chosen “highlights” of the Met, but also in the collection at large. Most are from Middle Eastern or Eastern countries.
-            </p>
-            }
-            >
-              <Tween from={{ opacity: 0 }} to={{ opacity: 1 }} />
-            </Timeline>
-          </Scene>
-          {/* CANVAS6 */}
-          <Scene duration={"100%"} pin={true} triggerHook={0.05}>
-            {(progress) => (
-              <div>
-                <Timeline totalProgress={progress} paused>
-                  <h2 className="title mb-4 display-5 text-center">
-                    Highlighted Artwork From Around the World
-                  </h2>
-                  <canvas
-                    className="d-block my-4 mx-auto"
-                    id="canvas6"
-                    width="900"
-                    height="600"
-                  ></canvas>
-                  <Timeline
-                    target={
-                      <h1 className="animate animation3">
-                        The Department of the Arts of Africa, Oceania, and the
-                        Americas did not exist at the Met until 1969, when
-                        Nelson Rockefeller offered to gift over 3000 works from
-                        the Museum of Primitive Art.
-                      </h1>
-                    }
-                  >
-                    <Tween
-                      from={{ top: "50%", right: 500 }}
-                      to={{ right: 0 }}
-                    />
-                    <Tween from={{ opacity: 0 }} to={{ opacity: 1 }} />
-                  </Timeline>
-                </Timeline>
-              </div>
-            )}
-          </Scene>
-          <br />
-          <Scene duration={'100%'} pin={true} offset={200}>
-            <Timeline
-              target={
-                <p className="paragraphsMain mt-2 mb-3 mx-auto my-auto">
-                  Following widespread criticism, in 2020, the Metropolitan
-                  Museum of Art declared their intention to address racism and
-                  lack of diversity within their institution. They promised to
-                  "establish specified acquisition endowments with a total value
-                  of $10 million to increase the amount of works by BIPOC
-                  artists in our 20th- and 21st-century collections." We
-                  anxiously await the opportunity to see the benefits of this
-                  push toward a more comprehensive collection and approach.
-                </p>
-              }
-            >
-              <Tween from={{ opacity: -1 }} to={{ opacity: 2, ease: "Strong.easeOut" }} />
-            </Timeline>
-          </Scene>
-        </Controller>
-        <div className="mx-auto mb-5 display-6 text-center">
-          <a onClick={() => this.scrollToTop()} className="scrollToTop">
-            Top
-          </a>
-        </div>
-      </div>
-    );
-  }
+											<Tween
+												from={{ opacity: 1 }}
+												to={{ opacity: -1 }}
+											/>
+										</Timeline>
+									</Timeline>
+								</Timeline>
+							</div>
+						)}
+					</Scene>
+					<br />
+					<Scene duration={"100%"} triggerHook={0.2} pin={true}>
+						<Timeline
+							target={
+								<p className="paragraphsMain mt-2 mb-3 mx-auto my-auto">
+									We wanted to acknowledge the problematic
+									Eurocentric lens that prominent institutions
+									like the Metropolitan Museum present. The
+									paintings included in this last voronoi were
+									the result of a simple query into the Met's
+									"highlighted" works and contained the
+									parameter "Location: New York." It yielded
+									over 50 results, resulting in a more complex
+									voronoi than its underrepresented
+									counterpart. Details that are noteworthy
+									include the stark lack of people of color
+									(BIPOC) as subjects, and the fact that only
+									three paintings are by women artists (two of
+									which are by the same woman).
+								</p>
+							}
+						>
+							<Tween from={{ opacity: 0 }} to={{ opacity: 1 }} />
+						</Timeline>
+					</Scene>
+					{/* CANVAS5 */}
+					<Scene duration={1000} pin={true} triggerHook={0.05}>
+						{(progress) => (
+							<div>
+								<Timeline totalProgress={progress} paused>
+									<h2 className="title mb-4 display-6 text-center">
+										Highlighted Art from Underrepresented
+										Countries
+									</h2>
+									<canvas
+										className=" my-auto mx-auto"
+										id="canvas5"
+										width="900"
+										height="600"
+									></canvas>
+									<Timeline
+										target={
+											<h1 className="paragraphsMain animate animation5">
+												The Met has 107 pieces of
+												highlighted work from NY
+												(population 19 million ), but
+												only 177 from all of Africa
+												(population 1.35 billion).
+											</h1>
+										}
+									>
+										<Tween
+											from={{ top: "60%", left: -2000 }}
+											to={{ top: "60%", left: 700 }}
+										/>
+										<Tween
+											from={{ opacity: 1 }}
+											to={{ opacity: -1 }}
+										/>
+									</Timeline>
+								</Timeline>
+							</div>
+						)}
+					</Scene>
+					<br />
+					<Scene duration={"100%"} triggerHook={0.2} pin={true}>
+						<Timeline
+							target={
+								<p className="paragraphsMain mt-2 mb-3 mx-auto my-auto">
+									In stark contrast to the availability of
+									work from American and major European
+									countries, this last piece shows art from
+									countries with very limited highlighted
+									work. Many countries have no available
+									paintings in the "highlights" section. While
+									there are so many from New York, there are
+									just 4 from India, 1 from Korea, and 3 from
+									Japan, to name only a few. There are 3 from
+									all of Africa. These images all come from
+									countries that are largely underrepresented
+									in the chosen “highlights” of the Met, but
+									also in the collection at large. Most are
+									from Middle Eastern or Eastern countries.
+								</p>
+							}
+						>
+							<Tween from={{ opacity: 0 }} to={{ opacity: 1 }} />
+						</Timeline>
+					</Scene>
+					{/* CANVAS6 */}
+					<Scene duration={"100%"} pin={true} triggerHook={0.05}>
+						{(progress) => (
+							<div>
+								<Timeline totalProgress={progress} paused>
+									<h2 className="title mb-4 display-5 text-center">
+										Highlighted Artwork From Around the
+										World
+									</h2>
+									<canvas
+										className="d-block my-4 mx-auto"
+										id="canvas6"
+										width="900"
+										height="600"
+									></canvas>
+									<Timeline
+										target={
+											<h1 className="animate animation3">
+												The Department of the Arts of
+												Africa, Oceania, and the
+												Americas did not exist at the
+												Met until 1969, when Nelson
+												Rockefeller offered to gift over
+												3000 works from the Museum of
+												Primitive Art.
+											</h1>
+										}
+									>
+										<Tween
+											from={{ top: "50%", right: 500 }}
+											to={{ right: 0 }}
+										/>
+										<Tween
+											from={{ opacity: 0 }}
+											to={{ opacity: 1 }}
+										/>
+									</Timeline>
+								</Timeline>
+							</div>
+						)}
+					</Scene>
+					<br />
+					<Scene duration={"100%"} pin={true} offset={200}>
+						<Timeline
+							target={
+								<p className="paragraphsMain mt-2 mb-3 mx-auto my-auto">
+									Following widespread criticism, in 2020, the
+									Metropolitan Museum of Art declared their
+									intention to address racism and lack of
+									diversity within their institution. They
+									promised to "establish specified acquisition
+									endowments with a total value of $10 million
+									to increase the amount of works by BIPOC
+									artists in our 20th- and 21st-century
+									collections." We anxiously await the
+									opportunity to see the benefits of this push
+									toward a more comprehensive collection and
+									approach.
+								</p>
+							}
+						>
+							<Tween
+								from={{ opacity: -1 }}
+								to={{ opacity: 2, ease: "Strong.easeOut" }}
+							/>
+						</Timeline>
+					</Scene>
+				</Controller>
+				<div className="mx-auto mb-5 display-6 text-center">
+					<a
+						onClick={() => this.scrollToTop()}
+						className="scrollToTop"
+					>
+						Top
+					</a>
+				</div>
+			</div>
+		);
+	}
 }
 
 export default App;
