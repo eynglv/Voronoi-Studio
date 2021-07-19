@@ -138,8 +138,8 @@ class App extends React.Component {
                 </canvas>
                 <Timeline target = { <h1 className="fs-4 animate animation1">These 17 pieces are the only oil paintings available tagged as depicting women by women artists via the MET API.<br/> <br/> 
                 Only 3 of these pieces are "highlighted" works</h1>}>
-                  <Tween from={{top: '10%', left: -2000 }} to={{left: 40}} />
-                  <Tween from={{top: '20%'}} to={{top: '85%'}} />
+
+                  <Tween from={{top: '110%', left: 60}} to={{top: '-50%'}} />
                   <Tween from={{ opacity: 1}} to={{ opacity: -1}} />
                 </Timeline>
               </Timeline>
@@ -369,7 +369,7 @@ RM2YQGZ0TBN0CXC3BQJU/GayatriFinal.jpg?format=750w" height="500px"></img>
                   </canvas>
                     <Timeline target = { <h1 className="paragraphsMain animate animation4">In 2020, the Met hired it's first Native-American curator for the American Wing.</h1>}>
 
-                      <Tween from={{ top: '15%', left: -2000 }} to={{top: '15%', left: 40}} />
+                      <Tween from={{ top: '15%', left: -2000 }} to={{top: '15%', left: 60}} />
 
                       <Tween from={{ top: '15%'}} to={{ top: '80%' }} />
 
@@ -516,7 +516,7 @@ RM2YQGZ0TBN0CXC3BQJU/GayatriFinal.jpg?format=750w" height="500px"></img>
           </Scene>
         </Controller>
         <div className="mx-auto mb-5 display-6 text-center">
-          <a onClick={() => this.scrollToTop()} className="scrollToTop h4">
+          <a onClick={() => this.scrollToTop()} className="scrollToTop">
             Top
           </a>
         </div>
