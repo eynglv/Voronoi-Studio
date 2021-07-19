@@ -4,14 +4,13 @@
 	font-family: "Poppins", sans-serif;
 }
 
+.paintingsAll {
+	border-color: #fff8f0 !important;
+}
+
 h1 {
 	font-family: "Spartan";
 }
-
-/* img {
-	max-height: max-content;
-	min-height: min-content;
-} */
 
 .CYO {
 	color: #ffcab1;
@@ -244,19 +243,31 @@ small {
 }
 
 .scrollToTop {
-	cursor: pointer;
+
+  cursor: pointer;
+  color: #fff8f0;
+  font-size: 2rem;
+
 }
 
+.scrollToTop:hover {
+  color: #a63d40
+}
+
+
+
 .animate {
-	font-size: 30px;
-	font-weight: 1000;
-	color: #fff8f0;
-	z-index: 2;
-	position: absolute;
-	background-color: rgba(18, 22, 25, 0.65);
-	text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
-		1px 1px 0 #000;
-	width: 350px;
+
+  font-size: 24px;
+  font-weight: 1000;
+  color: #fff8f0;
+  z-index: 2;
+  position: absolute;
+  background-color: rgba(18, 22, 25, 0.65);
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+  width: 350px;
+
 }
 
 #formBtn:hover {
@@ -297,4 +308,9 @@ canvas:hover {
 
 .noscroll {
 	overflow: hidden;
+}
+
+.paragraphsMain {
+  text-align: justify;
+  text-justify: inter-word
 }
