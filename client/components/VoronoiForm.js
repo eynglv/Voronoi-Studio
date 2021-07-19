@@ -104,8 +104,6 @@ export default () => {
 				//only render a canvas if we have artData. Otherwise, we will just have a black box
 				const chartRender = chart.render(
 					"#user-generated",
-					720,
-					1080,
 					artData,
 					numberOfCells
 				);
