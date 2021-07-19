@@ -29,6 +29,7 @@ class Routes extends Component {
             <SingleVoronoi
               voronoiId="Women By Women"
               curator="Josephine Bartholoma"
+              links={['https://artsandculture.google.com/story/the-women-painters-overlooked-by-art-history/7AJCHFiEkqVKJg','https://www.dailyartmagazine.com/10-female-artist-forgotten-art-history']}
             />
           )}
         />
@@ -36,14 +37,16 @@ class Routes extends Component {
           exact
           path="/womenbymen"
           render={(props) => (
-            <SingleVoronoi voronoiId="Women By Men" curator="Phoebe Torchia" />
+            <SingleVoronoi voronoiId="Women By Men" curator="Phoebe Torchia" 
+            links={['https://www.instagram.com/changethemuseum/?hl=en']}/>
           )}
         />
         <Route
           exact
           path="/highlighted-american"
           render={(props) => (
-            <SingleVoronoi voronoiId="American Art" curator="Elvy Yang" />
+            <SingleVoronoi voronoiId="American Art" curator="Elvy Yang"
+            links={['https://www.sacredartsresearch.org/blog/2018/2/23/10-native-american-painters-schools-and-styles-you-should-know','https://www.artsy.net/article/artsy-editorial-influential-living-african-american-artists']} />
           )}
         />
         <Route
@@ -53,6 +56,7 @@ class Routes extends Component {
             <SingleVoronoi
               voronoiId="Non-Western Art"
               curator="Adrienne Scutellaro"
+              links={['https://blog.artsper.com/en/a-closer-look/10-african-artists-you-absolutely-must-know/', 'https://theculturetrip.com/asia/articles/10-non-western-contemporary-artists-you-should-know/']}
             />
           )}
         />
