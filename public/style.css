@@ -247,15 +247,16 @@ small {
 	margin: auto;
 }
 
-.extra-artists{
-  display: inline-flex;
-  flex-direction: row;
-  flex-grow:inherit;
-  flex-wrap: nowrap;
-  margin: auto;
-  margin-top: 40px;
+
+.column {
+  /* float: left; */
+  flex: 50%;
+  padding: 5px;
 }
 
-#artist-description p{
-  flex-shrink: inherit;
+/* Clear floats after image containers */
+.row{
+  display: flex;
+  margin: 100px;
+  align-items: center;
 }

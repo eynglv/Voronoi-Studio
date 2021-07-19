@@ -172,16 +172,15 @@ class App extends React.Component {
           {/*New Artist info*/}
           <Scene duration={"100%"} triggerHook={0.05} pin={true}>
           {(progress) => (
-            <div className="sticky">
+            <div>
               <Timeline totalProgress={progress} paused>   
                 <Timeline target = { 
-                <div className="extra-artists">
-                <span>
-                <img className="extra-artists" src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Catharina_van_Hemessen_-_Portrait_of_a_Lady.jpg" height="500px"></img>
-                <p className="extra-artists" id="artist-description">
-                 This pieces is entitled Portrait of a Woman by Catharina van Hemmessen painted in the mid-1500s.  She is widely credited with with first self-portrait depicting an artist (of any gender) working at an easel. Her work is not available at the Met.
+                <div className="row" >
+          
+                <img className="column" src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Catharina_van_Hemessen_-_Portrait_of_a_Lady.jpg" width="400px"></img>
+                <p className="column" id="artist-description">
+                 This piece is entitled Portrait of a Woman by Catharina van Hemessen painted in the mid-1500s.  She is widely credited with with first self-portrait depicting an artist (of any gender) working at an easel. Her work is not available at the Met.
                 </p>
-                </span>
                 </div>}>
                   <Tween from={{top: '20%', left: -2000 }} to={{left: 30}} />
                   <Tween from={{top: '20%'}} to={{top: '85%'}} />
@@ -198,14 +197,12 @@ class App extends React.Component {
             <div className="sticky">
               <Timeline totalProgress={progress} paused>   
                 <Timeline target = { 
-                <div className="extra-artists">
-                <span>
-                <p className="extra-artists" id="artist-description">
+                <div className="row">
+                <p className="column" id="artist-description">
                   This painting, "afro died" was painted in 2011 by Iona Rozeal Brown.  It is part of the National Gallery of Art collection, but it is not on view.
                 </p>
-                <img className="extra-artists" src="https://secureservercdn.net/160.153.138.53/6mj.cc8.myftpupload.com/wp-content/uploads/2020/06/Rozeal-.jpg" height="500px"></img>
+                <img className="column" src="https://secureservercdn.net/160.153.138.53/6mj.cc8.myftpupload.com/wp-content/uploads/2020/06/Rozeal-.jpg" width="400px"></img>
                 
-                </span>
                 </div>}>
                   <Tween from={{top: '20%', left: -2000 }} to={{left: 30}} />
                   <Tween from={{top: '20%'}} to={{top: '85%'}} />
@@ -270,13 +267,11 @@ class App extends React.Component {
             <div className="sticky">
               <Timeline totalProgress={progress} paused>   
                 <Timeline target = { 
-                <div className="extra-artists">
-                <span>
-                <img className="extra-artists" src="https://cdn.shopify.com/s/files/1/0585/0461/files/fullsizeoutput_31fa_2048x2048.jpeg?v=1561381118" height="400px"></img>
-                <p className="extra-artists" id="artist-description">
+                <div className="row">
+                <img className="column" src="https://cdn.shopify.com/s/files/1/0585/0461/files/fullsizeoutput_31fa_2048x2048.jpeg?v=1561381118" height="600px"></img>
+                <p className="column" id="artist-description">
                  Jane Clatworthy is a contemporary artist based in London.  She paints nudes of men as she strives "to address the imbalance we see across gallery walls. If men can paint women, why not the other way around?" 
                 </p>
-                </span>
                 </div>}>
                   <Tween from={{top: '20%', left: -2000 }} to={{left: 30}} />
                   <Tween from={{top: '20%'}} to={{top: '85%'}} />
@@ -335,14 +330,13 @@ class App extends React.Component {
             <div className="sticky">
               <Timeline totalProgress={progress} paused>   
                 <Timeline target = { 
-                <div className="extra-artists">
-                <span>
-                <img className="extra-artists" src="https://images.squarespace-cdn.com/content/v1/5b0fd1ca31d4df1c5e5588b2/1598099279839-
+                <div className="row">
+
+                <img className="column" src="https://images.squarespace-cdn.com/content/v1/5b0fd1ca31d4df1c5e5588b2/1598099279839-
 RM2YQGZ0TBN0CXC3BQJU/GayatriFinal.jpg?format=750w" height="500px"></img>
-                <p className="extra-artists" id="artist-description">
+                <p className="column" id="artist-description">
                 Non-binary artists are even less represented in museum walls.  Shiva Raichandani is a contemporary artist helping to promote gender-diverse representation in art through their work. 
                 </p>
-                </span>
                 </div>}>
                   <Tween from={{top: '20%', left: -2000 }} to={{left: 30}} />
                   <Tween from={{top: '20%'}} to={{top: '85%'}} />
@@ -403,14 +397,11 @@ RM2YQGZ0TBN0CXC3BQJU/GayatriFinal.jpg?format=750w" height="500px"></img>
             <div className="sticky">
               <Timeline totalProgress={progress} paused>   
                 <Timeline target = { 
-                <div className="extra-artists">
-                <span>
-                <p className="extra-artists" id="artist-description">
+                <div className="row">
+                   <p className="column" id="artist-description">
                 Wangechi Mutu is a Kenyan-born, Brooklyn-based contemporary artist. This piece was produced in 2009 and titled Cactus Green Nips.  Mutu's sculpture work was actually featured at the Met in 2019 as part of their new annual Facade Commission.
                 </p>
-                <img className="extra-artists" src="https://blog.artsper.com/wp-content/uploads/2018/11/Wangechi-Mutu-3.jpg" heigh="500px"></img>
-                
-                </span>
+                <img className="column" src="https://blog.artsper.com/wp-content/uploads/2018/11/Wangechi-Mutu-3.jpg" height="350px"></img>
                 </div>}>
                   <Tween from={{top: '20%', left: -2000 }} to={{left: 30}} />
                   <Tween from={{top: '20%'}} to={{top: '85%'}} />
@@ -464,14 +455,12 @@ RM2YQGZ0TBN0CXC3BQJU/GayatriFinal.jpg?format=750w" height="500px"></img>
             <div className="sticky">
               <Timeline totalProgress={progress} paused>   
                 <Timeline target = { 
-                <div className="extra-artists">
-                <span>
-                <img className="extra-artists" src="https://images.squarespace-cdn.com/content/v1/53e3c23ee4b018c6bdf89fdb/1519431980659-PLY4UV7OJ8FSMUICD2LB/amaringo-auca_yachai.jpg?format=2500w" width="600px"></img>
+                <div className="row">
+                <img className="column" src="https://images.squarespace-cdn.com/content/v1/53e3c23ee4b018c6bdf89fdb/1519431980659-PLY4UV7OJ8FSMUICD2LB/amaringo-auca_yachai.jpg?format=2500w" height="325px"></img>
                 
-                <p className="extra-artists" id="artist-description">
+                <p className="column" id="artist-description">
                This beautiful piece is by the late Pablo Amaringo.  He was a Peruvian artist who depicted images which conjure the Amazon jungle, as well as the culture and traditions of the people there.  His work was not widely known and he helped to create the The Usko-Ayae, a free school for artists of the Peruvian Amazon.
                 </p>
-                </span>
                 </div>}>
                   <Tween from={{top: '20%', left: -2000 }} to={{left: 30}} />
                   <Tween from={{top: '20%'}} to={{top: '85%'}} />
