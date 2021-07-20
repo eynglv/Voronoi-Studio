@@ -25,14 +25,14 @@ export default (props) => {
     <div>
       <div id="modal"></div>
       <h1 className="text-center display-3 mt-3">{props.voronoiId}</h1>
-      <h3 className="text-center mb-2 mt-2">Curated by {props.curator}</h3>
+      <h3 style={{color: '#ffcab1'}}  className="text-center mb-2 mt-2">Curated by {props.curator}</h3>
       <canvas
         id="single-voronoi"
         className="mx-auto mb-3"
         width="1000"
-        height="600"
+        height="500"
       ></canvas>
-      <h3 className="text-center mb-2 mt-2">
+      <h3 style={{color: '#ffcab1'}} className="text-center fs-6 mb-2 mt-2">
         To see more art from this population, check out the links below.
       </h3>
       {props.links.length > 0 ? (

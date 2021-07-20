@@ -122,6 +122,14 @@ a {
 	color: #fff8f0;
 }
 
+.citation-link a{
+	color: #fff8f0;
+}
+
+.citation-link:hover a{
+	color: #ffcab1;
+}
+
 h1 #welcome {
 	font-family: "Spartan", sans-serif;
 }
