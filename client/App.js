@@ -94,7 +94,6 @@ class App extends React.Component {
                 <p className="paragraphsMain mb-5 mx-auto my-auto">
                   Voronoi Studio aims to visually dissect the disproportionate representation of male and western artists, compared to female and non-western artists. The Met’s digital collection contains over 375,000 pieces of artwork available through the Open Access program. We created two sets of contrasting art works to highlight the overt bias in the Met's Collection, one depicting women by women artists juxtaposed with nude paintings of women by male artists, while the other queried the Met's "highlighted" works and contrasted American pieces with pieces from underrepresented countries.
                   </p>
-                  <small>scroll to continue</small>
                   </div>
               
           </Scene>
@@ -330,7 +329,7 @@ class App extends React.Component {
                 <Timeline target = { 
                 <div className="d-flex ms-5 me-5 mx-auto">
 
-                <img  className="w-50 p-2" height="50%" width="auto"src="https://images.squarespace-cdn.com/content/v1/5b0fd1ca31d4df1c5e5588b2/1598099279839-
+                <img  className="p-2" height="50%" width="auto"src="https://images.squarespace-cdn.com/content/v1/5b0fd1ca31d4df1c5e5588b2/1598099279839-
 RM2YQGZ0TBN0CXC3BQJU/GayatriFinal.jpg?format=750w" height="500px"></img>
                 <p  className="p-3 my-auto paragraphsMain align-self-center" id="artist-description">
                 Non-binary artists are scarcely represented in museum walls.  <a style={{color: "#a63d40"}} href="https://www.instagram.com/shivaraichandani/?hl=en">Shiva Raichandani</a> is a contemporary artist helping to promote gender-diverse representation in art through their work. 
@@ -454,7 +453,7 @@ RM2YQGZ0TBN0CXC3BQJU/GayatriFinal.jpg?format=750w" height="500px"></img>
               <Timeline totalProgress={progress} paused>   
                 <Timeline target = { 
                 <div className="d-flex ms-5 me-5 mx-auto">
-                <img  className="w-50 p-2" height="50%" width="auto" src="https://images.squarespace-cdn.com/content/v1/53e3c23ee4b018c6bdf89fdb/1519431980659-PLY4UV7OJ8FSMUICD2LB/amaringo-auca_yachai.jpg?format=2500w" height="325px"></img>
+                <img  className="p-2" height="50%" width="auto" src="https://images.squarespace-cdn.com/content/v1/53e3c23ee4b018c6bdf89fdb/1519431980659-PLY4UV7OJ8FSMUICD2LB/amaringo-auca_yachai.jpg?format=2500w" height="325px"></img>
                 
                 <p className="p-3 my-auto paragraphsMain align-self-center" id="artist-description">
                This beautiful piece is by the late <a style={{color: "#a63d40"}}href="https://pablo-amaringo.pixels.com/">Pablo Amaringo</a>.  He was a Peruvian artist who depicted images which conjure the Amazon jungle, as well as the culture and traditions of the people there.  His work was not widely known and he helped to create the The Usko-Ayae, a free school for artists of the Peruvian Amazon.

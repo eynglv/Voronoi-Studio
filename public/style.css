@@ -102,6 +102,14 @@ a {
 	background-color: rgba(95, 124, 140, 0.35);
 }
 
+.namesCollection {
+	color: #fff8f0;
+}
+
+.namesCollection:hover{
+	color: #ffcab1;
+}
+
 .names.github:hover,
 #explanation a:hover,
 #voronoi-explained-link:hover,
