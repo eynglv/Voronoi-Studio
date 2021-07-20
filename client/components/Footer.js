@@ -55,7 +55,7 @@ class Footer extends React.Component {
             All artworks provided by{" "}
             <a
               href="https://www.metmuseum.org/blogs/now-at-the-met/2018/met-collection-api"
-              className="names mx-auto text-center"
+              className="namesCollection mx-auto text-center"
               style={({ color: "#FFCAB1" }, { backgroundColor: "transparent" })}
             >
               The Met Collection API
