@@ -77,43 +77,42 @@ class App extends React.Component {
       <div id='main'>
         <div id="modal"></div>
         <Controller>
-          <Scene duration={600} triggerHook={0} pin={true}>
+          <Scene duration={600} triggerHook={0.2} pin={true}>
             <Timeline
               target={
-                <div id="how-to" className="text-center">
-                  <h5>Welcome to Voronoi Studio</h5>
-                  <p>Scroll down to view our digital essay.</p>
-                  <p>You can click on any of the moving images to get more detail.</p>
-                  <p>Use the pop-out nav bar on the left to explore more of the site.</p>
+                <div id="how-to" className="mt-5 mb-5 w-50 mx-auto border-5 text-center my-auto">
+                  <p className="fs-5">Scroll down to view our digital essay.</p>
+                  <p>Any of the moving images can be clicked on for more detail.</p>
+                  <p>Use the pop-out bar on the left to explore the site and paintings in greater detail.</p>
                   <p>Please enjoy responsibly.</p>
                 </div>}>
-                <Tween from={{ opacity: 3 }} to={{ opacity: 0 }} />
+                <Tween from={{ opacity: 0 }} to={{ opacity: 1 }} />
               </Timeline>
           </Scene>
-          <Scene duration={165} triggerHook={0.3} pin={true}>
+          <Scene duration={700}  triggerHook={0.2} pin={true, {pushfollowers: false}} enabled={true}>
                 <div>
-                <p className="paragraphsMain mt-5 mb-5 mx-auto my-auto">
+                <p className="paragraphsMain mb-5 mx-auto my-auto">
                   Voronoi Studio aims to visually dissect the disproportionate representation of male and western artists, compared to female and non-western artists. The Met’s digital collection contains over 375,000 pieces of artwork available through the Open Access program. We created two sets of contrasting art works to highlight the overt bias in the Met's Collection, one depicting women by women artists juxtaposed with nude paintings of women by male artists, while the other queried the Met's "highlighted" works and contrasted American pieces with pieces from underrepresented countries.
                   </p>
                   <small>scroll to continue</small>
                   </div>
               
           </Scene>
-					<Scene duration={"100%"} triggerHook={0.07} pin={true}>
+					<Scene duration={'100%'} triggerHook={0.25} pin={true, {pushfollowers: false}} enabled={true}>
             <Timeline
               target={
-                <p className="paragraphsMain mt-5 mb-3 mx-auto my-auto">
-                The art we are presenting comes in the form of live-motion voronoi diagrams, allowing us to present multiple views and elements from many different artworks. Voronoi diagrams are created by mapping the relationships between data, which seemed metaphoric for our demonstration. We've also included a sprinkling of works from outside the Met's collection from female and non-binary artists, and artists from diverse cultural backgrounds.</p>
+                <p className="paragraphsMain mb-3 mx-auto my-auto">
+                The art we are presenting comes in the form of live-motion voronoi diagrams, allowing us to present multiple views and elements from many different artworks. Voronoi diagrams are created by mapping the relationships between data, which was fitting for our demonstration. In addition, we have included a sprinkling of works from outside the Met's collection from artists identified as female, non-binary, and from diverse cultural backgrounds.</p>
               }
                 >
                   <Tween from={{ opacity: 0 }} to={{ opacity: 1 }} />
                 </Timeline>
           </Scene>
-					<Scene duration={"100%"} triggerHook={0.07} pin={true}>
+					<Scene duration={'100%'} triggerHook={0.3} pin={true, {pushfollowers: false}} enabled={true}>
             <Timeline
               target={
-                <p className="paragraphsMain mt-5 mb-3 mx-auto my-auto"> 
-                In 2019, The Met was the 3rd most visited art museum in the world, with nearly 7,000,000 visitors annually, and was the most visited art museum in America. What responsibility does the most prominent art museum in the country have to highlight diverse and underrepresented artists and their cultures? How can we demand accountability from historically biased institutions, without observing the current dismal state of affairs?</p>
+                <p className="paragraphsMain mb-5 mx-auto my-auto"> 
+                In 2019, The Met was the 3rd most visited art museum in the world with nearly 7,000,000 visitors annually, and was the most visited art museum in America. What responsibility does the most prominent art museum in the country have to highlight diverse and underrepresented artists and their cultures? How can we demand accountability from historically biased institutions, without observing the current dismal state of affairs?</p>
               }
                 >
                   <Tween from={{ opacity: 0 }} to={{ opacity: 1 }} />
@@ -122,7 +121,7 @@ class App extends React.Component {
 
 
           {/* CANVAS1 */}
-          <Scene duration={"100%"} triggerHook={0.08} pin={true}>
+          <Scene duration={"100%"} triggerHook={0.08} pin={true, {pushfollowers: false}} enabled={true}>
           {(progress) => (
             <div>
               <Timeline totalProgress={progress} paused>   
@@ -147,10 +146,10 @@ class App extends React.Component {
           )}
 
           </Scene>
-          <Scene duration={"100%"} triggerHook={0.2} pin={true}>
+          <Scene duration={"100%"} triggerHook={0.2}  pin={true, {pushfollowers: false}} enabled={true}>
             <Timeline
               target={
-                <p className="paragraphsMain mt-2 mb-3 mx-auto my-auto">
+                <p className="paragraphsMain mt-2 mb-2 mx-auto my-auto">
                   The voronoi above consists of art by women with at least one woman subject. We limited the selection to just oil paintings in order to create a cohesive look. Originally, the plan was to only use works "highlighted" by The Met, but there were only 3.  This piece presents the only ones available that fit these criteria out of the entire collection. 
 
                 </p>
@@ -161,17 +160,38 @@ class App extends React.Component {
           </Scene>
 
           {/*New Artist info*/}
-          <Scene duration={"100%"} triggerHook={0.05} pin={true}>
+          <Scene duration={"100%"} triggerHook={0.1}   pin={true, {pushfollowers: false}} enabled={true}>
           {(progress) => (
-            <div>
+            <div className="mx-auto">
               <Timeline totalProgress={progress} paused>   
                 <Timeline target = { 
-                <div className="row" >
-          
-                <img className="column" src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Catharina_van_Hemessen_-_Portrait_of_a_Lady.jpg" width="400px"></img>
-                <p className="column" id="artist-description">
-                 This piece is entitled Portrait of a Woman by Catharina van Hemessen painted in the mid-1500s.  She is widely credited with with first self-portrait depicting an artist (of any gender) working at an easel. Her work is not available at the Met.
+                <div className="d-flex ms-5 me-5 mx-auto">
+                <img className="w-50 p-2" height="50%" width="auto" src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Catharina_van_Hemessen_-_Portrait_of_a_Lady.jpg"></img>
+                <p className="column p-3 my-auto paragraphsMain align-self-center" id="artist-description">
+                 This piece is entitled Portrait of a Woman by <a style={{color: "#a63d40"}}href="https://en.wikipedia.org/wiki/Catharina_van_Hemessen">Catharina van Hemessen</a> painted in the mid-1500s. She is widely credited with with first self-portrait depicting an artist (of any gender) working at an easel. Her work is not available at the Met.
                 </p>
+                </div>}>
+                  {/* <Tween from={{top: '20%', left: -2000 }} to={{left: 30}} />
+                  <Tween from={{top: '20%'}} to={{top: '85%'}} />
+                  <Tween from={{ opacity: 1}} to={{ opacity: -1}} /> */}
+                  
+                </Timeline>
+              </Timeline>
+            </div>
+          )}
+
+          </Scene>
+          <Scene duration={"100%"} triggerHook={0.15} pin={true}>
+          {(progress) => (
+            <div className="mx-auto">
+              <Timeline totalProgress={progress} paused>   
+                <Timeline target = { 
+                <div className="d-flex ms-5 me-5 mx-auto">
+                                  <p  className="column p-3 my-auto paragraphsMain align-self-center">
+                  This painting, "afro died" was painted in 2011 by <a style={{color: "#a63d40"}}href="https://en.wikipedia.org/wiki/Iona_Rozeal_Brown">Iona Rozeal Brown</a>. It is part of the National Gallery of Art collection, but is not currently on view.
+                </p>
+                <img  className="w-50 p-2" height="50%" width="auto"  src="https://secureservercdn.net/160.153.138.53/6mj.cc8.myftpupload.com/wp-content/uploads/2020/06/Rozeal-.jpg" width="400px"></img>
+
                 </div>}>
                   <Tween from={{top: '20%', left: -2000 }} to={{left: 30}} />
                   <Tween from={{top: '20%'}} to={{top: '85%'}} />
@@ -183,31 +203,7 @@ class App extends React.Component {
           )}
 
           </Scene>
-          <Scene duration={"100%"} triggerHook={0.05} pin={true}>
-          {(progress) => (
-            <div className="sticky">
-              <Timeline totalProgress={progress} paused>   
-                <Timeline target = { 
-                <div className="row">
-                <p className="column" id="artist-description">
-                  This painting, "afro died" was painted in 2011 by Iona Rozeal Brown.  It is part of the National Gallery of Art collection, but it is not on view.
-                </p>
-                <img className="column" src="https://secureservercdn.net/160.153.138.53/6mj.cc8.myftpupload.com/wp-content/uploads/2020/06/Rozeal-.jpg" width="400px"></img>
-                
-                </div>}>
-                  <Tween from={{top: '20%', left: -2000 }} to={{left: 30}} />
-                  <Tween from={{top: '20%'}} to={{top: '85%'}} />
-                  <Tween from={{ opacity: 1}} to={{ opacity: -1}} />
-                  
-                </Timeline>
-              </Timeline>
-            </div>
-          )}
-
-          </Scene>
-          
-
-
+        
           {/* CANVAS2*/}
           <Scene duration={'100%'} pin={true} triggerHook={0.05}>
           {(progress) => (
@@ -260,15 +256,15 @@ class App extends React.Component {
           </Scene>
 
 {/*New Artist info*/}
-<Scene duration={"100%"} triggerHook={0.05} pin={true}>
+<Scene duration={"100%"} triggerHook={0.15} pin={true}>
           {(progress) => (
-            <div className="sticky">
+            <div className="mx-auto">
               <Timeline totalProgress={progress} paused>   
                 <Timeline target = { 
-                <div className="row">
-                <img className="column" src="https://cdn.shopify.com/s/files/1/0585/0461/files/fullsizeoutput_31fa_2048x2048.jpeg?v=1561381118" height="600px"></img>
-                <p className="column" id="artist-description">
-                 Jane Clatworthy is a contemporary artist based in London.  She paints nudes of men as she strives "to address the imbalance we see across gallery walls. If men can paint women, why not the other way around?" 
+                <div className="d-flex ms-5 me-5 mx-auto">
+                <img  className="w-50 p-2" height="50%" width="auto"   src="https://cdn.shopify.com/s/files/1/0585/0461/files/fullsizeoutput_31fa_2048x2048.jpeg?v=1561381118" height="600px"></img>
+                <p  className="p-3 my-auto paragraphsMain align-self-center" id="artist-description">
+                <a style={{color: "#a63d40"}} href="https://janeclatworthy.com/">Jane Clatworthy</a> is a contemporary artist based in London.  She paints nudes of men as she strives "to address the imbalance we see across gallery walls. If men can paint women, why not the other way around?" 
                 </p>
                 </div>}>
                   <Tween from={{top: '20%', left: -2000 }} to={{left: 30}} />
@@ -317,7 +313,7 @@ class App extends React.Component {
             <Timeline
             target={
             <p className="paragraphsMain mt-2 mb-3 mx-auto my-auto">
-            By combining all of the artwork from the previous two diagrams, we show a more balanced view of artwork depicting women from both male and female artists.
+            In combining all of the artwork from the previous two voronois into one larger piece, we envision a more balanced view of artwork that depicts women from both male and female artist perspectives.
             </p>
             }
             >
@@ -327,17 +323,17 @@ class App extends React.Component {
             </Scene>
 
             {/*New Artist info*/}
-<Scene duration={"100%"} triggerHook={0.05} pin={true}>
+<Scene duration={"100%"} triggerHook={0.15} pin={true}>
           {(progress) => (
-            <div className="sticky">
+            <div className="mx-auto">
               <Timeline totalProgress={progress} paused>   
                 <Timeline target = { 
-                <div className="row">
+                <div className="d-flex ms-5 me-5 mx-auto">
 
-                <img className="column" src="https://images.squarespace-cdn.com/content/v1/5b0fd1ca31d4df1c5e5588b2/1598099279839-
+                <img  className="w-50 p-2" height="50%" width="auto"src="https://images.squarespace-cdn.com/content/v1/5b0fd1ca31d4df1c5e5588b2/1598099279839-
 RM2YQGZ0TBN0CXC3BQJU/GayatriFinal.jpg?format=750w" height="500px"></img>
-                <p className="column" id="artist-description">
-                Non-binary artists are even less represented in museum walls.  Shiva Raichandani is a contemporary artist helping to promote gender-diverse representation in art through their work. 
+                <p  className="p-3 my-auto paragraphsMain align-self-center" id="artist-description">
+                Non-binary artists are scarcely represented in museum walls.  <a style={{color: "#a63d40"}} href="https://www.instagram.com/shivaraichandani/?hl=en">Shiva Raichandani</a> is a contemporary artist helping to promote gender-diverse representation in art through their work. 
                 </p>
                 </div>}>
                   <Tween from={{top: '20%', left: -2000 }} to={{left: 30}} />
@@ -368,7 +364,7 @@ RM2YQGZ0TBN0CXC3BQJU/GayatriFinal.jpg?format=750w" height="500px"></img>
 
                     >
                   </canvas>
-                    <Timeline target = { <h1 className="paragraphsMain animate animation4">In 2020, the Met hired it's first Native-American curator for the American Wing.</h1>}>
+                    <Timeline target = { <h1 className="animate animation4">In 2020, the Met hired it's first Native-American curator for the American Wing.</h1>}>
 
                       <Tween from={{ top: '15%', left: -2000 }} to={{top: '15%', left: 60}} />
 
@@ -386,7 +382,7 @@ RM2YQGZ0TBN0CXC3BQJU/GayatriFinal.jpg?format=750w" height="500px"></img>
             <Timeline
               target={
             <p className="paragraphsMain mt-2 mb-3 mx-auto my-auto">
-              We wanted to acknowledge the problematic Eurocentric lens that prominent institutions like the Metropolitan Museum present. The paintings included in this last voronoi were the result of a simple query into the Met's "highlighted" works and contained the parameter "Location: New York." It yielded over 50 results, resulting in a more complex voronoi than its underrepresented counterpart. Details that are noteworthy include the stark lack of people of color (BIPOC) as subjects, and the fact that only three paintings are by women artists (two of which are by the same woman).
+              We wanted to acknowledge the problematic Eurocentric lens that prominent institutions like the Metropolitan Museum present. The paintings included in this last voronoi were the result of a simple query into the Met's "Highlighted" works and contained the parameter "Location: New York." It yielded over 50 results, resulting in a more complex voronoi than its underrepresented counterpart. Details that are noteworthy are the stark lack of Black, Indigenous, people of color (BIPOC) as subjects, and the fact that only three paintings are by Women artists (two of which are by the same artist).
             </p>
             }
             >
@@ -394,16 +390,16 @@ RM2YQGZ0TBN0CXC3BQJU/GayatriFinal.jpg?format=750w" height="500px"></img>
             </Timeline>
           </Scene>
 
-          <Scene duration={"100%"} triggerHook={0.05} pin={true}>
+          <Scene duration={"100%"} triggerHook={0.15} pin={true}>
           {(progress) => (
-            <div>
+            <div className="mx-auto">
               <Timeline totalProgress={progress} paused>   
                 <Timeline target = { 
-                <div className="row">
-                   <p className="column" id="artist-description">
-                Wangechi Mutu is a Kenyan-born, Brooklyn-based contemporary artist. This piece was produced in 2009 and titled Cactus Green Nips.  Mutu's sculpture work was actually featured at the Met in 2019 as part of their new annual Facade Commission.
+                <div className="d-flex ms-5 me-5 mx-auto">
+                   <p  className="p-3 my-auto paragraphsMain align-self-center" id="artist-description">
+                   <a style={{color: "#a63d40"}}href="https://en.wikipedia.org/wiki/Wangechi_Mutu">Wangechi Mutu</a> is a Kenyan-born, Brooklyn-based contemporary artist. This piece was produced in 2009 and titled Cactus Green Nips.  Mutu's sculpture work was actually featured at the Met in 2019 as part of their new annual Facade Commission.
                 </p>
-                <img className="column" src="https://blog.artsper.com/wp-content/uploads/2018/11/Wangechi-Mutu-3.jpg" height="350px"></img>
+                <img  className="w-50 p-2" height="50%" width="auto" src="https://blog.artsper.com/wp-content/uploads/2018/11/Wangechi-Mutu-3.jpg" height="350px"></img>
                 </div>}>
                   <Tween from={{top: '20%', left: -2000 }} to={{left: 30}} />
                   <Tween from={{top: '20%'}} to={{top: '85%'}} />
@@ -452,19 +448,19 @@ RM2YQGZ0TBN0CXC3BQJU/GayatriFinal.jpg?format=750w" height="500px"></img>
             </Timeline>
           </Scene>
 
-          <Scene duration={"100%"} triggerHook={0.05} pin={true}>
+          <Scene duration={"100%"} triggerHook={0.25} pin={true}>
           {(progress) => (
-            <div>
+            <div className="mx-auto mb-5">
               <Timeline totalProgress={progress} paused>   
                 <Timeline target = { 
-                <div className="row">
-                <img className="column" src="https://images.squarespace-cdn.com/content/v1/53e3c23ee4b018c6bdf89fdb/1519431980659-PLY4UV7OJ8FSMUICD2LB/amaringo-auca_yachai.jpg?format=2500w" height="325px"></img>
+                <div className="d-flex ms-5 me-5 mx-auto">
+                <img  className="w-50 p-2" height="50%" width="auto" src="https://images.squarespace-cdn.com/content/v1/53e3c23ee4b018c6bdf89fdb/1519431980659-PLY4UV7OJ8FSMUICD2LB/amaringo-auca_yachai.jpg?format=2500w" height="325px"></img>
                 
-                <p className="column" id="artist-description">
-               This beautiful piece is by the late Pablo Amaringo.  He was a Peruvian artist who depicted images which conjure the Amazon jungle, as well as the culture and traditions of the people there.  His work was not widely known and he helped to create the The Usko-Ayae, a free school for artists of the Peruvian Amazon.
+                <p className="p-3 my-auto paragraphsMain align-self-center" id="artist-description">
+               This beautiful piece is by the late <a style={{color: "#a63d40"}}href="https://pablo-amaringo.pixels.com/">Pablo Amaringo</a>.  He was a Peruvian artist who depicted images which conjure the Amazon jungle, as well as the culture and traditions of the people there.  His work was not widely known and he helped to create the The Usko-Ayae, a free school for artists of the Peruvian Amazon.
                 </p>
                 </div>}>
-                  <Tween from={{ opacity: 1}} to={{ opacity: -1}} />
+                  <Tween from={{ opacity: 0}} to={{ opacity: 1}} />
                   
                 </Timeline>
               </Timeline>
