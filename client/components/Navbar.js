@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 class Navbar extends React.Component {
   constructor() {
@@ -10,7 +10,7 @@ class Navbar extends React.Component {
         id='nav'
         className='top-0 nav  mx-auto d-flex flex-column position-fixed'
       >
-        {' '}
+        {" "}
         <span className='material-icons'>fingerprint</span>
         <div className='menu flex-grow-1 d-flex flex-column justify-content-around'>
           <a href='/' className='mx-auto links-text'>
