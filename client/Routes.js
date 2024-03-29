@@ -1,17 +1,14 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { withRouter, Route } from "react-router-dom";
+
 import App from "./App";
 import FeaturedPieces from "./components/FeaturedPieces";
 import Home from "./components/Home";
 import Navbar from "./components/Navbar";
 import WorksCited from "./components/WorksCited";
-
 import VoronoiForm from "./components/VoronoiForm";
 
-/**
- * COMPONENT
- */
 class Routes extends Component {
   render() {
     return (
