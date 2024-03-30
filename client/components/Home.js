@@ -13,8 +13,8 @@ class Home extends React.Component {
     return (
       <div>
         <h1
-          className='display-3 mt-5 mx-3 text-center text-nowrap'
-          id='welcome'
+          className='text-6xl font-bold leading-10 text-rose-800'
+          // id='welcome'
         >
           Welcome to Voronoi Studio
         </h1>
