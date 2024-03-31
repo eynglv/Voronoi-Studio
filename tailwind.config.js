@@ -13,6 +13,10 @@ module.exports = {
       sans: ["Graphik", "sans-serif"],
       serif: ["Merriweather", "serif"],
     },
+    fontSize: {
+      paragraph: ["1.5rem", { lineHeight: "2rem" }],
+      heading1: ["3.75rem", { lineHeight: "1" }],
+    },
     extend: {},
   },
   plugins: [],

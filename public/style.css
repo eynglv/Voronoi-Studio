@@ -24,15 +24,6 @@
   transition: 2s;
 }
 
-.carousel-item img {
-  height: 650px;
-  width: auto;
-}
-
-.carousel-item p {
-  font-size: 12px;
-}
-
 .menu {
   background-color: #a63d40;
   opacity: 0;
@@ -211,12 +202,12 @@ small {
   flex-shrink: 0;
   flex-basis: fit-content;
 }
-
+/* 
 #main p,
 #explanation p {
   font-size: x-large;
   width: 75%;
-}
+} */
 
 .scrollToTop {
   cursor: pointer;

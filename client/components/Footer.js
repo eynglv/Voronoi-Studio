@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className='bg-secondary-900 w-full h-125 absolute bottom-0'>
+    <div className='bg-accent-900/70 w-full h-125 absolute bottom-0'>
       <div className='names card-body text-center justify-content-center'>
         <p
           className='mt-1 mx-auto text-center names'
