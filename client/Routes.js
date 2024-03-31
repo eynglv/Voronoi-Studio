@@ -13,7 +13,6 @@ class Routes extends Component {
   render() {
     return (
       <>
-        <Navbar />
         <Route exact path='/' component={Home} />
         <Route exact path='/main' component={App} />
         <Route exact path='/voronoi-form' component={VoronoiForm} />

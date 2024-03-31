@@ -67,6 +67,7 @@ const Carousel = () => {
     setCurrentIndex(prevIndex);
   };
 
+  // TODO: maybe add transitions
   useEffect(() => {
     const timer = setInterval(() => {
       handleNextSlide();
@@ -75,6 +76,7 @@ const Carousel = () => {
     return () => clearInterval(timer);
   }, [currentIndex]);
 
+  // TODO: change all the text
   const carouselItems = [
     {
       imgSrc: "https://images.metmuseum.org/CRDImages/ad/web-large/DT73.jpg",
@@ -121,7 +123,10 @@ const Carousel = () => {
       </div>
       <div className='flex justify-around w-2/6 md:w-3/12'>
         {carouselItems.map((_, index) => (
-          <SlideIndicator active={index === currentIndex} />
+          <SlideIndicator
+            active={index === currentIndex}
+            key={`indicator-${index}`}
+          />
         ))}
       </div>
     </div>
