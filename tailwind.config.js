@@ -6,7 +6,7 @@ module.exports = {
   theme: {
     colors: {
       primary: colors.zinc,
-      secondary: colors.indigo,
+      secondary: colors.cyan,
       accent: colors.orange,
     },
     fontFamily: {

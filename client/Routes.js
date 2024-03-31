@@ -12,14 +12,14 @@ import VoronoiForm from "./components/VoronoiForm";
 class Routes extends Component {
   render() {
     return (
-      <div>
+      <>
         <Navbar />
         <Route exact path='/' component={Home} />
         <Route exact path='/main' component={App} />
         <Route exact path='/voronoi-form' component={VoronoiForm} />
         <Route path='/all' component={FeaturedPieces} />
         <Route path='/works-cited' component={WorksCited} />
-      </div>
+      </>
     );
   }
 }

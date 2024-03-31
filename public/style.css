@@ -76,34 +76,10 @@
   vertical-align: middle;
 }
 
-.footer {
-  background-color: #5f7c8c;
-  height: 150px;
-}
-
 a {
   text-decoration: none;
 }
 
-.footer {
-  background-color: #5f7c8c;
-  height: 150px;
-}
-.names {
-  color: #fff8f0;
-  background-color: rgba(95, 124, 140, 0.35);
-}
-
-.namesCollection {
-  color: #fff8f0;
-}
-
-.namesCollection:hover {
-  color: #ffcab1;
-}
-
-.names.github:hover,
-#explanation a:hover,
 #voronoi-explained-link:hover,
 .citation-link:hover {
   color: #ffcab1;
