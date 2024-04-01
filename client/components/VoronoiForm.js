@@ -413,13 +413,10 @@ const VoronoiForm = () => {
             </button>
           </form>
         </div>
-        {!showVoronoi && <FormPlaceholder />}
+        {!showVoronoi && !errorMessage && <FormPlaceholder />}
         <div id='modal'></div>
         {errorMessage ? (
-          <p
-            className='flex-grow-1 mx-5 my-auto fs-2 text'
-            style={{ color: "#a63d40" }}
-          >
+          <p className='flex-grow-1 mx-5 my-auto fs-2 text-primary-50'>
             {errorMessage}
           </p>
         ) : (

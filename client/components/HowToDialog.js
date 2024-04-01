@@ -35,11 +35,11 @@ const HowToDialog = ({ open, closeModal }) => {
               leaveTo='opacity-0 scale-95'
             >
               <Dialog.Panel className='w-full max-w-md transform overflow-hidden rounded-2xl bg-secondary-900 p-6 text-left align-middle shadow-xl transition-all'>
-                <Dialog.Title className='text-heading2 text-secondary-400'>
+                <Dialog.Title className='text-heading2 text-primary-100'>
                   Tips For Creating Your Own Voronoi
                 </Dialog.Title>
                 <Dialog.Description>
-                  <FormExplanation textStyles='text-paragraph2 text-secondary-200' />
+                  <FormExplanation textStyles='text-paragraph2 text-primary-100 ml-2' />
                 </Dialog.Description>
               </Dialog.Panel>
             </Transition.Child>
