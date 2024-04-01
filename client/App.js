@@ -262,7 +262,7 @@ class App extends React.Component {
                   <Timeline
                     target={
                       <div className='d-flex ms-5 me-5 mx-auto'>
-                        <p className='column p-3 my-auto paragraphsMain align-self-center'>
+                        <p className='column p-3 my-auto text-paragraph align-self-center'>
                           This painting, "afro died" was painted in 2011 by{" "}
                           <a
                             style={{ color: "#a63d40" }}
@@ -337,7 +337,7 @@ class App extends React.Component {
           <Scene duration={"100%"} triggerHook={0.2} pin={true}>
             <Timeline
               target={
-                <p className='paragraphsMain mt-2 mb-3 mx-auto my-auto'>
+                <p className='text-paragraph mb-5 mx-5 my-auto'>
                   Of the 14,350 artworks featured in the Modern and Contemporary
                   Art Collection, 2,027 artworks are by women while 10,829 are
                   by men. It’s hard to read those numbers without thinking of
@@ -369,7 +369,7 @@ class App extends React.Component {
                           height='600px'
                         ></img>
                         <p
-                          className='p-3 my-auto paragraphsMain align-self-center'
+                          className='p-3 my-auto text-paragraph align-self-center'
                           id='artist-description'
                         >
                           <a
@@ -416,7 +416,7 @@ class App extends React.Component {
                   </Tween>
                   <Timeline
                     target={
-                      <h1 className='paragraphsMain animate animation3'>
+                      <h1 className='text-paragraph animate animation3'>
                         In 2018, only 14.13% of the Met's 14,350 Modern and
                         Contemporary Art pieces were by women artists.
                       </h1>
@@ -437,7 +437,7 @@ class App extends React.Component {
           <Scene duration={"100%"} triggerHook={0.2} pin={true}>
             <Timeline
               target={
-                <p className='paragraphsMain mt-2 mb-3 mx-auto my-auto'>
+                <p className='text-paragraph mb-5 mx-5 my-auto'>
                   In combining all of the artwork from the previous two voronois
                   into one larger piece, we envision a more balanced view of
                   artwork that depicts women from both male and female artist
@@ -466,7 +466,7 @@ RM2YQGZ0TBN0CXC3BQJU/GayatriFinal.jpg?format=750w'
                           height='500px'
                         ></img>
                         <p
-                          className='p-3 my-auto paragraphsMain align-self-center'
+                          className='p-3 my-auto text-paragraph align-self-center'
                           id='artist-description'
                         >
                           Non-binary artists are scarcely represented in museum
@@ -535,7 +535,7 @@ RM2YQGZ0TBN0CXC3BQJU/GayatriFinal.jpg?format=750w'
           <Scene duration={"100%"} triggerHook={0.2} pin={true}>
             <Timeline
               target={
-                <p className='paragraphsMain mt-2 mb-3 mx-auto my-auto'>
+                <p className='text-paragraph mb-5 mx-5 my-auto '>
                   We wanted to acknowledge the problematic Eurocentric lens that
                   prominent institutions like the Metropolitan Museum present.
                   The paintings included in this last voronoi were the result of
@@ -561,7 +561,7 @@ RM2YQGZ0TBN0CXC3BQJU/GayatriFinal.jpg?format=750w'
                     target={
                       <div className='d-flex ms-5 me-5 mx-auto'>
                         <p
-                          className='p-3 my-auto paragraphsMain align-self-center'
+                          className='p-3 my-auto text-paragraph align-self-center'
                           id='artist-description'
                         >
                           <a
@@ -614,7 +614,7 @@ RM2YQGZ0TBN0CXC3BQJU/GayatriFinal.jpg?format=750w'
                   ></canvas>
                   <Timeline
                     target={
-                      <h1 className='paragraphsMain animate animation5'>
+                      <h1 className='text-paragraph animate animation5'>
                         The Met has 107 pieces of highlighted work from NY
                         (population 19 million ), but only 177 from all of
                         Africa (population 1.35 billion).
@@ -635,7 +635,7 @@ RM2YQGZ0TBN0CXC3BQJU/GayatriFinal.jpg?format=750w'
           <Scene duration={"100%"} triggerHook={0.2} pin={true}>
             <Timeline
               target={
-                <p className='paragraphsMain mt-2 mb-3 mx-auto my-auto'>
+                <p className='text-paragraph mb-5 mx-5 my-auto'>
                   In stark contrast to the availability of work from American
                   and major European countries, this last piece shows art from
                   countries with very limited highlighted work. Many countries
@@ -651,49 +651,6 @@ RM2YQGZ0TBN0CXC3BQJU/GayatriFinal.jpg?format=750w'
             >
               <Tween from={{ opacity: 0 }} to={{ opacity: 1 }} />
             </Timeline>
-          </Scene>
-
-          <Scene duration={"100%"} triggerHook={0.25} pin={true}>
-            {(progress) => (
-              <div className='mx-auto mb-5'>
-                <Timeline totalProgress={progress} paused>
-                  <Timeline
-                    target={
-                      <div className='d-flex ms-5 me-5 mx-auto'>
-                        <img
-                          className='p-2'
-                          height='50%'
-                          width='auto'
-                          src='https://images.squarespace-cdn.com/content/v1/53e3c23ee4b018c6bdf89fdb/1519431980659-PLY4UV7OJ8FSMUICD2LB/amaringo-auca_yachai.jpg?format=2500w'
-                          height='325px'
-                        ></img>
-
-                        <p
-                          className='p-3 my-auto paragraphsMain align-self-center'
-                          id='artist-description'
-                        >
-                          This beautiful piece is by the late{" "}
-                          <a
-                            style={{ color: "#a63d40" }}
-                            href='https://pablo-amaringo.pixels.com/'
-                          >
-                            Pablo Amaringo
-                          </a>
-                          . He was a Peruvian artist who depicted images which
-                          conjure the Amazon jungle, as well as the culture and
-                          traditions of the people there. His work was not
-                          widely known and he helped to create the The
-                          Usko-Ayae, a free school for artists of the Peruvian
-                          Amazon.
-                        </p>
-                      </div>
-                    }
-                  >
-                    <Tween from={{ opacity: 0 }} to={{ opacity: 1 }} />
-                  </Timeline>
-                </Timeline>
-              </div>
-            )}
           </Scene>
 
           {/* CANVAS6 */}
@@ -734,7 +691,7 @@ RM2YQGZ0TBN0CXC3BQJU/GayatriFinal.jpg?format=750w'
           <Scene duration={"100%"} pin={true} offset={200}>
             <Timeline
               target={
-                <p className='paragraphsMain mt-2 mb-3 mx-auto my-auto'>
+                <p className='text-paragraph mb-5 mx-5 my-auto'>
                   Following widespread criticism, in 2020, the Metropolitan
                   Museum of Art declared their intention to address racism and
                   lack of diversity within their institution. They promised to
