@@ -14,9 +14,10 @@ module.exports = {
       serif: ["Merriweather", "serif"],
     },
     fontSize: {
-      paragraph: ["1.5rem", { lineHeight: "2rem" }],
       heading1: ["3.75rem", { lineHeight: "1" }],
       heading2: ["2.25rem", { lineHeight: "2.5rem" }],
+      paragraph: ["1.5rem", { lineHeight: "2rem" }],
+      paragraph2: ["1rem", { lineHeight: "1.5rem" }],
     },
     extend: {},
   },
