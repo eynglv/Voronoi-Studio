@@ -1,4 +1,4 @@
-import React from "react";
+import React, { StrictMode } from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import { Router } from "react-router-dom";
@@ -9,10 +9,12 @@ import store from "./store";
 import Routes from "./Routes";
 
 ReactDOM.render(
-  <Provider store={store}>
-    <Router history={history}>
-      <Routes />
-    </Router>
-  </Provider>,
+  <StrictMode>
+    <Provider store={store}>
+      <Router history={history}>
+        <Routes />
+      </Router>
+    </Provider>
+  </StrictMode>,
   document.getElementById("app")
 );
