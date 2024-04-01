@@ -2,9 +2,7 @@ import React from "react";
 
 const FormExplanation = ({ textStyles }) => (
   <ul style={{ listStyle: "disc" }}>
-    <li className={textStyles} listStyle='square'>
-      Entering a search term is required.
-    </li>
+    <li className={textStyles}>Entering a search term is required.</li>
     <li className={textStyles}>
       You may search items by a tag or by an artist or culture.{" "}
       <span className={`${textStyles} italic`}>
@@ -12,7 +10,7 @@ const FormExplanation = ({ textStyles }) => (
         artist or A culture.
       </span>
     </li>
-    <li className={textStyles} listStyle='square'>
+    <li className={textStyles}>
       Selecting both the "highlighted artworks" and "female artists only"
       options will not likely yield many results.
     </li>

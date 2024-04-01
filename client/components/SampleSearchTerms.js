@@ -1,7 +1,7 @@
 import React from "react";
 
 const SampleSearchTerms = () => (
-  <ul style={{ listStyle: "disc" }}>
+  <ul>
     <li className='list-group-item'>Tag: Women, Highlighted Works Only</li>
     <li className='list-group-item'>Artist & Culture: Gogh</li>
     <li className='list-group-item'>Department: Asian Art, Tag: Cat</li>
