@@ -6,6 +6,7 @@ import { animateScroll as scroll } from "react-scroll";
 import axios from "axios";
 
 import Intro from "./components/Intro";
+import Navbar from "./components/Navbar";
 
 class App extends React.Component {
   constructor() {
@@ -70,6 +71,7 @@ class App extends React.Component {
   render() {
     return (
       <div id='main'>
+        <Navbar />
         <div id='modal'></div>
         <Controller>
           <Scene duration={600} triggerHook={0.2} pin={true}>
@@ -193,7 +195,7 @@ class App extends React.Component {
           >
             <Timeline
               target={
-                <p className='paragraphsMain mt-2 mb-2 mx-auto my-auto'>
+                <p className='text-paragraph mt-2 mb-2 mx-auto my-auto'>
                   The voronoi above consists of art by women with at least one
                   woman subject. We limited the selection to just oil paintings
                   in order to create a cohesive look. Originally, the plan was
@@ -227,7 +229,7 @@ class App extends React.Component {
                           src='https://upload.wikimedia.org/wikipedia/commons/5/5c/Catharina_van_Hemessen_-_Portrait_of_a_Lady.jpg'
                         ></img>
                         <p
-                          className='column p-3 my-auto paragraphsMain align-self-center'
+                          className='column p-3 my-auto text-paragraph align-self-center'
                           id='artist-description'
                         >
                           This piece is entitled Portrait of a Woman by{" "}

@@ -8,9 +8,9 @@ const Home = () => {
   const history = useHistory();
 
   return (
-    <div className='h-dvh w-full` flex flex-col items-center'>
+    <div className='h-dvh w-full flex flex-col items-center'>
       {/* TODO update this text */}
-      <h1 className='text-2xl text-primary-300 my-5 sm:text-6xl'>
+      <h1 className='text-heading2 text-center text-primary-300 my-5 sm:text-heading1'>
         Replace this opening text
       </h1>
       <Carousel />

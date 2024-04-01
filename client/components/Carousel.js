@@ -5,9 +5,12 @@ const CarouselItem = ({ carouselItem }) => {
   return (
     <div className='flex flex-col items-center'>
       <img src={imgSrc} className='object-contain h-96' alt={alt} />
-      <div className='flex flex-col items-center' style={{ opacity: 0.8 }}>
+      <div
+        className='flex flex-col items-center text-center max-w-96'
+        style={{ opacity: 0.8 }}
+      >
         <h5>{title}</h5>
-        <p className=''>{caption}</p>
+        <p>{caption}</p>
       </div>
     </div>
   );
@@ -67,45 +70,45 @@ const Carousel = () => {
     setCurrentIndex(prevIndex);
   };
 
-  // TODO: maybe add transitions
-  useEffect(() => {
-    const timer = setInterval(() => {
-      handleNextSlide();
-    }, 5000);
+  // useEffect(() => {
+  //   const timer = setInterval(() => {
+  //     handleNextSlide();
+  //   }, 5000);
 
-    return () => clearInterval(timer);
-  }, [currentIndex]);
+  //   return () => clearInterval(timer);
+  // }, [currentIndex]);
 
   // TODO: change all the text
   const carouselItems = [
     {
       imgSrc: "https://images.metmuseum.org/CRDImages/ad/web-large/DT73.jpg",
-      title: "Fur Traders Descending the Missouri",
+      title: "Fur Traders Descending the Missouri (1845)",
       caption:
-        "This piece was originally titled French Trader & Half Breed Son",
+        "This piece was originally titled 'French Trader & Half Breed Son', which was deemed too controversial and subsequently renamed.",
       alt: "painting depicting two people resting on a small boat",
     },
     {
       imgSrc:
         "https://collectionapi.metmuseum.org/api/collection/v1/iiif/38360/128077/main-image",
-      title: "Bodhissatva (12th Century)",
+      title: "Bodhisattva (12th Century)",
       caption:
-        "This piece was originally titled French Trader & Half Breed Son",
-      alt: "bronze statue of a bodhissatva",
+        "The Met acquired this sculpture in 1989 through a longtime collaborator, Douglas Latchford, who was indicted for antiquities trafficking and charged by prosecutors for falsifying the provenance of Khmer works of art.",
+      alt: "bronze statue of a Bodhisattva",
     },
     {
       imgSrc:
         "https://collectionapi.metmuseum.org/api/collection/v1/iiif/41494/183320/main-image",
       title: "Landscapes (1814)",
       caption:
-        "This piece was originally titled French Trader & Half Breed Son",
+        "Chinese art dealer Robert H. Ellsworth made a fortune dealing to millionaire collectors of 'Oriental' art.",
       alt: "black and white sketch of a mountainous landscape",
     },
     {
       imgSrc:
         "https://collectionapi.metmuseum.org/api/collection/v1/iiif/313131/2185313/main-image",
       title: "Female Figure (12th-14th century)",
-      caption: "Female Figure (12th-14th century)",
+      caption:
+        "This statue was displayed in the Museum of Primitive Art, the precursor to The Michael C. Rockefeller Wing.",
       alt: "statue of female figure",
     },
   ];
@@ -121,7 +124,7 @@ const Carousel = () => {
           <ChevronRightIcon />
         </button>
       </div>
-      <div className='flex justify-around w-2/6 md:w-3/12'>
+      <div className='flex justify-around w-2/6 mt-1 md:w-3/12'>
         {carouselItems.map((_, index) => (
           <SlideIndicator
             active={index === currentIndex}
