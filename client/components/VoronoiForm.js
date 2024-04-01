@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { useHistory } from "react-router";
 
 import chart from "./pulsate";
 import HowToDialog from "./HowToDialog";
@@ -30,6 +31,8 @@ const VoronoiForm = () => {
   // UI states
   const [openModal, setOpenModal] = useState(false);
   const [showVoronoi, setShowVoronoi] = useState(false);
+
+  const history = useHistory();
 
   //function to get data from MET API
   const getVoronoi = async (route) => {
@@ -135,14 +138,14 @@ const VoronoiForm = () => {
   return (
     <div className='w-screen h-screen'>
       <Navbar />
-      <div className='lg:hidden text-heading2 flex justify-center items-center mt-[300px]'>
+      <div className='lg:hidden text-heading2 flex flex-col justify-center items-center mt-[300px]'>
         <svg
           xmlns='http://www.w3.org/2000/svg'
           fill='none'
           viewBox='0 0 24 24'
           strokeWidth={1.5}
           stroke='currentColor'
-          className='w-8 h-8 mr-2'
+          className='w-16 h-16 mr-2'
         >
           <path
             strokeLinecap='round'
@@ -151,6 +154,12 @@ const VoronoiForm = () => {
           />
         </svg>
         Oops! This feature is only available in the desktop!
+        <button
+          className='text-paragraph bg-accent-900 rounded-md h-16 px-8 mt-2'
+          onClick={() => history.push("/main")}
+        >
+          Take Me Back to Essay!
+        </button>
       </div>
       <div className='min-vh-100 flex-row-reverse hidden lg:flex'>
         <HowToDialog open={openModal} closeModal={() => setOpenModal(false)} />
