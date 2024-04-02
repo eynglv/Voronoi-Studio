@@ -221,7 +221,7 @@ class App extends React.Component {
                 <Timeline totalProgress={progress} paused>
                   <Timeline
                     target={
-                      <div className='d-flex ms-5 me-5 mx-auto'>
+                      <div className='flex flex-col ms-5 me-5 mx-auto md:flex-row'>
                         <img
                           className='w-50 p-2'
                           height='50%'
@@ -261,7 +261,7 @@ class App extends React.Component {
                 <Timeline totalProgress={progress} paused>
                   <Timeline
                     target={
-                      <div className='d-flex ms-5 me-5 mx-auto'>
+                      <div className='flex flex-col ms-5 me-5 mx-auto md:flex-row'>
                         <p className='column p-3 my-auto text-paragraph align-self-center'>
                           This painting, "afro died" was painted in 2011 by{" "}
                           <a
@@ -360,7 +360,7 @@ class App extends React.Component {
                 <Timeline totalProgress={progress} paused>
                   <Timeline
                     target={
-                      <div className='d-flex ms-5 me-5 mx-auto'>
+                      <div className='flex flex-col ms-5 me-5 mx-auto md:flex-row'>
                         <img
                           className='w-50 p-2'
                           height='50%'
@@ -456,7 +456,7 @@ class App extends React.Component {
                 <Timeline totalProgress={progress} paused>
                   <Timeline
                     target={
-                      <div className='d-flex ms-5 me-5 mx-auto'>
+                      <div className='flex flex-col ms-5 me-5 mx-auto md:flex-row'>
                         <img
                           className='p-2'
                           height='50%'
@@ -559,7 +559,7 @@ RM2YQGZ0TBN0CXC3BQJU/GayatriFinal.jpg?format=750w'
                 <Timeline totalProgress={progress} paused>
                   <Timeline
                     target={
-                      <div className='d-flex ms-5 me-5 mx-auto'>
+                      <div className='flex flex-col ms-5 me-5 mx-auto md:flex-row'>
                         <p
                           className='p-3 my-auto text-paragraph align-self-center'
                           id='artist-description'

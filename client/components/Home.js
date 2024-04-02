@@ -10,7 +10,7 @@ const Home = () => {
   return (
     <div className='h-dvh w-full flex flex-col items-center'>
       <h1 className='text-heading2 text-center text-primary-300 my-5 sm:text-heading1'>
-        Social Responsibility at the Met
+        Social Responsibility at the Met: A Visual Essay
       </h1>
       <Carousel />
       <button
