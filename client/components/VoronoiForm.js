@@ -1,8 +1,13 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import chart from "./pulsate";
+import { useHistory } from "react-router";
 
-export default () => {
+import chart from "./pulsate";
+import HowToDialog from "./HowToDialog";
+import Navbar from "./Navbar";
+import FormPlaceholder from "./FormPlaceholder";
+
+const VoronoiForm = () => {
   //state for form component
   const [highlight, setHighlight] = useState(true);
   const [tags, setTags] = useState(true);
@@ -22,6 +27,12 @@ export default () => {
   //state for keeping number of intervals to 1
   const [oldInterval, setOldInterval] = useState({});
   const [newInterval, setNewInterval] = useState({});
+
+  // UI states
+  const [openModal, setOpenModal] = useState(false);
+  const [showVoronoi, setShowVoronoi] = useState(false);
+
+  const history = useHistory();
 
   //function to get data from MET API
   const getVoronoi = async (route) => {
@@ -53,6 +64,7 @@ export default () => {
           return artObj;
         })
       );
+      setShowVoronoi(true);
       return artData;
     } catch (err) {
       setErrorMessage(
@@ -84,7 +96,6 @@ export default () => {
         });
       if (!artDataHolder.length)
         setErrorMessage("No results! Please change your search query!");
-      console.log(artDataHolder);
       setArtData(artDataHolder);
     };
     if (search.query) {
@@ -125,378 +136,300 @@ export default () => {
     setOldInterval(newInterval);
   }, [newInterval]);
   return (
-    <div className="d-flex min-vh-100 flex-row-reverse">
-      <div
-        className="modal"
-        id="infoModal"
-        tabIndex="-1"
-        aria-labelledby="infoModalLabel"
-        aria-hidden="true"
-      >
-        {" "}
-        <div className="modal-dialog">
-          <div className="modal-content">
-            <div className="modal-header">
-              <h5 className="modal-title fw-bold" id="infoModalLabel">
-                Tips On How To Create Your Voronoi
-              </h5>
-              <button
-                type="button"
-                className="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div className="modal-body fw-bold">
-              <ul id="infoBullets">
-                <li id="infoBullets">
-                  Selecting both the "highlighted artworks" and "female artists
-                  only" options will not likely yield many results. A travesty,
-                  we know!
-                </li>
-                <br></br>
-                <li id="infoBullets">
-                  You may search items by a tag or by an artist or culture.{" "}
-                  <span id="infoBullets" className="fst-italic">
-                    Note that searching by "artist or culture" means you may
-                    search by AN artist or A culture.{" "}
-                  </span>
-                </li>
-                <br></br>
-                <li id="infoBullets">
-                  The location search term must be capitalized.
-                </li>
-                <br></br>
-                <li id="infoBullets">
-                  Once your voronoi is created, you can directly change its cell
-                  count! Try it out!
-                </li>
-                <br></br>
-                <li id="infoBullets">
-                  Don't forget to click on the voronoi cells to view your query
-                  results!
-                </li>
-              </ul>
-            </div>
-            <div className="modal-footer">
-              <button
-                className="btn"
-                id="sampleTermBtn"
-                data-bs-target="#sampleSearchTerms"
-                data-bs-toggle="modal"
-                data-bs-dismiss="modal"
-              >
-                Open For Sample Search Terms
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        className="modal"
-        id="sampleSearchTerms"
-        aria-hidden="true"
-        aria-labelledby="infoModalLabel"
-        tabIndex="-1"
-      >
-        <div className="modal-dialog modal-dialog-centered">
-          <div className="modal-content">
-            <div className="modal-header">
-              <h5 className="modal-title fw-bold" id="infoModalLabel">
-                Sample Search Terms
-              </h5>
-              <button
-                type="button"
-                className="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div className="modal-body">
-              <ul className="list-group list-group-flush fw-bold">
-                <li className="list-group-item">
-                  Tag: Women, Highlighted Works Only
-                </li>
-                <li className="list-group-item">Artist & Culture: Gogh</li>
-                <li className="list-group-item">
-                  Department: Asian Art, Tag: Cat
-                </li>
-                <li className="list-group-item">
-                  Tag: Angel, Highlighted Works Only
-                </li>
-                <li className="list-group-item">
-                  Tag: Flower, Female Artists Only
-                </li>
-              </ul>{" "}
-            </div>
-            <div className="modal-footer">
-              <button
-                className="btn"
-                id="sampleTermBtn"
-                data-bs-target="#infoModal"
-                data-bs-toggle="modal"
-                data-bs-dismiss="modal"
-              >
-                Back to Tips
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        className="mx-auto ms-2 me-2 d-flex justify-content-end flex-column"
-        style={{ minWidth: "500px" }} //or 30%
-      >
-        <h2 className="CYO fs-2 text-center mx-auto mt-5">
-          Create Your Own Voronoi
-        </h2>
-        <form
-          id="new-voronoi-form"
-          className="mx-auto fs-7 p-4 d-flex flex-column flex-grow-1 justify-content-around"
-          onSubmit={(evt) => {
-            evt.preventDefault();
-            setSearch({
-              query,
-              highlight,
-              tags,
-              artistOrCulture,
-              departmentId,
-              location,
-              femaleArtist,
-            });
-          }}
+    <div className='w-screen h-screen'>
+      <Navbar />
+      <div className='lg:hidden text-heading2 flex flex-col justify-center items-center mt-[300px]'>
+        <svg
+          xmlns='http://www.w3.org/2000/svg'
+          fill='none'
+          viewBox='0 0 24 24'
+          strokeWidth={1.5}
+          stroke='currentColor'
+          className='w-16 h-16 mr-2'
         >
-          <span>
-            <label
-              className="text-center mx-auto form-label"
-              htmlFor="highlight"
-            >
-              Show only highlighted works
-            </label>{" "}
-            <input
-              name="highlight"
-              type="checkbox"
-              className=""
-              value={highlight}
-              onChange={() => setHighlight(!highlight)}
-              checked={highlight}
-            />
-          </span>
+          <path
+            strokeLinecap='round'
+            strokeLinejoin='round'
+            d='M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z'
+          />
+        </svg>
+        Oops! This feature is only available in the desktop!
+        <button
+          className='text-paragraph bg-accent-900 rounded-md h-16 px-8 mt-2'
+          onClick={() => history.push("/main")}
+        >
+          Take Me Back to Essay!
+        </button>
+      </div>
+      <div className='min-vh-100 flex-row-reverse hidden lg:flex'>
+        <HowToDialog open={openModal} closeModal={() => setOpenModal(false)} />
+        <div
+          className='mx-auto ms-2 me-2 d-flex justify-content-end flex-column'
+          style={{ minWidth: "500px" }} //or 30%
+        >
+          <h2 className='text-primary-100 text-heading2 text-center mx-auto mt-5'>
+            Create Your Own Voronoi
+          </h2>
+          <form
+            id='new-voronoi-form'
+            className='mx-auto fs-7 p-4 d-flex flex-column flex-grow-1 justify-content-around'
+            onSubmit={(evt) => {
+              evt.preventDefault();
+              setSearch({
+                query,
+                highlight,
+                tags,
+                artistOrCulture,
+                departmentId,
+                location,
+                femaleArtist,
+              });
+            }}
+          >
+            <span>
+              <label
+                className='text-center mx-auto form-label'
+                htmlFor='highlight'
+              >
+                Show only highlighted works
+              </label>{" "}
+              <input
+                name='highlight'
+                type='checkbox'
+                className=''
+                value={highlight}
+                onChange={() => setHighlight(!highlight)}
+                checked={highlight}
+              />
+            </span>
 
-          <span>
-            {" "}
-            <label className="form-label mx-auto" htmlFor="femaleArtist">
-              Show only works by female artists
-            </label>{" "}
-            <input
-              name="femaleArtist"
-              type="checkbox"
-              value={femaleArtist}
-              onChange={() => setFemaleArtist(!femaleArtist)}
-              checked={femaleArtist}
-            />
-          </span>
+            <span>
+              {" "}
+              <label className='form-label mx-auto' htmlFor='femaleArtist'>
+                Show only works by female artists
+              </label>{" "}
+              <input
+                name='femaleArtist'
+                type='checkbox'
+                value={femaleArtist}
+                onChange={() => setFemaleArtist(!femaleArtist)}
+                checked={femaleArtist}
+              />
+            </span>
 
-          <div className="d-flex justify-content-between align-items-start">
-            <div
-              className=""
-              onChange={() => {
-                setArtistOrCulture(!artistOrCulture);
-                setTags(!tags);
-              }}
-            >
-              <p className="">
-                Search by Artist & Culture or by Tags: <br></br>{" "}
-                <span>
-                  <input
-                    type="radio"
-                    id="artistCulture"
-                    name="culture-or-tags"
-                    value="artistOrCulture"
-                  />{" "}
-                  <label htmlFor="artistCulture">Artist and Culture</label>{" "}
-                  <input
-                    type="radio"
-                    id="tags"
-                    name="culture-or-tags"
-                    value="tags"
-                    className="bs-pink"
-                    defaultChecked
-                  />{" "}
-                  <label htmlFor="tags">Tags</label>
-                </span>
-              </p>
-            </div>
-            <button
-              type="button"
-              className="btn btn-outline-info rounded-circle mx-4"
-              style={{ width: "50px", height: "50px" }}
-              data-bs-toggle="modal"
-              data-bs-target="#infoModal"
-            >
-              ?{/* <h3> ?</h3> */}
-            </button>
-          </div>
-
-          <span className="d-flex justify-content-end">
-            <label className="align-self-center me-3" htmlFor="department">
-              Filter to Department
-            </label>
-            <select
-              name="department"
-              id="department"
-              className="w-50"
-              value={`${departmentId}`}
-              onChange={(evt) =>
-                setDepartmentId(parseInt(evt.target.value, 10))
-              }
-            >
-              <option value="0">Any</option>
-              {[
-                {
-                  departmentId: 1,
-                  displayName: "American Decorative Arts",
-                },
-                {
-                  departmentId: 3,
-                  displayName: "Ancient Near Eastern Art",
-                },
-                {
-                  departmentId: 5,
-                  displayName: "Arts of Africa, Oceania, and the Americas",
-                },
-                {
-                  departmentId: 6,
-                  displayName: "Asian Art",
-                },
-                {
-                  departmentId: 7,
-                  displayName: "The Cloisters",
-                },
-                {
-                  departmentId: 10,
-                  displayName: "Egyptian Art",
-                },
-                {
-                  departmentId: 11,
-                  displayName: "European Paintings",
-                },
-                {
-                  departmentId: 13,
-                  displayName: "Greek and Roman Art",
-                },
-                {
-                  departmentId: 14,
-                  displayName: "Islamic Art",
-                },
-                {
-                  departmentId: 15,
-                  displayName: "The Robert Lehman Collection",
-                },
-                {
-                  departmentId: 16,
-                  displayName: "The Libraries",
-                },
-                {
-                  departmentId: 17,
-                  displayName: "Medieval Art",
-                },
-                {
-                  departmentId: 21,
-                  displayName: "Modern Art",
-                },
-              ].map((val) => (
-                <option value={`${val.departmentId}`} key={val.departmentId}>
-                  {val.displayName}
-                </option>
-              ))}
-            </select>
-          </span>
-          <div className="d-flex justify-content-end">
-            <label className="me-3 align-self-center" htmlFor="location">
-              Location
-            </label>
-            <input
-              className="w-50"
-              type="text"
-              id="location"
-              value={location}
-              onChange={(evt) => setLocation(evt.target.value)}
-              placeholder="any"
-            />
-          </div>
-          <div className="d-flex justify-content-end">
-            <label className="align-self-center me-3" htmlFor="query">
-              Search Term
-            </label>
-            <input
-              type="text"
-              className="w-50"
-              id="query"
-              value={query}
-              onChange={(evt) => setQuery(evt.target.value)}
-              required
-            />
-          </div>
-          <div className="d-flex justify-content-end">
-            <label className="align-self-center me-3" htmlFor="cell-count">
-              Number of Cells
-            </label>
-            <input
-              className="w-50"
-              type="number"
-              id="cell-count"
-              value={numberOfCells}
-              min="3"
-              step="1"
-              onChange={(evt) => {
-                let cellCount = evt.target.value;
-                if (cellCount < 3) cellCount = 3;
-                setNumberOfCells(cellCount);
-              }}
-            />
-          </div>
-          <p className="align-self-end">
-            (too many cells can impact performance)
-          </p>
-          {progressMax ? (
-            <div className="progress" style={{ width: "100%" }}>
+            <div className='d-flex justify-content-between align-items-start'>
               <div
-                className="progress-bar"
-                role="progressbar"
-                aria-valuenow={currentProgress}
-                aria-valuemin="0"
-                aria-valuemax={progressMax}
-                style={{
-                  width: `${(currentProgress / progressMax) * 100}%`,
-                  backgroundColor: "#a63d40",
+                className=''
+                onChange={() => {
+                  setArtistOrCulture(!artistOrCulture);
+                  setTags(!tags);
                 }}
-              ></div>
+              >
+                <p className=''>
+                  Search by Artist & Culture or by Tags: <br></br>{" "}
+                  <span>
+                    <input
+                      type='radio'
+                      id='artistCulture'
+                      name='culture-or-tags'
+                      value='artistOrCulture'
+                    />{" "}
+                    <label htmlFor='artistCulture'>Artist and Culture</label>{" "}
+                    <input
+                      type='radio'
+                      id='tags'
+                      name='culture-or-tags'
+                      value='tags'
+                      className='bs-pink'
+                      defaultChecked
+                    />{" "}
+                    <label htmlFor='tags'>Tags</label>
+                  </span>
+                </p>
+              </div>
+              <button
+                type='button'
+                className='btn btn-outline-info rounded-circle mx-4'
+                style={{ width: "50px", height: "50px" }}
+                data-bs-toggle='modal'
+                data-bs-target='#infoModal'
+                onClick={() => setOpenModal(true)}
+              >
+                ?
+              </button>
             </div>
-          ) : (
-            ""
-          )}
-          <button type="submit" id="formBtn">
-            Create Voronoi!
-          </button>
-        </form>
+
+            <span className='d-flex justify-content-end text-primary-900'>
+              <label
+                className='align-self-center me-3 text-primary-50'
+                htmlFor='department'
+              >
+                Filter to Department
+              </label>
+              <select
+                name='department'
+                id='department'
+                className='w-50'
+                value={`${departmentId}`}
+                onChange={(evt) =>
+                  setDepartmentId(parseInt(evt.target.value, 10))
+                }
+              >
+                <option value='0'>Any</option>
+                {[
+                  {
+                    departmentId: 1,
+                    displayName: "American Decorative Arts",
+                  },
+                  {
+                    departmentId: 3,
+                    displayName: "Ancient Near Eastern Art",
+                  },
+                  {
+                    departmentId: 5,
+                    displayName: "Arts of Africa, Oceania, and the Americas",
+                  },
+                  {
+                    departmentId: 6,
+                    displayName: "Asian Art",
+                  },
+                  {
+                    departmentId: 7,
+                    displayName: "The Cloisters",
+                  },
+                  {
+                    departmentId: 10,
+                    displayName: "Egyptian Art",
+                  },
+                  {
+                    departmentId: 11,
+                    displayName: "European Paintings",
+                  },
+                  {
+                    departmentId: 13,
+                    displayName: "Greek and Roman Art",
+                  },
+                  {
+                    departmentId: 14,
+                    displayName: "Islamic Art",
+                  },
+                  {
+                    departmentId: 15,
+                    displayName: "The Robert Lehman Collection",
+                  },
+                  {
+                    departmentId: 16,
+                    displayName: "The Libraries",
+                  },
+                  {
+                    departmentId: 17,
+                    displayName: "Medieval Art",
+                  },
+                  {
+                    departmentId: 21,
+                    displayName: "Modern Art",
+                  },
+                ].map((val) => (
+                  <option value={`${val.departmentId}`} key={val.departmentId}>
+                    {val.displayName}
+                  </option>
+                ))}
+              </select>
+            </span>
+            <div className='d-flex justify-content-end'>
+              <label className='me-3 align-self-center' htmlFor='location'>
+                Location
+              </label>
+              <input
+                className='w-50 text-primary-900'
+                type='text'
+                id='location'
+                value={location}
+                onChange={(evt) => setLocation(evt.target.value)}
+                placeholder=' ie: New York'
+              />
+            </div>
+            <div className='d-flex justify-content-end '>
+              <label className='align-self-center me-3' htmlFor='query'>
+                Search Term
+              </label>
+              <input
+                type='text'
+                className='w-50 text-primary-900'
+                id='query'
+                value={query}
+                onChange={(evt) => setQuery(evt.target.value)}
+                required
+                placeholder=' ie: cat'
+              />
+            </div>
+            <div className='d-flex justify-content-end text-primary-900'>
+              <label
+                className='align-self-center me-3 text-primary-50'
+                htmlFor='cell-count'
+              >
+                Number of Cells
+              </label>
+              <input
+                className='w-50'
+                type='number'
+                id='cell-count'
+                value={numberOfCells}
+                min='3'
+                step='1'
+                onChange={(evt) => {
+                  let cellCount = evt.target.value;
+                  if (cellCount < 3) cellCount = 3;
+                  setNumberOfCells(cellCount);
+                }}
+              />
+            </div>
+            <p className='align-self-end'>
+              (too many cells can impact performance)
+            </p>
+            {progressMax ? (
+              <div className='progress' style={{ width: "100%" }}>
+                <div
+                  className='progress-bar'
+                  role='progressbar'
+                  aria-valuenow={currentProgress}
+                  aria-valuemin='0'
+                  aria-valuemax={progressMax}
+                  style={{
+                    width: `${(currentProgress / progressMax) * 100}%`,
+                    backgroundColor: "#a63d40",
+                  }}
+                ></div>
+              </div>
+            ) : (
+              ""
+            )}
+            <button
+              type='submit'
+              id='formBtn'
+              className='bg-accent-800 h-10 rounded-md hover:bg-accent-900'
+            >
+              Create Voronoi!
+            </button>
+          </form>
+        </div>
+        {!showVoronoi && !errorMessage && <FormPlaceholder />}
+        <div id='modal'></div>
+        {errorMessage ? (
+          <p className='flex-grow-1 mx-5 my-auto fs-2 text-primary-50'>
+            {errorMessage}
+          </p>
+        ) : (
+          <canvas
+            id='user-generated'
+            className='flex-grow-1 mx-4 me-0 my-auto'
+            height='500'
+            width='700'
+          ></canvas>
+        )}
       </div>
-      <div id="modal"></div>
-      {errorMessage ? (
-        <p
-          className="flex-grow-1 mx-5 my-auto fs-2 text"
-          style={{ color: "#a63d40" }}
-        >
-          {errorMessage}
-        </p>
-      ) : (
-        <canvas
-          id="user-generated"
-          className="flex-grow-1 mx-4 me-0 my-auto"
-          height="500"
-          width="700"
-        ></canvas>
-      )}
     </div>
   );
 };
+
+export default VoronoiForm;
