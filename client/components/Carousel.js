@@ -70,15 +70,14 @@ const Carousel = () => {
     setCurrentIndex(prevIndex);
   };
 
-  // useEffect(() => {
-  //   const timer = setInterval(() => {
-  //     handleNextSlide();
-  //   }, 5000);
+  useEffect(() => {
+    const timer = setInterval(() => {
+      handleNextSlide();
+    }, 5000);
 
-  //   return () => clearInterval(timer);
-  // }, [currentIndex]);
+    return () => clearInterval(timer);
+  }, [currentIndex]);
 
-  // TODO: change all the text
   const carouselItems = [
     {
       imgSrc: "https://images.metmuseum.org/CRDImages/ad/web-large/DT73.jpg",

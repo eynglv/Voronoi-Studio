@@ -8,12 +8,11 @@ const Intro = forwardRef((props, ref) => {
   }));
   return (
     <div className='w-56 border-2 mx-auto' ref={div}>
-      {/* TODO: change text */}
       <p className='text-paragraph'>Scroll down to view our digital essay.</p>
       <p className='text-paragraph'>
         Any of the moving images can be clicked on for more detail.
       </p>
-      <p className='text-paragraph'>Please enjoy responsibly.</p>
+      <p className='text-paragraph'>Scroll to Continue.</p>
     </div>
   );
 });

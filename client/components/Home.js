@@ -9,9 +9,8 @@ const Home = () => {
 
   return (
     <div className='h-dvh w-full flex flex-col items-center'>
-      {/* TODO update this text */}
       <h1 className='text-heading2 text-center text-primary-300 my-5 sm:text-heading1'>
-        Replace this opening text
+        Social Responsibility at the Met
       </h1>
       <Carousel />
       <button
