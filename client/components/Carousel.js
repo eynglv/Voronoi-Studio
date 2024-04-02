@@ -73,7 +73,7 @@ const Carousel = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       handleNextSlide();
-    }, 5000);
+    }, 8000);
 
     return () => clearInterval(timer);
   }, [currentIndex]);

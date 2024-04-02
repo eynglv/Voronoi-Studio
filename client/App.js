@@ -87,16 +87,16 @@ class App extends React.Component {
           >
             <div>
               <p className='text-paragraph mb-5 mx-5 my-auto'>
-                Voronoi Studio aims to visually dissect the disproportionate
-                representation of male and western artists, compared to female
-                and non-western artists. The Met’s digital collection contains
-                over 375,000 pieces of artwork available through the Open Access
-                program. We created two sets of contrasting art works to
-                highlight the overt bias in the Met's Collection, one depicting
-                women by women artists juxtaposed with nude paintings of women
-                by male artists, while the other queried the Met's "highlighted"
-                works and contrasted American pieces with pieces from
-                underrepresented countries.
+                Our voronoi diagrams aim to visually dissect the
+                disproportionate representation of male and western artists,
+                compared to female and non-western artists. The Met’s digital
+                collection contains over 375,000 pieces of artwork available
+                through the Open Access program. We created two sets of
+                contrasting art works to highlight the overt bias in the Met's
+                Collection, one depicting women by women artists juxtaposed with
+                nude paintings of women by male artists, while the other queried
+                the Met's "highlighted" works and contrasted American pieces
+                with pieces from underrepresented countries.
               </p>
             </div>
           </Scene>
@@ -157,7 +157,7 @@ class App extends React.Component {
             {(progress) => (
               <div>
                 <Timeline totalProgress={progress} paused>
-                  <h2 className='text-heading1 mb-4 display-5 text-center text-secondary-400/70'>
+                  <h2 className='text-heading1 mb-4 display-5 text-center'>
                     Women by Women
                   </h2>
                   <canvas
@@ -195,7 +195,7 @@ class App extends React.Component {
           >
             <Timeline
               target={
-                <p className='text-paragraph mt-2 mb-2 mx-auto my-auto'>
+                <p className='text-paragraph mb-5 mx-10 my-auto'>
                   The voronoi above consists of art by women with at least one
                   woman subject. We limited the selection to just oil paintings
                   in order to create a cohesive look. Originally, the plan was
