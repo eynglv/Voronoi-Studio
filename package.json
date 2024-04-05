@@ -4,7 +4,7 @@
   "description": "voronoi studio web app to present an aesthetic and purposeful experience",
   "main": "index.js",
   "scripts": {
-    "build": "webpack",
+    "build": "webpack --output-path=public",
     "build:dev": "npm run build -- --watch --mode=development",
     "seed": "node script/seed.js",
     "start": "node server",
