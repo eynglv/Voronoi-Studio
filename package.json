@@ -3,9 +3,13 @@
   "version": "2.0.0",
   "description": "voronoi studio web app to present an aesthetic and purposeful experience",
   "main": "index.js",
+  "engines": {
+    "node": "21.x"
+  },
   "scripts": {
-    "build": "webpack --output-path=public",
+    "build": "webpack",
     "build:dev": "npm run build -- --watch --mode=development",
+    "heroku-postbuild": "webpack --output-path=public",
     "seed": "node script/seed.js",
     "start": "node server",
     "start:dev": "npm run build:dev & npm run start-server",
